@@ -1,0 +1,203 @@
+﻿@model StaffLoans.Models.ForgotPassword
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="~/Content/bootstrap.min.css">
+<link href="~/Content/Custom/Menus.css" rel="stylesheet" />
+<link href="~/Content/Custom/Login.css" rel="stylesheet" />
+<script src="~/scripts/ForgotPassword.js"></script>
+<div class="clsPageBannerHeader">
+    <div class="clsCenterBlock clsPageBannerHeaderPad">
+        <div class="clsPageBannerHeaderTitle">FORGOT PASSWORD</div>
+        <div class="clsPageBannerHeaderSubTitle">Follow these easy steps to recover your password.</div>
+    </div>
+</div>
+<div class="clsCenterBlock">
+    <div class="clsCenterBlockPad">
+        <br />
+
+        <br />
+        <div style="clear:both"></div>
+        <div class="log_in clsCenterDiv" style="background-color:#fff;border-radius:5px;margin:0 auto">
+
+            <div style="clear:both"></div>
+
+            <input type="hidden" id="hdnLoginErrorMsg" value="@ViewBag.LoginError" />
+
+
+
+            @using (Ajax.BeginForm("SendOTP", "ForgotPassword", new AjaxOptions
+            {
+                HttpMethod = "Post",
+                OnSuccess = "displayForgotPasswordOTPPopup(data)",
+                OnFailure = "displayForgotPasswordOTPPopup(data)"
+            }))
+            {
+                @Html.AntiForgeryToken()
+
+
+                <table cellpadding="0" cellspacing="0" style="margin: 0 auto;">
+                    @*<tr>
+                            <td>
+                                <div class="inputClass" style="width: 100% !important;display: inline-block; position:relative; font-size:22px;text-align:center;font-weight:bold;">
+                                    Forgot Password
+                                </div>
+                                <br />
+                            </td>
+                        </tr>*@
+                    <tr>
+                        <td colspan="2"><br /></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="inputClass" style="width: 300px !important;">
+                                ID Number
+                            </div>
+                            <br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><br /></td>
+                    </tr>
+                    <tr>
+
+                        <td>
+                            @Html.ValidationMessageFor(m => m.Step1.IDNumber)
+                            @Html.TextBoxFor(m => m.Step1.IDNumber, new { id = "txtIDNumber", maxlength = 13, @class = "inputClass inputBox", onkeypress = "return isNumberKey(event,this);", })
+                            <div class="clsMandatory inputClass" style="float: left"> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><br /></td>
+                    </tr>
+                    @*<tr>
+                            <td>
+                                <div class="inputClass" style="width: 300px !important; ">
+                                    Password
+                                </div>
+                                <br />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><br /></td>
+                        </tr>
+                        <tr>
+
+                            <td>
+                                @Html.TextBoxFor(m => m.Password, new { id = "txtPassword", @class = "inputClass inputBox", type = "password", autocomplete = "new-password" })
+                                <div id='showhide' onclick='javascript:fnShowHidePasswordText();' class='btnHidePassword ' style="margin-top:5px !important;margin-right:10px;"></div>
+                                <div class="clsMandatory inputClass" style="float: left"></div>
+                                <br />
+                                <br />
+                                <br />
+                            </td>
+                        </tr>*@
+                    <tr>
+                        <td colspan="2"><br /></td>
+                    </tr>
+
+                    <tr>
+
+                        <td style="padding-top: 10px; padding-bottom: 20px">
+                            <div style="clear:both"></div>
+                            <br /><br />
+                            <input class="btn" style="width: 300px;  font-size: 14px;color: white;  border-radius: 10px;" type="submit" value="Send OTP" name="command" />
+                        </td>
+                    </tr>
+                </table>
+            }
+
+
+
+            @using (Ajax.BeginForm("ValidateOTP", "ForgotPassword", new AjaxOptions
+            {
+                HttpMethod = "Post",
+                //OnBegin = "displayLoader()",
+                OnSuccess = "handleOTPValidationResult(data)",
+                OnFailure = "handleOTPValidationResult(data)"
+            }))
+            {
+                @Html.AntiForgeryToken()
+
+                @Html.HiddenFor(x => x.Step1.IDNumber, new { id = "hfIDNumber" })
+
+                <div id="divForgotPasswordOTPPopup" class="modal fade" role="dialog" style="display:none !important;width:400px;height:200px;margin:0 auto;top:5%;overflow:hidden;background-color:#fff;padding:15px;border-radius:5px;z-index:10000000000;">
+                    <div class="button" data-dismiss="modal" style="font-weight:bold;float:right;width:10%;text-align:right;font-size:18px;padding:5px;cursor:pointer;display:inline-block;" onclick="clearForgotPasswordOTPBackground();">x</div>
+                    <div class="cls_signingHeader clsSubHeaderColor">
+                        Forgot Password OTP
+                    </div>
+                    <div style="border-bottom:1px solid  rgba(189, 195, 199, 0.7);padding-top:10px;"></div>
+
+                    <div class="clsNegativegMainDiv" id="divValidateOTPError" style="display:none;height:45px; margin-top: 0px; position: relative;z-index:0;">
+                        <div>
+                            <img src="~/Content/Images/Negative_alert_icon.png" alt="" class="clsNegativeInnerImgRight" />
+                            <div class="clsNegativeInnerTextdiv" id="divValidateOTPErrorText">Invalid User</div>
+                            <div class="clsNegativeInnerCloseImageDiv" onclick="javascript: $('#divValidateOTPError').fadeOut();">
+                                <img src="~/Content/Images/close_popup_icon.png" alt="" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <br />
+                    <div class="cls_signingSubHeader">
+                        Please enter the OTP received on your mobile phone.
+                    </div>
+                    <div style="font-size:12px;padding-top:10px;padding-bottom:10px;">
+
+                        @Html.ValidationMessageFor(m => m.Step2.OTP)
+                        @Html.TextBoxFor(m => m.Step2.OTP, new { id = "txtOTP", maxlength = 13, @class = "inputClass inputBox", onkeypress = "return isNumberKey(event,this);", autocomplete = "off" })
+                        <div class="clsMandatory inputClass" style="float: left"> </div>
+                        <br />
+                        <br />
+                    </div>
+                    <div style="font-size:12px;padding-top:10px;padding-bottom:10px;">
+
+                        <input id="btnValidateOTP" class="btn" style="width: 360px;  font-size: 14px;color: white;  border-radius: 10px;" type="submit" value="Submit" name="command" />
+                    </div>
+
+
+                </div>
+            }
+
+
+            @*<tr>
+                    <td>
+                        <div class="inputClass" style="width: 300px !important;">
+                            Two-Step Authentication Code
+                        </div>
+                        <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2"><br /></td>
+                </tr>
+                <tr>
+
+                    <td>
+                        @Html.TextBoxFor(m => m.TwoFactorCode, new { id = "txtTwoFactorCode", @class = "inputClass inputBox" })
+                        <div class="clsMandatory inputClass" style="float: left"></div>
+                        <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2"><br /></td>
+                </tr>*@
+            @*@using (Html.BeginForm("SendResetEmail", "ForgotPassword", FormMethod.Post, new { sentStatus = 0 }))
+                {
+
+                        <tr>
+
+                            <td style="padding-top: 10px; padding-bottom: 20px">
+                                <div style="clear:both"></div>
+                                <br /><br />
+                                <input class="btn" style="width: 360px;  font-size: 14px;color: white;  border-radius: 10px;" type="submit" value="Reset Password" name="command" />
+                            </td>
+                        </tr>
+                    </table>
+                }*@
+            <br />
+        </div>
+        <br />
+    </div>
+</div>

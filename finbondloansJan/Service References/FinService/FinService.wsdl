@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="FinService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://10.1.13.72/FinService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://10.1.13.72/FinService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://10.1.13.72/FinService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/FinServiceSassa" />
+      <xsd:import schemaLocation="http://10.1.13.72/FinService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IFinService_GetUSN_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUSN" />
+  </wsdl:message>
+  <wsdl:message name="IFinService_GetUSN_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUSNResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFinService_GetTransactionHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTransactionHistory" />
+  </wsdl:message>
+  <wsdl:message name="IFinService_GetTransactionHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTransactionHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFinService_SendSMS_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendSMS" />
+  </wsdl:message>
+  <wsdl:message name="IFinService_SendSMS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendSMSResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFinService_SendEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendEmail" />
+  </wsdl:message>
+  <wsdl:message name="IFinService_SendEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFinService_LoadBlacklistIntoTemp_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadBlacklistIntoTemp" />
+  </wsdl:message>
+  <wsdl:message name="IFinService_LoadBlacklistIntoTemp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadBlacklistIntoTempResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFinService_BulkRegistrationCheck_InputMessage">
+    <wsdl:part name="parameters" element="tns:BulkRegistrationCheck" />
+  </wsdl:message>
+  <wsdl:message name="IFinService_BulkRegistrationCheck_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BulkRegistrationCheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFinService_GetAccountSummary_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountSummary" />
+  </wsdl:message>
+  <wsdl:message name="IFinService_GetAccountSummary_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountSummaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFinService_GetMSISDNDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMSISDNDetail" />
+  </wsdl:message>
+  <wsdl:message name="IFinService_GetMSISDNDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMSISDNDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFinService_ValidateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateUser" />
+  </wsdl:message>
+  <wsdl:message name="IFinService_ValidateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateUserResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IFinService">
+    <wsdl:operation name="GetUSN">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFinService/GetUSN" message="tns:IFinService_GetUSN_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFinService/GetUSNResponse" message="tns:IFinService_GetUSN_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionHistory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFinService/GetTransactionHistory" message="tns:IFinService_GetTransactionHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFinService/GetTransactionHistoryResponse" message="tns:IFinService_GetTransactionHistory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendSMS">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFinService/SendSMS" message="tns:IFinService_SendSMS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFinService/SendSMSResponse" message="tns:IFinService_SendSMS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFinService/SendEmail" message="tns:IFinService_SendEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFinService/SendEmailResponse" message="tns:IFinService_SendEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadBlacklistIntoTemp">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFinService/LoadBlacklistIntoTemp" message="tns:IFinService_LoadBlacklistIntoTemp_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFinService/LoadBlacklistIntoTempResponse" message="tns:IFinService_LoadBlacklistIntoTemp_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BulkRegistrationCheck">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFinService/BulkRegistrationCheck" message="tns:IFinService_BulkRegistrationCheck_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFinService/BulkRegistrationCheckResponse" message="tns:IFinService_BulkRegistrationCheck_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountSummary">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFinService/GetAccountSummary" message="tns:IFinService_GetAccountSummary_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFinService/GetAccountSummaryResponse" message="tns:IFinService_GetAccountSummary_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMSISDNDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFinService/GetMSISDNDetail" message="tns:IFinService_GetMSISDNDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFinService/GetMSISDNDetailResponse" message="tns:IFinService_GetMSISDNDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFinService/ValidateUser" message="tns:IFinService_ValidateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFinService/ValidateUserResponse" message="tns:IFinService_ValidateUser_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IFinService" type="tns:IFinService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetUSN">
+      <soap:operation soapAction="http://tempuri.org/IFinService/GetUSN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionHistory">
+      <soap:operation soapAction="http://tempuri.org/IFinService/GetTransactionHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSMS">
+      <soap:operation soapAction="http://tempuri.org/IFinService/SendSMS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendEmail">
+      <soap:operation soapAction="http://tempuri.org/IFinService/SendEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadBlacklistIntoTemp">
+      <soap:operation soapAction="http://tempuri.org/IFinService/LoadBlacklistIntoTemp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BulkRegistrationCheck">
+      <soap:operation soapAction="http://tempuri.org/IFinService/BulkRegistrationCheck" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountSummary">
+      <soap:operation soapAction="http://tempuri.org/IFinService/GetAccountSummary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMSISDNDetail">
+      <soap:operation soapAction="http://tempuri.org/IFinService/GetMSISDNDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateUser">
+      <soap:operation soapAction="http://tempuri.org/IFinService/ValidateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FinService">
+    <wsdl:port name="BasicHttpBinding_IFinService" binding="tns:BasicHttpBinding_IFinService">
+      <soap:address location="http://10.1.13.72/FinService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

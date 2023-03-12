@@ -1,0 +1,12 @@
+﻿body {
+    margin:0px;
+    height:100% !important;
+ font-family: "OpenSans-Regular" !important; /*, "Helvetica Neue",sans-serif*/
+     font-size:12px;
+     color:#404040; /**/
+    background: url("./Images/background.png")  repeat;
+
+}
+.clsMenuColor{
+    color: #FFFFFF;
+}

@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LoggedinLayout.cshtml";
+}
+<script src="~/scripts/bootstrap.js"></script>
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<script src="~/scripts/DataTable/js/jquery.dataTables.min.js"></script>
+<script src="~/scripts/DataTable/js/jquery.dataTables.js"></script>
+<link href="~/scripts/DataTable/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="~/Content/demo_table.css" rel="stylesheet" />
+<link href="~/Content/Footable.css" rel="stylesheet" />
+<script src="~/scripts/Footable.js"></script>
+<link href="~/Content/datatables.responsive.css" rel="stylesheet" />
+<script src="~/scripts/datatables.responsive.js"></script>
+<script src="~/scripts/Statement.js"></script>
+<div class="clsPageBannerHeader">
+    <div class="clsCenterBlock clsPageBannerHeaderPad">
+        <div class="clsPageBannerHeaderTitle">STATEMENTS</div>
+        <div class="clsPageBannerHeaderSubTitle">Click on view button to view the statements</div>
+    </div>
+</div>
+<div class="clsCenterBlock">
+    @Html.AntiForgeryToken()
+    <div style="width:100%;padding-top:20px">
+        @*<div style="font-size:20px;font-weight:bold" class="clsSubHeaderColor">
+            Statement Information
+
+        </div>
+        <div>Please click view statements from the below grid</div>
+        <br />*@
+        <div class="clsResAfforGrid" >
+            <table id="gdStatements" class="display clsGridTable  clsFooPayLink footable">
+                <thead>
+                    <tr>
+                        <th data-class="expand">Loan Application Number</th>
+                        <th data-hide="phone">Loan Amount</th>
+                        <th data-hide="phone">View</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+    <br />
+    </div>

@@ -1,0 +1,1022 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <style type="text/css" >
+        /* table, th  {
+  border: 1px solid black;
+} */
+table {
+  border-collapse: collapse;
+}
+
+table,  th {
+  border: 1px solid black;
+}
+
+.clsBorderlessTable {
+    border: none;
+    /* text-align: left; */
+    margin-left:auto; 
+    margin-right:auto;
+}
+
+
+        input, textarea
+        {
+            color:black;
+            height:25px;
+        }
+        ol
+        {
+            list-style:decimal;
+        }
+        ul
+        {
+            list-style:circle;
+           
+        }
+  
+
+        .header1
+        {
+            font-size:25px;
+            text-align:center;
+            width:100%;
+            font-weight:bold;
+            /*background-color:#f5f6fa;*/
+            padding:10px;
+            color:gray;
+            /*width: 740px;*/
+            margin: 0 auto;
+            /* position: absolute;
+            left: 50%;
+            margin-left: -17%; */
+        }
+
+        .header2
+        {
+            font-size:16px;
+            /*font-weight:bold;
+            background-color:#f5f6fa;*/
+            padding:10px;
+            color:black;
+            width: 100%;
+            text-align:center;
+            margin: 0 auto;
+            padding-top:0px;
+        }
+
+    </style>
+</head>
+<body style="background-color:#fff;font-family:Arial;">
+    <br/>
+    <div>
+        <div style="width:285px;margin:0 auto;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAR0AAABzCAIAAAAqgUGyAAAABGdBTUEAALGPC/xhBQAATEpJREFUeF7tfYdjFNX69vcPfFeS7G4Smt7r/XktP7MzG0AQVGzYKSJITd2WDoQmvaP0LkWqCAqIdAQUCF16CL0HQk9PtkzbfM97ZhJSNwGiwfvtw2GzO3PmzCnv85YzZ2b+T5EPPvhQ2/Dxygcfah8+XvngQ+3DxysffKh9+Hjlgw+1Dx+vniJ4PB63241PRVFKtgDq9xKoGwFRFLVNPjxl8PHqKYIsy3l5eevWrUtJSTl79uzt27fx0+l0gmwulwtf8vPzsfH8+fO7d+9ev349tmhH+vCUwcerpwiSJIFat27dmjdv3uzZs+fMmYPPuXPnzmfAF2yZNWuWuvHevXvIrB3pw1MGH6+eOsDBO3nypEqqqvDHH3/AVyxxF3142uDj1VMHNXDasGGDxqEKWLlypSAILMIqH3r58JTAx6unETBEiKy+++67ilYLW65du6aSCtAO8OEpg49XTy9OnDiBaEoNqFSAVOvXr0cY5vMAn3L4ePX0wu12L1++XKMUw9y5c+/cueMj1dMPH6+eXsiyfOnSJXUOULVamzZt8vl+fwv4ePX0Qp12X7FiBRilBlq3bt3S9vnwdMPHq7qBWwBn4NC5PB5BVorg2DEzhL8SDBXLoq2rOH/+vMqrH3/8seIFKxyqFHlYkj1FsiILsiSIgiziq8d3davO4ONVHQAUWrv5930HT7slRVYEjyLTppJUFoIgLFy4EH5gampqRScQG4o3KR6PLAjSjfu546d956K5Dd8qpzqDj1d1ADAh9cqtl5p2+3rmhlwn3D23x0OsIJo85IkGGLWUlJR58+Y5nc5KFlgQ02QYPbBIlDzb9p7m37eNm7+qwO3yKIKWx4e/HD5e1Q2yHcKrb9iDuagPug/cd/yiQ5TciigXifDlyvEKVMvIyNiyZQsIVsFegYxuWXE5JPH6/bw+o+Y2CA0LDgnfceScqEiMcj7UDXy8qhN4YHk+6j78Gd5Wj7M0DjUnDplz4dYDN4uUtCzFAJ3gCt64cQOkqsCrIkRROQ5h7o+/vvR2vD9vr8fHPW+y3cspkMmCaXl8+Ovh41WdwCMrcuyguQG83Y+LDzDadJz5+Rb2YZNXpd/PRWCEiMujSDBGCj6Z3WEzEwqsmeSRRNklKgKyFbrk79fve+2jpCBjZABv8TdZ/UJiXn07Md/t9hQJPmtVh/Dxqk7gAW+GT12h46z+fLyOt/vziQEh8UEh5n827dF/zPzUczcK3ZJE1HKpniFLIJjiEUVZUtLv5s1curXZx70CuTCD0a43JgVwZK8CuNimH/d3SjgE1PKhzuDjVZ0AvJK/nrtGbwKvYnW8tR5n8+Ni/fk4f5MNlqd+qOWDrsMXr9l5/W42GSzGK0RX+YWFW/edNveb/e8WFgNnDTDGBYTG0FFcXABn8+cs4NXr7Qa5YPF8vKpT+HhVJ/AoHnnid+sCuGgYGR1vDjBFkyPH21gC0+IamsLbhQ1auHKzQxBhpkAqUZL37D8YNWDqP1tGBXJRBs6u4+KQPwCHmCwBfBQK0fGxrToMdvt4Vdfw8apO4JEUcczsn3Qm4pWes+iNsUjw6IKMlldbxw6dtPzU5dtuOIsKXYYi96+oSKT1Fwq8wMw894KVu974fEhwqMUQEqsPidchSONiAkzEtBZtv3LJyO+Lr+oSPl7VCRRFFgd/s5JNNsCjg7Wx6Yz2V9/pPe27zQ9ynQikSqb+8KXMDDubxRAVJV9Qtu053qbriEAuxp/r7c/H6EKj/Th76Ed9nKIE5pYc4cNfDx+v6gRgihSeONPfhJjKHhRi+6fR/NXXKzJyXG4yUKDEQ07gO4ADtN8s1JI9kuhRHJJUKMk/bNxrfD8WbmGAMdHPZH/+TVuOy1lUVAgrpx3hw18OH6/qBB63LL/9+SC9CXwI/6jL0KOp17BF9riLPCJIpOViAKmcTufVq1dVgoFUSLQUsEhE8oCHRfKdvIKkkd81DI0I4GzBJtv1ewWKB/GVj1d1Bh+v6gAgx51cx4utLA1Co0ZOX5nrFASPW1FcINVD/68Y2JCenr5hw4Zib1BiBdAeWqGLD+KW4JDkjbuPGN+NqR8SuWH7UVrT63ME6w4+XtUBIO9Hzlw1vhm2PuWMW/HIspPW38IC0ZQ6/pRZBAiCbN++fe7cuQUFBbIMUjFeEZ3YXpYHRXgQscny+ZsP2vYcNHriAkHBJh+v6gw+XtUBIO8/b9px5tJ1+HCMHt4IACdwwYIFc+bMOXr0qCSBVFVC8ShuUXqQ55wyZ5FA9srnB9YZfLyqGxS4nQ7BJbE17F54BccvNTV1NsMPP/zgnVdgligKgii73JKi0O1Y2mYf/nL4eFUngCkRkDzk1Gk2qyLoBhK3e9myZSqvYLLUJzFhV4UoTAU2IuJiXiKb3lC3+vDXw8erOgJdXwKpYFJUalUCWZbPnDmjkkrFzz//XDx7UQmwlXawP9p3H+oIPl7VER6SoBJ7BeYAiKwWL16sUYrZKyAjI0Pdq2UtBbUsFfheSQ4f/ir4ePU0QmXOwYMHQSSNVcVYvXq1KIqV8sqHpwc+Xj11AGfg7D148GDevHmqjdIoVYzz58/7ePWUw8erpw7gjCAIq1at0mhUAUuWLCksLET0Bfppx/jwlMHHq6cO4NWBAwcqmikV6gM6d+/eDVJV8hgZH54OlOeVw+neeSD11/1p2w6k7th/6rf9p7YfPIn0+/5TO/el4WdJ+n1/Kjbiy46DJ3Yg84HU37ylUztY2n4wFWkHKxNftuH7gTRt17603QdTXW5vT+eCzKnQfv8N4aXyoApw9erVb7/9FuTB5/z58xcuXLh06dJly5bhy4IFC+bOnYtd+ExPT695P7A++3u7jlXVX/bQ1KpCqyplT5FETyvwYBttgSTR9uKkzr3iky7tKZQJXxR1j4eWOytqSXS3G/YgiMVJ1emfR+668ry6cP3+89yXDYzm+iHmBq/Y6hvNBi5Kb4oI5COC+fAgE0val57BXGQgH20I7aE3RQVx0cFcVLD2We6LlpAnkDcHcdZgY0xxsgcbLUF8mIEPC+Ijn2vW4+bdLK0qlQFixyTkbw+tPWUB+5Odnb158+Zjx45lZGTk5eW53Ww5LkabAf5hbm4udiHDtm3bHA6HdqRXqGf8W0Mdd609pYBN877f3G/0wn5jliSPWZY85vve4xb3Hbuo35hFyWMX9hmHz8XJY5ewz8XJYxb3HfNd3zEL+49ZNOTr74dPWTlpwfoFP23f8NuRo2nXb9zNdorqgjBQTCqiB1qBb5XM1tYE5XmV7yrYtvfYxpSTq3794+s5v7TpPirYZA3g4uvxCX6h8X6muIeJjw3gevtzvf1Mdj8+nu4G52OqSgGmOH9TXD1TfD0TyklkmSl/AN0tmxDAx9JNslxSgyb2yzfua1WpDDdu3Lhw4cKlvy3UxypBSrT2lAW2i6JIBGLQtjKoW5iMEdSfoJm22yvy8/PRaRcvXtQq8TeE+tplrT2lgI1hsaNfbN6zkal7IBel42L9TZA3SGaMjrPpeEsAZIxjiYQtFp86iJzRrg+JC6AHH9j0vAW63hAS8VzTqFdb2yzJ05eu3nntVo4MZpHtcsHs0d9HRIX4CgRlplQpckpFrgLJufvI6bfbJwe+atYZE3R073dxMtoMxoT6nNX0fmyzNjGm93vzbfpWkZKN7yW90jrhP28m/KtFbINQMwydgTP7q09N4RIMRpues+lDYhtwkecu0fUZrTJlge07d+5cvXo1Yvq/KX777TeVFVqT/hKAzDj137ff1qxZk5OTU5VUuCWPQ/TczRfX7Tz5fucBhpBIA/EqMYCLY1IaqzPGaYlL9Kcbq60BRrMe2zm7P2fx5+z1jCBY4jN8bxgPf85m4CMbhoZ/aRu/aXdqnluiB34/ehxbnldwK1W/QSkSmf9BTwW6cjs75J2EACM98adUikGlX34zJgPeiuKhZTnslqCKX9h9Qh63UlQoKPdyCi5cv7s1Ja3/2CXG90FUsCvWj7fVM6HAOIMp8viZK1X1IFWnGFTFvyFKKq816S8BxKLkvH9HqJUHtPaUBcVHHknyuJyScD/P2abLML0xys8U/wx5VfTwDx0SZ4XtCuItr76d9G6Xgd2TvonuPzM8aVLbiKFcm4SgUHpKnGrWYPH0nF0PjW+CHYv4tPuwo2lXxSfnFTwO9omBVxOFcbJHnDBvvY4e+mN/mEAtLuHFN+OzCt0yZasxKKsH3usDhzB88tJGpjCdKaaeKcaPjwkMsew9eoVWo4LXWsjogw/VQpVVUlfb9pwK4s0ITJgTCH0NWxTT5st+0+b9mHbxToFDgJYHSyDlEFlYDocgnbt+d8LsFU1BsBByyiDbgaGRjIrRMGv/ahY7b9VvLklB8EVTI+qpqkNFXpUDyoFGcP+6/7SeR6BVmlc2lVfZj8orAoqVBVl2iUWrNh9p3CRMx8f6cQl6zrJ1Txp4xaZo2D8ffHgU3M1xNWpm9ePjIEsUQXHw92x7jl8T4HcxkwHrxjKq9IARlwSPjOgt2yXNXr7phTcQpNkDjH1BMH+TGX4ZzFcDU4+RM1YWwCsDuYhd1aNaXtHZ4cSduHAzkI+sPV4BEgJvhR4w5Plu5Y5gY7Q/VIXJ8vO2P4hX7BUbPl758KgoFMQmn/ZjfEAcFY9QJdBo3n8CwYW7gicJisngFcIUyUMvNhKKlLMZ99v0GIpQn6Iek+2ZUJg+uz9iM948btpPkkg8lGiSsBp45xVZFRJtj3j55v2GTaKq5BXVTz2khkBuVI5dS/CIDkFuGz4ykLdAx3z/y26fvfLhcQF+yO90HqbjyYvzp3gpJpCLPnDiMnhVTpzY/WkUvzFppMdXIZQTPcLtPGePuNFBXE8c62eystAryZ9PasCF/bhxf6EowSXUiqga3nkF0WdFKOLNu3mNQmuLV8hKjMd/JASd0BXbDp2uz3cLNFrnL/8VjmyxvfLBh0eCR5aVzyLH+nMWnSnCn7eS4eLN+05cgZ0pN/mg3vym0YoUOT2KB8wCb/IK3R0towJfhaWKBT/VR6AGcDEvvGE9n35Plp+UV2zOgngsZjzIZ4/7qRVelQG1qEiByXrzs0Qdb5u84Bd2vYD0SLmO8MGH6gBBlDravkZkpTfG+HP08GADb9l3HH4grZ+oOW48yGv+aZK/0RbAx+j5aBiueibyLTtGjXAI9EwSun2OCiSfSz2kNKrnFZNx8XZWQeNmtegHlgIOVOg0MxZvCuRjRk3/USBSqS+sQY0fu1wf/j8EVLLcJX4yXbwyxj4Jr9yytPv45QZNYPTsbPKDmT4uvr6xx4+b9rJXUrhV2X1CXhU2alL1vMUT8gpHe8STF2405LoNHr/QzVaSMEIJPl758ChACCF3TZii4yvhlZalRkAg4nQrRQO/WWLgo/y4xEAjXEGbf0hCIB/bqn2fHLcoKi41jqlURGvkByIa/PN4xUIsuUiR3KIyY+Hq7Tv/gP8KN5dOrj7TywcfagriVZeEyQiHnoxXKInW6N7Lc/3vOygkDl6lnjPrjIiy4oL5iJ+2HBJY/EIZH4dXKmH+LF5R7IZ4EQk1lCWZrjEoHkUS2FvVsIvN0lA2NED1DKk2WsLHQ30Bi6cmyix7JFo4oj06gr2TjRJlRaksomMH1QDF2dA+Wv3MjD4rltVMPTXbgqqKtCAaPxX1dHJJxSmxnOyY0l80UBvpP21l1VTzqyjZoxZUU7CjSg0LlVlSiHomtkXdpv5QfxbnZollrhSUvdgFKsmu/inT4WqOaqCdmJVQKrIurqf6Xat8SdJ2lIJqr2qBV9QTHlHyKFMWbaBVQbSw0KwujDJwto+6DS2ky2GoZ+Xtq4ZXJKNUffFWVmHj2uUVVRwHlZcwmXEDnYa/RDOPLBW5xaJCxeOEEYODWJJoYb/iZqEZoki3pLhh6GRFdktyniA4BdEpSk6J3m3odiswhk5JKXBLBS5BlNDFJBTFJ/ZWdbAQANkdglAgyijTIUhO+qIUJ3wXXZLkEKVCURREGFtZlsAxJFZN6AjFTXOcRZJELi/OTddM2MV7FkiiDR4B+0kxUKMk6k71qTKoGssCt5gWbpbIcQ2A/ExnqUWhDqIiiVBegiQXuKSsQmcmUoEz2+HOc0voNElb7oTBZGOupYriy36CUuhraEK6t4KCeJqjLh4gFCZhJzk7tApJPaBCOWUg0SVaGnd6bQr6h8ZdxNCjMNZP6oAhC52BHmJK2SsWWHu8Yv/RuvTMghdaWugaMRcbwFsD6OV9CQ1CI4+dS/cUwRWsfETqhFcYKiYn1Fvlh410Peu+W/eytqekbtuTunXv6c17zm5KObN5T9rmvakladPeU5v2ndqy99TmlDSkbSlHnQJdVd+wdc8Hn/V675N+rT/t16ptcot2/Vq0G/B6uwHN2w9o0bZv6/a9120/igrTQ5vJzlQyOKXBCKDk5jk6dUtu0z75zfa93visf8u2g5q379fs816vfd4bJbdqO/CNtr3fad/nk469ft97BAdcvHZ7a8qpLSmnt6DO+1I37j/5KzXkxJY9p35NOb095eTWvbQFrUMbt+85tePA2T1HLp08l3H5xr27OQWF8IrRpapMsw8mV+W6qjogM4kqwgQXJPVBgWPHgbSRk9Z0CP/6tQ+T/9XSXL9pWIOmEc+2sBo/7PtZ5Igxs9ak/HEu3+GGzKoHV34+2kZT0oWCuGtf6rbdp7elpLHWIZ0qNTqpJy/dJiUCYmi+g7faM2cARFTOXL7x6x50zskte05v3nt2y94zW/ek/ZqCfkNKxYm27EU6cfDEOSbR5SpJvKoVP1AtVFJchYocM3gWnEB4gIxX9MVgtAz6ehkYr12IqoA64BU4I9FL0qB2SOnhv7aDoZhX0tGTF5IGTonqPeXtjoPqc5EBxmg0ycBFBxYng9EaHGJ7qbn5i8gRtn7Teg+anJUH4+xwCI5bWQXHLtyevnTD+90GBpoi/E2J9fj4Z0yJfny83mj792vmnYfS6NI5zRGhAtqpKwX0PZkJj5KZX3grtzAt/f607zZyb8QF0bD10nEJjXlLwqB5e05cvpFdcC+vsFB0wW5u2n4wbsCMnrFfv/aevaExHMOs56N1pp4BPGpuDTL20JmiKHGRekr4btOhUaHm+qHm51+Paf5J3+RRS7aknMiClYSqoOv8UI1CVdqxUqAPyVp75Mu3coZPWPWfN2P1vFlvtBr4yJfej3uvy6jPwid+2O3rZh8OeI5WFVgCjNb6fHToB0mzlm+/n+d0wbB5nIqCBEqUAnWXJBe5cxyufkOmdo/75vVPezXgewRx9iBjr9ID9D8tLIdOXoF5LKKX3AmkHKoG0yIQDPnnTb/HD5wclvR1q7b9g7kIvcmqM1n1dPNeWFBIZ/59e7e4MTEDJ06avZSqRXoZqQS1xiu1nai2IDt3HToNCUSZ7DJxtI6P8w+xN2mTWEhyr84Klkcd8Aqa6W5uwaHUs/dyCiRZLOfbkM3HaeFiKx5oTkRaUBgHz157o1MfHS2kiiW1QQn9ZTb3m57xIF9U4HtJLniB8CA8gsfjgvkWFVlQFHhua7Yfe+ktm46nNWN+PN0+YDDa/qeV/WDaVeZzVsMrZlhRLEkGOXIKHE4p9fytZ0HXkD76kNjR09eintguyMhDOSXRDX9IQJioiPkuafiUH/RcOCrsBxeCTzSExL3ydlyPxMmDJ6/8Zt7muSt3frty54T5W/uNX942atz/tLAZ6JpmnIGzB3ORfJuE2d9vySqEGoIUIZWWoWqA1j0odI2ZueZfzW16zg41ZHy/99g5a9Ou3S+UUEt60w/4Cg/wXnbhis0HO1m/aQBlHGIxmGyhbRJ/+vUPBzlcQrkBYsAQkf+NZsLTzpelg2evxg6d07hpyQDhk27EePXd+DPX7jCPF5GnN6DjSKNC1GTFBS2iyIWyvHn/qedbRgbwMX7G2PqhkZO/25Lj9rjI6adTVzZwtcUrFM1WJtB9xO6cfNeLLc16LgYjqONsAUZ8iQs2hh85m45xoTUMFfAX8YrpKi1hvFdu3P0c13b7vuMgQDlZIXcAufBBPrSLVBgEVBSPn7vT0BhNN6shdiQf1/LK2/Z7eS5RchdBZ1CMhaGhm9GoPJyPDCG54nDVL6Xfa/FRkp5utkmgiR1jnJ5L5N6PPX3tLrLgROyEKtjBpQA1ShfmyW+kRrBgQSp0uz/pOcgvJCY4NPrc9fsYaJmiC3Y0WTdyMhUILYsCsgvFVu366TmreptZ0KvWBT/tonvm0LV0OYFFJlRdqkdmtmPhqt+5jxJ1Rru/sRdkNJgL/6jr8Is3c5EPzdGqVRmoc+kPRT6wDofPXW/VoU8gWysQGBrRf8yie7kuBFhFiggpppZAMtXuorCqUJTlHfvPNv20D73tzpgYxEfFDf42M9dFkReJFzWfjSPrKnzDJggrVZz2QevsPJD2Ymu0EXISAyajCTre1uyTxCt3cqmfGT9ZJfHBxKoUKA7EJuSirhDYuENRKhNmb9S/EhPI2brZx8KdRYjokeltRizkLFMCA/FKja/0T2qvqJnUQR4Enh5z8nQdR6qZiR/de6E3Rk9duBFuF7OZ5fEX8Yo0FhN5KtCjjJi6EoZ1275UYoK3A0kvgnlgR45DePlNdJaN3hcKXWi0dLJNQLAvF4moHtXRKy6k3/vXGzH16O4aK1M5cQFGy2ufJl29lcNudC8OZrTPqoAOIYKhMTFfzQgIsT/b1OKAWYSooqblj6OHqTPWKjFfzdXx9LJTf96sC4lbtOZ3L+dAVTIyHZ1tk2nlqCnGn7PA52z6Qa+rd7JEEdZDy1YRVHvivwSTuj7lxPOtwoghXGIDU/T8FduwsWIVS4ABwoGCrFy+n9+66wC2AijeYIr+uPuAm8QtkA4ZaPi0AyoDumX/6Wsvv2WHRofyolfdkYm2vPF5/5sP8kEtqiAb02r7GfVhuaUdB8/SDVG8ecK3q+ncVTeBgXhVS37gQ+CUc7/fqqeXOMfToFDn0BxGeJ/pYD7p3AqoNV5V01xWFBK6Bl5a24iRwcaobftTSQ68AWMAqSdxyXdKpvf7qLxiFxOsccMWQu3SXHx1MTGQ7xJMHyf60f3YdsQS/qEWPy4Buvzdjn3vZBfQSFO/08B5BVqh8ar/2EV6PvaFVjFoPPzDSnlFqpzqLw+fslpHsU2NeAX1L4pilsPdNmqYASrAhH6GQrF3iB5RAG5ouSoFulkUi5Rffj/cuGkEhABuZzBvGTd7rYPeTczqWIVc0vghkAJxZeXqvQK+TTx5zuAGH/3eFwNuZTvheRUVOakDqgYKd0jy9GXbyTWgm3bhfkNOYvSmyI/Ch2cWIhRBD5Nn7bUVAEkL8UoRjp3P0PNQhVFL1+5iw+N9jP4cXnmKDpy4ZDBFsoW84JUNXq4/H9Ps4yTEr38mr4gzXkG7IWEilDsG6Z8trIFGy6/7T9AcqpqhcqDSJEowaw633Pzj/iqvdCF2A2/rM/Z75kRSJavr7iIcbvqwb4Cxly4k3p+3+ZmiUfkAY1KgMRokv5+L6AyFUQzgvT4ar4qKBn2zDHr05bdj4f+wCXTaVxaI9AB4p/LXs+kaCGoewHi1cPVv3s5ClUCpzjPpd597zQLp9DPF1OOT6puiN+w65q2d8J9Eefex8/9s0ZPCOWMfgymuXcQImBvJ4/AuWKw++EDLSAP/uje1oSkcXQRzh8CsfdTYLBecA4GmnLxWHdyct3K7Aa6gKbaeEZW3Qynge4ApqkvchFwnAkVUoyb9zKyrRzhz9U5QKEK+qFVb96NiREtvh/4pvMIJswrEIL4HPRsDmk7lFZfw79ctd7IKKq3PX8kreps7tPuCldBnoIeV8YrUUtWgnqWB9IhOQW7VdmBpXvX9+gfGK8qk/a0aBYLMf9RXZ4xv1XF04xbRrAI2lEPuSoita+ykHAfxqlp1WIFXNgGuHl1poX1lQDWHJEAvSJPmblTtVU14RaKNwjwCbET0gNmBCLRMlv9Lc2K2iMSJXuqHCty6n8+/lxBAMzR2ncnWIDTsj7RrkgLLyehfJVAdGmf8ISVGF+vkngmTERAyxQyH0DJo4nInZJa8cq9VUOQFK7YHGSMQhxiawGRBVBCTxLM3vkab+84qgLBU71+QQgKKitxnr92u38Ss5yNWbzvAmuD92D+HV4jgZY/xgyRmgTVe+XG96nMRpy5lMPErj8fnlR+7w/elN2OyCtzq8gg2KmUSMzWsJIpfRATN6Q8KmrSB0x9j4K3b9p+Ep6TurxJq5KMoDlF6/dOBpC1oognuu3XAuB/QzcWHV1NMoSiZPkpGj8QMXfTztiPPhkKVWvygR3l4lXGBnNn+1SxwT5LcZGEe0rT8KJLKpAkHz6AJ3+u5uFdax4lQrGSKSRa0TCrI2yGCwK2bMHeTGl+pvFq02psfSFykrqP1J0vW7QsIoecu+Jvs9Yy2Zh/2cYvlxJpKQgXoIbmi0nfEgqBX2W3d8J2Mti6xk5xkfqDRqlN8rMVaHmKHlHL0XAOe2T2ylrZGzcwH0tJFBcoCElElUO35P+yEM9KwiX3emkMI7Uj/mjBedjQk0Bg1aMxSF93OKqDOOCXrZ5wWQl+6giRN1J8e99mrd4P4aB0XuWrrAahv6htvIkO8qqV5i1KAfCueDubxEDymJpi+4GMDefOW3ccr7ZDH5xV70ov1pbfM9yi+ork4mmWGF8E0dPF3WtqDJCiSQ5SPn7/9QZfhQSHRGC0Db96+/6S3UFoFCTGZQ4cotvjsK2hB9BQtKgmxgFfVHl0C0DIUfiBvix+22K14lvyS0rBJlD+f4M/H6dizr4K48IHjFrnoYTmlL2qx1pdCMa8U4pUx/pXWCYxXOICkUcukgtxTmpVB8yfMA6+sNfUDmQ1HfyqKc+Pu0/RQLiOG0+4XGvefN2MLHIhSSoBiSCwxQJIipJ690cjU00BnodjaYDSv/f2kRIJIzrbXM5YF6qyIBbLSsl2yv9EOXlGHc9YvrKOcdDGqbDPLAo2d/8MuA2dt1MSS6ZZmLdsRxIfh8GJtaK/PRX49ey38QYXseel+Lg2ahqNdHuHc1XsIERFfMV5RT3ttCfHqT7BXKFax9JupR3xF9yCDWnTlRsdZ5v2wlfqrAh6fV4hS/Hn78y3tG/al7jpyZveRs2raxVLJz52Hzq777djUpZs62sY0ahIO46CjZ1A9Bq+EFp8+Ka/8OGvckEWiRy6UhdlLdzSgW7Vj69GlLbQooSEf9c3cNS7S7ZBFslQVS/9reEUjRS6A64cN+wN5S5DRYiAHIebldxIKXWWfGUgnhxSKsEv2fjP9OWs9cgJj4a68/JYVKk+UnSSLVJ0ag5ooCUWesbN+BkP8uDj0OWxmY1Pk4bR0b6wqxavGTay0mkwUx89cU58z+7GIX8/H/YOLDwqNmLVkg0AXoGjiHEdVqBuxinr/Ia9Ue0U97bUlfxKvYK/kr75ZTpPs9Mi0WPjk5A3y9nGzf6q0Ok8QX8EmGnuBJ8F8eH0uPJCeyQZXp0xC/wbySLZAmiq1+pusYKPqyz0Wr+AHPhGvcPa4oYsQ1Ekep1PwjJ68OpiLCDBZUKA/h7bEN+B6zv9pVwGYR9MYlcyp/CW8Yl2OnlfEAV9/789Z4FbBagWYbG93GkirPUuBTkpTjsKNzIIXmlv9ubh6Jls9Mg62z6NHCXTVyK3aP5ZqDlkuEnb+cT7IGKnjELBBQGOCQuL6jlpczrKUg8orDD3sVa7brcguh1seMHpRsCmSXeGIeYZPxCg04Lqv2LTPIdGLW3FQBa5Sl1J1nxZ7hRoqY2atJTPF7pgEr8iumOL6jV9UqaJ5knkLdBNb+sBHUb8jBoC7YqTPki/EPfaMAUTA/kzjUjhL00R1ySu0SIKTJQuIzpPHLA2kJSpUrJ8xxhASG8xHfL9pP3xFFlyV77Qn5JU/oqzqeQXukKjdzylE/PYMPbrUZkDduOhxs9aUqxA597TsWlz729HgEIuB6BdBlxOMtuFTfmQXY0XWCPwvd6hXUIMcmQVSQw4uRnyAKcrPZNO92rtJmwQnhZ9VAhFBCa9y3BItV1NchW4pduA8Qwg0L3xai3qputFrUetT0ujiH4UM5cqkLqVNTxGvpEnfbYHJVb1Z6Ag4a/X42MRRCypVNE9irywBPE1VNwixBhvtBow9BwOlJf3DZNYZo/R8lD4EZEiAo+IXGlXPFINg9Le9J0AMrxKGc1fJq4GPwqsCgc2zm+zxQxYREYgzNOZOtxI/cIaOi9Zrj7ymkfjXa+YdKamiCKlwoQKlBhL9i6Et5hUX/9LbxCvqKHyQiJRCWV4ZjDSd4M8lBIaYF63exZiDI9XE5Ko4eRRREAsLFWXQxGW6Vy3+JloAFWiMN74Ve/1OHrKUBk6A0UFEmDxmiY4mS+063vIPU7w/F7Vi/X4t06MDzZSKREEpavJhH39jIjQCeh7lB5qi0q7do0kqtFWrdxmU8KpxqCXPjYwQH3Szkl8g9LSPDzKZMfT1SGziA0Lin29u3nPsggDfQHarqoT1IMqkPqGiH4tXtT9vgTFR5BnLtkA5Il5AVzA/kO4jThz6bdlR1/AEvIJF4hP+2TJ+1dbDG/cc3ZJyfOuuUmn38S1Iu45v3nlszdYDUxatjeoz6YUWlkBTnJ8xwY9PhHO4Y+9JCg20c1WBWrJXpXnFjiJbhC9wobLzxa4x32Dk6vHxZF3p0XPWF1pGHDh5WZBEmtMjx4zJkUqyYl7pHoVXgbDYZNXjA0Mivluzk87NwIrFgW62rJZqhRA5zy1Pmr+xoSkCAUm9kN56LqmRKWzt9sNuRD2U/yHU0RE8no+7D8GgEK84O3hl4CP3HLmiZXp0MF7Rxe520d/4GxPg7aNkA/z5UMsaehAdqzLLxrI/hFTMq2dVXrEKwmwiPch3fxI2FHrWjz3PWW9MCOSsL74Refz8DVprSAHtw35+El79GfMWUA1zVm6ji8JcosYrUICP6zVsbtlR1/Ak9goibn/xLXtWgVtUoNrUftESzfxSYnODkF76o1y5k9stYWoQDJ0xSc/Fbtubil3oKu1sleJP4BWzVzR+AMZbFpUH2a4PwkcwJy3WQDMZcc+YYl58y3ry7E2IrESxNUaFCEQTWGjOo/MKcql6ywZjxLQV2wslBBaSy0OfQhHdII0TFQqejPu5v2w/9FG3IUEhVph3uHNwoV9+M3b1toMC6k2jUQbUFo8ER6vJh/AFKJ6Go+JnSkDQe/rSbS3To4KEGhpEhLMc1W82FUvrksj5QZqxaAM1mQxWJWNXjlfqRupoyLUiZWQWtOn0FcJFigjouS7x/iZ7kzZxl6/eh4gorBvUfmRVwJ+nZN6CRHjqko3MXpXiFRfbf0xtx1c4B82zvxmTk+dGJ0N1qb6NmmhuoDix7kBpiiiLuW6ps2WYzmiB8tu6L5WWpXntpz+DV+UO8si0wPNmZsE7nZODjNGGEFoi8A9TIhrYpE3S2fQHtFKJTWMwUUJDH4dXNPHA2+A6GriYRs3DubfjPvhy5OfRk7vGzuyZMAsG84MuQ/l3E/7ZzFzfGBFIE+VkPJ97zWofNOvCrSyXxOSpwhjSiRUp3yH8b2u7H4SJrnejfxIbh4ZdSr+nZXpUMKHGoENGk0YsZNXWkoGzj5m2kuwVOXgV46LKeUUlonc8klsQrt7IbPlxvM5oJj+K3imTiLjx9U97X7ub56Z7O7V+ZvYcxz019kqWJy5YW9FeDZ24vLZ5xa6RgVfZBS65iJ6xSyJXnCBspRI6A62SFYmWl5+9fKdhsyh9aPSW/U8Dr8jEy5IgKY5LN+81/ag3rTo32tha7Dj/kNi32ve5dT+fLXmnlaePzyvqMZs+JEn3ai+dMTKoSUT9ppENm5sbNTc3bGZu2MQMF4uCT1NsABdPs/8ma/3m5kFTNhxOu+YQ6BZZNvVfzg+EnJESyylwvdDKgriF8SoOUVzj0B5Xbz4+r0hN0ssq5P7jl+lKeEUmyz70m6UYM4WeTUlr47RDilE1r9jbF2RJlBxnr9179Z0kfx7UokUkkCW/UPt7XfreyipQHUIab41X4rmrd+ueV+QoKCOmf19ir9DPjAKxk+avr2VeMa+m1Hp27ZDqAUHsYBmt563b957y0B1vOEPVqJpXjz1vUclBVJDkVuS0SxnGdxGjR9NyFdbMerztva5D72Y6BMENe0uKgHzaogETl8OkqPOBVEuMOES8NMryyhASR9PlXJLOmDh4wk8nzl2/knH/+u2sm/dz0u9kn79+b+/xy0vW7Y0dtsD0Qa8gYxSo5W+EUxrVwBjZuuPg79fvy3UgvEJ8D8kiljPxwk/IrpJT6H7xDThXtFo/KISusTQM7Xnh+pPyCnpw8Nc/QEBpXpdoEONvsoya8T2cfmgjkuFyTa6SVwys0tTPsnz89PWXWqOHo9mMcSxkyY+3dLKMzc1zyaLA1s6jjaTEzl270wDDUbfzFowGScPn6OiZ74gMIYQx9UwYUPOKtXto/Cug9njlrbVlgKEYN2ddIGfZsecUBS9e+8kLr54gvtI2lgIKEl2yyyFKx85k/G8ryBBGOoHFALEGztzRMi6bblASyGgwpTpowlKEiDWfZ9eHxBuM9IwEPW+b/9NO9BjkBhkosSdDkEokePIc0uqth1q176vnovzIbFoDQiIahIa3ixhy/R67C4vuvaVGsMMxPhIt9m8TT93CWQPpUZJxDUIjoCO0mjwqqC3UIThV8sjFdE8NG+4AY2KA0T514TqoFZiex+MV9KpbdrsVZc/hCy80pwb68Ykwg/C9DXx0eK/JOQ50CM4AFUbxBXhVnzfXuR8oyZ4eCRNpDpwiZOKVHx8XFBK188C5SqtTB7xCoT+s31+fj9iRkgrHgMTSC/4qXkEkJAUOraBIyt4/zj7XPJoWYYSwcIVMv82cPL3QJUtoKNVZHjxhqcH4CLzSGRP09LIvOFSRi3+mt8tRR2gJRcDpEuleFfCWniEjZTrEqP6zIKD09j1TrJ8xAY7iW1/2yyx0i4qLbotGjdnBTFI973QeiG7BuOiNdHdQsCk65fAlqgWyPCqozmgMtSxmwFz2cC/2EkQjDKl9zZYD4LY6fVeeVTWyVygWZlZURGXrrlQ4wyhZT/or7hkuAc5hwtBv4feKCjzzQojV2eu3g0zWOl9vAR3TuuMQds2WriWin/15e0NT1MX0B2wIyqMueKXIW1OO1+c6/ZZyWJZcJJZe8CfwqrKDICGoCBQwgkAXwsBfdhx9rlkYbAtrJgQrPpiLShq5KNdFL/ATPPJXE5fpjQk151WAMUHHs/e+GKOWlF13i++k/NFUliga9UBbizkuqYttYiAtp4xRFxMZTOa+Y+Y76MlJdINj8fkECLq5/yzy0+iZrBZ/uCi85cd1B1BWzbuoNFh96PpeZ8skaASaY0SfG+MbGMPSLt+CWiEVwGSjHLzyCjUh71FLcPgk+YcNexo16amj2wTRz/EIWYO5iKGTVzpEaC8BnuCZ67cNoZDmurRX8CwKJfn5ZnCG6XUKgSHwC1Cy7cU3YjPzaaG2lq8U6sReSddvZ85evunazVsKvXlI2145/gpe4TdtUsddkuH/g1qeFRsO1G8aVY9uubUFUhhA92sMn7ysUPSg0gMnfK8zJr1czCs0vzJekRCovAI52WDEGEJsS1btZhchkMgPpEtkaCVJDMpCorIQO7lF94Vr9543RdHDVk3oc1vAq3HPNulx8XYmk2ztLLBX4NXcH3ehc8BADDwsLTTCsAk/UFmM8izrI0ChCgmwmy0/7Q/1gZrXM1n1vD2ktRXNp5o/Bq+oGqwupMTgSUI9uAVJmrN8e2BotJ/JYuBiAkNiA0Ksgabo6Qs2uKlL5NPX7+jpHplHjq9qj1fU3vM37ga/Gu1vglseTREsyaGt9eeDnfBdMHwVUAe8ejRUzavanLcoBwi3ojgFZfbyLQa6+xqkQrhFS/gDTVGzl20tcCOgXxLkfT5Qc5NofnnC3I2I++FS0mdI3KJVv7MMVYHKYmVCrpToxKm6EBii+EBachkDczR35TY2LYn/RGf64lGOXcxoxJthFdkEg8WPt7W3jKd7wxQnWEuUr2lXqQDbCzML5UZ8GMIJWNp6MBohlpgBsypyqTS88qoMGMMkBALw+sbNWulvivQjuYJZhv4yB3PWRT+nOAXnqcu3g0LNBqPGK6YmvKD2ePXwNBhXZc2vhwKNkfQaSM4WRNff4pB6j/hOpJniSrrkb8yrWo2vHoJJIKRWEkShQFTGTF9T3xTG+pGW84BjjU09Fv68q//EFRi5x+XVbyxDVaCyqOWwSrKydFVKIBcZQA6emT2uJC555Fy6XYN4pdoi9L6QLylvfZ4Mq8iSDbbl5bdis+BOyZBulMRKfQTItO728LnAkHA9DXeMvzGpgTF656Ez3oupOa/QAjbpIlI/C9BTS4O4sH9wifV4RLNwt2zPNolYu/nIqct3g0zgthZf1YRXte0HkokcPHGZwWipx/xVWuwKCeTNP/ySQu4q9lfA34hXT3T/Vc15xcYbORAagTKyS1C+Gr+IHrHGxxtCILLxkLOGzSJe+3yoP/eYvFq8uka8Un/s2HcqiO/JeGXxMyE8i48dOJOKZrxi9cWZUE3h+192GvioAGMSXBQ9Zw02mjfuPkXcJG/zYYHVA6NODwb1jJy2ysACCYSXgcakD78c4oDLyc5YFWrOK1SouJ8hmorLJcUPnuPPRdejuzDssLc46QvN7HNW7tebIuuKV3Q+dK7kadl+gC6EHoiA3tDRTfj0ctT02zk0h6vlLYP/H3nl/SDyq2i88YFxRAwgOETFPnAWW/YeT14Kl0TPQuEt1ay7fWJ7pf7YuOuYng+HFYKaZJdorUMmLqLuJquKwSFxoWupspBb6H7t0wRdSAJiFXrLoDE+rNdU0g3adLxWYPWgUZdz3FLTj5L8IZ2hMf4htoZ81KbdR+n2Ga/dV3NelQB9BxUBu5rjFLvHfxPIQTWQ4/0Mn0ROl8kcEIq2P4IfWEu8IuLTdQ+P58LVO8HwrrkEdIUfPcYnHuHuR92HUFyLilfWIU8/ryh4QHcVCkLzzwbivCAVPsGr/hqvUMFKVUYZFAoy/2Ey9E38kAVVqJgSoExqDJVNmluUFTHPKXaJm6Bjd2rpilc06/gEdd4C+UjOK+UVLY8UGa/Y2gIQIyTG+3342KUWhNaJivL1/PWBodaAkLjAEJzUGsQzzY1hIXuFvDTlSHnp8pdn4+9H6vMWdiu3zd8Y18jU88K1uxh9xDHUV1RTVnQlPYYt2j7SZZKwfsfxYA58jqX3qZnMEb0nO9VnUBbnqhSQhPkrdus4S+Om1fGquDJqvehWLFl8kO9qFz0Gh0MHPWMCpa0U2XIJhuJ5C/CKHVwViFe1cV2YakRnYxeC5izerKfn8CD2I+vtRxM50bOWbCRWKSIbhfL4G/CKxdx0xbbZZwPg6OPUENBAztZ37HJS2aSw4ZxU1rhSoOcxfdTHzxQXP2QeVIy2tQZgxaJ14t0C98fhw9lKFjRfXY3h7foVJIAxzq143OO/XY9D9PTG23id0VLd8y2Q8EH3T+QI8mttkw3kBMZCUKC/je/EPKBJKBE1q1CI4pak3sMXGoxWf1qOGBfIWSKSJjkEj/pwW9SQlAUBEl/uaHZallDzrDzHW+36kXdgskGbhH6YdDOzQJu69AqMyLwVuwL4qEZNo/NrZq9UsNrQYwozcl3vdh1ETSBGWVEHWJ66mGcHX9BfQq4gvdEOCj2eyTxGHxKY+O/XrXdzHKROae1NJeJUa7zy1tgnAJqmSmeBKIV+ovEK4hXI2xKG0R2KzF5Vf/YCpxDybjyiFHPydDIuNQYEjWrhEQRJysjMf69TvwBT1P8NTaqHcIuzeeMVVDDVHPuFUbPWodoPeeX1+YF0KC3vKnQq8rTFvwaRXxQbAOeTVn5ET1+ywUFPMRHUfKWBwXKLQna++/OwYRCmf/DxfnxsQ87885bD8BLhStNCDdL3qGclosDIRkpKUJTBk3+AicD4wu995S3riXMZsNpoC0malrlygL2zF2/X85ENTRG59IirmkLtZ9QTquHqvZzXPks0GKP9ESvSDCFCmr/8ujCdRZI8wu+HL9SndwOQr0GJHnFhie43ne7vxNDTyJcZdxW1xCucQTukdoFhpIlMiHWOU3jx7V4ar2hprCW6/zwXggfqaKqj9wrczi78Z3OzzhT3ac/hFR5p5A3FxdI0Bjrxyu3MZp8lsKcjUTW8XRdmvPIoguiREscso4kHHsNDD0xVeYUx0TIWA1sAuKmSLDpkadn6fY1Co9laKnZR2Bj2uXk0AkXQQw2rNGksBiuTfOZ72Y5PegzVcREIr3XG+Jda2g8ev+iURLJbtF6WDWlZkJsIqZblQrc0ffFGPT3sBfrLEvJOzP7jVyiGIEGoXIZKA5UfP2N9AB8dzEem38nXttYAWoWo/pLskc6k3w19PzYI9KDHftUBryB2suIslOQvbBN0CD3oDgPwikzWc69FHT2f7pI0D7zcKKh42nklF9EdGghyLmVkBocidtT8QANn/aD7iAJRfcAa6uitApD89btO6LnIfxgTXmhlzsgs0HbUCGrhZPJxIkERzl67b3oX7rslwJRYHa+wS3ZKwsdRY9hURzSt2uSs83/cjtrSzsoA4ly7m9t/7OKGpkj/EDt0AU0DmsxtuvS//SCPxgS8IvlD3rIGAVsoGJXdivIgz2VOmhRkDPOjiRbbf163/5qS5mDPzUImlrUMSIoUT2auK3n04vomejCBjjO3bNfn9OUMCSGG2s10VCWcLA2orLCEmf5N6N7QbXuOa1trBMg9nYP1syiIrqNnbrzyVkwgHFpj/F/vB0LkJMW1LSUtmLM8Q48VguDF6ujelvAeyVMdsiLQYlEtr/qnNKrhFRIJrMedkVXQqGmZ93aT883F/+etmKxCJ6THW2MfCVQQehZKix7bAEslK5JTkAeNWxwUEgkToaM1e5Qahob/8vuRfLe2pk6dmdEuJlCFaE2XS1Zy3fLG3w+/+LZVF2qGnQlsEvW5fXza5VuFMvYi+oFi8u6ukBRSH7CEOBUCeOrcjZC3Y3XGhFfeSnCSo8qEjrnacP+o5tDbMt3Gj/x7j1x81mRlzwClx78YjLa3vhg6atryFRv27D167uy12+l3stPv5py+krH32LnFq3dE9p3SqHk4LUeiaf0EvdHaMDQsacS8TNIiqgZjhNXqVhYk+yR6yOUWPXOWbPmf1yMCaL1vYkM+vM+oBeczslAnNJ0pI3QYEpE02yH+tPWPN9r3DwqJCjLaG4ZGJQ77LpuWwFJ51K8lJygLyCsKYW4FlI68P/XqP18z/4OLq2e09EycWOgkUpJMKzQNoB1TOYixyMESnRRqaf/xq8+/Zqb1vrz5p637oWQ9ZKsrkeNikAB0jZ+sZ6tjA+gpFDXn1cMK4APG6m6e87WPk0nOeTPUhB+f5Ed3xPU8deU2pEuTtCrgnVd0HiYyruv3chs0hbotx6u4/3nTdr/QQcOjHfHEoOrSUNzOzN9/7MLW/WcXrNrZNnJ4oDGClD3dClGcTPagJpE9ek+Fv7TzyOX9R884Bcg09Q6KOXT88hc9B33ceaCptf15U3hjk60Rr6XGvOXfph6tPo5t121I5/AhuQ5vHVQOrJm0cG7X4fP/aWEJaW1zFE+1gVEUUxXRvNaNW3dTjp3ZsPfYoElLn38d+gjGCio8Vq0/m0eGQoUytjbgLAiBGhnN9Y1RgfQ4EMToMewdWebGoZFNPkxMHDbv8NnrhRAzDLzXsSwHyLqoyBdvPogb+u2/Xo9A4YYQ83PNzG0jx46evXHZhj1rdx5euXXvjGWbbP2mh7ROYvFMdMOmkR2t438/cqGQ3Fg14vIix0VuRTp57tKeo+d/3nF04Pil/24eSQupQunZ0UF85HudB8xasX3boTN7jl9Mv5OF/MUaoRqo/Qwdtml32rNNo/XG8NW/HmRKhcway1IpwCuls32CgT2qKIA9Jv6ReMW+oL2SS5STR34XyMF1p+UmxCtafh09fvYqjES1qNYPVDWx+9KtzPpN4IaV5hX5gc+3irmb66AwRzvkiUHeFN0ncOD4OXPS6PDkKT17TQjvNalHr2nd+8zq2WtqSeqRNL1Hrxk9e02O6DMprPdEW68RWbmFtMCHpEEucIvpd7PT7+dcu5dz5U5O+oMcfKf0IOf6/ZzrD3Kv38++difrxr1saFnt1DWAOt6woqIsb085ljRkulP1lOk/tAEGnl7GunHzb9G9h4f1GR/We3L3pCkgv1btJCS0aGr35Cnd+2A7vk8J7zU1vNeUyL7TLINmxY9aOHTa6plLNv+659TVWzkOQYafKcJIshdwMSNTU8B+KvBWFHqEdMa9vJlLtraNGPdCS1swHw1jGMSZDcbIICKbBQbqudDo1l8MGzz5x9TLtx3wE2AZPW721A10prexhfUbMnaqufeYiN4TMRbhSVO7957Yvc/E8KQpEYmzwpPmhidNi+w1KarXpA2/0nNsasgrJrpqP3vWbDnwryad12zeAyHD4V4LwAB4OljGsXl22BnNXiFErJZXrFSK7qjfipTlvxxqzIUxctK7MqAHDXz0h92+ynWKcEXYEd5QPa/QQtQp9fKtQFM5XlnhXTRuZruVlefdJj4amIhCLYlFggufcDBgEKB5SbbozvCShJMy30+Ge8D8EHXKU1WxbCWrmqinmHBSf9EnSSdV2MUykA+pnrkmYL2Pw3EI9LnC7spEbTVqAWAXTZzBuGB3caK5iFI1Z5XHFlK/JCc4oDhRfgpSXHTHJxxU6n1Wqlq+dpIaQz0OhaCh9PY9MbPAdfLSrTXbD33307ZZSzfOXb71+3UpKccv3ckrgMsmUQ1Yn7Aj6WxqCVWD1ZkYINKDOgTmWaIIdA62MUVDX6AR3OSu1xjs1NpQolanLt26k5VPvMJmb/WhtRvvdR1K7gC9yE+Lr/afuIoKej2Q9TRpItEtKdv2nW5kMsObgPeuhvSI5//3rchz1+7QPZfVXP8kVMMrNtZ0vp2HLxjoFavleRXMWy7eyEQUoR1ROyAykOiTkOELMQGJ3GttqNQE6ZREmthg30ki8MlIxcSV5SnOq/3RfrBmYbDZV1U51hTEBbUIKoo8fnzHGdFVtBtbFIgXVRVAnd30hi46bcnZ1QTQ4URA8h4hD9hAhdKwETepscQ9tVRKYK8q8Y8EdiKSdgmmVKEXgqjBH8VZTDlRQEhsZ289Z5Wjw3BeDAM7qbczkrZSz0CaDbJLo8GaQVwjNUGJdcej1RwlMlmn3pYFWaC39LFC6KNquESpebt+8KQCyvCK7JXX4+hE6CV0xI+bDj3b1MweM2HXmfBJD2P8dwvz74fPsbvvkKpvSAVe4ZDiyqN/INTQzaIkzl6+nb26+CGvEO2g9gY+Yv3u4+xtkBBoJls4ghXzUAoeSW4JdJBaCvtGYL/KQ91YanvpDdSMUjtLdpUkqhb+aB+PCfVYtUAV6nftJ3Xlw10PoW4vTkwSS44BSh1R/FXdX2rHI6DqAytsLsla/KVkQ1Wocm9Jo6otojpQF2lfqwDLQZo4q8D1n5YWP3ryPnvZAh8TbOy2//hlGCKPxwmOk7rSDAYSaTuJHmCIJGYVuIdNWtGQnnVJz0v0pwuA8QGc+cU3bbsOnqb7xcmEVqNoVJTnFTuZ+okEVQoP2+mSPJ1sE/SMwSWJVsrxsTqjLW7Id06JvAf0Iw5FA/Edp2fKmNXgyTrVBx+8QNVNqocjFHn2nbxYnwurx+43YVOCscFcxKJfDma56PIDWVcFHimSi32SHRUlT36huOKXA69/khzIR9LTe2juAIyKNXCRLdsmHT2fgUDXjbCDibd2Yq+owCuPS7Pm9AlCuZ0y3dTZwBSlLeUo4ZWJ7n7VhfRqbDIv30gPXmaKAE2DfyWoXsFj+S0++PAoIFlFLOqGMXGKcs+kiQajOcAUTwsy6R3N8XreFsRHvNTa3jVh0qT5v6z//djxMxmXr2deuHb/YOqVpWt3Jw1fYHzbGshF+Rvtz/CJz3BJ/vR+d9uzzaL7jJz7IM8pwUmGtwyRZtJcE4EuzytZcdPjUSSKQB2SJ/Xy3V6jFjRo0lNPy3gfkop4xVvAqwBjYqAxpoEpLCzhm71HL+S72IIZyeNCoEP+MKhVA2/0bwjylCtA2/e0ouaVrHnOOgdCWEiaU/bczCzsO3xOkClcxyfUoxUSZj3dKEV3P5Cg0i30dFua3mgNNEYHh0QFcRHgm56P8ucsMFB+dJ+1WWeyB3GWxnx0j4SJR8/ehI1C0EXULbYQqnlUT+0F5Xl1/X5O5+ivPo8e/27X4S+/a2vE0QXKgCb0XFIQqTSv2DwJJT1dikmglwaYov/dKvrd7kPb2SZ1tg45ey2DzXrDH60bUCQuihK9o7QMIDHYCKdA+10MbMH2cvJEMT786rIbsQU5H4JOQqiYDfm0H8VAtqomanF4xXOVANtxJu3HI4IqR11BCVWq2PYyYNWoKo9ayXJ7q6o5NgLaDwbWiuoqUDOgKJxwxOSfOsVMaBM2vFELM5ijM8ED7OVHvIrW0Stk1YCFJBYhk8FEa5fprccQYHrjTrz67k8Db4aVq89Hv96u/6jpKy7cfEAP2CDP0UU+HJpFvhg7KdmJ8mNaEeV5dSnjwbvtbG+1TW7Zvn+LDv1ath/wevuB5VLLCltKEvKz1P/tdvbTF29Q95GZrlxQ/lR4FM+Obdu/+Lxjr8QktxO9Q0B9MKizZs7o1KHthnU/Y4O6ncFz8OC+bt06C4KWGcC4fTfv24H9+pADz4ASnE5nVFRUT6BHj+5fdvnyi07h3XsghXXvcePGjRIxwmjMnjlr5JCh9K24B2RJsESFr1r5g/qzBChWkZWtm7d0+rzjiuU/VBRHZDl9+uSXX3bMz88rKa1aqPlQ9oB+/bt9iXp2iejRNbJnt6Q4+8b1GyQBrj6TGZYNoFrI8rHDR7p27DRlwkR4PhKbx9R2M+RkZX/ZqfOoESMFlxsl0CZP0dnTZ7p80SkvJ5dl0YCyx40bN2HCBJRJJUsyMowcOTI+If56enpNtH61wCniBs9p2b5fyw79X2+PVFpcy4su5FaVz9fb4XNg645DPuk55kvbBPvAOWNm/vTLtgMQfno+I1VM7fzSffNoqOgHCqKkiBJsaxE8OsFDzx56jOSUi9zQSh62BKEWOvCRAV79umVrxw6fd+n8JUZd3YjRzcnJASHAq3VrV1NA+BCeAwf2dvyinbssr+bOmpGcFE/OAANKAHJzc/MZ5s6anRSfUJCbV5AHgc+HecReNSeGZ+rkKUMHfFWOV+E9uq5cvlT9WQIc5XK5zFHR386c1bN7D5RfkVdpaSfatf8k79F5BWok9+4zccIEVBHIysw8sH//5+077N2zV61ZSXGoBvTO4K8GzZg0Bfoi4+ZNIkTZ02VlZnVo175923ZLFi2G/aNNnqIzaac7fNa2HK+A0aNGjxs7Vi325o0bsfaYoUOHZufkwBjUvBXegR4XtEQLqcrJYeWpOJuoyIh6SH0osE1knpiHhYo9qTmtwCsP2ESXOJiGZq9OeqyEXmOkAj2rcHr+bDBe9ejWHcKNpKlMWd66devoUSN7dOm07ufVrK4l8Ow/sPeLTu3L82r2jL69Ekp4BZAsFmPBvPmwhzgX0agYWraioulTpw4eMLAir378YZn6swSo2IH9B7p36QqKxtjsP/74Iyiq7dOgnFJ5lfcYvPKAV9OmTafQG7pShJmRwnr0VA0j8pQUh58XL178vEOHm9fThwwaPG3KVOq3sqeDvQKvcCx01uFDf6hO3elTae0//ay8vVI8o0eOGj92nCiIyNC9a7dvZ88R3PTkQya+tQV1LpAleGilhLDKhMEkEcWwqVN0dCmbDAA9GRuFIEeZJj8GKvKKwjS1YHZdBed7nMTqTvPsqsRppf+V8BSBV9D9UKWd4aLk5alas3fv3ieOH+/ZtfP6teV5BXtVkVfzZs8sx6vSWLBgQWJiovajLNDmaVOnDulfgVfdy9sr7HW73f369vtu/gK4Cps2bOzRo0dhYaG2WwPxqn2HTx+bV0MHD/7j0IE/Dh7YtfO3WTOmJ8YnwPJU5NXEiRNHjRoFn+3YkaOwabczbpH4lUJOdjaM1bkzZ39a+SPUFlxf9CpoU4m98njGglejx+zc8duXHb+YM3OWzALR0md8cqillUpl5NBLUqcj8I20Ikk8jmaE09IToTyv4ApQKq1OcDoVj/gFX6kUYlbJ1r8QxbyCsoyPjVu3bh14df78eZvNJrjdPbp2Xrd2TdnuA6/2ffFFB7eb8Yr6mvgwd/bM5N6Jj82rMvYKgykJYeBVWXuFvadPn+7U8Yt7d+4qkpybndOlS5e1P/+sHaXBc+rUifbtP9N4VbMeVXOpvIoM6zF88MARQ74aMrCfOaJn3+Q+Vy5foTYWZwPu3LnTsWNHVAYOnigIsJwIEVVelVQmJzunQ/sOZ8+cQTfCzYuNic3LzUtLPVWRVzhk9IiR3Tp/GRUWPn3K1K5fdrly+XKt84oVpjJBTcUoOUeVX1BBiLpq60SS0pIMZQTjcVCBV/81KOYVdOSWTZuTEhJFtzBl0uTVP62C7Hbv2vWXn9dSP6qJ4fDhwx06dHA5XdgCYSKfSVZmzJjRv3//siL+EF54BRrPnj07OTkZXzQmeIoQ68MdWvXjT2oeGliGsaPHwK2yW21IkGYY2MjwCEdBIapaUr1Tp061b98+PzePKdgyNa8K6n6VV9OnT8d39XQwjxO+/gbRDgVIrBxshOe5bNmytm3bWq1WtSZgAmqS+eCBWk9WWBECVPTSuXPnYNzw3W62TP5mwqnjJz5v2y4vO0fNowJHwQ+0RJvv3L7jdrnHjR0XERFx7949VoUnFdynHP/9vAI9cnNyISJwbOC3ZGdmMV51q8ir69evQ6rOnjnL1oBRAg0SExKnTp1alRx4s1cez9q1a8PDwx0OBx3OTnT39h04V/v27i3JA+mEK9Xus7b79uzFXqQ7t26fPX0GNIM6gFJQcwK1yCsAzUefqEoECdUoKCggO7l27Z3bt9WapF+7DnovmL8Ae3EIK+whr7AF269duYqwcMK48e0++RSWVs2jAhnGjBr99bjx5P4JYkF+flJSEvzw3NzcktL+W/Ffyyso2K2btxCvEK1LMvwZROqTJkwkQyTJINjaNT9rolksndDiME1Wi/Xg/gM3rqdfunARAU+nTp3Onj1bqRyAFeAVZEX7XRY4BG7Vl19+OWbMGHhW6dfTTxw7PmjgV7ASTodDzaPagdmzZsXFxMJfVQmjmsqpk6fYLFa6QsCqh5ypqant2rVD3U4eP5F64iTSqZOpCMNQAvay8spDbRyCpd5JvYYPG37ixImTJ08eO3YMXnG3Ll1nTp+h2UNE65KEjd27d8/PzwdbqCZQLJKMIKprl67gUkkPZGdng1fwqNWfqGrKrt3t2rZr+9lnuTmV2KvxY8eVtAvGCopmxIgR6Oqq6vzfgf9aXmG8Dx04OGzIUChLjChIAp198fwFWCHsGjFs+K7fdz5U/AyCIECqvl+2rFdiEvQ0HCGoW9XhqZRXAGQR1qxSEcEh8KyuXbs2ZcoUu90eGRGREBf/7ew5OVnZglu7MwV5YCW++uqr33f8BiHWKgOayArsQP++/U6fSgPzkBOnuHjxYl+gT3K/5L5qQoaMjIyq6gao1UJ7p0+d1o8OJkB3jB07dtvWX10Op3pS9A94NW7cuFWrVqE0/FRrggOzMrMGDhjw22+/EdkYEOChhPT0dPWn2szly5ejZOxSN6pAnRcvXLR08ZKS0pAzLS2tX79+W7Zs8fHqbwmMItwUiAjkUk3Ywn5SYtKj+WYlwEZ1O8ssI0E02Ncq10BQ/qpsBfPxIK9UKMDOTn8lqlVJHmzBJztpMclJ0NX8lBmZ1My0TWsRclAqOVzNUBHqDvUQ6hAG9Sj8ROH4q56RthTvogJLqgGwA0t4he/IQHkYsB2gHJXVhI5VV1+z+iKP2iElpf234r83vvLBh7qDj1c++FD78PHKBx9qHz5e+eBD7cPHKx98qH34eOWDD7UPH6988KH24eOVDz7UNoqK/h9kisPX/AFrsAAAAABJRU5ErkJggg==" alt="" />
+        </div>
+        <br />
+        <div class="header1">Pre-Agreement Statement and Quotation for a Small Credit Agreement</div>
+        <div class="header2">in terms of Section 92 of the National Credit Act 34 of 2005 <b>("the Act")</b></div>
+        <br />
+        <br />
+        <div style="width:100%;">
+            <div style="float:left;width:40%">
+                <table style="width:100%;border-radius:5px;font-size:12px;border-radius:5px;" border="1">
+                    <tr style="background-color:black;color:#fff;font-size:16px;padding:5px;text-align:center;">
+                        <td colspan="2" style="padding-top:10px;padding-bottom:10px">DETAILS OF THE CREDIT PROVIDER <br />("the Credit Provider")</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color:#f5f6fa;padding:5px;">Name</td>
+                        <td style="padding:5px;">Finbond Mutual Bank</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color:#f5f6fa;padding:5px;">NCR number</td>
+                        <td style="padding:5px;">NCR CP6172</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color:#f5f6fa;padding:5px;">Physical address</td>
+                        <td style="padding:5px;padding-top:15px;padding-bottom:15PX;">
+                            Rigel Office Park<br />
+                            446 Rigel Ave South<br />
+                            Erasmusrand<br />
+                            Pretoria<br />
+                            0181
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="background-color:#f5f6fa;padding:5px;">Contact number</td>
+                        <td style="padding:5px;padding-bottom:30px;">086 000 4249</td>
+                    </tr>
+                </table>
+            </div>
+            <div style="float:left;width:55%;padding-left:30px;">
+                <table style="width:100%;font-size:12px;" border="1">
+                    <tr style="background-color:black;color:#fff;font-size:16px;text-align:center;">
+                        <td colspan="2" style="padding-top:10px;padding-bottom:10px">DETAILS OF THE CONSUMER <br />("I", "me", "the Consumer")</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color:#f5f6fa;width:200px;padding:5px;">Surname</td>
+                        <td style="padding:5px;">[SURNAME]</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color:#f5f6fa;padding:5px;">First names</td>
+                        <td style="padding:5px;">[FIRSTNAME]</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color:#f5f6fa;padding:5px;">ID number</td>
+                        <td style="padding:5px;">[IDNUMBER]</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color:#f5f6fa;padding:5px;">Email address</td>
+                        <td style="padding:5px;">[EMAILADDRESS]</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color:#f5f6fa;padding:5px;">Physical address</td>
+                        <td style="padding:5px;">[PHYSICALADDRESS]</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color:#f5f6fa;padding:5px;">Postal address</td>
+                        <td style="padding:5px;">[POSTALADDRESS]</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color:#f5f6fa;padding:5px;">Contact number</td>
+                        <td style="padding:5px;">
+                            Work: [WORKNUMBER]
+                            <br />
+                            Home: [HOMENUMBER]
+                            <br />
+                            Cell: [CELLNUMBER]
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div style="clear:both"></div>
+        </div>
+
+        <br />
+        <br />
+        <div style="clear:both"></div>
+        <div style="background-color:black;color:#fff;font-size:16px;text-align:center;width:100%;border-radius:5px;padding:10px;">
+            REPAYMENT ARRANGEMENTS
+        </div>
+        <div style="clear:both"></div>
+        <br/>
+        <br/>
+        <div style="width:100%;">
+            <div style="float:left;width:40%">
+                <table style="width:100%;border-radius:5px;font-size:12px;border-radius:5px;" border="1">
+                
+                    <tr>
+                        <td style="background-color:#f5f6fa;width:200px;padding:5px;">Method of payment</td>
+                        <td style="padding:5px;">Debit order</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color:#f5f6fa;padding:5px;">Payment frequency</td>
+                        <td style="padding:5px;">Monthly</td>
+                    </tr>
+             
+                    <tr>
+                        <td style="background-color:#f5f6fa;padding:5px;">Bank</td>
+                        <td style="padding:5px;">[BANKNAME]</td>
+                    </tr>
+                </table>
+                </div>
+            <div style="float:left;width:55%;padding-left:30px;">
+                <table style="width:100%;border-radius:5px;font-size:12px;border-radius:5px;" border="1">
+
+                    <tr>
+                        <td style="width:200px;background-color:#f5f6fa;padding:5px;padding-top:15px;padding-bottom:15px;">Salary date</td>
+                        <td style="padding:5px;">[SALARYDATE]</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color:#f5f6fa;padding:5px;">Account Number</td>
+                        <td style="padding:5px;">[ACCOUNTNUMBER]</td>
+                    </tr>
+
+                  
+                </table>
+                </div>
+            </div>
+        <div style="clear:both"></div>
+        <br/>
+        <br/>
+        <div style="font-size:12px;">
+            The Consumer herewith accepts the quote as set out on this page and the Quotation and Loan Offer Slip, and agrees to the terms and conditions overleaf.
+        </div>
+
+        <div style="clear:both"></div>
+        <br/>
+        <br/>
+        <div  style="font-size:12px;">
+           
+            <div style="float:left;"> Signed at</div> <div style="float:left;font-weight:bold;padding-left:5px;padding-right:5px;" id="divSignedAt1">[SIGNEDAT]</div> <div style="float:left;">
+                on this <b>[DAY]</b> day of <b>[MONTH]</b> <b>[YEAR]</b>
+            </div>
+            <div style="clear:both"></div>
+        </div>
+        <div style="clear:both"></div>
+        <br />
+        <br />
+           
+ 
+
+                <table style="width:100%; padding: 30px ; text-align: center;font-size:12px;text-align:left; "  class="" border="0">
+                 
+                    <tr style="padding:30px">
+                        <td style="padding:20px;width:50%;vertical-align:top;"><b>Signature <div class="clsFooTermsText" id="divStaffLoan1"><img src="data:image/png;base64,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" alt="" style="width:80px;height:40px;margin-top:30px;"></div></b></td>
+                        <td style="width:50%"> <b>Consumer <div class="clsFooTermsText" id="divStaffLoan2" onclick="fnShowSignaturePopup('divStaffLoan2');"><img src="../Content/Images/Signin.png" alt="" style="width:250px" class="clsSign1" /></div></b></td>
+                    </tr>
+                    <tr style="padding:30px">
+                        <td style="padding:0px; width: 30%; position: absolute; padding-left:20px"><b>Signature on behalf of Credit Provider<br /></b></td>
+                        <td style="padding:0px; width: 20%;  right: 5%;"><b>Signature of Consumer<br /></b></td>
+                    </tr>
+                    <tr><td colspan="2"><br/></td></tr>
+                </table>
+                <br />
+                <br />
+             
+
+
+
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+     
+                <br />
+                <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <br />
+        <br />
+
+        <div style="width:100%;">
+            <div style="width:45%;padding-right:30px;float:left;">
+                <div style="text-align:center;"><b>TERMS AND CONDITIONS FOR SMALL CREDIT AGREEMENT</b></div>
+                <div  style="text-align:center;"><b>("Agreement")</b></div>
+                <div style="font-size:12px;"> 
+                    <ol>
+                        <li><b>This Agreement is made up of the Pre-Agreement Statement and Quotation, the Quotation and Loan Offer Slip and these terms and conditions. In terms of this Agreement, the Credit Provider agrees to lend me the amount set out on the Quotation and Loan Offer Slip and I agree to repay the Credit Provider the amount set out under Total Repayment of the Quotation and Loan Offer Slip.</b></li><br />
+                        <li><b><u>Early settlement and early repayments:</u></b> I may settle this Agreement early at any time in terms of sections 122 and 125 of the National Credit Act, 34 of 2005 ("the Act") by paying the unpaid balance, the unpaid interest and all other fees and charges up to the date of settlement. I may also make early repayments under this Agreement.</li><br />
+                        <li><b>Addresses for receiving documents:</b> I nominate the address set out in the Pre-Agreement Statement and Quotation for purposes of communication, including legal notices and court orders. Either party to this Agreement may change its address by delivering to the other party a written notice of the new address by hand, registered mail, or electronic mail.</li><br />
+                        <li><b>Payments under the Agreement:</b> I authorise the Credit Provider to deduct the monthly instalments and other amounts due in terms of this Agreement from my bank account.</li><br />
+                        <li><b>Penalty clause and Legal Costs:</b> If I default under this Agreement, I agree that the Credit Provider may charge me penalty interest on arrear instalments at the same interest rate set out in the Quotation and Loan Offer Slip. I agree that all attorneys' or registered debt collectors' costs can be recovered from me on the higher of the attorney and client scale or the published tariff recoverable by registered debt collectors.</li><br />
+                        <li><b>Credit Provider's right to terminate this Agreement:</b> The Credit Provider may enforce and/or terminate this Agreement against me if I default with any of the agreed instalments in terms of this Agreement, in terms of sections 123, 129 and 130 of the Act, which may result in a court enforcing the repayment of my outstanding obligations in terms of this Agreement and a judgment against me being recorded at credit bureaus, which will be available to other credit providers.</li><br />
+
+                        <li><b>Account statements:</b> The Credit Provider will provide a free statement to me at the end of every third month and statements during intermediate months will be provided to me on request at a cost computed at the maximum allowable provided for in the Act.</li><br />
+                        <li><b>Default Administration and collection charges:</b> If I default under this Agreement, I will be liable for default and/or collection charges and reasonable and necessary expenses incurred to deliver such letter, at the maximum allowable rate allowed in law.</li><br />
+                        <li><b>Agreement provided and available:</b> I was given a free copy of this Agreement when I signed it and a copy of the Act and Regulations is available from branches of the Credit Provider.</li><br />
+                        <li><b>Conditions, rights and obligations:</b> This is the full agreement between the parties and there are no unwritten terms or conditions.</li><br />
+                        <li><b>Dispute resolution:</b> I agree that in the event of any dispute or uncertainty, I will let Credit Provider know in writing, and if the dispute is not resolved, I may take the matter up with the National Credit Regulator at toll share number 0860 100 406.</li><br />
+                        <li><b>Administration order: </b>I declare that I am not under administration, nor am I going to apply for an administration order. If I am placed under administration after entering into this Agreement, I agree that all instalments still due after the administration order is granted, fall within the ambit of Section 74 A (2)(e)(ii) of the Magistrates Court Act and are excluded in terms of Section 74 C (2) of the said act and the Credit Provider will be able to recover all moneys still outstanding in terms of this Agreement by legal action.</li><br />
+                        <li><b>Debt counselling:</b> I may apply to a debt counsellor to be declared over indebted in terms of section 86 of the Act. I can access the names of debt counsellors at www.ncr.org.za.</li> <br />
+                    </ol>
+                    <br/>
+                    <div><b>I declare and warrant that I:</b></div>
+                    <div>
+                        <ul>
+                            <li>am legally competent to execute this Agreement;</li>
+                            <li>if necessary, have my spouse's consent to enter into this Agreement;</li>
+                            <li>understand and accept the terms and conditions set out in this Agreement;</li>
+                            <li>have given information that is true and complete as part of the assessment required prior to entering into this Agreement;</li>
+                            <li>am the rightful owner of the bank account detailed in this Agreement and as such have the right to give the Credit Provider the authority to debit such account;</li>
+                            <li>have not applied to a debt counsellor or court for an over-indebtedness or debt review.</li>
+                        </ul>
+                      
+                    </div>
+                </div>
+            </div>
+            <div style="width:45%;padding-right:30px;float:left;">
+                <div style="text-align:left;"><b>CONTACT NUMBERS</b></div>
+                <div>
+                    <br/>
+                    <table style="width:100%;border:none;font-size:12px;" border="0"  >
+                        <tr>
+                            <td><b>National Credit Regulator:</b></td>
+                            <td>086 062 7627</td>
+                            <td>complaints@ncr.org.za</td>
+                        </tr>
+                        <tr>
+                            <td><b>Banking Ombudsman:</b></td>
+                            <td>0860 800 900</td>
+                            <td>info@obassa.co.za</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"><b>Credit bureaus:</b></td>
+                        </tr>
+                        <tr>
+                            <td>Compuscan:</td>
+                            <td>086 151 4131</td>
+                            <td>consumercare@compuscan.co.za</td>
+                        </tr>
+                        <tr>
+                            <td>XDS:</td>
+                            <td>086 093 7000<br/>011 645 9100</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Experian:</td>
+                            <td>0861 10 56 65</td>
+                            <td>EZA.consumer@experian.com</td>
+                        </tr>
+                        <tr>
+                            <td>CPB:</td>
+                            <td></td>
+                            <td>dispute@cpbonline.co.za</td>
+                        </tr>
+                        <tr>
+                            <td>TransUnion:</td>
+                            <td>0861 886 466</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Vericred:</td>
+                            <td></td>
+                            <td>disputes@vccb.co.za</td>
+                        </tr>
+                      
+                    </table>
+                </div>
+                <br/>
+
+                <div style="text-align:center;"><b>CONSENT FOR CREDIT CHECK AND MARKETING OPTIONS</b></div>
+                <div><b>Credit Check Consent:</b></div>
+                <br />
+                <div style="font-size:12px;">
+                    <div>I voluntarily provide consent to the Credit Provider to:</div>
+                    <ul>
+                        <li>conduct a reference check on me for the purposes of the Credit Provider carrying out a statutory assessment of my creditworthiness, for the purpose of deciding whether to grant me credit and enter into a credit agreement with me (the Agreement);</li>
+                        <li>monitor my credit profile if the Credit Provider does grant me credit;</li>
+                        <li>
+                            file my consumer credit information with any registered credit bureau;
+                            •
+                        </li>
+                        <li>share my Personal Information with tracing agents, collection agents and attorneys if I default under the Agreement;</li>
+                        <li>use my Personal Information for any lawful purpose that the Credit Provider is required to comply with;</li>
+                        <li>tell credit bureaus about this application for credit, the entering into and termination of the Agreement, and how I conduct the Agreement. I understand that if I do not conduct the Agreement well, my credit-worthiness will be negatively affected.</li>
+
+                    </ul>
+                    <div>
+                        I further provide my consent to any credit bureau to provide the Credit Provider with credit reports, to accept the filing of my credit information from the Credit Provider.
+                        <br /><br />
+                        <div>I understand that I have the right to contact the credit bureaus to check my credit record and request the credit bureaus to correct any incorrect information they hold about me.</div>
+                        <br/>
+                        <br/>
+                        <div><b>Personal Information:</b></div>
+                        <div>
+                            <p>
+                                I consent to the Credit Provider collecting and Processing* my Personal Information** to enable it to implement the Agreement, carry out statistical and other analysis to identify potential markets and trends and to develop new products and services and to it disclosing my Personal Information to any of its agents or service providers. The Credit Provider asks these parties to agree to its privacy policies.
+                            </p>
+                            <p>I agree that the Credit Provider may determine the need and purpose of Processing my Personal Information as required by various laws, including the Financial Intelligence Centre Act and the Financial Advisory and Intermediary Services Act.</p>
+                            <p>I consent to the Credit Provider holding, utilising, processing, confirming, storing and giving out my confidential and personal information to my employer, bank, any credit bureau or other person for business reasons if the Credit Provider is legally required to or allowed to do so and to the Credit Provider holding, utilising, processing, confirming, storing, sending and receiving information about me from any credit bureau or similar organisation that has information about me or my creditworthiness.</p>
+                            <p>I have no claim against the Credit Provider for keeping, using or legally distributing my Personal Information.</p>
+                            <p><b>*Process/Processing </b>means the collection, receipt, recording, organisation, collation, storage, updating or modification, retrieval; alteration; consultation; use; dissemination by means of transmission, distribution or making available in any other form; merging, linking, as well as blocking, degradation, erasure or destruction of information;</p>
+                            <p><b>**Personal Information</b>
+                                includes race, gender, sex, marital status, nationality, ethnic or social origin, colour, sexual orientation, age, physical or mental health, religion, belief, disability, language, birth, education, identity number, telephone number, email, postal or street address, biometric information, financial, criminal or employment history and correspondence that is private or confidential.</p>
+
+                        </div>
+                    </div>
+                </div>
+            <div style="clear:both"></div>
+        </div>
+            <div style="clear:both"></div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <table style="width:100%; padding: 30px ; text-align: center;font-size:12px;text-align:left; " class="" border="0">
+
+                <tr style="padding:30px">
+                    <td style="padding:20px;width:50%;vertical-align:top;"><b>Signature <div class="clsFooTermsText" id="divStaffLoan3"><img src="data:image/png;base64,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" alt="" style="width:80px;height:40px;margin-top:30px;"></div></b></td>
+                    <td style="width:50%"> <b>Consumer <div class="clsFooTermsText" id="divStaffLoan4" onclick="fnShowSignaturePopup('divStaffLoan4');"><img src="../Content/Images/Signin.png" alt="" style="width:250px" class="clsSign1" /></div></b></td>
+                </tr>
+                <tr style="padding:30px">
+                    <td style="padding:0px; width: 30%; position: absolute; padding-left:20px"><b>Signature on behalf of Credit Provider<br /></b></td>
+                    <td style="padding:0px; width: 20%;  right: 5%;"><b>Signature of Consumer<br /></b></td>
+                </tr>
+                <tr><td colspan="2"><br /></td></tr>
+            </table>
+            <br />
+            <br />
+            </div>
+
+        <br/>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <br />
+        <br />
+
+        <br />
+        <br />
+        <br />
+
+        <br />
+        <br />
+
+        <br />
+        <br />
+        <br />
+
+        <br />
+        <br />
+
+        <br />
+        <br />
+        <br />
+
+        <br />
+        <br />
+
+        <br />
+        <br />
+        <br />
+
+        <br />
+        <br />
+
+        <br />
+        <br />
+        <br />
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <br />
+        <br />
+        <br />
+
+        <br />
+        <br />
+
+        <br />
+        <br />
+        <br />
+
+        <br />
+        <br />
+
+        <br />
+        <br />
+        <br />
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <br />
+        <br />
+
+        <br />
+        <br />
+        <br />
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <div style="border: 1px solid black; width: 95%; text-align: center;" class="header1">LOAN AGREEMENTS </div>
+        <br />
+        <div style="font-size:16px;font-weight:bold;color:black;     margin-left:4%; ">NCR number: NCR CP6172</div>
+        <br />
+
+
+
+
+
+
+
+
+
+
+
+        <br />
+        <table width="90%;" class="clsBorderlessTable" style="font-size:12px">
+            <!-- <td colspan="2" style="text-align:center;font-size:18px;font-weight:normal;padding:10px; border-bottom: 0px solid black;">SUMMARY</td> -->
+            <tr style="padding:0px">
+                <td style="padding:0px; font-size: 16px;vertical-align:top;"> <b><u>Credit Provider</u></b>
+                
+                <br/>
+                    <div style="font-size:12px;">
+                        Finbond Mutual Bank<br />Rigel Office Park<br />
+                        446 Rigel Ave South<br />
+                        Erasmusrand<br />
+                        Pretoria<br />
+                        0181<br />012 460 7288
+                    </div>
+                </td>
+                <td style="padding-left:9%; font-size: 16px;"> <b><u>Consumer</u></b>
+                    <div style="font-size:12px;">
+                        <br />
+                        Name of consumer <b><u><input type="text" value="[CONSUMERNAME]" id="txtPage2NameOfConsumer" style="width:100%; font-weight: bold; border: none; border-bottom: 1px solid black;" /></u></b>
+                        <br />
+                        Physical Address <b><u><input type="text" value="[CONSUMERADDRESS]" id="txtPage2Address1" style="width:100%; font-weight: bold; border: none; border-bottom: 1px solid black;" /></u></b>
+                        <br />
+                        Contact Number:  <input type="text" value="[CONSUMERCONTACTNO]" id="txtPage2ContactNumber" style="width:100%; font-weight: bold; border: none; border-bottom: 1px solid black;" /></u></b>
+                        <br />
+                        ID Number: <input type="text" value="[CONSUMERID]" id="txtPage2IDNumber" style="width:100%; font-weight: bold; border: none; border-bottom: 1px solid black;" /></u></b>
+</div>
+</td>
+
+            </tr>
+          
+        </table>
+        <br />
+
+
+
+
+
+
+
+        <br />
+
+
+
+
+        <br />
+        <table width="90%" class="clsBorderlessTable" style="font-size:12px">
+            <tr><td colspan="2" style="text-align:center;font-size:16px;font-weight:normal;padding-bottom:20px; border-bottom: 0px solid black;"><b><u>ACCEPTED LOAN DETAILS</u></b><br /><br /><br /></td></tr>
+            <tr style="padding:0px">
+                <td style="padding:0px"><div style="width: 45%;float:left; display: inline-block;">Date:</div>
+                    <b>
+                        <u>
+                            <input type="text" value="[DATE]" id="txtPage2MonthlyInstalments" style="width:30%; font-weight: bold; border: none; border-bottom: 1px solid black;" />
+                        </u>
+                    </b>
+                </td>
+                <td style="padding:0px; "><div style="width: 45%; display: inline-block;">Term: </div>
+                    <b>
+                        <u>
+                            <input type="text" value="[LOANTERM]" id="txtPageLoanTerm" style="width:30%; font-weight: bold; border: none; border-bottom: 1px solid black;" />
+                        </u>
+                    </b>
+                </td>
+
+            </tr>
+            <tr style="padding:0px">
+                <td style="padding:0px"><div style="width: 45%; display: inline-block;">Loan Opt: </div>
+                <b><u>
+                   <input type="text" value="[LOANOPT]" id="txtPage2LoanOpt" style="width:30%; font-weight: bold; border: none; border-bottom: 1px solid black;" />
+                    </u></b>
+                </td>
+                <td style="padding:0px; "><div style="width: 45%; display: inline-block;">Capital Amt: </div>
+                    <b>
+                        <u>
+                            <input type="text" value="[CAPITALAMT]" id="txtPage2CapitalAmt" style="width:30%; font-weight: bold; border: none; border-bottom: 1px solid black;" />
+                        </u>
+                    </b>
+                </td>
+            </tr>
+            <tr style="padding:0px">
+                <td style="padding:0px"><div style="width: 45%; display: inline-block;">Principal Debt: </div>
+                    <b>
+                        <u>
+                             <input type="text" value="[PRINCIPALDEBT]" id="txtPage2PrincipalDebt" style="width:30%; font-weight: bold; border: none; border-bottom: 1px solid black;" />
+                        </u>
+                    </b>
+                </td>
+                <td style="padding:0px;  "><div style="width: 45%; display: inline-block;">Initiation Fee: </div>
+                    <b>
+                        <u>
+                            <input type="text" value="[INITIATIONFEE]" id="txtPage2InitiationFee" style="width:30%; font-weight: bold; border: none; border-bottom: 1px solid black;" />
+                        </u>
+                    </b>
+                </td>
+            </tr>
+
+            <tr style="padding:0px">
+                <td style="padding:0px"><div style="width: 45%; display: inline-block;">Installment Amt: </div>
+                    <b>
+                        <u>
+                            <input type="text" value="[INSTALLMENTAMT]" id="txtPage2InstallemtnAmt" style="width:30%; font-weight: bold; border: none; border-bottom: 1px solid black;" />
+                        </u>
+                    </b>
+                </td>
+                <td style="padding:0px;  "><div style="width: 45%; display: inline-block;">Monthly Service Fee: </div>
+                    <b>
+                        <u>
+                             <input type="text" value="[SERVICEFEE]" id="txtPage2ServiceFee" style="width:30%; font-weight: bold; border: none; border-bottom: 1px solid black;" />
+                        </u>
+                    </b>
+                </td>
+            </tr>
+            <tr style="padding:0px">
+                <td style="padding:0px"><div style="width: 45%; display: inline-block;">Interest Rate: </div>
+                    <b>
+                        <u>
+                            <input type="text" value="[INTERESTRATE]" id="txtPage2InterestRate" style="width:30%; font-weight: bold; border: none; border-bottom: 1px solid black;" />
+                        </u>
+                    </b>
+                 </td>
+                <td style="padding:0px;  "><div style="width: 45%; display: inline-block;">Interest Amt: </div>
+                    <b>
+                        <u>
+                            <input type="text" value="[INTERESTAMT]" id="txtPage2InterestAmt" style="width:30%; font-weight: bold; border: none; border-bottom: 1px solid black;" />
+                        </u>
+                    </b>
+                </td>
+            </tr>
+            <tr style="padding:0px">
+                <td style="padding:0px"><div style="width: 45%; display: inline-block;">VAT: </div>
+                    <b>
+                        <u>
+                            <input type="text" value="[VAT]" id="txtPage2VAT" style="width:30%; font-weight: bold; border: none; border-bottom: 1px solid black;" />
+                        </u>
+                    </b>
+                </td>
+                <td style="padding:0px;  "><div style="width: 45%; display: inline-block;">Capital _ Interest: </div>
+                    <b>
+                        <u>
+                            <input type="text" value="[CAPITALINTEREST]" id="txtPage2CapitalInterest" style="width:30%; font-weight: bold; border: none; border-bottom: 1px solid black;" />
+                        </u>
+                    </b>
+                </td>
+            </tr>
+            <tr style="padding:0px">
+                <td style="padding:0px"><div style="width: 45%; display: inline-block;">Total Repayment: </div>
+                    <b>
+                        <u>
+                            <input type="text" value="[TOTALREPAYMENT]" id="txtPage2TotalRepayment" style="width:30%; font-weight: bold; border: none; border-bottom: 1px solid black;" />
+                        </u>
+                    </b>
+                </td>
+                <td style="padding:0px;  "><div style="width: 45%; display: inline-block;">First Pay Date: </div>
+                    <b>
+                        <u>
+                            <input type="text" value="[FIRSTPAYDATE]" id="txtPage2FirstPaydATE" style="width:30%; font-weight: bold; border: none; border-bottom: 1px solid black;" />
+                        </u>
+                    </b>
+                </td>
+            </tr>
+            <tr style="padding:0px">
+                <td style="padding:0px"><div style="width: 45%; display: inline-block;">Last Pay Date: </div>
+                    <b>
+                        <u>
+                            <input type="text" value="[LASTPAYDATE]" id="txtPage2LastPayDate" style="width:30%; font-weight: bold; border: none; border-bottom: 1px solid black;" />
+                        </u>
+                    </b>
+                </td>
+                <td style="padding:0px;  "><div style="width: 45%; display: inline-block;">Credit cost multiple: </div>
+                    <b>
+                        <u>
+                            <input type="text" value="[CREDITCOSTMULTIPLE]" id="txtPage2CreditCostMultiple" style="width:30%; font-weight: bold; border: none; border-bottom: 1px solid black;" />
+                        </u>
+                    </b>
+                </td>
+            </tr>
+            
+        </table>
+        <br />
+
+        <br /><br />
+        <br />
+        <table width="90%;" style="font-size:12px;" class="clsBorderlessTable">
+            <!-- <td colspan="2" style="text-align:center;font-size:18px;font-weight:normal;padding:10px; border-bottom: 1px solid black;">PART B: Further information on rights and obligations</td> -->
+      
+            <tr style="padding:20px">
+                <td style="padding:20px;padding-bottom:10px; width: 50%;"><b> <div class="clsFooTermsText" id="divStaffLoan3"><img src="data:image/png;base64,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" alt="" style="width:80px;height:40px;margin-top:30px;"></div></b></td>
+                <td style="padding:20px;padding-bottom:10px;width: 40%; position: absolute; right: 5%;text-align:right;"> <b> <div class="clsFooTermsText" id="divStaffLoan6" onclick="fnShowSignaturePopup('divStaffLoan6');"><img src="../Content/Images/Signin.png" alt="" style="width:250px" class="clsSign2" /></div></b></td>
+            </tr>
+            <tr style="padding:0px">
+                <td style="padding:0px;  width: 50%;"><b>(Signature of credit provider)</b></td>
+                <td style="padding:0px; width: 50%; position: absolute; right: 5%;text-align:right;margin-right:7%;"><b>(Signature of consumer)</b></td>
+            </tr>
+
+        </table>
+        <br />
+
+        </div>
+
+    <br />
+    <br />
+    <br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <div>
+        <div style="font-size:16px;font-weight:bold;background-color:#f5f6fa;padding:10px;color:black;text-align:center;">DEBIT ORDER FORM</div>
+
+        <br />
+        <br />
+
+
+        <br />
+        <div style="width:100%;">
+            <div style="float:left;width:40%">
+                <table style="width:100%;border-radius:5px;font-size:12px;border-radius:5px;" border="1">
+                    <tr style="background-color:black;color:#fff;font-size:16px;padding:5px;text-align:center;">
+                        <td colspan="2" style="padding-top:10px;padding-bottom:10px">DETAILS OF THE CREDIT PROVIDER <br />("the Credit Provider")</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color:#f5f6fa;padding:5px;">Name</td>
+                        <td style="padding:5px;">Finbond Mutual Bank</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color:#f5f6fa;padding:5px;">NCR number</td>
+                        <td style="padding:5px;">NCR CP6172</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color:#f5f6fa;padding:5px;">Physical address</td>
+                        <td style="padding:5px;padding-top:15px;padding-bottom:15PX;">
+                            Rigel Office Park<br />
+                            446 Rigel Ave South<br />
+                            Erasmusrand<br />
+                            Pretoria<br />
+                            0181
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="background-color:#f5f6fa;padding:5px;">Contact number</td>
+                        <td style="padding:5px;padding-bottom:30px;">086 000 4249</td>
+                    </tr>
+                </table>
+            </div>
+            <div style="float:left;width:55%;padding-left:30px;">
+                <table style="width:100%;font-size:12px;" border="1">
+                    <tr style="background-color:black;color:#fff;font-size:16px;text-align:center;">
+                        <td colspan="2" style="padding-top:10px;padding-bottom:10px">DETAILS OF THE CONSUMER <br />("I", "me", "the Consumer")</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color:#f5f6fa;width:200px;padding:5px;">Surname</td>
+                        <td style="padding:5px;">[SURNAME]</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color:#f5f6fa;padding:5px;">First names</td>
+                        <td style="padding:5px;">[FIRSTNAME]</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color:#f5f6fa;padding:5px;">ID number</td>
+                        <td style="padding:5px;">[IDNUMBER]</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color:#f5f6fa;padding:5px;">Email address</td>
+                        <td style="padding:5px;">[EMAILADDRESS]</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color:#f5f6fa;padding:5px;">Physical address</td>
+                        <td style="padding:5px;">[PHYSICALADDRESS]</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color:#f5f6fa;padding:5px;">Postal address</td>
+                        <td style="padding:5px;">[POSTALADDRESS]</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color:#f5f6fa;padding:5px;">Contact number</td>
+                        <td style="padding:5px;">
+                            Work: [WORKNUMBER]
+                            <br />
+                            Home: [HOMENUMBER]
+                            <br />
+                            Cell: [CELLNUMBER]
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div style="clear:both"></div>
+        </div>
+        <br />
+        <br />
+        <div style="font-size:16px;font-weight:bold;background-color:#f5f6fa;padding:10px;color:black">CONSENT AND DEBIT ORDER INSTRUCTIONS</div>
+        <br />
+        <div style="font-size:12px;padding:10px;color:black">I, the User, hereby consent to you, the Credit Provider: FINBOND MUTUAL BANK</div>
+
+
+        <div style="font-size:12px;color:black">
+            <ol>
+                <li style="">
+                    <div style="">Receiving, compiling and retaining any confidential credit information about me for purposes of (i) assisting you perform your statutory assessment of my creditworthiness (ii) deciding whether to grant credit to me and (iii) monitoring my credit profile, should you grant me credit; filing my consumer credit information with any other credit provider and a registered credit bureau, including Compuscan Holdings (Pty) Limited, Experian Limited and TransUnion ITC and the National Loans Register; sharing my consumer credit information with any tracing agent or collection company in the event of me defaulting in my credit repayment obligations to you</div>
+
+                </li>
+                <br />
+                <li style="">
+                    <div style="">I further hereby consent to a credit bureau:</div>
+                    <div style="font-size:12px;font-weight:normal;">
+                        <ul>
+                            <li>
+                                providing you with a credit report which you may rely on (i) to assess my creditworthiness and (ii) to base your decision whether to grant credit to me;
+                            </li>
+                            <li>accepting the filing of my consumer credit information from any credit provider;</li>
+                            <li>Issuing a report to any person who requires it for a lawful purpose.</li>
+                        </ul>
+                    </div>
+                </li>
+                <br />
+
+            </ol>
+
+            <div style="padding:10px;color:black">My signature hereto signifies my consent as aforesaid and my agreement to hold you and any credit bureau and other credit provider to whom you may provide my consumer credit information in terms of my aforesaid consent harmless against any and all liability, loss, claim, demand, cost, fees and expenses arising out of or from or in connection with my aforesaid consent.</div>
+
+            <div style="padding:10px;color:black">In addition, I herewith provide my consent to Finbond Mutual Bank to debit my bank account or any other future bank accounts that is registered in my name. This debit orders will be for all outstanding payments as reflected on my loan contracts. As the collections are based on pay date collections I further authorise Finbond Mutual Bank (The Credit Provider) if not notified by me of any pay date changes that may occur to implement timeous date changes themselves on the collections system to track payments to ensure the efficient collections of payments to my benefit and to the benefit of Finbond Mutual Bankâ€.</div>
+
+            <br /><br />
+            <div style="clear:both"></div>
+            <br />
+            <br />
+            <div style="font-size:12px;">
+              
+                <div style="float:left;"> Signed at</div> <div style="float:left;font-weight:bold;padding-left:5px;padding-right:5px;" id="divSignedAt2">[SIGNEDAT]</div> <div style="float:left;">
+                    on this <b>[DAY]</b> day of <b>[MONTH]</b> <b>[YEAR]</b>
+                </div>
+                <div style="clear:both"></div>
+            </div>
+            <div style="clear:both"></div>
+            <br />
+            <br />
+
+            <table style="width:100%; padding: 30px ; text-align: center;font-size:12px;text-align:left; " class="" border="0">
+
+                <tr style="padding:30px">
+                    <td style="padding:20px;width:50%;vertical-align:top;"><b>Signature <div class="clsFooTermsText" id="divStaffLoan1"><img src="data:image/png;base64,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" alt="" style="width:80px;height:40px;margin-top:30px;"></div></b></td>
+                    <td style="width:50%"> <b>Consumer <div class="clsFooTermsText" id="divStaffLoan7" onclick="fnShowSignaturePopup('divStaffLoan7');"><img src="../Content/Images/Signin.png" alt="" style="width:250px" class="clsSign1" /></div></b></td>
+                </tr>
+                <tr style="padding:30px">
+                    <td style="padding:0px; width: 30%; position: absolute; padding-left:20px"><b>Signature on behalf of Credit Provider<br /></b></td>
+                    <td style="padding:0px; width: 20%;  right: 5%;"><b>Signature of Consumer<br /></b></td>
+                </tr>
+                <tr><td colspan="2"><br /></td></tr>
+            </table>
+            <br />
+            <br />
+        </div>
+    </div>
+
+
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <div>
+        <div style="font-size:16px;font-weight:bold;background-color:#f5f6fa;padding:10px;color:black;text-align:center;">NUPAY MANDATE FORM</div>
+
+        <br />
+        <br />
+
+
+        <br />
+        <div style="width:100%;">
+            <div style="float:left;width:40%">
+                <table style="width:100%;border-radius:5px;font-size:12px;border-radius:5px;" border="1">
+                    <tr style="background-color:black;color:#fff;font-size:16px;padding:5px;text-align:center;">
+                        <td colspan="2" style="padding-top:10px;padding-bottom:10px">DETAILS OF THE SERVICE PROVIDER <br />("the Service Provider")</td>
+                    </tr>
+                    <tr style="height:48px;">
+                        <td style="background-color:#f5f6fa;padding:5px;">Name</td>
+                        <td style="padding:5px;">Altech NuPay (PTY) Ltd</td>
+                    </tr>
+                    <!--<tr>
+                        <td style="background-color:#f5f6fa;padding:5px;">NCR number</td>
+                        <td style="padding:5px;">NCR CP6172</td>
+                    </tr>-->
+                    <!--<tr>
+                        <td style="background-color:#f5f6fa;padding:5px;">Physical address</td>
+                        <td style="padding:5px;padding-top:15px;padding-bottom:15PX;">
+                            Rigel Office Park<br />
+                            446 Rigel Ave South<br />
+                            Erasmusrand<br />
+                            Pretoria<br />
+                            0181
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="background-color:#f5f6fa;padding:5px;">Contact number</td>
+                        <td style="padding:5px;padding-bottom:30px;">086 000 4249</td>
+                    </tr>-->
+                </table>
+            </div>
+            <div style="float:left;width:55%;padding-left:30px;">
+                <table style="width:100%;font-size:12px;" border="1">
+                    <tr style="background-color:black;color:#fff;font-size:16px;text-align:center;">
+                        <td colspan="2" style="padding-top:10px;padding-bottom:10px">DETAILS OF THE CONSUMER <br />("I", "me", "the Consumer")</td>
+                    </tr>
+           
+                    <tr>
+                        <td style="background-color:#f5f6fa;padding:5px;">Full name</td>
+                        <td style="padding:5px;">[FIRSTNAME] [SURNAME]</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color:#f5f6fa;padding:5px;">ID number</td>
+                        <td style="padding:5px;">[IDNUMBER]</td>
+                    </tr>
+                
+                </table>
+            </div>
+            <div style="clear:both"></div>
+        </div>
+        <br />
+        <br />
+        <div>
+            <table style="width:100%;border-radius:5px;font-size:12px;border-radius:5px;" border="1">
+                <tr><td colspan="3">
+                        <b>Installment payable by Consumer in terms of Credit Agreement ("Payment Obligation")</b>
+                    </td></tr>
+                <tr>
+                    <td colspan="3">
+                        <b>Installment Value:</b> [INSTALLMENTAMT]
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>No. of Installments:</b> [LOANTERM]
+                    </td>
+                    <td><b>1st Installment Payment Date</b> [FIRSTPAYDATE]</td>
+                    <td>Frequency: Monthly</td>
+                </tr>
+            </table>
+        </div>
+        <br/>
+        <div ><b>1. Introduction</b></div>
+ 
+        <div style="font-size:12px;color:black">
+            <ol>
+                <li style="">
+                    <div style="">1The consumer has entered into a Credit Agreement, identified by the Credit Agreement Reference Number 2195 with FINBOND MUTUAL BANK (“Credit Provider”) with merchant /Group number 540. <br/>And hereby instructs Altech NuPay (pty) Ltd to process deductions and the consumer’s Payment against his/her bank account.</div>
+
+                </li>
+                <br />
+                <li style="">
+                    <div style="font-size:12px;font-weight:normal;">
+                        2 Altech NuPay is entitled to a Transaction Processing Fee for the processing of every Payment Obligation and the Consumer hereby agrees to the payment of the Transaction Processing Fee, subject to the terms and conditions set out below.
+                    </div>
+                </li>
+                <br />
+
+            </ol>
+
+            <div style="font-size:14px"><b>2 Terms and conditions </b></div>
+            <ul>
+                <li>2.1The consumer acknowledges and agrees that –</li>
+                <li>2.1.1 The transaction Processing Fee is due to Altech NuPay and has not been included in the cost of credit charged by and due to the Credit Provider.</li>
+                <li>2.1.2The transaction processing Fee due to Altect NuPay and the relevant Payment Obligation of the consumer in terms of the Credit agreement will be processed as a single payment instruction and the Total installment Amount as indicated above will be debited against the consumer’s nominated account.</li>
+                <li>2.1.3Service charges levied by the consumer’s bank are not governed by this agreement.</li>
+                <li>2.1.4The transaction processing fee statement to the consumer will clearly differentiate transaction processing fee payment obligations.</li>
+                <li><b>3 Queries</b><br/>
+Altech NuPay will maintain a Call Centre to assist the consumer with queries regarding this Altech NuPay Transaction Processing Fee agreement. The number of the Call Centre is (011) 617 1750.
+</li>
+                <li><b>4 Deduction Authority & Acknowledgement of Liability </b></li>
+                <li>4.1 The consumer hereby authorises Altech NuPay to process the Transactions Processing Fee due to Altech  NuPay and the payment obligation due to the Credit Provider as a single payment instruction and to deliver the payment instruction for collection at the consumer’s bank. </li>
+                <li>4.2 The consumer hereby authorises the Consumer’s bank to debit the consumers nominated account with the amount of the payment instructions as set out above. </li>
+
+                <li>4.3 Subsequent payment instructions will continue to be delivered in terms of this authority until the consumer’s payment obligations under the credit agreement have been paid or until cancelled by the consumer. Payment instruction falling on non-processing days may be presented on the preceding processing day.</li>
+                <li>4.4 The consumer hereby confirms that the credit agreement was not subject to the conclusion of this agreement.</li>
+                <li>4.5 The consumer acknowledges that he/she owes Finbond Mutual Bank (FMB) any and all amounts paid over by FMB to Altech NuPay , any bank or IT Service provider with regards to any transaction between June 2015 and November 2015 and hereby gives consent to Finbond Mutual Bank to deduct these fees from the Consumers nominated account over the next 3 to 6 months. </li>
+                <li>4.6 The consumer further acknowledges that he/she owes Finbond Mutual Bank (FMB) any and all money paid over by FMB to Altech NuPay or any other Bank or IT service provider with regards to any current transaction fees including but not limited to AEDO, NAEDO, SPF and Interchange Fees and hereby gives consent to FMB to deduct these fees from the consumers nominated account.</li>
+                <li><b>4.7 The consumer confirms that he/she willingly entered into this agreemnst and was not induced or required to conclude this agreement </b> </li>
+    
+            </ul>
+
+            <br />
+            <div style="clear:both"></div>
+            <br />
+            <br />
+            <div style="font-size:12px;">
+                <div style="float:left;"> Signed at</div> <div style="float:left;font-weight:bold;padding-left:5px;padding-right:5px;" id="divSignedAt3">[SIGNEDAT]</div> <div style="float:left;">
+    on this <b>[DAY]</b> day of <b>[MONTH]</b> <b>[YEAR]</b></div>
+                <div style="clear:both"></div>
+</div>
+            <div style="clear:both"></div>
+            <br />
+            <br />
+
+            <table style="width:100%; padding: 30px ; text-align: center;font-size:12px;text-align:left; " class="" border="0">
+
+                <tr style="padding:30px">
+                    <td style="padding:20px;width:50%;vertical-align:top;"><b>Signature <div class="clsFooTermsText" id="divStaffLoan122"><img src="data:image/png;base64,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" alt="" style="width:80px;height:40px;margin-top:30px;"></div></b></td>
+                    <td style="width:50%"> <b>Consumer <div class="clsFooTermsText" id="divStaffLoan9" onclick="fnShowSignaturePopup('divStaffLoan9');"><img src="../Content/Images/Signin.png" alt="" style="width:250px" class="clsSign1" /></div></b></td>
+                </tr>
+                <tr style="padding:30px">
+                    <td style="padding:0px; width: 30%; position: absolute; padding-left:20px"><b>Signature on behalf of Service Provider<br /></b></td>
+                    <td style="padding:0px; width: 20%;  right: 5%;"><b>Signature of Consumer<br /></b></td>
+                </tr>
+                <tr><td colspan="2"><br /></td></tr>
+            </table>
+            <br />
+            <br />
+        </div>
+    </div>
+</body>
+</html>

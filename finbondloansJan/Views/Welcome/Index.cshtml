@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LoggedinLayout.cshtml";
+}
+<link href="~/Content/Custom/contactInput.css" rel="stylesheet" />
+<div style="background-color:#EFEFEF ;height:100%;">
+    <div class="clsCenterBlock" style="padding:10px">
+        <div style="">
+            <map name='welcomeslider'>
+                <area shape='rect' coords='107,241,336,291' href='~/myaccount/index' />
+            </map>
+            <br/>
+            <br />
+            <div style="color:#003F7D;font-weight:bold;padding-bottom:10px;font-size:14px;">Hi @StaffLoans.Models.Common.LoggedInClientName,</div>
+            <div style="border-top:1px solid #003F7D;"></div>
+            <div style="padding-top:15px;" class="clsDesktop">
+                <img usemap="#welcomeslider" src="~/Content/Images/Welcome_slide_3.png" alt="" class="img-responsive" />
+            </div>
+            <div class="clsMobi">
+                <img alt="" class="clsSliderMobi" usemap="#homemap">
+            </div>
+            <br />
+            <div class="clsMobi" style="width:200px;margin:0 auto;">
+                <a href="/myaccount/index"><div class="btn">Apply Now</div></a>
+            </div>       
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br /><br />
+            <br />
+            <br />
+        </div>
+    </div>
+</div>

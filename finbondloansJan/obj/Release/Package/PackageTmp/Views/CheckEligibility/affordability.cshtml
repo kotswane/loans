@@ -1,0 +1,222 @@
+﻿@model StaffLoans.Models.CheckEligibility
+
+@{
+    ViewBag.Title = "affordability";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    ViewBag.Title = "CheckEligibility";
+}
+<link href="~/Content/Custom/Menus.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/Custom/EligibilityEnquiry.css" rel="stylesheet" />
+<script src="~/scripts/ThankYou.js"></script>
+<script src="~/scripts/DataTable/js/jquery.dataTables.min.js"></script>
+<script src="~/scripts/DataTable/js/jquery.dataTables.js"></script>
+<link href="~/scripts/DataTable/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="~/Content/demo_table.css" rel="stylesheet" />
+<link href="~/Content/Footable.css" rel="stylesheet" />
+<script src="~/scripts/Footable.js?v=3"></script>
+<link href="~/Content/datatables.responsive.css" rel="stylesheet" />
+<script src="~/scripts/datatables.responsive.js"></script>
+<script src="~/scripts/checkEligibility.js"></script>
+
+<div class="clsPageBannerHeader">
+    <div class="clsCenterBlock clsPageBannerHeaderPad">
+        <div class="clsPageBannerHeaderTitle">DO I QUALIFY?</div>
+        <div class="clsPageBannerHeaderSubTitle">Please follow the below instructions to check if you qualify for a loan.</div>
+    </div>
+</div>
+<div class="clsCenterBlock">
+    <div class="clsCenterBlockPad" style="padding:0px;">
+        <div style="width:100%;margin:0 auto">
+            <div style="background-color:#fff; border-radius:10px;padding:20px;">
+                <div id="divExpensestab" style="display:block">
+                    @using (Ajax.BeginForm("CheckAffordability", "CheckEligibility", new AjaxOptions
+                    {
+                        HttpMethod = "Post",
+                        OnBegin = "displayLoader()",
+                        OnSuccess = "displayLoanOptionsFromAjaxPostback(data)",
+                        OnFailure = "displayErrorFromAjaxPostback(data)"
+                    }))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.HiddenFor(x => x.IDNumber)
+                        @Html.HiddenFor(x => x.FirstName)
+                        @Html.HiddenFor(x => x.Surname)
+                        @Html.HiddenFor(x => x.EmploymentTypeId)
+                        <br />
+                        <div style="font-size:20px;font-weight:bold" class="clsSubHeaderColor">
+                            Salary Information
+                        </div>
+                        <br />
+                        <div style="float:left;margin-right:50px;">
+                            <div style="float:left;width:100px;">Latest Net Salary<br />(Last Month)</div>
+                            <div style="float:left">@Html.TextBoxFor(m => m.salaryAndExpenses.LastMonthSalary, new { maxlength = 20, autocomplete = "off", onkeypress = "return isNumberKey(event,this);", id = "txtLatestSalary" })</div>
+                            <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.salaryAndExpenses.LastMonthSalary)</div>
+                            <div style="clear:both"></div>
+                        </div>
+                        <div style="float:left;">
+                            <div style="float:left;width:100px;">Latest Net Salary<br />(2 Months ago)</div>
+                            <div style="float:left">@Html.TextBoxFor(m => m.salaryAndExpenses.LastTwoMonthSalary, new { maxlength = 20, autocomplete = "off", onkeypress = "return isNumberKey(event,this);", id = "txtLatestSalary2" })</div>
+                            <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.salaryAndExpenses.LastTwoMonthSalary)</div>
+                            <div style="clear:both"></div>
+                        </div>
+                        <div style="clear:both"></div>
+
+
+                        <br />
+                        <div style="float:left;margin-right:50px;">
+                            <div style="float:left;width:100px;">Latest Net Salary<br />(3 Months ago)</div>
+                            <div style="float:left">@Html.TextBoxFor(m => m.salaryAndExpenses.LastThreeMonthSalary, new { maxlength = 20, autocomplete = "off", onkeypress = "return isNumberKey(event,this);", id = "txtLatestSalary3" })</div>
+                            <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.salaryAndExpenses.LastThreeMonthSalary)</div>
+                            <div style="clear:both"></div>
+                        </div>
+
+                        <div style="clear:both"></div>
+
+                        <br />
+
+
+
+                        <br />
+                        <br />
+                        <br />
+                        <div style="font-size:20px;font-weight:bold" class="clsSubHeaderColor">
+                            Expenses Information
+                        </div>
+                        <div class="clsMandatory">(Note: if there are no expenses please enter value as 0)</div>
+                        <br />
+                        <div style="float:left;margin-right:50px;">
+                            <div style="float:left;width:100px;">Groceries</div>
+                            <div style="float:left">@Html.TextBoxFor(m => m.salaryAndExpenses.Groceries, new { maxlength = 20, autocomplete = "off", onkeypress = "return isNumberKey(event,this);", id = "txtGroceries" })</div>
+                            <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.salaryAndExpenses.Groceries)</div>
+                            <div style="clear:both"></div>
+                        </div>
+                        <div style="float:left;">
+                            <div style="float:left;width:100px;">Transport</div>
+                            <div style="float:left">@Html.TextBoxFor(m => m.salaryAndExpenses.Transport, new { maxlength = 20, autocomplete = "off", onkeypress = "return isNumberKey(event,this);", id = "txtTransport" })</div>
+                            <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.salaryAndExpenses.Transport)</div>
+                            <div style="clear:both"></div>
+                        </div>
+                        <div style="clear:both"></div>
+                        <br />
+                        <div style="float:left;margin-right:50px;">
+                            <div style="float:left;width:100px;">Housing</div>
+                            <div style="float:left">@Html.TextBoxFor(m => m.salaryAndExpenses.Housing, new { maxlength = 20, autocomplete = "off", onkeypress = "return isNumberKey(event,this);", id = "txtHousing" })</div>
+                            <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.salaryAndExpenses.Housing)</div>
+                            <div style="clear:both"></div>
+                        </div>
+                        <div style="float:left;">
+                            <div style="float:left;width:100px;">Clothing</div>
+                            <div style="float:left">@Html.TextBoxFor(m => m.salaryAndExpenses.Clothing, new { maxlength = 20, autocomplete = "off", onkeypress = "return isNumberKey(event,this);", id = "txtClothing" })</div>
+                            <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.salaryAndExpenses.Clothing)</div>
+                            <div style="clear:both"></div>
+                        </div>
+                        <div style="clear:both"></div>
+
+                        <br />
+                        <div style="float:left;margin-right:50px;">
+                            <div style="float:left;width:100px;">Medical</div>
+                            <div style="float:left">@Html.TextBoxFor(m => m.salaryAndExpenses.Medical, new { maxlength = 20, autocomplete = "off", onkeypress = "return isNumberKey(event,this);", id = "txtMedical" })</div>
+                            <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.salaryAndExpenses.Medical)</div>
+                            <div style="clear:both"></div>
+                        </div>
+                        <div style="float:left;">
+                            <div style="float:left;width:100px;">Water/Electricity</div>
+                            <div style="float:left">@Html.TextBoxFor(m => m.salaryAndExpenses.WaterElectricty, new { maxlength = 20, autocomplete = "off", onkeypress = "return isNumberKey(event,this);", id = "txtElectricity" })</div>
+                            <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.salaryAndExpenses.WaterElectricty)</div>
+                            <div style="clear:both"></div>
+                        </div>
+                        <div style="clear:both"></div>
+
+                        <br />
+                        <div style="float:left;margin-right:50px;">
+                            <div style="float:left;width:100px;">Child Maintenance</div>
+                            <div style="float:left">@Html.TextBoxFor(m => m.salaryAndExpenses.ChildMaintainance, new { maxlength = 20, autocomplete = "off", onkeypress = "return isNumberKey(event,this);", id = "txtChildM" })</div>
+                            <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.salaryAndExpenses.ChildMaintainance)</div>
+                            <div style="clear:both"></div>
+                        </div>
+                        <div style="float:left;">
+                            <div style="float:left;width:100px;">Education</div>
+                            <div style="float:left">@Html.TextBoxFor(m => m.salaryAndExpenses.Education, new { maxlength = 20, autocomplete = "off", onkeypress = "return isNumberKey(event,this);", id = "txtEducation" })</div>
+                            <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.salaryAndExpenses.Education)</div>
+                            <div style="clear:both"></div>
+                        </div>
+                        <div style="clear:both"></div>
+
+                        <br />
+                        <div style="float:left;margin-right:50px;">
+                            <div style="float:left;width:100px;">Bank Charges</div>
+                            <div style="float:left">@Html.TextBoxFor(m => m.salaryAndExpenses.BankCharges, new { maxlength = 20, autocomplete = "off", onkeypress = "return isNumberKey(event,this);", id = "txtBankCharges" })</div>
+                            <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.salaryAndExpenses.BankCharges)</div>
+                            <div style="clear:both"></div>
+                        </div>
+                        <div style="float:left;">
+                            <div style="float:left;width:100px;">Other</div>
+                            <div style="float:left">@Html.TextBoxFor(m => m.salaryAndExpenses.Other, new { maxlength = 20, autocomplete = "off", onkeypress = "return isNumberKey(event,this);", id = "txtOther" })</div>
+                            <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.salaryAndExpenses.Other)</div>
+                            <div style="clear:both"></div>
+                        </div>
+
+                        <br />
+                            <div style="clear:both"></div>
+                            <br />
+                            <div style="float:right">
+                                <input class="btn" type="submit" value="Check affordability" name="Save" id="BtnSave" />
+                            </div>
+                            <div style="clear:both"></div>
+                    }
+                </div>
+
+                <div id="divLoanOptions" style="visibility:hidden;display:none;">
+                    <div id="Customcontainer">
+                        <div id="Customdemo">
+                            <div style="width:100%;padding-top:20px">
+                                <div style="font-size:20px;font-weight:bold" class="clsSubHeaderColor">
+                                    Loan options available based on Pre-Authorisation information provided
+
+                                </div>
+                                <br />
+                                <div style="height:320px;overflow:scroll">
+                                    @*670px*@
+                                    <table id="gdLoans" class="display clsGridTable  clsFooPayLink footable">
+                                        <thead>
+                                            <tr>
+                                                @*<th data-hide="expand">Select</th>*@
+                                                <th data-class="expand">Terms</th>
+                                                <th data-class="expand">Description</th>
+                                                <th data-hide="phone">Capital</th>
+                                                <th data-hide="phone">Intitation Fee </th>
+                                                <th data-hide="phone">Service Fee</th>
+                                                <th data-hide="phone">Principal Debt</th>
+                                                <th data-hide="phone">First Payment Date</th>
+                                                <th data-hide="phone">Last Payment Date</th>
+                                                <th data-hide="phone">Installment Amount</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <br />
+
+
+                            <div style="float:right" class="clsDesktop">
+                                <input type="button" class="btn" value="Continue"  name="Next" onclick="location.href='@Url.Action("Index", "Register")'" />
+                                @*<input class="btn" type="button" value="Continue" name="Next" id="BtnNextLoanOption"  />*@
+                            </div>
+
+                            <div style="float:right" class="clsMobi">
+                                <input type="button" class="btn" value="Continue" name="Next" onclick="location.href='@Url.Action("Index", "mobireg")'" />
+                                @*<input class="btn" type="button" value="Continue" name="Next" id="BtnNextLoanOption"  />*@
+                            </div>
+                            <div style="clear:both"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

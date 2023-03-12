@@ -1,0 +1,61 @@
+﻿.clsCellcPowerdBy
+{
+    display:block;
+    float:right;
+    margin-left:5px;
+}
+.clsCellPoweredDiv{
+    width:300px;margin:0 auto;
+}
+.clsSlider{
+    background:url('../Images/Finbond-Cell-C-Home-header-March_2020_V2.jpg')  no-repeat;background-position:center; width:100%;height:100%;
+}
+.clsSliderMobi{
+    background:url('../Images/Finbond-Cell-C-Home-header-March_2020_V2-Mobile.png')  no-repeat;background-position:center; width:100%;height:498px;background-color:#003F7D;
+    background-color:#f15a23;
+}
+.clsContainerForHeaderButtons
+{
+    display:none;
+}
+.clsCellcContainerForHeaderButtons
+{
+    display:block;
+    position:absolute;
+    top: 15%;
+    left: 35.5%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    align-content:center;
+    width: 550px;
+    height: 100px;
+}
+.clsMobiDoIQualify{
+      width: 150px; z-index: 1000; height: 45px; float: left;  background-color:black; border: 1px solid black; border-radius: 30px; cursor:pointer; text-align:center; color:#f15a23; font-family: OpenSans-Regular !important; font-weight: 900; padding-top: 10px; font-size: 14px;
+      margin-right:20px;
+}
+.clsMobiAppN{
+  width: 150px; z-index: 1000; height: 45px; float: left;  background-color:#fff; border: 1px solid #fff; border-radius: 30px; cursor:pointer; text-align:center; color:#f15a23; font-family: OpenSans-Regular !important; font-weight: 900; padding-top: 10px; font-size: 14px;
+
+}
+
+.clsCellCMobiContainerForHeaderButtons {
+    display:block;
+    align-content:center;
+    width: 320px;
+    height: 100px;
+    /*background-color: grey;*/
+    margin-top:-70px;
+    position:relative;
+    margin-left:38px;
+}
+
+.clsDesktopDoIQualify{
+      width: 250px; z-index: 1000; height: 65px; float: left;  background-color:black; border: 1px solid black; border-radius: 50px; cursor:pointer; text-align:center; color:#f15a23; font-family: OpenSans-Regular !important; font-weight: 900; padding-top: 20px; font-size: 20px;
+      margin-right:20px;
+   
+}
+.clsDesktopAppN{
+  width: 250px; z-index: 1000; height: 65px; float: left;  background-color:#fff; border: 1px solid #fff; border-radius: 50px; cursor:pointer; text-align:center; color:#f15a23; font-family: OpenSans-Regular !important; font-weight: 900; padding-top: 20px; font-size: 20px;
+
+}

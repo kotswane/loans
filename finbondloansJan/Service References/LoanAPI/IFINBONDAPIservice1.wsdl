@@ -1,0 +1,1570 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="urn:WSSOAPIntf" name="IFINBONDAPIservice" targetNamespace="http://tempuri.org/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xs:schema xmlns="urn:WSSOAPIntf" targetNamespace="urn:WSSOAPIntf">
+      <xs:complexType name="TSessionData">
+        <xs:sequence xmlns="http://www.w3.org/2001/XMLSchema">
+          <xs:element name="SessionID" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TReplyData">
+        <xs:sequence xmlns="http://www.w3.org/2001/XMLSchema">
+          <xs:element name="ReplyCode" type="xs:int" />
+          <xs:element name="ReplyMessage" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TConnectionCheckReply">
+        <xs:sequence xmlns="http://www.w3.org/2001/XMLSchema">
+          <xs:element name="ReplyData" type="ns1:TReplyData" />
+          <xs:element name="LookupValues" type="ns1:TLookupValuesInfoArray" />
+          <xs:element name="BankDetails" type="ns1:TBankDetailsInfoArray" />
+          <xs:element name="BankDetailsVersion" type="xs:int" />
+          <xs:element name="ClientTypeRequiredDocuments" type="ns1:TClientTypeRequiredDocumentArray" />
+          <xs:element name="NuPayPaymentFrequency" type="xs:string" />
+          <xs:element name="NuPayTrackingIndicator" type="xs:string" />
+          <xs:element name="NuPayDateAdjustment" type="xs:string" />
+          <xs:element name="DebitOrderDaysToShow" type="xs:int" />
+          <xs:element name="DebitOrderStartWindow" type="xs:int" />
+          <xs:element name="LoanApprovalReqdCents" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TLookupValuesInfoArray">
+        <xs:complexContent mixed="false">
+          <xs:restriction base="soapenc:Array">
+            <xs:sequence xmlns="http://www.w3.org/2001/XMLSchema" />
+            <xs:attribute xmlns:n1="http://schemas.xmlsoap.org/wsdl/" n1:arrayType="ns1:TLookupValueInfo[]" ref="soapenc:arrayType" />
+          </xs:restriction>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="TBankDetailsInfoArray">
+        <xs:complexContent mixed="false">
+          <xs:restriction base="soapenc:Array">
+            <xs:sequence xmlns="http://www.w3.org/2001/XMLSchema" />
+            <xs:attribute xmlns:n1="http://schemas.xmlsoap.org/wsdl/" n1:arrayType="ns1:TBankDetails[]" ref="soapenc:arrayType" />
+          </xs:restriction>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="TClientTypeRequiredDocumentArray">
+        <xs:complexContent mixed="false">
+          <xs:restriction base="soapenc:Array">
+            <xs:sequence xmlns="http://www.w3.org/2001/XMLSchema" />
+            <xs:attribute xmlns:n1="http://schemas.xmlsoap.org/wsdl/" n1:arrayType="ns1:TClientTypeRequiredDocumentInfo[]" ref="soapenc:arrayType" />
+          </xs:restriction>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="TLookupValueInfo">
+        <xs:sequence xmlns="http://www.w3.org/2001/XMLSchema">
+          <xs:element name="LookupName" type="xs:string" />
+          <xs:element name="Code" type="xs:int" />
+          <xs:element name="Description" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TBankDetails">
+        <xs:sequence xmlns="http://www.w3.org/2001/XMLSchema">
+          <xs:element name="BranchCode" type="xs:string" />
+          <xs:element name="BranchName" type="xs:string" />
+          <xs:element name="BankName" type="xs:string" />
+          <xs:element name="Location" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TClientTypeRequiredDocumentInfo">
+        <xs:sequence xmlns="http://www.w3.org/2001/XMLSchema">
+          <xs:element name="ClientType" type="xs:unsignedInt" />
+          <xs:element name="DocumentType" type="xs:unsignedInt" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TLogonReply">
+        <xs:sequence xmlns="http://www.w3.org/2001/XMLSchema">
+          <xs:element name="ReplyData" type="ns1:TReplyData" />
+          <xs:element name="SessionData" type="ns1:TSessionData" />
+          <xs:element name="DoRiskMatrix" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TClientData">
+        <xs:sequence xmlns="http://www.w3.org/2001/XMLSchema">
+          <xs:element name="ClientCode" type="xs:unsignedInt" />
+          <xs:element name="IDNumber" type="xs:string" />
+          <xs:element name="FirstName" type="xs:string" />
+          <xs:element name="MiddleName" type="xs:string" />
+          <xs:element name="LastName" type="xs:string" />
+          <xs:element name="DOB" type="xs:unsignedInt" />
+          <xs:element name="MobileNumber" type="xs:string" />
+          <xs:element name="EMailAddress" type="xs:string" />
+          <xs:element name="ResAddressStreet" type="xs:string" />
+          <xs:element name="ResAddressSuburb" type="xs:string" />
+          <xs:element name="ResAddressProvince" type="xs:string" />
+          <xs:element name="ResAddressCountry" type="xs:string" />
+          <xs:element name="ResAddressPostalCode" type="xs:int" />
+          <xs:element name="PostalAddressStreet" type="xs:string" />
+          <xs:element name="PostalAddressSuburb" type="xs:string" />
+          <xs:element name="PostalAddressProvince" type="xs:string" />
+          <xs:element name="PostalAddressCountry" type="xs:string" />
+          <xs:element name="PostalAddressPostalCode" type="xs:int" />
+          <xs:element name="Title" type="xs:int" />
+          <xs:element name="MaritalStatus" type="xs:int" />
+          <xs:element name="Language" type="xs:int" />
+          <xs:element name="CountryOfBirth" type="xs:int" />
+          <xs:element name="Nationality" type="xs:int" />
+          <xs:element name="WorkNumber" type="xs:string" />
+          <xs:element name="MarketingConsent" type="xs:int" />
+          <xs:element name="MarketingPreference" type="xs:int" />
+          <xs:element name="OtherNumber" type="xs:string" />
+          <xs:element name="AlternateContactFirstName" type="xs:string" />
+          <xs:element name="AlternateContactLastName" type="xs:string" />
+          <xs:element name="AlternateContactNumber" type="xs:string" />
+          <xs:element name="GoogleTwoFactorSecret" type="xs:string" />
+          <xs:element name="LastLoginAttemptUtc" type="xs:string" />
+          <xs:element name="ActivationGUID" type="xs:string" />
+          <xs:element name="NOKFullName" type="xs:string" />
+          <xs:element name="NOKRelationship" type="xs:int" />
+          <xs:element name="NOKContactNumber" type="xs:string" />
+          <xs:element name="NumberOfDependants" type="xs:int" />
+          <xs:element name="UpdateDateTime" type="xs:string" />
+          <xs:element name="StaffEmployer" type="xs:int" />
+          <xs:element name="ClientFingerprintImage" type="xs:base64Binary" />
+          <xs:element name="ClientFingerprintTemplate" type="xs:base64Binary" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TInsUpdReply">
+        <xs:sequence xmlns="http://www.w3.org/2001/XMLSchema">
+          <xs:element name="ReplyData" type="ns1:TReplyData" />
+          <xs:element name="ClientCode" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="TInsertUpdateType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="iutInsert" />
+          <xs:enumeration value="iutUpdate" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="TEmployerData">
+        <xs:sequence xmlns="http://www.w3.org/2001/XMLSchema">
+          <xs:element name="EmployerClientCode" type="xs:unsignedInt" />
+          <xs:element name="Employer" type="xs:string" />
+          <xs:element name="Department" type="xs:string" />
+          <xs:element name="Placement" type="xs:string" />
+          <xs:element name="Occupation" type="xs:string" />
+          <xs:element name="OccupationType" type="xs:int" />
+          <xs:element name="EmployeeNumber" type="xs:string" />
+          <xs:element name="AppointedOn" type="xs:unsignedInt" />
+          <xs:element name="PayFrequency" type="xs:int" />
+          <xs:element name="SalaryMethod" type="xs:int" />
+          <xs:element name="ContractEndDate" type="xs:unsignedInt" />
+          <xs:element name="RepayMethod" type="xs:int" />
+          <xs:element name="PayDayShift" type="xs:int" />
+          <xs:element name="EmployerStreet" type="xs:string" />
+          <xs:element name="EmployerSuburb" type="xs:string" />
+          <xs:element name="EmployerProvince" type="xs:string" />
+          <xs:element name="EmployerCountry" type="xs:string" />
+          <xs:element name="EmployerPostalCode" type="xs:int" />
+          <xs:element name="EmployerContactNumber" type="xs:string" />
+          <xs:element name="ClientIDNumber" type="xs:string" />
+          <xs:element name="HRContact" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TBankingData">
+        <xs:sequence xmlns="http://www.w3.org/2001/XMLSchema">
+          <xs:element name="BankingClientCode" type="xs:unsignedInt" />
+          <xs:element name="AccountNumber" type="xs:string" />
+          <xs:element name="BranchCode" type="xs:string" />
+          <xs:element name="BankName" type="xs:string" />
+          <xs:element name="AccountType" type="xs:int" />
+          <xs:element name="ClientIDNumber" type="xs:string" />
+          <xs:element name="PayoutAccountNumber" type="xs:string" />
+          <xs:element name="PayoutBranchCode" type="xs:string" />
+          <xs:element name="PayoutBankName" type="xs:string" />
+          <xs:element name="PayoutAccountType" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TClientEnquiryReply">
+        <xs:sequence xmlns="http://www.w3.org/2001/XMLSchema">
+          <xs:element name="ReplyData" type="ns1:TReplyData" />
+          <xs:element name="ClientData" type="ns1:TClientData" />
+          <xs:element name="EmployerData" type="ns1:TEmployerData" />
+          <xs:element name="BankingData" type="ns1:TBankingData" />
+          <xs:element name="DocumentData" type="ns1:TDocumentData" />
+          <xs:element name="ExistingLoanData" type="ns1:TExistingLoanDataArray" />
+          <xs:element name="AffordabilityInfo" type="ns1:TAffordabilityInfo" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TDocumentData">
+        <xs:sequence xmlns="http://www.w3.org/2001/XMLSchema">
+          <xs:element name="IDDoc" type="xs:base64Binary" />
+          <xs:element name="IDDocCardFront" type="xs:base64Binary" />
+          <xs:element name="IDDocCardBack" type="xs:base64Binary" />
+          <xs:element name="CodixPDFDoc" type="xs:base64Binary" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TExistingLoanDataArray">
+        <xs:complexContent mixed="false">
+          <xs:restriction base="soapenc:Array">
+            <xs:sequence xmlns="http://www.w3.org/2001/XMLSchema" />
+            <xs:attribute xmlns:n1="http://schemas.xmlsoap.org/wsdl/" n1:arrayType="ns1:TExistingLoan[]" ref="soapenc:arrayType" />
+          </xs:restriction>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="TAffordabilityInfo">
+        <xs:sequence xmlns="http://www.w3.org/2001/XMLSchema">
+          <xs:element name="MessageVersion" type="xs:int" />
+          <xs:element name="ClientIDNumber" type="xs:string" />
+          <xs:element name="ClientCode" type="xs:int" />
+          <xs:element name="GrantRecipient" type="xs:boolean" />
+          <xs:element name="Salary1" type="xs:unsignedInt" />
+          <xs:element name="Salary2" type="xs:unsignedInt" />
+          <xs:element name="Salary3" type="xs:unsignedInt" />
+          <xs:element name="Groceries" type="xs:unsignedInt" />
+          <xs:element name="Transport" type="xs:unsignedInt" />
+          <xs:element name="Housing" type="xs:unsignedInt" />
+          <xs:element name="Clothing" type="xs:unsignedInt" />
+          <xs:element name="Medical" type="xs:unsignedInt" />
+          <xs:element name="WaterElectricity" type="xs:unsignedInt" />
+          <xs:element name="ChildMaintenance" type="xs:unsignedInt" />
+          <xs:element name="Education" type="xs:unsignedInt" />
+          <xs:element name="BankCharges" type="xs:unsignedInt" />
+          <xs:element name="Other" type="xs:unsignedInt" />
+          <xs:element name="DebitOrderRunDate" type="xs:int" />
+          <xs:element name="OperatorIDNumber" type="xs:string" />
+          <xs:element name="OperatorUSN" type="xs:unsignedInt" />
+          <xs:element name="ClientType" type="xs:unsignedInt" />
+          <xs:element name="ClientUSN" type="xs:unsignedInt" />
+          <xs:element name="CardClientType" type="xs:unsignedInt" />
+          <xs:element name="ContractToSettle" type="xs:unsignedInt" />
+          <xs:element name="CustomerDeclaredExpenses" type="xs:unsignedInt" />
+          <xs:element name="CustomerDeclaredIncome" type="xs:unsignedInt" />
+          <xs:element name="ExpenseNormsAdj" type="xs:unsignedInt" />
+          <xs:element name="BureauExpenses" type="xs:unsignedInt" />
+          <xs:element name="NonBureauExpenses" type="xs:int" />
+          <xs:element name="Affordability" type="xs:unsignedInt" />
+          <xs:element name="CodixResult" type="xs:string" />
+          <xs:element name="CodixNrMonths" type="xs:unsignedInt" />
+          <xs:element name="FirstName" type="xs:string" />
+          <xs:element name="LastName" type="xs:string" />
+          <xs:element name="CountryOfBirth" type="xs:unsignedInt" />
+          <xs:element name="EmploymentType" type="xs:unsignedInt" />
+          <xs:element name="ReasonForLoan" type="xs:int" />
+          <xs:element name="PayFrequency" type="xs:int" />
+          <xs:element name="DelfinClient" type="xs:boolean" />
+          <xs:element name="BureauExpenseRecords" type="ns1:TExpensesArray" />
+          <xs:element name="DelfinSettlementAmount" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TExpensesArray">
+        <xs:complexContent mixed="false">
+          <xs:restriction base="soapenc:Array">
+            <xs:sequence xmlns="http://www.w3.org/2001/XMLSchema" />
+            <xs:attribute xmlns:n1="http://schemas.xmlsoap.org/wsdl/" n1:arrayType="ns1:TExpense[]" ref="soapenc:arrayType" />
+          </xs:restriction>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="TExistingLoan">
+        <xs:sequence xmlns="http://www.w3.org/2001/XMLSchema">
+          <xs:element name="ContractNumber" type="xs:unsignedInt" />
+          <xs:element name="LoanDate" type="xs:unsignedInt" />
+          <xs:element name="ClientCode" type="xs:unsignedInt" />
+          <xs:element name="ClientIDNumber" type="xs:string" />
+          <xs:element name="OfferID" type="xs:unsignedInt" />
+          <xs:element name="Status" type="xs:int" />
+          <xs:element name="TotalAmountPaid" type="xs:int" />
+          <xs:element name="TotalOutstandingAmount" type="xs:int" />
+          <xs:element name="InstallmentsRemaining" type="xs:unsignedInt" />
+          <xs:element name="Loan_Capital" type="xs:unsignedInt" />
+          <xs:element name="Loan_NrInstallments" type="xs:unsignedInt" />
+          <xs:element name="Loan_CapitalPlusInterest" type="xs:unsignedInt" />
+          <xs:element name="Loan_PrincipalDebt" type="xs:unsignedInt" />
+          <xs:element name="Loan_InitiationFee" type="xs:unsignedInt" />
+          <xs:element name="Loan_InstallmentAmount" type="xs:unsignedInt" />
+          <xs:element name="Loan_InterestAmount" type="xs:unsignedInt" />
+          <xs:element name="Loan_ServiceFee" type="xs:unsignedInt" />
+          <xs:element name="LoanTerm" type="xs:unsignedInt" />
+          <xs:element name="LastPayDate" type="xs:unsignedInt" />
+          <xs:element name="NextPayDate" type="xs:unsignedInt" />
+          <xs:element name="NuPayTransactionID" type="xs:string" />
+          <xs:element name="SettlementAmount" type="xs:unsignedInt" />
+          <xs:element name="StatementInfo" type="ns1:TStatementRecordArray" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TStatementRecordArray">
+        <xs:complexContent mixed="false">
+          <xs:restriction base="soapenc:Array">
+            <xs:sequence xmlns="http://www.w3.org/2001/XMLSchema" />
+            <xs:attribute xmlns:n1="http://schemas.xmlsoap.org/wsdl/" n1:arrayType="ns1:TStatementRecord[]" ref="soapenc:arrayType" />
+          </xs:restriction>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="TStatementRecord">
+        <xs:sequence xmlns="http://www.w3.org/2001/XMLSchema">
+          <xs:element name="TransactionSeqNo" type="xs:int" />
+          <xs:element name="IDNumber" type="xs:string" />
+          <xs:element name="ContractNo" type="xs:int" />
+          <xs:element name="ClientCode" type="xs:int" />
+          <xs:element name="LoanAmount" type="xs:int" />
+          <xs:element name="Debit" type="xs:int" />
+          <xs:element name="Credit" type="xs:int" />
+          <xs:element name="Balance" type="xs:int" />
+          <xs:element name="Description" type="xs:string" />
+          <xs:element name="TransactionNumber" type="xs:int" />
+          <xs:element name="TransactionType" type="xs:int" />
+          <xs:element name="TransactionDate" type="xs:unsignedInt" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TExpense">
+        <xs:sequence xmlns="http://www.w3.org/2001/XMLSchema">
+          <xs:element name="ExpenseName" type="xs:string" />
+          <xs:element name="AmountRands" type="xs:int" />
+          <xs:element name="ExpenseTypeBureauNonBureau" type="xs:string" />
+          <xs:element name="Excluded" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TAffordabilityReply">
+        <xs:sequence xmlns="http://www.w3.org/2001/XMLSchema">
+          <xs:element name="FullyFICAd" type="xs:boolean" />
+          <xs:element name="NonFICALimit" type="xs:int" />
+          <xs:element name="ApplicationNumber" type="xs:unsignedInt" />
+          <xs:element name="ReplyData" type="ns1:TReplyData" />
+          <xs:element name="LoanOptions" type="ns1:TLoanOptionsArray" />
+          <xs:element name="ExpenseNormsExpenses" type="xs:unsignedInt" />
+          <xs:element name="CustomerDeclaredExpenses" type="xs:unsignedInt" />
+          <xs:element name="NewClient" type="xs:boolean" />
+          <xs:element name="RefinanceSettlementAmount" type="xs:unsignedInt" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TLoanOptionsArray">
+        <xs:complexContent mixed="false">
+          <xs:restriction base="soapenc:Array">
+            <xs:sequence xmlns="http://www.w3.org/2001/XMLSchema" />
+            <xs:attribute xmlns:n1="http://schemas.xmlsoap.org/wsdl/" n1:arrayType="ns1:TLoanOption[]" ref="soapenc:arrayType" />
+          </xs:restriction>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="TLoanOption">
+        <xs:sequence xmlns="http://www.w3.org/2001/XMLSchema">
+          <xs:element name="OfferID" type="xs:unsignedInt" />
+          <xs:element name="LoanID" type="xs:unsignedInt" />
+          <xs:element name="LoanDescription" type="xs:string" />
+          <xs:element name="LoanTerm" type="xs:unsignedInt" />
+          <xs:element name="Loan_PrincipalDebt" type="xs:unsignedInt" />
+          <xs:element name="Loan_Capital" type="xs:unsignedInt" />
+          <xs:element name="Loan_NrInstallments" type="xs:unsignedInt" />
+          <xs:element name="Loan_InitiationFee" type="xs:unsignedInt" />
+          <xs:element name="Loan_InstallmentAmount" type="xs:unsignedInt" />
+          <xs:element name="Loan_InterestRate" type="xs:unsignedInt" />
+          <xs:element name="Loan_VAT" type="xs:unsignedInt" />
+          <xs:element name="Loan_InterestAmount" type="xs:unsignedInt" />
+          <xs:element name="Loan_CapitalPlusInterest" type="xs:unsignedInt" />
+          <xs:element name="Loan_TotalRepayment" type="xs:unsignedInt" />
+          <xs:element name="Loan_ServiceFee" type="xs:unsignedInt" />
+          <xs:element name="Loan_DiscountFactor" type="xs:unsignedInt" />
+          <xs:element name="DateOfFirstDebit" type="xs:unsignedInt" />
+          <xs:element name="DateOfLastDebit" type="xs:unsignedInt" />
+          <xs:element name="TotalCostOfCredit" type="xs:double" />
+          <xs:element name="LoanCapitalMinimum" type="xs:unsignedInt" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TAdjustOfferReply">
+        <xs:sequence xmlns="http://www.w3.org/2001/XMLSchema">
+          <xs:element name="NewLoanOptionOffer" type="ns1:TLoanOption" />
+          <xs:element name="ReplyData" type="ns1:TReplyData" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TDocumentsArray">
+        <xs:complexContent mixed="false">
+          <xs:restriction base="soapenc:Array">
+            <xs:sequence xmlns="http://www.w3.org/2001/XMLSchema" />
+            <xs:attribute xmlns:n1="http://schemas.xmlsoap.org/wsdl/" n1:arrayType="ns1:TDocument[]" ref="soapenc:arrayType" />
+          </xs:restriction>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="TDocument">
+        <xs:sequence xmlns="http://www.w3.org/2001/XMLSchema">
+          <xs:element name="Document" type="xs:base64Binary" />
+          <xs:element name="ImageType" type="xs:int" />
+          <xs:element name="ImageID" type="xs:int" />
+          <xs:element name="ImageTypeString" type="xs:string" />
+          <xs:element name="MimeType" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TReceiptReply">
+        <xs:sequence xmlns="http://www.w3.org/2001/XMLSchema">
+          <xs:element name="ReplyData" type="ns1:TReplyData" />
+          <xs:element name="ReceiptStrings" type="ns1:TStringsArray" />
+          <xs:element name="NuPayReceiptStrings" type="ns1:TStringsArray" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TStringsArray">
+        <xs:complexContent mixed="false">
+          <xs:restriction base="soapenc:Array">
+            <xs:sequence xmlns="http://www.w3.org/2001/XMLSchema" />
+            <xs:attribute xmlns:n1="http://schemas.xmlsoap.org/wsdl/" n1:arrayType="xs:string[]" ref="soapenc:arrayType" />
+          </xs:restriction>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="TExpenseDefinitionsArray">
+        <xs:complexContent mixed="false">
+          <xs:restriction base="soapenc:Array">
+            <xs:sequence xmlns="http://www.w3.org/2001/XMLSchema" />
+            <xs:attribute xmlns:n1="http://schemas.xmlsoap.org/wsdl/" n1:arrayType="ns1:TExpenseDefinition[]" ref="soapenc:arrayType" />
+          </xs:restriction>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="TExpenseDefinition">
+        <xs:sequence xmlns="http://www.w3.org/2001/XMLSchema">
+          <xs:element name="Category" type="xs:string" />
+          <xs:element name="Option" type="xs:string" />
+          <xs:element name="SubOption" type="xs:string" />
+          <xs:element name="Value" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TRecordInsUpdReply">
+        <xs:sequence xmlns="http://www.w3.org/2001/XMLSchema">
+          <xs:element name="ReplyData" type="ns1:TReplyData" />
+          <xs:element name="RecordNumber" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TCashInOutRecordsReply">
+        <xs:sequence xmlns="http://www.w3.org/2001/XMLSchema">
+          <xs:element name="CashInOutRecords" type="ns1:TCashInOutRecordArray" />
+          <xs:element name="ReplyData" type="ns1:TReplyData" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TCashInOutRecordArray">
+        <xs:complexContent mixed="false">
+          <xs:restriction base="soapenc:Array">
+            <xs:sequence xmlns="http://www.w3.org/2001/XMLSchema" />
+            <xs:attribute xmlns:n1="http://schemas.xmlsoap.org/wsdl/" n1:arrayType="ns1:TCashInOutRecord[]" ref="soapenc:arrayType" />
+          </xs:restriction>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="TCashInOutRecord">
+        <xs:sequence xmlns="http://www.w3.org/2001/XMLSchema">
+          <xs:element name="RecordNo" type="xs:int" />
+          <xs:element name="Direction" type="xs:int" />
+          <xs:element name="Amount" type="xs:int" />
+          <xs:element name="Reason" type="xs:int" />
+          <xs:element name="Description" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TRiskReply">
+        <xs:sequence xmlns="http://www.w3.org/2001/XMLSchema">
+          <xs:element name="ReplyData" type="ns1:TReplyData" />
+          <xs:element name="Score" type="xs:double" />
+          <xs:element name="AffordabilityInfo" type="ns1:TAffordabilityInfo" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TClientValidateActivationReply">
+        <xs:sequence xmlns="http://www.w3.org/2001/XMLSchema">
+          <xs:element name="ReplyData" type="ns1:TReplyData" />
+          <xs:element name="GoogleTwoFactorSecret" type="xs:string" />
+          <xs:element name="LastLoginAttemptUtc" type="xs:string" />
+          <xs:element name="ActivationGUID" type="xs:string" />
+          <xs:element name="FirstName" type="xs:string" />
+          <xs:element name="LastName" type="xs:string" />
+          <xs:element name="EmailAddress" type="xs:string" />
+          <xs:element name="IDNumber" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TClientLogonReply">
+        <xs:sequence xmlns="http://www.w3.org/2001/XMLSchema">
+          <xs:element name="SessionData" type="ns1:TSessionData" />
+          <xs:element name="ReplyData" type="ns1:TReplyData" />
+          <xs:element name="ClientData" type="ns1:TClientData" />
+          <xs:element name="EmployerData" type="ns1:TEmployerData" />
+          <xs:element name="BankingData" type="ns1:TBankingData" />
+          <xs:element name="DocumentData" type="ns1:TDocumentData" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TPendingLoanApplicationsReply">
+        <xs:sequence xmlns="http://www.w3.org/2001/XMLSchema">
+          <xs:element name="ReplyData" type="ns1:TReplyData" />
+          <xs:element name="LoanApplications" type="ns1:TLoanApplicationArray" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TLoanApplicationArray">
+        <xs:complexContent mixed="false">
+          <xs:restriction base="soapenc:Array">
+            <xs:sequence xmlns="http://www.w3.org/2001/XMLSchema" />
+            <xs:attribute xmlns:n1="http://schemas.xmlsoap.org/wsdl/" n1:arrayType="ns1:TLoanApplication[]" ref="soapenc:arrayType" />
+          </xs:restriction>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="TLoanApplication">
+        <xs:sequence xmlns="http://www.w3.org/2001/XMLSchema">
+          <xs:element name="ApplicationNumber" type="xs:int" />
+          <xs:element name="LoanDate" type="xs:string" />
+          <xs:element name="ClientCode" type="xs:unsignedInt" />
+          <xs:element name="ClientIDNumber" type="xs:string" />
+          <xs:element name="OfferID" type="xs:unsignedInt" />
+          <xs:element name="OperatorIDNumber" type="xs:string" />
+          <xs:element name="LoanDescription" type="xs:string" />
+          <xs:element name="LoanTerm" type="xs:unsignedInt" />
+          <xs:element name="Loan_PrincipalDebt" type="xs:unsignedInt" />
+          <xs:element name="Loan_Capital" type="xs:unsignedInt" />
+          <xs:element name="Loan_NrInstallments" type="xs:unsignedInt" />
+          <xs:element name="Loan_InitiationFee" type="xs:unsignedInt" />
+          <xs:element name="Loan_InstallmentAmount" type="xs:unsignedInt" />
+          <xs:element name="Loan_InterestRate" type="xs:unsignedInt" />
+          <xs:element name="Loan_VAT" type="xs:unsignedInt" />
+          <xs:element name="Loan_InterestAmount" type="xs:unsignedInt" />
+          <xs:element name="Loan_CapitalPlusInterest" type="xs:unsignedInt" />
+          <xs:element name="Loan_TotalRepayment" type="xs:unsignedInt" />
+          <xs:element name="Loan_ServiceFee" type="xs:unsignedInt" />
+          <xs:element name="Loan_DiscountFactor" type="xs:unsignedInt" />
+          <xs:element name="DateOfFirstDebit" type="xs:unsignedInt" />
+          <xs:element name="DateOfLastDebit" type="xs:unsignedInt" />
+          <xs:element name="SettlementAmount" type="xs:unsignedInt" />
+          <xs:element name="FirstName" type="xs:string" />
+          <xs:element name="LastName" type="xs:string" />
+          <xs:element name="Salary0" type="xs:unsignedInt" />
+          <xs:element name="SalaryMinus1" type="xs:unsignedInt" />
+          <xs:element name="SalaryMinus2" type="xs:unsignedInt" />
+          <xs:element name="Origin" type="xs:unsignedInt" />
+          <xs:element name="Status" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TOriginArray">
+        <xs:complexContent mixed="false">
+          <xs:restriction base="soapenc:Array">
+            <xs:sequence xmlns="http://www.w3.org/2001/XMLSchema" />
+            <xs:attribute xmlns:n1="http://schemas.xmlsoap.org/wsdl/" n1:arrayType="xs:unsignedInt[]" ref="soapenc:arrayType" />
+          </xs:restriction>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="TLoanApplicationsByStatusReply">
+        <xs:sequence xmlns="http://www.w3.org/2001/XMLSchema">
+          <xs:element name="ReplyData" type="ns1:TReplyData" />
+          <xs:element name="LoanApplications" type="ns1:TLoanApplicationArray" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TLoanApplicationsByIDReply">
+        <xs:sequence xmlns="http://www.w3.org/2001/XMLSchema">
+          <xs:element name="ReplyData" type="ns1:TReplyData" />
+          <xs:element name="LoanApplications" type="ns1:TLoanApplicationArray" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TLoanEnquiryReply">
+        <xs:sequence xmlns="http://www.w3.org/2001/XMLSchema">
+          <xs:element name="ReplyData" type="ns1:TReplyData" />
+          <xs:element name="LoanApplicationData" type="ns1:TLoanApplication" />
+          <xs:element name="Documents" type="ns1:TDocumentsArray" />
+          <xs:element name="EMailAddress" type="xs:string" />
+          <xs:element name="MobileNumber" type="xs:string" />
+          <xs:element name="CountryOfBirth" type="xs:string" />
+          <xs:element name="Nationality" type="xs:string" />
+          <xs:element name="WorkNumber" type="xs:string" />
+          <xs:element name="EmployerName" type="xs:string" />
+          <xs:element name="EmployerContactNumber" type="xs:string" />
+          <xs:element name="HRContact" type="xs:string" />
+          <xs:element name="Department" type="xs:string" />
+          <xs:element name="AppointedOn" type="xs:string" />
+          <xs:element name="EmployerResidentialAddressCountry" type="xs:string" />
+          <xs:element name="EmployerResidentialAddressProvince" type="xs:string" />
+          <xs:element name="EmployerResidentialAddressSuburb" type="xs:string" />
+          <xs:element name="EmployerResidentialAddressStreet" type="xs:string" />
+          <xs:element name="EmployerResidentialAddressPostalCode" type="xs:string" />
+          <xs:element name="ContractEndDate" type="xs:string" />
+          <xs:element name="NrMonthsService" type="xs:int" />
+          <xs:element name="Occupation" type="xs:string" />
+          <xs:element name="PayFrequency" type="xs:string" />
+          <xs:element name="SalaryMethod" type="xs:string" />
+          <xs:element name="OccupationType" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TCheckBureauReply">
+        <xs:sequence xmlns="http://www.w3.org/2001/XMLSchema">
+          <xs:element name="ReplyData" type="ns1:TReplyData" />
+          <xs:element name="BureauRecords" type="ns1:TBureauRecordsArray" />
+          <xs:element name="CustomerDeclaredExpenses" type="xs:unsignedInt" />
+          <xs:element name="CustomerDeclaredIncome" type="xs:unsignedInt" />
+          <xs:element name="ExpenseNormsAdj" type="xs:unsignedInt" />
+          <xs:element name="BureauExpenses" type="xs:unsignedInt" />
+          <xs:element name="Affordability" type="xs:int" />
+          <xs:element name="CodixResult" type="xs:string" />
+          <xs:element name="CodixNrMonths" type="xs:unsignedInt" />
+          <xs:element name="BureauPDFReport" type="xs:base64Binary" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TBureauRecordsArray">
+        <xs:complexContent mixed="false">
+          <xs:restriction base="soapenc:Array">
+            <xs:sequence xmlns="http://www.w3.org/2001/XMLSchema" />
+            <xs:attribute xmlns:n1="http://schemas.xmlsoap.org/wsdl/" n1:arrayType="ns1:TBureauRecord[]" ref="soapenc:arrayType" />
+          </xs:restriction>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="TBureauRecord">
+        <xs:sequence xmlns="http://www.w3.org/2001/XMLSchema">
+          <xs:element name="IDNumber" type="xs:string" />
+          <xs:element name="SubscriberName" type="xs:string" />
+          <xs:element name="AccountNumber" type="xs:string" />
+          <xs:element name="AccountType" type="xs:string" />
+          <xs:element name="OpenDate" type="xs:string" />
+          <xs:element name="OpenBalance" type="xs:int" />
+          <xs:element name="CurrentBalance" type="xs:int" />
+          <xs:element name="OverdueAmount" type="xs:int" />
+          <xs:element name="InstallmentAmount" type="xs:int" />
+          <xs:element name="StatusCodeDescription" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TOTPReply">
+        <xs:sequence xmlns="http://www.w3.org/2001/XMLSchema">
+          <xs:element name="ReplyData" type="ns1:TReplyData" />
+          <xs:element name="OTPValue" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TSoftwareUpdateReply">
+        <xs:sequence xmlns="http://www.w3.org/2001/XMLSchema">
+          <xs:element name="ReplyCode" type="xs:int" />
+          <xs:element name="ReplyMessage" type="xs:string" />
+          <xs:element name="UpdateExe" type="xs:base64Binary" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </types>
+  <message name="ValidateSession0Request">
+    <part name="SessionData" type="ns1:TSessionData" />
+  </message>
+  <message name="ValidateSession0Response">
+    <part name="return" type="ns1:TReplyData" />
+  </message>
+  <message name="ConnectionCheck1Request">
+    <part name="SoftwareVersionInt" type="xs:unsignedInt" />
+    <part name="BankInfoVersion" type="xs:unsignedInt" />
+    <part name="Origin" type="xs:unsignedInt" />
+  </message>
+  <message name="ConnectionCheck1Response">
+    <part name="return" type="ns1:TConnectionCheckReply" />
+  </message>
+  <message name="OperatorLogon2Request">
+    <part name="OperatorID" type="xs:string" />
+    <part name="UserName" type="xs:string" />
+    <part name="Password" type="xs:string" />
+    <part name="SoftwareVersionInt" type="xs:unsignedInt" />
+    <part name="Origin" type="xs:unsignedInt" />
+  </message>
+  <message name="OperatorLogon2Response">
+    <part name="return" type="ns1:TLogonReply" />
+  </message>
+  <message name="TestFunc3Request">
+    <part name="i" type="xs:int" />
+  </message>
+  <message name="TestFunc3Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="InsUpdClientDetails4Request">
+    <part name="SessionData" type="ns1:TSessionData" />
+    <part name="ClientData" type="ns1:TClientData" />
+  </message>
+  <message name="InsUpdClientDetails4Response">
+    <part name="return" type="ns1:TInsUpdReply" />
+  </message>
+  <message name="InsUpdEmployerDetails5Request">
+    <part name="SessionData" type="ns1:TSessionData" />
+    <part name="InsUpdType" type="ns1:TInsertUpdateType" />
+    <part name="EmployerData" type="ns1:TEmployerData" />
+  </message>
+  <message name="InsUpdEmployerDetails5Response">
+    <part name="return" type="ns1:TInsUpdReply" />
+  </message>
+  <message name="InsUpdBankingDetails6Request">
+    <part name="SessionData" type="ns1:TSessionData" />
+    <part name="InsUpdType" type="ns1:TInsertUpdateType" />
+    <part name="BankingData" type="ns1:TBankingData" />
+  </message>
+  <message name="InsUpdBankingDetails6Response">
+    <part name="return" type="ns1:TInsUpdReply" />
+  </message>
+  <message name="ClientEnquiry7Request">
+    <part name="SessionData" type="ns1:TSessionData" />
+    <part name="IDNumber" type="xs:string" />
+    <part name="InquiryOnly" type="xs:boolean" />
+  </message>
+  <message name="ClientEnquiry7Response">
+    <part name="return" type="ns1:TClientEnquiryReply" />
+  </message>
+  <message name="CheckAffordability8Request">
+    <part name="SessionData" type="ns1:TSessionData" />
+    <part name="AffordabilityInfo" type="ns1:TAffordabilityInfo" />
+  </message>
+  <message name="CheckAffordability8Response">
+    <part name="return" type="ns1:TAffordabilityReply" />
+  </message>
+  <message name="LoanPreAuth9Request">
+    <part name="SessionData" type="ns1:TSessionData" />
+    <part name="ID" type="xs:string" />
+    <part name="FirstName" type="xs:string" />
+    <part name="LastName" type="xs:string" />
+    <part name="Amount" type="xs:int" />
+    <part name="CountryOfBirth" type="xs:int" />
+    <part name="EmployType" type="xs:int" />
+  </message>
+  <message name="LoanPreAuth9Response">
+    <part name="return" type="ns1:TReplyData" />
+  </message>
+  <message name="AdjustOffer10Request">
+    <part name="SessionData" type="ns1:TSessionData" />
+    <part name="OperatorID" type="xs:string" />
+    <part name="ClientCode" type="xs:unsignedInt" />
+    <part name="OfferID" type="xs:unsignedInt" />
+    <part name="NewAmount" type="xs:unsignedInt" />
+  </message>
+  <message name="AdjustOffer10Response">
+    <part name="return" type="ns1:TAdjustOfferReply" />
+  </message>
+  <message name="LoanCompletion11Request">
+    <part name="SessionData" type="ns1:TSessionData" />
+    <part name="OperatorID" type="xs:string" />
+    <part name="ClientCode" type="xs:unsignedInt" />
+    <part name="ClientUSN" type="xs:unsignedInt" />
+    <part name="OfferID" type="xs:unsignedInt" />
+    <part name="CompletionCode" type="xs:unsignedInt" />
+    <part name="ApplicationNumber" type="xs:unsignedInt" />
+    <part name="NuPayTerminalID" type="xs:string" />
+    <part name="NuPayMerchantID" type="xs:string" />
+    <part name="NuPayTransactionID" type="xs:string" />
+    <part name="NuPayApprovalCode" type="xs:string" />
+    <part name="NuPayPAN" type="xs:string" />
+    <part name="NuPayResponse" type="xs:string" />
+    <part name="NuPayAccountNumber" type="xs:string" />
+    <part name="NuPayAccountType" type="xs:string" />
+    <part name="NuPayTracking" type="xs:string" />
+    <part name="NuPayAdjRule" type="xs:string" />
+  </message>
+  <message name="LoanCompletion11Response">
+    <part name="return" type="ns1:TReplyData" />
+  </message>
+  <message name="LoanApplicationCompletion12Request">
+    <part name="SessionData" type="ns1:TSessionData" />
+    <part name="OperatorID" type="xs:string" />
+    <part name="ClientCode" type="xs:unsignedInt" />
+    <part name="ClientUSN" type="xs:unsignedInt" />
+    <part name="OfferID" type="xs:unsignedInt" />
+    <part name="CompletionCode" type="xs:unsignedInt" />
+    <part name="ApplicationNumber" type="xs:unsignedInt" />
+    <part name="NuPayTerminalID" type="xs:string" />
+    <part name="NuPayMerchantID" type="xs:string" />
+    <part name="NuPayTransactionID" type="xs:string" />
+    <part name="NuPayApprovalCode" type="xs:string" />
+    <part name="NuPayPAN" type="xs:string" />
+    <part name="NuPayResponse" type="xs:string" />
+    <part name="NuPayAccountNumber" type="xs:string" />
+    <part name="NuPayAccountType" type="xs:string" />
+    <part name="NuPayTracking" type="xs:string" />
+    <part name="NuPayAdjRule" type="xs:string" />
+  </message>
+  <message name="LoanApplicationCompletion12Response">
+    <part name="return" type="ns1:TReplyData" />
+  </message>
+  <message name="InsDocuments13Request">
+    <part name="SessionData" type="ns1:TSessionData" />
+    <part name="ClientCode" type="xs:unsignedInt" />
+    <part name="ClientIDNumber" type="xs:string" />
+    <part name="ApplicationNumber" type="xs:unsignedInt" />
+    <part name="Documents" type="ns1:TDocumentsArray" />
+  </message>
+  <message name="InsDocuments13Response">
+    <part name="return" type="ns1:TReplyData" />
+  </message>
+  <message name="InsDocument14Request">
+    <part name="SessionData" type="ns1:TSessionData" />
+    <part name="ClientCode" type="xs:unsignedInt" />
+    <part name="ClientIDNumber" type="xs:string" />
+    <part name="ApplicationNumber" type="xs:unsignedInt" />
+    <part name="Document" type="ns1:TDocument" />
+  </message>
+  <message name="InsDocument14Response">
+    <part name="return" type="ns1:TReplyData" />
+  </message>
+  <message name="AddDocument15Request">
+    <part name="SessionData" type="ns1:TSessionData" />
+    <part name="ClientCode" type="xs:unsignedInt" />
+    <part name="ClientIDNumber" type="xs:string" />
+    <part name="ApplicationNumber" type="xs:unsignedInt" />
+    <part name="Document" type="ns1:TDocument" />
+  </message>
+  <message name="AddDocument15Response">
+    <part name="return" type="ns1:TReplyData" />
+  </message>
+  <message name="GetLoanReceipt16Request">
+    <part name="SessionData" type="ns1:TSessionData" />
+    <part name="ClientCode" type="xs:unsignedInt" />
+    <part name="ApplicationNumber" type="xs:unsignedInt" />
+  </message>
+  <message name="GetLoanReceipt16Response">
+    <part name="return" type="ns1:TReceiptReply" />
+  </message>
+  <message name="InsUpdExpenseDeclarationInfo17Request">
+    <part name="SessionData" type="ns1:TSessionData" />
+    <part name="ClientCode" type="xs:unsignedInt" />
+    <part name="ApplicationNumber" type="xs:unsignedInt" />
+    <part name="ExpenseDefinitions" type="ns1:TExpenseDefinitionsArray" />
+  </message>
+  <message name="InsUpdExpenseDeclarationInfo17Response">
+    <part name="return" type="ns1:TReplyData" />
+  </message>
+  <message name="GetOperatorEODReceipt18Request">
+    <part name="SessionData" type="ns1:TSessionData" />
+    <part name="OperatorID" type="xs:string" />
+    <part name="Date" type="xs:unsignedInt" />
+  </message>
+  <message name="GetOperatorEODReceipt18Response">
+    <part name="return" type="ns1:TReceiptReply" />
+  </message>
+  <message name="GetLoanStatementReceipt19Request">
+    <part name="SessionData" type="ns1:TSessionData" />
+    <part name="ClientID" type="xs:string" />
+    <part name="ContractNumber" type="xs:unsignedInt" />
+  </message>
+  <message name="GetLoanStatementReceipt19Response">
+    <part name="return" type="ns1:TReceiptReply" />
+  </message>
+  <message name="CashControlAdd20Request">
+    <part name="SessionData" type="ns1:TSessionData" />
+    <part name="OperatorID" type="xs:string" />
+    <part name="Direction" type="xs:int" />
+    <part name="Amount" type="xs:int" />
+    <part name="Reason" type="xs:int" />
+    <part name="Description" type="xs:string" />
+  </message>
+  <message name="CashControlAdd20Response">
+    <part name="return" type="ns1:TRecordInsUpdReply" />
+  </message>
+  <message name="CashControlDelete21Request">
+    <part name="SessionData" type="ns1:TSessionData" />
+    <part name="OperatorID" type="xs:string" />
+    <part name="RecordNumber" type="xs:int" />
+  </message>
+  <message name="CashControlDelete21Response">
+    <part name="return" type="ns1:TReplyData" />
+  </message>
+  <message name="CashControlGetRecords22Request">
+    <part name="SessionData" type="ns1:TSessionData" />
+    <part name="OperatorID" type="xs:string" />
+    <part name="Date" type="xs:unsignedInt" />
+  </message>
+  <message name="CashControlGetRecords22Response">
+    <part name="return" type="ns1:TCashInOutRecordsReply" />
+  </message>
+  <message name="CashControlEOD23Request">
+    <part name="SessionData" type="ns1:TSessionData" />
+    <part name="OperatorID" type="xs:string" />
+    <part name="Amount" type="xs:int" />
+  </message>
+  <message name="CashControlEOD23Response">
+    <part name="return" type="ns1:TReplyData" />
+  </message>
+  <message name="CalculateRiskMatrix24Request">
+    <part name="SessionData" type="ns1:TSessionData" />
+    <part name="ClientID" type="xs:string" />
+    <part name="Amount" type="xs:int" />
+    <part name="CountryOfBirth" type="xs:int" />
+    <part name="EmployType" type="xs:int" />
+    <part name="MobileNumber" type="xs:string" />
+  </message>
+  <message name="CalculateRiskMatrix24Response">
+    <part name="return" type="ns1:TRiskReply" />
+  </message>
+  <message name="InsUpdClientActivation25Request">
+    <part name="SessionData" type="ns1:TSessionData" />
+    <part name="ClientCode" type="xs:unsignedInt" />
+    <part name="Password" type="xs:string" />
+    <part name="ActivationGUID" type="xs:string" />
+  </message>
+  <message name="InsUpdClientActivation25Response">
+    <part name="return" type="ns1:TReplyData" />
+  </message>
+  <message name="ValidateActivationLink26Request">
+    <part name="SessionData" type="ns1:TSessionData" />
+    <part name="ClientCode" type="xs:unsignedInt" />
+    <part name="ActivationGUID" type="xs:string" />
+  </message>
+  <message name="ValidateActivationLink26Response">
+    <part name="return" type="ns1:TClientValidateActivationReply" />
+  </message>
+  <message name="ClientLoginAndSecretUpdate27Request">
+    <part name="SessionData" type="ns1:TSessionData" />
+    <part name="ClientCode" type="xs:unsignedInt" />
+    <part name="G2FASecret" type="xs:string" />
+    <part name="LastLoginAttemptUtc" type="xs:string" />
+  </message>
+  <message name="ClientLoginAndSecretUpdate27Response">
+    <part name="return" type="ns1:TReplyData" />
+  </message>
+  <message name="ClientLogon28Request">
+    <part name="ClientID" type="xs:string" />
+    <part name="Password" type="xs:string" />
+    <part name="Origin" type="xs:unsignedInt" />
+  </message>
+  <message name="ClientLogon28Response">
+    <part name="return" type="ns1:TClientLogonReply" />
+  </message>
+  <message name="GetPendingLoanApplications29Request">
+    <part name="SessionData" type="ns1:TSessionData" />
+  </message>
+  <message name="GetPendingLoanApplications29Response">
+    <part name="return" type="ns1:TPendingLoanApplicationsReply" />
+  </message>
+  <message name="GetLoanApplicationsByStatus30Request">
+    <part name="SessionData" type="ns1:TSessionData" />
+    <part name="Status" type="xs:int" />
+    <part name="Origins" type="ns1:TOriginArray" />
+  </message>
+  <message name="GetLoanApplicationsByStatus30Response">
+    <part name="return" type="ns1:TLoanApplicationsByStatusReply" />
+  </message>
+  <message name="GetLoanApplicationsByID31Request">
+    <part name="SessionData" type="ns1:TSessionData" />
+    <part name="IDNumber" type="xs:string" />
+  </message>
+  <message name="GetLoanApplicationsByID31Response">
+    <part name="return" type="ns1:TLoanApplicationsByIDReply" />
+  </message>
+  <message name="LoanEnquiry32Request">
+    <part name="SessionData" type="ns1:TSessionData" />
+    <part name="ApplicationNumber" type="xs:unsignedInt" />
+  </message>
+  <message name="LoanEnquiry32Response">
+    <part name="return" type="ns1:TLoanEnquiryReply" />
+  </message>
+  <message name="UpdateAEDOInformation33Request">
+    <part name="SessionData" type="ns1:TSessionData" />
+    <part name="ClientCode" type="xs:unsignedInt" />
+    <part name="ApplicationNumber" type="xs:unsignedInt" />
+    <part name="OldNuPayTransactionID" type="xs:string" />
+    <part name="NuPayMerchantID" type="xs:string" />
+    <part name="NuPayTerminalID" type="xs:string" />
+    <part name="NewNuPayTransactionID" type="xs:string" />
+    <part name="NewNuPayApprovalCode" type="xs:string" />
+  </message>
+  <message name="UpdateAEDOInformation33Response">
+    <part name="return" type="ns1:TReplyData" />
+  </message>
+  <message name="CheckBureau34Request">
+    <part name="SessionData" type="ns1:TSessionData" />
+    <part name="ClientCode" type="xs:unsignedInt" />
+    <part name="ClientType" type="xs:unsignedInt" />
+    <part name="IDNumber" type="xs:string" />
+    <part name="FirstName" type="xs:string" />
+    <part name="LastName" type="xs:string" />
+    <part name="CustomerDeclaredExpenses" type="xs:unsignedInt" />
+    <part name="CustomerDeclaredIncome" type="xs:unsignedInt" />
+  </message>
+  <message name="CheckBureau34Response">
+    <part name="return" type="ns1:TCheckBureauReply" />
+  </message>
+  <message name="LogNuPayRequest35Request">
+    <part name="Merchant_ID" type="xs:string" />
+    <part name="Term_ID" type="xs:string" />
+    <part name="Contract_no" type="xs:string" />
+    <part name="install_amnt" type="xs:string" />
+    <part name="contract_amnt" type="xs:string" />
+    <part name="installments" type="xs:string" />
+    <part name="frequency" type="xs:string" />
+    <part name="start_date" type="xs:string" />
+    <part name="employer" type="xs:string" />
+    <part name="adj_rule" type="xs:string" />
+    <part name="tracking" type="xs:string" />
+    <part name="client_ID" type="xs:string" />
+    <part name="accountNumberIn" type="xs:string" />
+    <part name="aedoGlobalTimeout" type="xs:int" />
+  </message>
+  <message name="LogNuPayRequest35Response">
+    <part name="return" type="ns1:TReplyData" />
+  </message>
+  <message name="ValidateActivationGUID36Request">
+    <part name="SessionData" type="ns1:TSessionData" />
+    <part name="ActivationGUID" type="xs:string" />
+  </message>
+  <message name="ValidateActivationGUID36Response">
+    <part name="return" type="ns1:TReplyData" />
+  </message>
+  <message name="SendOTPSMS37Request">
+    <part name="SessionData" type="ns1:TSessionData" />
+    <part name="MobileNumber" type="xs:string" />
+  </message>
+  <message name="SendOTPSMS37Response">
+    <part name="return" type="ns1:TOTPReply" />
+  </message>
+  <message name="RecordVisit38Request">
+    <part name="Origin" type="xs:unsignedInt" />
+  </message>
+  <message name="RecordVisit38Response">
+    <part name="return" type="ns1:TReplyData" />
+  </message>
+  <message name="UpdateApplicationStatus39Request">
+    <part name="SessionData" type="ns1:TSessionData" />
+    <part name="ApplicationNumber" type="xs:unsignedInt" />
+    <part name="Status" type="xs:unsignedInt" />
+  </message>
+  <message name="UpdateApplicationStatus39Response">
+    <part name="return" type="ns1:TReplyData" />
+  </message>
+  <message name="LoanManualCredit40Request">
+    <part name="SessionData" type="ns1:TSessionData" />
+    <part name="ApplicationNumber" type="xs:unsignedInt" />
+    <part name="AmountInCents" type="xs:unsignedInt" />
+  </message>
+  <message name="LoanManualCredit40Response">
+    <part name="return" type="ns1:TReplyData" />
+  </message>
+  <message name="DownloadUpdate41Request">
+    <part name="CurrentSoftwareVersionInt" type="xs:int" />
+  </message>
+  <message name="DownloadUpdate41Response">
+    <part name="return" type="ns1:TSoftwareUpdateReply" />
+  </message>
+  <portType name="IFINBONDAPI">
+    <operation name="ValidateSession">
+      <input message="tns:ValidateSession0Request" />
+      <output message="tns:ValidateSession0Response" />
+    </operation>
+    <operation name="ConnectionCheck">
+      <input message="tns:ConnectionCheck1Request" />
+      <output message="tns:ConnectionCheck1Response" />
+    </operation>
+    <operation name="OperatorLogon">
+      <input message="tns:OperatorLogon2Request" />
+      <output message="tns:OperatorLogon2Response" />
+    </operation>
+    <operation name="TestFunc">
+      <input message="tns:TestFunc3Request" />
+      <output message="tns:TestFunc3Response" />
+    </operation>
+    <operation name="InsUpdClientDetails">
+      <input message="tns:InsUpdClientDetails4Request" />
+      <output message="tns:InsUpdClientDetails4Response" />
+    </operation>
+    <operation name="InsUpdEmployerDetails">
+      <input message="tns:InsUpdEmployerDetails5Request" />
+      <output message="tns:InsUpdEmployerDetails5Response" />
+    </operation>
+    <operation name="InsUpdBankingDetails">
+      <input message="tns:InsUpdBankingDetails6Request" />
+      <output message="tns:InsUpdBankingDetails6Response" />
+    </operation>
+    <operation name="ClientEnquiry">
+      <input message="tns:ClientEnquiry7Request" />
+      <output message="tns:ClientEnquiry7Response" />
+    </operation>
+    <operation name="CheckAffordability">
+      <input message="tns:CheckAffordability8Request" />
+      <output message="tns:CheckAffordability8Response" />
+    </operation>
+    <operation name="LoanPreAuth">
+      <input message="tns:LoanPreAuth9Request" />
+      <output message="tns:LoanPreAuth9Response" />
+    </operation>
+    <operation name="AdjustOffer">
+      <input message="tns:AdjustOffer10Request" />
+      <output message="tns:AdjustOffer10Response" />
+    </operation>
+    <operation name="LoanCompletion">
+      <input message="tns:LoanCompletion11Request" />
+      <output message="tns:LoanCompletion11Response" />
+    </operation>
+    <operation name="LoanApplicationCompletion">
+      <input message="tns:LoanApplicationCompletion12Request" />
+      <output message="tns:LoanApplicationCompletion12Response" />
+    </operation>
+    <operation name="InsDocuments">
+      <input message="tns:InsDocuments13Request" />
+      <output message="tns:InsDocuments13Response" />
+    </operation>
+    <operation name="InsDocument">
+      <input message="tns:InsDocument14Request" />
+      <output message="tns:InsDocument14Response" />
+    </operation>
+    <operation name="AddDocument">
+      <input message="tns:AddDocument15Request" />
+      <output message="tns:AddDocument15Response" />
+    </operation>
+    <operation name="GetLoanReceipt">
+      <input message="tns:GetLoanReceipt16Request" />
+      <output message="tns:GetLoanReceipt16Response" />
+    </operation>
+    <operation name="InsUpdExpenseDeclarationInfo">
+      <input message="tns:InsUpdExpenseDeclarationInfo17Request" />
+      <output message="tns:InsUpdExpenseDeclarationInfo17Response" />
+    </operation>
+    <operation name="GetOperatorEODReceipt">
+      <input message="tns:GetOperatorEODReceipt18Request" />
+      <output message="tns:GetOperatorEODReceipt18Response" />
+    </operation>
+    <operation name="GetLoanStatementReceipt">
+      <input message="tns:GetLoanStatementReceipt19Request" />
+      <output message="tns:GetLoanStatementReceipt19Response" />
+    </operation>
+    <operation name="CashControlAdd">
+      <input message="tns:CashControlAdd20Request" />
+      <output message="tns:CashControlAdd20Response" />
+    </operation>
+    <operation name="CashControlDelete">
+      <input message="tns:CashControlDelete21Request" />
+      <output message="tns:CashControlDelete21Response" />
+    </operation>
+    <operation name="CashControlGetRecords">
+      <input message="tns:CashControlGetRecords22Request" />
+      <output message="tns:CashControlGetRecords22Response" />
+    </operation>
+    <operation name="CashControlEOD">
+      <input message="tns:CashControlEOD23Request" />
+      <output message="tns:CashControlEOD23Response" />
+    </operation>
+    <operation name="CalculateRiskMatrix">
+      <input message="tns:CalculateRiskMatrix24Request" />
+      <output message="tns:CalculateRiskMatrix24Response" />
+    </operation>
+    <operation name="InsUpdClientActivation">
+      <input message="tns:InsUpdClientActivation25Request" />
+      <output message="tns:InsUpdClientActivation25Response" />
+    </operation>
+    <operation name="ValidateActivationLink">
+      <input message="tns:ValidateActivationLink26Request" />
+      <output message="tns:ValidateActivationLink26Response" />
+    </operation>
+    <operation name="ClientLoginAndSecretUpdate">
+      <input message="tns:ClientLoginAndSecretUpdate27Request" />
+      <output message="tns:ClientLoginAndSecretUpdate27Response" />
+    </operation>
+    <operation name="ClientLogon">
+      <input message="tns:ClientLogon28Request" />
+      <output message="tns:ClientLogon28Response" />
+    </operation>
+    <operation name="GetPendingLoanApplications">
+      <input message="tns:GetPendingLoanApplications29Request" />
+      <output message="tns:GetPendingLoanApplications29Response" />
+    </operation>
+    <operation name="GetLoanApplicationsByStatus">
+      <input message="tns:GetLoanApplicationsByStatus30Request" />
+      <output message="tns:GetLoanApplicationsByStatus30Response" />
+    </operation>
+    <operation name="GetLoanApplicationsByID">
+      <input message="tns:GetLoanApplicationsByID31Request" />
+      <output message="tns:GetLoanApplicationsByID31Response" />
+    </operation>
+    <operation name="LoanEnquiry">
+      <input message="tns:LoanEnquiry32Request" />
+      <output message="tns:LoanEnquiry32Response" />
+    </operation>
+    <operation name="UpdateAEDOInformation">
+      <input message="tns:UpdateAEDOInformation33Request" />
+      <output message="tns:UpdateAEDOInformation33Response" />
+    </operation>
+    <operation name="CheckBureau">
+      <input message="tns:CheckBureau34Request" />
+      <output message="tns:CheckBureau34Response" />
+    </operation>
+    <operation name="LogNuPayRequest">
+      <input message="tns:LogNuPayRequest35Request" />
+      <output message="tns:LogNuPayRequest35Response" />
+    </operation>
+    <operation name="ValidateActivationGUID">
+      <input message="tns:ValidateActivationGUID36Request" />
+      <output message="tns:ValidateActivationGUID36Response" />
+    </operation>
+    <operation name="SendOTPSMS">
+      <input message="tns:SendOTPSMS37Request" />
+      <output message="tns:SendOTPSMS37Response" />
+    </operation>
+    <operation name="RecordVisit">
+      <input message="tns:RecordVisit38Request" />
+      <output message="tns:RecordVisit38Response" />
+    </operation>
+    <operation name="UpdateApplicationStatus">
+      <input message="tns:UpdateApplicationStatus39Request" />
+      <output message="tns:UpdateApplicationStatus39Response" />
+    </operation>
+    <operation name="LoanManualCredit">
+      <input message="tns:LoanManualCredit40Request" />
+      <output message="tns:LoanManualCredit40Response" />
+    </operation>
+    <operation name="DownloadUpdate">
+      <input message="tns:DownloadUpdate41Request" />
+      <output message="tns:DownloadUpdate41Response" />
+    </operation>
+  </portType>
+  <binding name="IFINBONDAPIbinding" type="tns:IFINBONDAPI">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <operation name="ValidateSession">
+      <soap:operation soapAction="urn:WSSOAPIntf-IFINBONDAPI#ValidateSession" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="ConnectionCheck">
+      <soap:operation soapAction="urn:WSSOAPIntf-IFINBONDAPI#ConnectionCheck" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="OperatorLogon">
+      <soap:operation soapAction="urn:WSSOAPIntf-IFINBONDAPI#OperatorLogon" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="TestFunc">
+      <soap:operation soapAction="urn:WSSOAPIntf-IFINBONDAPI#TestFunc" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="InsUpdClientDetails">
+      <soap:operation soapAction="urn:WSSOAPIntf-IFINBONDAPI#InsUpdClientDetails" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="InsUpdEmployerDetails">
+      <soap:operation soapAction="urn:WSSOAPIntf-IFINBONDAPI#InsUpdEmployerDetails" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="InsUpdBankingDetails">
+      <soap:operation soapAction="urn:WSSOAPIntf-IFINBONDAPI#InsUpdBankingDetails" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="ClientEnquiry">
+      <soap:operation soapAction="urn:WSSOAPIntf-IFINBONDAPI#ClientEnquiry" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="CheckAffordability">
+      <soap:operation soapAction="urn:WSSOAPIntf-IFINBONDAPI#CheckAffordability" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="LoanPreAuth">
+      <soap:operation soapAction="urn:WSSOAPIntf-IFINBONDAPI#LoanPreAuth" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="AdjustOffer">
+      <soap:operation soapAction="urn:WSSOAPIntf-IFINBONDAPI#AdjustOffer" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="LoanCompletion">
+      <soap:operation soapAction="urn:WSSOAPIntf-IFINBONDAPI#LoanCompletion" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="LoanApplicationCompletion">
+      <soap:operation soapAction="urn:WSSOAPIntf-IFINBONDAPI#LoanApplicationCompletion" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="InsDocuments">
+      <soap:operation soapAction="urn:WSSOAPIntf-IFINBONDAPI#InsDocuments" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="InsDocument">
+      <soap:operation soapAction="urn:WSSOAPIntf-IFINBONDAPI#InsDocument" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="AddDocument">
+      <soap:operation soapAction="urn:WSSOAPIntf-IFINBONDAPI#AddDocument" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetLoanReceipt">
+      <soap:operation soapAction="urn:WSSOAPIntf-IFINBONDAPI#GetLoanReceipt" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="InsUpdExpenseDeclarationInfo">
+      <soap:operation soapAction="urn:WSSOAPIntf-IFINBONDAPI#InsUpdExpenseDeclarationInfo" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetOperatorEODReceipt">
+      <soap:operation soapAction="urn:WSSOAPIntf-IFINBONDAPI#GetOperatorEODReceipt" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetLoanStatementReceipt">
+      <soap:operation soapAction="urn:WSSOAPIntf-IFINBONDAPI#GetLoanStatementReceipt" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="CashControlAdd">
+      <soap:operation soapAction="urn:WSSOAPIntf-IFINBONDAPI#CashControlAdd" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="CashControlDelete">
+      <soap:operation soapAction="urn:WSSOAPIntf-IFINBONDAPI#CashControlDelete" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="CashControlGetRecords">
+      <soap:operation soapAction="urn:WSSOAPIntf-IFINBONDAPI#CashControlGetRecords" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="CashControlEOD">
+      <soap:operation soapAction="urn:WSSOAPIntf-IFINBONDAPI#CashControlEOD" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="CalculateRiskMatrix">
+      <soap:operation soapAction="urn:WSSOAPIntf-IFINBONDAPI#CalculateRiskMatrix" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="InsUpdClientActivation">
+      <soap:operation soapAction="urn:WSSOAPIntf-IFINBONDAPI#InsUpdClientActivation" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="ValidateActivationLink">
+      <soap:operation soapAction="urn:WSSOAPIntf-IFINBONDAPI#ValidateActivationLink" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="ClientLoginAndSecretUpdate">
+      <soap:operation soapAction="urn:WSSOAPIntf-IFINBONDAPI#ClientLoginAndSecretUpdate" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="ClientLogon">
+      <soap:operation soapAction="urn:WSSOAPIntf-IFINBONDAPI#ClientLogon" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetPendingLoanApplications">
+      <soap:operation soapAction="urn:WSSOAPIntf-IFINBONDAPI#GetPendingLoanApplications" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetLoanApplicationsByStatus">
+      <soap:operation soapAction="urn:WSSOAPIntf-IFINBONDAPI#GetLoanApplicationsByStatus" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetLoanApplicationsByID">
+      <soap:operation soapAction="urn:WSSOAPIntf-IFINBONDAPI#GetLoanApplicationsByID" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="LoanEnquiry">
+      <soap:operation soapAction="urn:WSSOAPIntf-IFINBONDAPI#LoanEnquiry" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="UpdateAEDOInformation">
+      <soap:operation soapAction="urn:WSSOAPIntf-IFINBONDAPI#UpdateAEDOInformation" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="CheckBureau">
+      <soap:operation soapAction="urn:WSSOAPIntf-IFINBONDAPI#CheckBureau" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="LogNuPayRequest">
+      <soap:operation soapAction="urn:WSSOAPIntf-IFINBONDAPI#LogNuPayRequest" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="ValidateActivationGUID">
+      <soap:operation soapAction="urn:WSSOAPIntf-IFINBONDAPI#ValidateActivationGUID" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="SendOTPSMS">
+      <soap:operation soapAction="urn:WSSOAPIntf-IFINBONDAPI#SendOTPSMS" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="RecordVisit">
+      <soap:operation soapAction="urn:WSSOAPIntf-IFINBONDAPI#RecordVisit" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="UpdateApplicationStatus">
+      <soap:operation soapAction="urn:WSSOAPIntf-IFINBONDAPI#UpdateApplicationStatus" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="LoanManualCredit">
+      <soap:operation soapAction="urn:WSSOAPIntf-IFINBONDAPI#LoanManualCredit" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="DownloadUpdate">
+      <soap:operation soapAction="urn:WSSOAPIntf-IFINBONDAPI#DownloadUpdate" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSSOAPIntf-IFINBONDAPI" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+  </binding>
+  <service name="IFINBONDAPIservice">
+    <port name="IFINBONDAPIPort" binding="tns:IFINBONDAPIbinding">
+      <soap:address location="http://10.1.2.22:8070/soap/IFINBONDAPI" />
+    </port>
+  </service>
+</definitions>

@@ -1,0 +1,57 @@
+﻿.clsContactMdiv{
+    background-color:#29303C;color:#fff; padding:20px;
+}
+.clsContactWhitediv{
+    color:#fff; border-radius:10px;padding:20px;
+}
+.clsContactFooHeader{
+    text-align:center;font-size:18px;padding-top:10px; color:#003F7D;
+}
+.clsContactFooFooter{
+    text-align:center;padding-top:15px;font-size:12px;color:#9EA4A9;
+    width:500px;
+    margin:0 auto;
+}
+.clsContactInnerCenterDiv{
+    font-size:12px;width:740px;margin:0 auto;
+    padding-bottom:10px;
+    padding-top:10px;
+}
+.clsContactFooBlock{
+    float:left;padding-right:40px;
+}
+.clsContactBlockTitle{
+    padding-bottom:10px;padding-left:5px;color:#323232;font-weight:bold;
+}
+.clsContactRoundBox{
+    width:240px;border-radius:30px;background-color:#003F7D;padding:12px;
+}
+.clsContactRoundBoxImg{
+    padding-right:10px;float:left;
+}
+.clsContactRoundBoxBorder{
+    border-left:1px solid #fff;float:left;padding-right:10px;height:40px;margin-top:-10px;
+}
+.clsContactRoundText{
+    margin-left:30px;
+
+}
+.clsContactBorderLeft{
+    width:45%;border-top:1px solid #707070;float:left;margin-top:10px;margin-right:10px;
+}
+.clsContactBorderText{
+    text-align:center;font-weight:bold;font-size:18px;
+}
+.clsContactBorderRight{
+    width:45%;border-top:1px solid #707070;float:left;margin-top:10px;
+}
+.clsContactFooText{
+    text-align:center;font-size:12px;color:#CCCCCC;
+}
+.clsContactFooBottomTextbox{
+    float:left;padding-right:20px;
+
+}
+.clsContactCallMeBackButton{
+    width:200px;margin-top:5px;border-radius:30px;
+}

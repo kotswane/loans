@@ -1,0 +1,703 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\laxmi\Documents\Projects\Publish\FinbondLoansWeb</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="ApplicationInsights.config">
+      <publishTime>02/10/2020 10:09:03</publishTime>
+    </File>
+    <File Include="bin/ApplicationInsights.config">
+      <publishTime>02/10/2020 10:09:03</publishTime>
+    </File>
+    <File Include="bin/CaptchaMvc.dll">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="bin/evohtmltopdf.dll">
+      <publishTime>02/10/2020 10:09:04</publishTime>
+    </File>
+    <File Include="bin/Gma.QrCodeNet.Encoding.dll">
+      <publishTime>02/10/2020 10:09:04</publishTime>
+    </File>
+    <File Include="bin/log4net.dll">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.Agent.Intercept.dll">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.DependencyCollector.dll">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.PerfCounterCollector.dll">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.ServerTelemetryChannel.dll">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.Web.dll">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.WindowsServer.dll">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="bin/Microsoft.ApplicationInsights.dll">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>02/10/2020 10:09:04</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="bin/StaffLoans.dll">
+      <publishTime>08/24/2020 14:38:08</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.Deployment.dll">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.dll">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.Razor.dll">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="bin/TwoFactor.dll">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css">
+      <publishTime>02/10/2020 10:09:04</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css">
+      <publishTime>02/10/2020 10:09:04</publishTime>
+    </File>
+    <File Include="Content/Custom/Activation.css">
+      <publishTime>02/10/2020 10:09:03</publishTime>
+    </File>
+    <File Include="Content/Custom/cellc.css">
+      <publishTime>03/24/2020 14:30:50</publishTime>
+    </File>
+    <File Include="Content/Custom/contact.css">
+      <publishTime>02/28/2020 15:07:02</publishTime>
+    </File>
+    <File Include="Content/Custom/contactInput.css">
+      <publishTime>02/28/2020 15:34:33</publishTime>
+    </File>
+    <File Include="Content/Custom/ExpensesSheet.css">
+      <publishTime>02/10/2020 10:09:03</publishTime>
+    </File>
+    <File Include="Content/Custom/ExtraMenuCustomisation.css">
+      <publishTime>02/28/2020 11:23:45</publishTime>
+    </File>
+    <File Include="Content/Custom/faq.css">
+      <publishTime>02/25/2020 09:16:24</publishTime>
+    </File>
+    <File Include="Content/Custom/Home.css">
+      <publishTime>03/13/2020 15:55:09</publishTime>
+    </File>
+    <File Include="Content/Custom/Howitworks.css">
+      <publishTime>02/10/2020 10:09:03</publishTime>
+    </File>
+    <File Include="Content/Custom/Login.css">
+      <publishTime>03/02/2020 09:29:14</publishTime>
+    </File>
+    <File Include="Content/Custom/Master.css">
+      <publishTime>02/28/2020 11:25:56</publishTime>
+    </File>
+    <File Include="Content/Custom/Menus.css">
+      <publishTime>02/10/2020 10:09:03</publishTime>
+    </File>
+    <File Include="Content/Custom/register.css">
+      <publishTime>02/10/2020 10:09:03</publishTime>
+    </File>
+    <File Include="Content/Custom/RegisterInput.css">
+      <publishTime>02/10/2020 10:09:03</publishTime>
+    </File>
+    <File Include="Content/datatables.responsive.css">
+      <publishTime>07/20/2020 17:09:10</publishTime>
+    </File>
+    <File Include="Content/demo_table.css">
+      <publishTime>02/10/2020 10:09:04</publishTime>
+    </File>
+    <File Include="Content/Fonts/Muli.ttf">
+      <publishTime>02/10/2020 10:09:03</publishTime>
+    </File>
+    <File Include="Content/Fonts/MuliRegular.eot">
+      <publishTime>02/10/2020 10:09:03</publishTime>
+    </File>
+    <File Include="Content/Fonts/MuliRegular.woff">
+      <publishTime>02/10/2020 10:09:03</publishTime>
+    </File>
+    <File Include="Content/Fonts/OpenSans-Regular.ttf">
+      <publishTime>02/10/2020 10:09:03</publishTime>
+    </File>
+    <File Include="Content/Footable.css">
+      <publishTime>02/12/2020 10:19:43</publishTime>
+    </File>
+    <File Include="Content/Images/button.png">
+      <publishTime>02/10/2020 10:09:04</publishTime>
+    </File>
+    <File Include="Content/Images/hide_password.png">
+      <publishTime>02/10/2020 10:09:04</publishTime>
+    </File>
+    <File Include="Content/Images/Negative_alert_icon.png">
+      <publishTime>02/10/2020 10:09:04</publishTime>
+    </File>
+    <File Include="Content/Images/page-loader.gif">
+      <publishTime>02/10/2020 10:09:04</publishTime>
+    </File>
+    <File Include="Content/Images/Red_close_icon.png">
+      <publishTime>02/10/2020 10:09:04</publishTime>
+    </File>
+    <File Include="Content/Images/show_password.png">
+      <publishTime>02/10/2020 10:09:04</publishTime>
+    </File>
+    <File Include="Content/Images/Signin.png">
+      <publishTime>02/10/2020 10:09:04</publishTime>
+    </File>
+    <File Include="Content/Images/success_alert_icon.png">
+      <publishTime>02/10/2020 10:09:04</publishTime>
+    </File>
+    <File Include="Content/jquery-ui.min.css">
+      <publishTime>02/10/2020 10:09:04</publishTime>
+    </File>
+    <File Include="Content/loancompletion.css">
+      <publishTime>08/06/2020 10:44:14</publishTime>
+    </File>
+    <File Include="Content/LoanOverview.css">
+      <publishTime>02/10/2020 10:09:04</publishTime>
+    </File>
+    <File Include="Content/profile.css">
+      <publishTime>08/06/2020 10:39:48</publishTime>
+    </File>
+    <File Include="Content/responsive.css">
+      <publishTime>08/14/2020 09:56:29</publishTime>
+    </File>
+    <File Include="Content/signature-pad.css">
+      <publishTime>02/10/2020 10:09:04</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>08/05/2020 12:04:50</publishTime>
+    </File>
+    <File Include="Content/thankyou.css">
+      <publishTime>08/06/2020 10:47:19</publishTime>
+    </File>
+    <File Include="debitorder.html">
+      <publishTime>03/10/2020 09:41:22</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>02/10/2020 10:09:04</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>04/14/2020 17:10:16</publishTime>
+    </File>
+    <File Include="scripts/Activation.js">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="scripts/ai.0.22.9-build00167.js">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="scripts/ai.0.22.9-build00167.min.js">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="scripts/alerts.js">
+      <publishTime>08/05/2020 17:07:02</publishTime>
+    </File>
+    <File Include="scripts/app.js">
+      <publishTime>08/13/2020 15:37:19</publishTime>
+    </File>
+    <File Include="scripts/bootstrap.js">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="scripts/bootstrap.min.js">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="scripts/callmeback.js">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="scripts/checkEligibility.js">
+      <publishTime>08/05/2020 12:53:42</publishTime>
+    </File>
+    <File Include="scripts/Common.js">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="scripts/ContractScripting.js">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="scripts/datatables.responsive.js">
+      <publishTime>07/15/2020 15:53:16</publishTime>
+    </File>
+    <File Include="scripts/Footable.js">
+      <publishTime>08/20/2020 11:00:40</publishTime>
+    </File>
+    <File Include="scripts/ForgotPassword.js">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="scripts/jquery-1.10.2.js">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="scripts/jquery-1.10.2.min.js">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="scripts/jquery-1.10.2.min.map">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="scripts/jquery-1.12.4.js">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="scripts/jquery-3.4.1.js">
+      <publishTime>04/14/2020 17:10:16</publishTime>
+    </File>
+    <File Include="scripts/jquery-3.4.1.min.js">
+      <publishTime>04/14/2020 17:10:16</publishTime>
+    </File>
+    <File Include="scripts/jquery-3.4.1.min.map">
+      <publishTime>04/14/2020 17:10:16</publishTime>
+    </File>
+    <File Include="scripts/jquery-3.4.1.slim.js">
+      <publishTime>04/14/2020 17:10:16</publishTime>
+    </File>
+    <File Include="scripts/jquery-3.4.1.slim.min.js">
+      <publishTime>04/14/2020 17:10:16</publishTime>
+    </File>
+    <File Include="scripts/jquery-3.4.1.slim.min.map">
+      <publishTime>04/14/2020 17:10:16</publishTime>
+    </File>
+    <File Include="scripts/jquery-migrate-1.2.1.js">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="scripts/jquery-ui.js">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="scripts/jquery-ui.min.js">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="scripts/jquery.min.js">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="scripts/jquery.password-strength.js">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="scripts/jquery.unobtrusive-ajax.js">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="scripts/jquery.validate.js">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="scripts/jquery.validate.unobtrusive.js">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="scripts/Loader.js">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="scripts/loggedinMaster.js">
+      <publishTime>08/06/2020 10:36:20</publishTime>
+    </File>
+    <File Include="scripts/login.js">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="scripts/Master.js">
+      <publishTime>04/29/2020 09:09:24</publishTime>
+    </File>
+    <File Include="scripts/modernizr-2.6.2.js">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="scripts/MyAccount.js">
+      <publishTime>08/03/2020 16:52:49</publishTime>
+    </File>
+    <File Include="scripts/PasswordMode.js">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="scripts/PasswordReset.js">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="scripts/Profile.js">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="scripts/Register.js">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="scripts/signature.js">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="scripts/signature_pad.min.js">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="scripts/signature_pad.umd.js">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="scripts/Statement.js">
+      <publishTime>08/05/2020 17:52:58</publishTime>
+    </File>
+    <File Include="scripts/ThankYou.js">
+      <publishTime>02/10/2020 10:09:05</publishTime>
+    </File>
+    <File Include="Service References/FinService/StaffLoans.FinService.AccountSummary.datasource">
+      <publishTime>02/12/2020 08:27:17</publishTime>
+    </File>
+    <File Include="Service References/FinService/StaffLoans.FinService.Historicaltransactions.datasource">
+      <publishTime>02/12/2020 08:27:17</publishTime>
+    </File>
+    <File Include="Service References/FinService/StaffLoans.FinService.LoadBlacklistIntoTempResponse.datasource">
+      <publishTime>02/12/2020 08:27:17</publishTime>
+    </File>
+    <File Include="Service References/FinService/StaffLoans.FinService.MSISDNDetails.datasource">
+      <publishTime>02/12/2020 08:27:17</publishTime>
+    </File>
+    <File Include="Service References/FinService/StaffLoans.FinService.RegistrationRowList.datasource">
+      <publishTime>02/12/2020 08:27:17</publishTime>
+    </File>
+    <File Include="Service References/FinService/StaffLoans.FinService.Transactions.datasource">
+      <publishTime>02/12/2020 08:27:17</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.AddDocumentResponse.datasource">
+      <publishTime>07/10/2020 14:50:54</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.AdjustOfferResponse.datasource">
+      <publishTime>07/10/2020 14:50:54</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.CalculateRiskMatrixResponse.datasource">
+      <publishTime>07/10/2020 14:50:54</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.CashControlAddResponse.datasource">
+      <publishTime>07/10/2020 14:50:54</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.CashControlDeleteResponse.datasource">
+      <publishTime>07/10/2020 14:50:54</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.CashControlEODResponse.datasource">
+      <publishTime>07/10/2020 14:50:54</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.CashControlGetRecordsResponse.datasource">
+      <publishTime>07/10/2020 14:50:54</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.CheckAffordabilityResponse.datasource">
+      <publishTime>07/10/2020 14:50:54</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.CheckAffordabilityStandaloneResponse.datasource">
+      <publishTime>02/24/2020 10:34:58</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.CheckBureauResponse.datasource">
+      <publishTime>07/10/2020 14:50:54</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.ClientEnquiryResponse.datasource">
+      <publishTime>07/10/2020 14:50:54</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.ClientLoginAndSecretUpdateResponse.datasource">
+      <publishTime>07/10/2020 14:50:54</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.ClientLogonResponse.datasource">
+      <publishTime>07/10/2020 14:50:54</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.ConnectionCheckResponse.datasource">
+      <publishTime>07/10/2020 14:50:53</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.DownloadUpdateResponse.datasource">
+      <publishTime>07/10/2020 14:50:55</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.GetLoanApplicationsByIDResponse.datasource">
+      <publishTime>07/10/2020 14:50:54</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.GetLoanApplicationsByStatusResponse.datasource">
+      <publishTime>07/10/2020 14:50:54</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.GetLoanReceiptResponse.datasource">
+      <publishTime>07/10/2020 14:50:54</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.GetLoanStatementReceiptResponse.datasource">
+      <publishTime>07/10/2020 14:50:54</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.GetOperatorEODReceiptResponse.datasource">
+      <publishTime>07/10/2020 14:50:54</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.GetPendingLoanApplicationsResponse.datasource">
+      <publishTime>07/10/2020 14:50:54</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.InsDocumentResponse.datasource">
+      <publishTime>07/10/2020 14:50:54</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.InsDocumentsResponse.datasource">
+      <publishTime>07/10/2020 14:50:54</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.InsUpdBankingDetailsResponse.datasource">
+      <publishTime>07/10/2020 14:50:54</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.InsUpdClientActivationResponse.datasource">
+      <publishTime>07/10/2020 14:50:54</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.InsUpdClientDetailsResponse.datasource">
+      <publishTime>07/10/2020 14:50:54</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.InsUpdEmployerDetailsResponse.datasource">
+      <publishTime>07/10/2020 14:50:54</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.InsUpdExpenseDeclarationInfoResponse.datasource">
+      <publishTime>07/10/2020 14:50:54</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.LeadReferralInfoResponse.datasource">
+      <publishTime>02/24/2020 10:34:58</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.LoanApplicationCompletionResponse.datasource">
+      <publishTime>07/10/2020 14:50:54</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.LoanCompletionResponse.datasource">
+      <publishTime>07/10/2020 14:50:54</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.LoanEnquiryResponse.datasource">
+      <publishTime>07/10/2020 14:50:54</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.LoanManualCreditResponse.datasource">
+      <publishTime>07/10/2020 14:50:55</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.LoanPreAuthResponse.datasource">
+      <publishTime>07/10/2020 14:50:54</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.LogNuPayRequestResponse.datasource">
+      <publishTime>07/10/2020 14:50:54</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.OperatorLogonResponse.datasource">
+      <publishTime>07/10/2020 14:50:53</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.RecordVisitResponse.datasource">
+      <publishTime>07/10/2020 14:50:55</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.SendOTPSMSResponse.datasource">
+      <publishTime>07/10/2020 14:50:54</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.TAdjustOfferReply.datasource">
+      <publishTime>07/10/2020 14:50:53</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.TAffordabilityReply.datasource">
+      <publishTime>07/10/2020 14:50:53</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.TCashInOutRecordsReply.datasource">
+      <publishTime>07/10/2020 14:50:53</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.TCheckBureauReply.datasource">
+      <publishTime>07/10/2020 14:50:53</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.TClientEnquiryReply.datasource">
+      <publishTime>07/10/2020 14:50:53</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.TClientLogonReply.datasource">
+      <publishTime>07/10/2020 14:50:53</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.TClientValidateActivationReply.datasource">
+      <publishTime>07/10/2020 14:50:53</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.TConnectionCheckReply.datasource">
+      <publishTime>07/10/2020 14:50:53</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.TestFuncResponse.datasource">
+      <publishTime>07/10/2020 14:50:54</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.TInsUpdReply.datasource">
+      <publishTime>07/10/2020 14:50:53</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.TLeadReferralInfoReply.datasource">
+      <publishTime>02/24/2020 10:34:57</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.TLoanApplicationsByIDReply.datasource">
+      <publishTime>07/10/2020 14:50:53</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.TLoanApplicationsByStatusReply.datasource">
+      <publishTime>07/10/2020 14:50:53</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.TLoanEnquiryReply.datasource">
+      <publishTime>07/10/2020 14:50:53</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.TLogonReply.datasource">
+      <publishTime>07/10/2020 14:50:53</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.TOTPReply.datasource">
+      <publishTime>07/10/2020 14:50:53</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.TPendingLoanApplicationsReply.datasource">
+      <publishTime>07/10/2020 14:50:53</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.TReceiptReply.datasource">
+      <publishTime>07/10/2020 14:50:53</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.TRecordInsUpdReply.datasource">
+      <publishTime>07/10/2020 14:50:53</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.TReplyData.datasource">
+      <publishTime>07/10/2020 14:50:53</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.TRiskReply.datasource">
+      <publishTime>07/10/2020 14:50:53</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.TSoftwareUpdateReply.datasource">
+      <publishTime>07/10/2020 14:50:53</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.UpdateAEDOInformationResponse.datasource">
+      <publishTime>07/10/2020 14:50:54</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.UpdateApplicationStatusResponse.datasource">
+      <publishTime>07/10/2020 14:50:55</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.ValidateActivationGUIDResponse.datasource">
+      <publishTime>07/10/2020 14:50:54</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.ValidateActivationLinkResponse.datasource">
+      <publishTime>07/10/2020 14:50:54</publishTime>
+    </File>
+    <File Include="Service References/LoanAPI/StaffLoans.LoanAPI.ValidateSessionResponse.datasource">
+      <publishTime>07/10/2020 14:50:53</publishTime>
+    </File>
+    <File Include="test.html">
+      <publishTime>02/12/2020 16:59:28</publishTime>
+    </File>
+    <File Include="test2.html">
+      <publishTime>02/12/2020 16:55:31</publishTime>
+    </File>
+    <File Include="Views/Activation/Index.cshtml">
+      <publishTime>02/10/2020 10:09:04</publishTime>
+    </File>
+    <File Include="Views/Activation/OTPCheck.cshtml">
+      <publishTime>04/15/2020 14:43:54</publishTime>
+    </File>
+    <File Include="Views/CheckEligibility/affordability.cshtml">
+      <publishTime>08/05/2020 14:12:34</publishTime>
+    </File>
+    <File Include="Views/CheckEligibility/Index.cshtml">
+      <publishTime>07/02/2020 21:22:34</publishTime>
+    </File>
+    <File Include="Views/ContactUs/Index.cshtml">
+      <publishTime>02/28/2020 15:44:38</publishTime>
+    </File>
+    <File Include="Views/CustomErrors/Index.cshtml">
+      <publishTime>04/14/2020 12:07:35</publishTime>
+    </File>
+    <File Include="Views/FAQ/Index.cshtml">
+      <publishTime>05/21/2020 17:31:45</publishTime>
+    </File>
+    <File Include="Views/ForgotPassword/Index.cshtml">
+      <publishTime>08/06/2020 15:37:06</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>05/11/2020 17:01:44</publishTime>
+    </File>
+    <File Include="Views/HowItWorks/Index.cshtml">
+      <publishTime>03/09/2020 15:31:32</publishTime>
+    </File>
+    <File Include="Views/LoanCompletion/Index.cshtml">
+      <publishTime>08/06/2020 10:45:26</publishTime>
+    </File>
+    <File Include="Views/LoanOverview/Index.cshtml">
+      <publishTime>02/10/2020 10:09:04</publishTime>
+    </File>
+    <File Include="Views/Login/Index.cshtml">
+      <publishTime>08/05/2020 10:16:22</publishTime>
+    </File>
+    <File Include="Views/Mobireg/Index.cshtml">
+      <publishTime>04/17/2020 11:12:50</publishTime>
+    </File>
+    <File Include="Views/MobiThankYou/Index.cshtml">
+      <publishTime>04/17/2020 14:12:23</publishTime>
+    </File>
+    <File Include="Views/MyAccount/Index.cshtml">
+      <publishTime>08/05/2020 12:23:58</publishTime>
+    </File>
+    <File Include="Views/PasswordReset/Index.cshtml">
+      <publishTime>02/10/2020 10:09:04</publishTime>
+    </File>
+    <File Include="Views/Profile/Index.cshtml">
+      <publishTime>08/13/2020 16:17:51</publishTime>
+    </File>
+    <File Include="Views/Register/Index.cshtml">
+      <publishTime>08/13/2020 15:32:35</publishTime>
+    </File>
+    <File Include="Views/Shared/TestLayout.cshtml">
+      <publishTime>02/10/2020 10:09:04</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>08/06/2020 12:22:45</publishTime>
+    </File>
+    <File Include="Views/Shared/_LoggedinLayout.cshtml">
+      <publishTime>08/06/2020 14:36:25</publishTime>
+    </File>
+    <File Include="Views/Statements/Index.cshtml">
+      <publishTime>08/05/2020 17:59:53</publishTime>
+    </File>
+    <File Include="Views/Test/Index.cshtml">
+      <publishTime>02/11/2020 10:44:59</publishTime>
+    </File>
+    <File Include="Views/ThankYou/Index.cshtml">
+      <publishTime>08/06/2020 09:52:14</publishTime>
+    </File>
+    <File Include="Views/ThankYou/UpdatedDetails.cshtml">
+      <publishTime>07/09/2020 18:24:41</publishTime>
+    </File>
+    <File Include="Views/UpdateDetailsVerification/Index.cshtml">
+      <publishTime>02/17/2020 11:45:12</publishTime>
+    </File>
+    <File Include="Views/UpdateDetailsVerification/OTPCheck.cshtml">
+      <publishTime>02/17/2020 11:45:12</publishTime>
+    </File>
+    <File Include="Views/web.config">
+      <publishTime>02/10/2020 10:09:04</publishTime>
+    </File>
+    <File Include="Views/Welcome/Index.cshtml">
+      <publishTime>08/06/2020 12:04:04</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>02/10/2020 10:09:04</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>08/24/2020 14:38:08</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,111 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="~/Content/bootstrap.min.css">
+<link href="~/Content/Custom/Menus.css" rel="stylesheet" />
+
+<link href="~/Content/Custom/Howitworks.css" rel="stylesheet" />
+<link href="~/Content/Custom/contact.css" rel="stylesheet" />
+<link href="~/Content/Custom/contactInput.css" rel="stylesheet" />
+<div class="clsPageBannerHeader">
+    <div class="clsCenterBlock clsPageBannerHeaderPad" >
+        <div class="clsPageBannerHeaderTitle">HOW IT WORKS</div>
+        <div class="clsPageBannerHeaderSubTitle">Follow these easy steps to get started on getting you the extra cash you need.</div>
+        </div>
+    </div>
+<div class="clsCenterBlock">
+    <div class="clsCenterBlockPad">
+        <br />
+        <div style="background-color:#fff;border-radius:10px;">
+            <div class="clsHowItOwrksPAdBox">
+                @*<div class="clsHowItWorksTitle"><b>HOW IT WORKS</b></div>
+                <div class="clsHowItWorksSubTitle">Follow these easy steps to get started on getting you the extra cash you need.</div>
+                <br />
+                <br />*@
+                <div class="clsHowItOwkrsCenterDiv">
+                    <div class="clsHowItWorksBlock">
+                        <img src="~/Content/Images/Step1.png" alt="" class="imgLeft" />
+                        <div class="clsFirstBlockMargin">
+                            <div class="clsBlockTitles"><a href="~\register\index"  style="color:#003F7D;" >STEP 1: REGISTER:</a></div>
+                            <div class="clsBlockSubTitles">Create your online profile and complete your personal information.</div>
+                        </div>
+                        <div style="clear:both"></div>
+                    </div>
+                    <div class="clsHowItWorksBlock">
+                        <img src="~/Content/Images/Step2.png" alt="" class="imgLeft" />
+                        <div class="clsFirstBlockMargin">
+                            <div class="clsBlockTitles">STEP 2: APPLY</div>
+                            <div class="clsBlockSubTitles">Select your loan amount and submit your financial details.</div>
+                        </div>
+                        <div style="clear:both"></div>
+                    </div>
+                    <div class="clsHowItWorksBlock">
+                        <img src="~/Content/Images/Step3.png" alt="" class="imgLeft" />
+                        <div class="clsFirstBlockMargin">
+                            <div class="clsBlockTitles">STEP 3: ASSESSMENT</div>
+                            <div class="clsBlockSubTitles">Your application will be evaluated and loan options sent to you.</div>
+                        </div>
+                        <div style="clear:both"></div>
+                    </div>
+
+                    <div class="clsHowItWorksBlock">
+                        <img src="~/Content/Images/Step4.png" alt="" class="imgLeft" />
+                        <div class="clsFirstBlockMargin">
+                            <div class="clsBlockTitles">STEP 4: CONTRACT AGREEMENT</div>
+                            <div class="clsBlockSubTitles">Pick the loan option that suits you and sign the loan agreement.</div>
+                        </div>
+                        <div style="clear:both"></div>
+                    </div>
+
+                    <div class="clsHowItWorksBlock">
+                        <img src="~/Content/Images/Step5.png" alt="" class="imgLeft" />
+                        <div class="clsFirstBlockMargin">
+                            <div class="clsBlockTitles">STEP 5: CASH IN YOUR ACCOUNT</div>
+                            <div class="clsBlockSubTitles">Your loan will be deposited into your account.</div>
+                        </div>
+                        <div style="clear:both"></div>
+                    </div>
+                    <div style="clear:both"></div>
+
+                </div>
+                <div style="clear:both"></div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="clsContactBackground clsContactMdiv">
+    <div class="clsContactInnerCenterDiv">
+        @*<div class="clsContactBorderLeft"></div>*@
+        <div class="clsContactBorderText">CALL ME BACK</div>
+        @*<div class="clsContactBorderRight"></div>*@
+        <div style="clear:both"></div>
+        <br />
+        <div class="clsContactFooText">Leave your details below and one of our consultant will get in touch with you.</div>
+        <br />
+        <div class="clsContactIFeildsBox">
+            <select id="drpContactTitle">
+                <option value="Mr">Mr</option>
+                <option value="Mrs">Mrs</option>
+                <option value="Miss">Miss</option>
+                <option value="Prof">Prof</option>
+                <option value="Dr">Dr</option>
+                <option value="Hon">Hon</option>
+                <option value="Other">Other</option>
+            </select>
+            <div class="clsContactFooBottomTextbox">
+                <input type="text" class="inputBox clstxtWidth" id="txtfooName" placeholder="Your Full Name" />
+            </div>
+            <div class="clsContactFooBottomTextbox">
+                <input type="text" class="inputBox clstxtWidth" id="txtfooMobileNumber" placeholder="Phone Number" />
+            </div>
+            <div class="clsContactButton clsContactCallMeBackButton" onclick="fnSaveCallMeBack()">CALL ME BACK</div>
+            <div style="clear:both"></div>
+            <br />
+            </div>
+        </div>
+
+
+</div>

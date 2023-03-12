@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="~/Content/bootstrap.min.css">
+<link href="~/Content/Custom/Menus.css" rel="stylesheet" />
+<link href="~/Content/Custom/contact.css" rel="stylesheet" />
+<link href="~/Content/Custom/contactInput.css" rel="stylesheet" />
+<script src="~/scripts/callmeback.js"></script>
+
+<div class="clsPageBannerHeader">
+    <div class="clsCenterBlock clsPageBannerHeaderPad">
+        <div class="clsPageBannerHeaderTitle">CONTACT US</div>
+        <div class="clsPageBannerHeaderSubTitle">Welcome to our home.</div>
+    </div>
+</div>
+        <div class="" >
+           
+            <div id="googleMap" style="height:400px;width:100%;"></div>
+            
+            <div class="clsContactBackground clsContactMdiv">
+                <div class="clsContactInnerCenterDiv">
+                    @*<div class="clsContactBorderLeft"></div>*@
+                    <div class="clsContactBorderText">CALL ME BACK</div>
+                    @*<div class="clsContactBorderRight"></div>*@
+                    <div style="clear:both"></div>
+                    <br />
+                    <div class="clsContactFooText">Leave your details below and one of our consultant will get in touch with you.</div>
+                    <br />
+                    <div class="clsContactIFeildsBox">
+                        <select id="drpContactTitle">
+                            <option value="Mr">Mr</option>
+                            <option value="Mrs">Mrs</option>
+                            <option value="Miss">Miss</option>
+                            <option value="Prof">Prof</option>
+                            <option value="Dr">Dr</option>
+                            <option value="Hon">Hon</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <div class="clsContactFooBottomTextbox">
+                            <input type="text" class="inputBox clstxtWidth" id="txtfooName" placeholder="Your Full Name" />
+                        </div>
+                        <div class="clsContactFooBottomTextbox">
+                            <input type="text" class="inputBox clstxtWidth" id="txtfooMobileNumber" placeholder="Phone Number" />
+                        </div>
+                        <div class="clsContactButton clsContactCallMeBackButton" onclick="fnSaveCallMeBack()">CALL ME BACK</div>
+                        <div style="clear:both"></div>
+                        <br />
+                        </div>
+                    </div>
+
+
+            </div>
+
+        </div>
+<script>
+
+        function myMap() {
+            var myCenter = new google.maps.LatLng(-25.808533, 28.256159);
+            var mapProp = { center: myCenter, zoom: 15, scrollwheel: false, draggable: true, mapTypeId: google.maps.MapTypeId.ROADMAP };
+            var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+            var marker = new google.maps.Marker({ position: myCenter });
+            marker.setMap(map);
+        }
+
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCa8bkTY0Cf_z2Nl9WDBKKZzu91XYLBgWo&callback=myMap"></script> 

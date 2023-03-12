@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8d8cb00c-b5a2-455c-af95-445f9284381b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://10.1.13.72/FinService.svc&#xA;&#xA;" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="FinService.wsdl" MetadataType="Wsdl" ID="86338f14-df2f-4851-aeef-8846f7ae40af" SourceId="1" SourceUrl="http://10.1.13.72/FinService.svc?wsdl" />
+    <MetadataFile FileName="FinService.xsd" MetadataType="Schema" ID="498e2113-2326-4936-a1f4-0ea057f53c5d" SourceId="1" SourceUrl="http://10.1.13.72/FinService.svc?xsd=xsd0" />
+    <MetadataFile FileName="FinService1.xsd" MetadataType="Schema" ID="df849b9b-f869-4f2b-a51a-c7efcf4f3d1c" SourceId="1" SourceUrl="http://10.1.13.72/FinService.svc?xsd=xsd1" />
+    <MetadataFile FileName="FinService2.xsd" MetadataType="Schema" ID="661f7de8-2bb9-4c7a-8002-5f281733b3c0" SourceId="1" SourceUrl="http://10.1.13.72/FinService.svc?xsd=xsd2" />
+    <MetadataFile FileName="FinService3.xsd" MetadataType="Schema" ID="8e9fc645-75d4-4b0f-a805-b00947b02c40" SourceId="1" SourceUrl="http://10.1.13.72/FinService.svc?xsd=xsd3" />
+    <MetadataFile FileName="FinService.disco" MetadataType="Disco" ID="9ad05c99-3779-41b4-9e77-80528121ff94" SourceId="1" SourceUrl="http://10.1.13.72/FinService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

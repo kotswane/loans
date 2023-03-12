@@ -1,0 +1,26 @@
+20 Nov 2019 16:12:52 [INFO][13]ErrorLoLogger - ActivationCotnroller=>IndexThe string was not recognized as a valid DateTime. There is an unknown word starting at index 0.    at System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.Convert.ToDateTime(String value)
+   at StaffLoans.Controllers.ActivationController.Index(Boolean generateSecret, String error) in C:\Users\laxmi\Documents\Projects\Projects\FinbondLoans\StaffLoans\Controllers\ActivationController.cs:line 116
+20 Nov 2019 16:29:13 [INFO][39]ErrorLoLogger - RegisterCotnroller =>RegisterStep1The request channel timed out while waiting for a reply after 00:01:00. Increase the timeout value passed to the call to Request or increase the SendTimeout value on the Binding. The time allotted to this operation may have been a portion of a longer timeout. 
+Server stack trace: 
+   at System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at StaffLoans.LoanAPI.IFINBONDAPI.InsUpdClientDetails(InsUpdClientDetailsRequest request)
+   at StaffLoans.LoanAPI.FINBONDAPIClient.StaffLoans.LoanAPI.IFINBONDAPI.InsUpdClientDetails(InsUpdClientDetailsRequest request) in C:\Users\laxmi\Documents\Projects\Projects\FinbondLoans\StaffLoans\Service References\LoanAPI\Reference.cs:line 6169
+   at StaffLoans.LoanAPI.FINBONDAPIClient.InsUpdClientDetails(TSessionData SessionData, TClientData ClientData) in C:\Users\laxmi\Documents\Projects\Projects\FinbondLoans\StaffLoans\Service References\LoanAPI\Reference.cs:line 6176
+   at StaffLoans.Controllers.RegisterController.RegisterStep1(PersonalInformation user, String sendOTP, String saveData) in C:\Users\laxmi\Documents\Projects\Projects\FinbondLoans\StaffLoans\Controllers\RegisterController.cs:line 239
+20 Nov 2019 16:35:15 [INFO][25]ErrorLoLogger - ActivationCotnroller=>IndexThe string was not recognized as a valid DateTime. There is an unknown word starting at index 1.    at System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.Convert.ToDateTime(String value)
+   at StaffLoans.Controllers.ActivationController.Index(Boolean generateSecret, String error) in C:\Users\laxmi\Documents\Projects\Projects\FinbondLoans\StaffLoans\Controllers\ActivationController.cs:line 116
+20 Nov 2019 16:59:10 [INFO][53]ErrorLoLogger - ActivationCotnroller=>IndexInvalid length for a Base-64 char array or string.    at System.Convert.FromBase64_Decode(Char* startInputPtr, Int32 inputLength, Byte* startDestPtr, Int32 destLength)
+   at System.Convert.FromBase64CharPtr(Char* inputPtr, Int32 inputLength)
+   at System.Convert.FromBase64String(String s)
+   at StaffLoans.Models.Common.Decrypt(String cypherString, Boolean useHasing) in C:\Users\laxmi\Documents\Projects\Projects\FinbondLoans\StaffLoans\Models\Common.cs:line 614
+   at StaffLoans.Controllers.ActivationController.Index(Boolean generateSecret, String error) in C:\Users\laxmi\Documents\Projects\Projects\FinbondLoans\StaffLoans\Controllers\ActivationController.cs:line 84

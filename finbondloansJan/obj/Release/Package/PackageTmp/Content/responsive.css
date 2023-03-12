@@ -1,0 +1,3131 @@
+﻿
+/* Smartphones (landscape) ----------- we use this lot for the mobi version*/
+@media only screen 
+and (min-width : 321px) 
+{
+   .clsCenterBlock
+   {
+       width:100% !important;
+   }
+ 
+   .clsContactInnerCenterDiv
+   {
+       width:100% !important;
+   }
+     .clsContactInnerDivWidth{
+       width:250px !important;
+   }
+   .clsHowItOwkrsCenterDiv
+   {
+       width:100% !important;
+   }
+   .clsHowItWorksBlock
+   {
+       width:100% !important;
+   }
+   .clsFirstBlockMargin
+   {
+       width:100% !important;
+        margin-left:0px !important;
+   }
+   .imgLeft
+   {
+       float:none !important;
+   }
+
+   .clsWhatuWillneedBlock
+    {
+        height:auto !important;
+    }
+    .clsPadLeft{
+        padding-left:20px !important;
+    }
+    .clsDesktop
+    {
+         display:none !important;
+    }
+    .clsContactIFeildsBox{
+        width:220px  !important;
+        margin:0 auto !important;
+    }
+    .clsWhtuWillNeedimg{
+        height:100%  !important;
+        width:100%  !important;
+    }
+    .clsPageBannerHeaderTitle
+    {
+        padding-left:20px !important;
+    }
+    .clsPageBannerHeaderSubTitle
+    {
+        padding-left:20px !important;
+    }
+    .footer {
+        height: 250px !important;
+    }
+    .clsContactFooFooter
+    {
+        width:300px !important;
+    }
+    .clsTermDialogue{
+        width:100% !important;
+    }
+    .clsHowItWorksBlock
+    {
+        padding-right:0px !important;
+    }
+    .clsFirstBlockMargin
+    {
+        background:none !important;
+    }
+    .clsBlockTitles
+    {
+        text-align:center !important;
+        padding-left:0px !important;
+    }
+    .clsBlockSubTitles
+    {
+        text-align:center !important;
+        padding-left:0px !important;
+    }
+    .clsSubHeaderOverride
+    {
+        width:100% !important;
+    }
+    .clsMobi{
+        display:block !important;
+    }
+    .clsMainHeaderInnerPad{
+        border-bottom:1px solid #003F7D !important;
+    }
+    .clsApplyNowButton{
+        margin-top:30px !important;
+        margin-bottom:30px !important;
+        float:none;
+        margin:0 auto;
+    }
+    .clsLoginBox{
+        width:100% !important;
+    }
+    #drpContactTitle
+    {
+        width:100% !important;
+    }
+    .clstxtWidth
+    {
+        width:100% !important;
+    }
+    .clsContactFooBottomTextbox
+    {
+        padding-right:0px !important;
+        width:100% !important;
+    }
+    .clsContactCallMeBackButton
+    {
+        margin-top:20px !important;
+    }
+    .clsDoIQualify
+    {
+         float:none !important;
+         margin:0 auto !important;
+         margin-top:20px !important;
+    }
+    .clsMarginLeft
+    {
+        margin-left:-20px !important;
+    }
+    .clsRegLeftDiv
+    {
+        float:none !important;
+        width:100% !important;
+    }
+    .clsRegRightDiv
+    {
+        float:none !important;
+        width:100% !important;
+        padding-top:10px !important;
+    }
+    .clsTablePad
+    {
+        padding:20px !important;
+    }
+    .clsEligibityButton{
+        float:none !important;
+        padding-right:0px !important;
+        text-align:center !important;
+    }
+    .clsDesktopInLine
+    {
+         display:none !important;
+    }
+    .clsSuccessMainDiv
+    {
+        height:65px !important;
+    }
+    .clsLeftMenuContainer
+    {
+        width:100% !important;
+        padding:10px !important;
+    }
+    .clsAboutUsContent
+    {
+        width:100% !important;
+        margin-left:0px !important;
+    }
+    .clsTLeft
+    {
+        float:none !important;
+    }
+     .clsResAfforGrid{
+        width:100% !important;
+        height:320px !important;
+        overflow:scroll !important;
+    }
+     #divActualDoc
+     {
+         width:500px !important;
+     }
+      .clsLoanConfirmationRight{
+            float:none !important;
+        }
+    .clsSignaturePop{
+       width:100% !important;
+       height:400px !important;
+    }
+    .clsFloatLeft{
+        float:none !important;
+    }
+       #divSignPopup
+      {
+          height:600px !important;
+          overflow-y:scroll !important;
+          border:2px solid green;
+      }
+       .clsCustomTextBox{
+        width:250px !important;
+    }
+    .clsDropDownList {
+        width:250px !important;
+    }
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen 
+and (max-width : 320px) 
+{
+    .clsCenterBlock
+   {
+       width:100% !important;
+   }
+    
+    .clsContactInnerCenterDiv
+   {
+       width:100% !important;
+   }
+    .clsContactInnerDivWidth{
+       width:250px !important;
+   }
+     .clsHowItOwkrsCenterDiv
+   {
+       width:100% !important;
+   }
+      .clsHowItWorksBlock
+   {
+       width:100% !important;
+   }
+   .clsFirstBlockMargin
+   {
+       width:100% !important;
+       margin-left:0px !important;
+   }
+    .imgLeft
+   {
+       float:none !important;
+   }
+     .clsWhatuWillneedBlock
+    {
+        height:auto !important;
+    }
+    .clsPadLeft{
+        padding-left:20px !important;
+    }
+    .clsDesktop
+    {
+         display:none !important;
+    }
+    .clsContactIFeildsBox{
+        width:220px  !important;
+        margin:0 auto !important;
+    }
+     .clsWhtuWillNeedimg{
+        height:100%  !important;
+        width:100% !important;
+    }
+    .clsPageBannerHeaderTitle
+    {
+        padding-left:20px !important;
+    }
+    .clsPageBannerHeaderSubTitle
+    {
+        padding-left:20px !important;
+    }
+     .footer {
+        height: 285px !important;
+    }
+    .clsContactFooFooter
+    {
+        width:300px !important;
+    }
+    .clsTermDialogue{
+        width:100% !important;
+    }
+    .clsHowItWorksBlock
+    {
+        padding-right:0px !important;
+    }
+     .clsFirstBlockMargin
+    {
+        background:none !important;
+    }
+     .clsBlockTitles
+    {
+        text-align:center !important;
+        padding-left:0px !important;
+    }
+    .clsBlockSubTitles
+    {
+        text-align:center !important;
+        padding-left:0px !important;
+    }
+     .clsSubHeaderOverride
+    {
+        width:100% !important;
+    }
+      .clsMobi{
+        display:block !important;
+    }
+      .clsMainHeaderInnerPad{
+        border-bottom:1px solid #003F7D !important;
+    }
+    .clsApplyNowButton{
+        margin-top:30px !important;
+        margin-bottom:30px !important;
+          float:none !important;
+        margin:0 auto !important;
+    }
+    .clsLoginBox{
+        width:100% !important;
+    }
+    #drpContactTitle
+    {
+        width:100% !important;
+    }
+    .clstxtWidth
+    {
+        width:100% !important;
+    }
+     .clsContactFooBottomTextbox
+    {
+        padding-right:0px !important;
+        width:100% !important;
+    }
+      .clsContactCallMeBackButton
+    {
+        margin-top:20px !important;
+    }
+       .clsDoIQualify
+    {
+         float:none !important;
+         margin:0 auto !important;
+         margin-top:20px !important;
+    }
+       .clsMarginLeft
+    {
+        margin-left:-20px !important;
+    }
+     .clsRegLeftDiv
+    {
+        float:none !important;
+        width:100% !important;
+    }
+    .clsRegRightDiv
+    {
+        float:none !important;
+        width:100% !important;
+        padding-top:10px !important;
+    }
+    .clsTablePad
+    {
+        padding:20px !important;
+    }
+      .clsEligibityButton{
+        float:none !important;
+        padding-right:0px !important;
+        text-align:center !important;
+    }
+      .clsDesktopInLine
+    {
+         display:none !important;
+    }
+      .clsSuccessMainDiv
+    {
+        height:65px !important;
+    }
+      .clsLeftMenuContainer
+    {
+        width:100% !important;
+        padding:10px !important;
+    }
+    .clsAboutUsContent
+    {
+        width:100% !important;
+        margin-left:0px !important;
+    }
+     .clsTLeft
+    {
+        float:none !important;
+    }
+     .clsResAfforGrid{
+        width:100%  !important;
+        height:320px  !important;
+        overflow:scroll  !important;
+    }
+      #divActualDoc
+     {
+         width:500px !important;
+     }
+          .clsLoanConfirmationRight{
+            float:none !important;
+        }
+    .clsSignaturePop{
+       width:100% !important;
+       height:400px !important;
+    }
+    .clsFloatLeft{
+        float:none !important;
+    }
+       #divSignPopup
+      {
+          height:440px !important;
+          overflow-y:scroll !important;
+          border:2px solid blue;
+      }
+       .clsCustomTextBox{
+        width:250px !important;
+    }
+    .clsDropDownList {
+        width:250px !important;
+    }
+}
+/* iPhone 6 in portrait & landscape */
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 667px) {
+   .clsCenterBlock
+   {
+       width:100%;
+   }
+   
+   .clsContactInnerCenterDiv
+   {
+       width:100%;
+   }
+   .clsContactInnerDivWidth{
+       width:250px;
+   }
+    .clsHowItOwkrsCenterDiv
+   {
+       width:100%;
+   }
+   .clsHowItWorksBlock
+   {
+       width:100%;
+   }
+   .clsFirstBlockMargin
+   {
+       width:100%;
+       margin-left:0px;
+   }
+    .imgLeft
+   {
+       float:none;
+   }
+     .clsWhatuWillneedBlock
+    {
+        height:auto;
+    }
+    .clsPadLeft{
+        padding-left:20px;
+    }
+    .clsDesktop
+    {
+         display:none;
+    }
+    .clsContactIFeildsBox{
+        width:220px ;
+        margin:0 auto;
+    }
+    .clsWhtuWillNeedimg{
+        height:100%;
+        width:100%;
+    }
+    .clsPageBannerHeaderTitle
+    {
+        padding-left:20px;
+    }
+    .clsPageBannerHeaderSubTitle
+    {
+        padding-left:20px;
+    }
+    .footer {
+        height: 285px;
+    }
+      .clsContactFooFooter
+    {
+        width:300px;
+    }
+    .clsTermDialogue{
+        width:100%;
+    }
+    .clsHowItWorksBlock
+    {
+        padding-right:0px;
+    }
+     .clsFirstBlockMargin
+    {
+        background:none;
+    }
+     .clsBlockTitles
+    {
+        text-align:center;
+        padding-left:0px;
+    }
+    .clsBlockSubTitles
+    {
+        text-align:center;
+        padding-left:0px;
+    }
+      .clsSubHeaderOverride
+    {
+        width:100%;
+    }
+    .clsMobi{
+        display:block;
+    }
+    .clsMainHeaderInnerPad{
+        border-bottom:1px solid #003F7D;
+    }
+     .clsApplyNowButton{
+        margin-top:30px;
+        margin-bottom:30px;
+          float:none;
+        margin:0 auto;
+    }
+     .clsLoginBox{
+        width:100%;
+    }
+      #drpContactTitle
+    {
+        width:100%;
+    }
+      .clstxtWidth
+    {
+        width:100%;
+    }
+   .clsContactFooBottomTextbox
+    {
+        padding-right:0px;
+        width:100%;
+    }
+    .clsContactCallMeBackButton
+    {
+        margin-top:20px;
+    }
+    .clsDoIQualify
+    {
+         float:none ;
+         margin:0 auto;
+         margin-top:20px;
+    }
+    .clsMarginLeft
+    {
+        margin-left:-20px;
+    }
+    .clsRegLeftDiv
+    {
+        float:none ;
+        width:100%;
+    }
+    .clsRegRightDiv
+    {
+        float:none;
+        width:100%;
+        padding-top:10px;
+    }
+     .clsTablePad
+    {
+        padding:20px;
+    }
+    .clsEligibityButton{
+        float:none;
+        padding-right:0px;
+        text-align:center;
+    }
+    .clsDesktopInLine
+    {
+         display:none;
+    }
+    .clsSuccessMainDiv
+    {
+        height:65px;
+    }
+    .clsLeftMenuContainer
+    {
+        width:100%;
+        padding:0px;
+    }
+     .clsAboutUsContent
+    {
+        width:100%;
+        margin-left:0px;
+    }
+    .clsTLeft {
+        float: none;
+    }
+     .clsResAfforGrid{
+        width:100%;
+        height:320px;
+        overflow:scroll;
+    }
+     #divActualDoc
+     {
+         width:500px;
+     }
+         .clsLoanConfirmationRight{
+            float:none;
+        }
+          .clsSignaturePop{
+       width:100%;
+       height:400px;
+    }
+    .clsFloatLeft{
+        float:none;
+    }
+       #divSignPopup
+      {
+          height:600px;
+          overflow-y:scroll;
+          border:2px solid red;
+      }
+   .clsCustomTextBox{
+        width:250px;
+    }
+    .clsDropDownList {
+        width:250px;
+    }
+}
+
+/* iPhone 6 in landscape */
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 667px) 
+and (orientation : landscape) {
+    .clsCenterBlock
+   {
+       width:100%;
+   }
+   
+   .clsContactInnerCenterDiv
+   {
+       width:100%;
+   }
+   .clsContactInnerDivWidth{
+       width:250px;
+   }
+    .clsHowItOwkrsCenterDiv
+   {
+       width:100%;
+   }
+    .clsHowItWorksBlock
+   {
+       width:100%;
+   }
+    .clsFirstBlockMargin
+   {
+       width:100%;
+margin-left:0px;
+   }
+      .imgLeft
+   {
+       float:none;
+   }
+    .clsWhatuWillneedBlock
+    {
+        height:auto;
+    }
+    .clsPadLeft{
+        padding-left:20px;
+    }
+    .clsDesktop
+    {
+         display:none;
+    }
+    .clsContactIFeildsBox{
+        width:220px ;
+        margin:0 auto;
+    }
+     .clsWhtuWillNeedimg{
+        height:100%;
+        width:100%;
+    }
+     .clsPageBannerHeaderTitle
+    {
+        padding-left:20px;
+    }
+     .clsPageBannerHeaderSubTitle
+    {
+        padding-left:20px;
+    }
+    .footer {
+        height: 285px;
+    }
+       .clsContactFooFooter
+    {
+        width:300px;
+    }
+    .clsTermDialogue{
+        width:100%;
+    }
+    .clsHowItWorksBlock
+    {
+        padding-right:0px;
+    }
+    .clsFirstBlockMargin
+    {
+        background:none;
+    }
+         .clsBlockTitles
+    {
+        text-align:center;
+        padding-left:0px;
+    }
+    .clsBlockSubTitles
+    {
+        text-align:center;
+        padding-left:0px;
+    }
+      .clsSubHeaderOverride
+    {
+        width:100%;
+    }
+      .clsMobi{
+        display:block;
+    }
+      .clsMainHeaderInnerPad{
+        border-bottom:1px solid #003F7D;
+    }
+    .clsApplyNowButton{
+        margin-top:30px;
+        margin-bottom:30px;
+          float:none;
+        margin:0 auto;
+    }
+     .clsLoginBox{
+        width:100%;
+    }
+        #drpContactTitle
+    {
+        width:100%;
+    }
+    .clstxtWidth
+    {
+        width:100%;
+    }
+    .clsContactFooBottomTextbox
+    {
+        padding-right:0px;
+        width:100%;
+    }
+     .clsContactCallMeBackButton
+    {
+        margin-top:20px;
+    }
+    .clsDoIQualify
+    {
+         float:none;
+         margin:0 auto;
+         margin-top:20px;
+    }
+    .clsMarginLeft
+    {
+        margin-left:-20px;
+    }
+    .clsRegLeftDiv
+    {
+        float:none ;
+        width:100%;
+    }
+    .clsRegRightDiv
+    {
+        float:none;
+        width:100%;
+        padding-top:10px;
+    }
+     .clsTablePad
+    {
+        padding:20px;
+    }
+     .clsEligibityButton{
+        float:none;
+        padding-right:0px;
+        text-align:center;
+    }
+      .clsDesktopInLine
+    {
+         display:none;
+    }
+    .clsSuccessMainDiv
+    {
+        height:65px;
+    }
+    .clsLeftMenuContainer
+    {
+        width:100%;
+        padding:10px;
+    }
+     .clsAboutUsContent
+    {
+        width:100%;
+         margin-left:0px;
+    }
+     .clsTLeft
+    {
+        float:none;
+    }
+      .clsResAfforGrid{
+        width:100%;
+        height:320px;
+        overflow:scroll;
+    }
+     #divActualDoc
+     {
+         width:500px;
+     }
+         .clsLoanConfirmationRight{
+            float:none;
+        }
+      .clsSignaturePop{
+       width:100%;
+       height:400px;
+    }
+    .clsFloatLeft{
+        float:none;
+    }
+   #divSignPopup
+      {
+          height:600px;
+          overflow-y:scroll;
+          border:2px solid red;
+      }
+     .clsCustomTextBox{
+        width:250px;
+    }
+    .clsDropDownList {
+        width:250px;
+    }
+}
+
+/* iPhone 6 in portrait */
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 667px) 
+and (orientation : portrait) {
+    .clsCenterBlock
+   {
+       width:100%;
+   }
+   
+    .clsContactInnerCenterDiv
+   {
+       width:100%;
+   }
+     .clsContactInnerDivWidth{
+       width:250px;
+   }
+     .clsHowItOwkrsCenterDiv
+   {
+       width:100%;
+   }
+     .clsHowItWorksBlock
+   {
+       width:100%;
+   }
+     .clsFirstBlockMargin
+   {
+       width:100%;
+       margin-left:0px;
+   }
+       .imgLeft
+   {
+       float:none;
+   }
+       .clsWhatuWillneedBlock
+    {
+        height:auto;
+    }
+    .clsPadLeft{
+        padding-left:20px;
+    }
+    .clsDesktop
+    {
+         display:none;
+    }
+     .clsContactIFeildsBox{
+        width:220px ;
+        margin:0 auto;
+    }
+      .clsWhtuWillNeedimg{
+        height:100%;
+        width:100%;
+    }
+    .clsPageBannerHeaderTitle
+    {
+        padding-left:20px;
+    }
+    .clsPageBannerHeaderSubTitle
+    {
+        padding-left:20px;
+    }
+    .footer {
+        height: 285px;
+    }
+       .clsContactFooFooter
+    {
+        width:300px;
+    }
+    .clsTermDialogue{
+        width:100%;
+    }
+    .clsHowItWorksBlock
+    {
+        padding-right:0px;
+    }
+    .clsFirstBlockMargin
+    {
+        background:none;
+    }
+         .clsBlockTitles
+    {
+        text-align:center;
+        padding-left:0px;
+    }
+    .clsBlockSubTitles
+    {
+        text-align:center;
+        padding-left:0px;
+    }
+      .clsSubHeaderOverride
+    {
+        width:100%;
+    }
+      .clsMobi{
+        display:block;
+    }
+    .clsMainHeaderInnerPad{
+        border-bottom:1px solid #003F7D;
+    }
+     .clsApplyNowButton{
+        margin-top:30px;
+        margin-bottom:30px;
+          float:none;
+        margin:0 auto;
+    }
+      .clsLoginBox{
+        width:100%;
+    }
+         #drpContactTitle
+    {
+        width:100%;
+    }
+    .clstxtWidth
+    {
+        width:100%;
+    }
+    .clsContactFooBottomTextbox
+    {
+        padding-right:0px;
+        width:100%;
+    }
+     .clsContactCallMeBackButton
+    {
+        margin-top:20px;
+    }
+       .clsDoIQualify
+    {
+         float:none;
+         margin:0 auto;
+         margin-top:20px;
+    }
+        .clsMarginLeft
+    {
+        margin-left:-20px;
+    }
+    .clsRegLeftDiv
+    {
+        float:none ;
+        width:100%;
+    }
+    .clsRegRightDiv
+    {
+        float:none;
+        width:100%;
+        padding-top:10px;
+    }
+     .clsTablePad
+    {
+        padding:20px;
+    }
+       .clsEligibityButton{
+        float:none;
+        padding-right:0px;
+        text-align:center;
+    }
+      .clsDesktopInLine
+    {
+         display:none;
+    }
+       .clsSuccessMainDiv
+    {
+        height:65px;
+    }
+      .clsLeftMenuContainer
+    {
+        width:100%;
+        padding:10px;
+    }
+       .clsAboutUsContent
+    {
+        width:100%;
+         margin-left:0px;
+    }
+     .clsTLeft
+    {
+        float:none;
+    }
+      .clsResAfforGrid{
+        width:100%;
+        height:320px;
+        overflow:scroll;
+    }
+     #divActualDoc
+     {
+         width:500px;
+     }
+         .clsLoanConfirmationRight{
+            float:none;
+        }
+      .clsSignaturePop{
+       width:100%;
+       height:400px;
+    }
+    .clsFloatLeft{
+        float:none;
+    }
+   #divSignPopup
+      {
+          height:600px;
+          overflow-y:scroll;
+          border:2px solid yellow;
+      }
+     .clsCustomTextBox{
+        width:250px;
+    }
+    .clsDropDownList {
+        width:250px;
+    }
+}
+
+/* iPhone 6 Plus in portrait & landscape */
+@media only screen 
+and (min-device-width : 414px) 
+and (max-device-width : 736px) {
+   .clsCenterBlock
+   {
+       width:100%;
+   }
+   
+   .clsContactInnerCenterDiv
+   {
+       width:100%;
+   }
+   .clsContactInnerDivWidth{
+       width:250px;
+   }
+       .clsHowItOwkrsCenterDiv
+   {
+       width:100%;
+   }
+       .clsHowItWorksBlock
+   {
+       width:100%;
+   }
+       .clsFirstBlockMargin
+   {
+       width:100%;
+       margin-left:0px;
+   }
+         .imgLeft
+   {
+       float:none;
+   }
+         .clsWhatuWillneedBlock
+    {
+        height:auto;
+    }
+    .clsPadLeft{
+        padding-left:20px;
+    }
+    .clsDesktop
+    {
+         display:none;
+    }
+     .clsContactIFeildsBox{
+        width:220px ;
+        margin:0 auto;
+    }
+      .clsWhtuWillNeedimg{
+        height:100%;
+        width:100%;
+    }
+    .clsPageBannerHeaderTitle
+    {
+        padding-left:20px;
+    }
+    .clsPageBannerHeaderSubTitle
+    {
+        padding-left:20px;
+    }
+    .footer {
+        height: 285px;
+    }
+       .clsContactFooFooter
+    {
+        width:300px;
+    }
+    .clsTermDialogue{
+        width:100%;
+    }
+    .clsHowItWorksBlock
+    {
+        padding-right:0px;
+    }
+    .clsFirstBlockMargin
+    {
+        background:none;
+    }
+         .clsBlockTitles
+    {
+        text-align:center;
+        padding-left:0px;
+    }
+    .clsBlockSubTitles
+    {
+        text-align:center;
+        padding-left:0px;
+    }
+      .clsSubHeaderOverride
+    {
+        width:100%;
+    }
+      .clsMobi{
+        display:block;
+    }
+     .clsMainHeaderInnerPad{
+        border-bottom:1px solid #003F7D;
+    }
+      .clsApplyNowButton{
+        margin-top:30px;
+        margin-bottom:30px;
+          float:none;
+        margin:0 auto;
+    }
+       .clsLoginBox{
+        width:100%;
+    }
+          #drpContactTitle
+    {
+        width:100%;
+    }
+           .clstxtWidth
+    {
+        width:100%;
+    }
+    .clsContactFooBottomTextbox
+    {
+        padding-right:0px;
+        width:100%;
+    }
+     .clsContactCallMeBackButton
+    {
+        margin-top:20px;
+    }
+       .clsDoIQualify
+    {
+         float:none;
+         margin:0 auto;
+         margin-top:20px;
+    }
+    .clsMarginLeft
+    {
+        margin-left:-20px;
+    }
+     .clsRegLeftDiv
+    {
+        float:none ;
+        width:100%;
+    }
+    .clsRegRightDiv
+    {
+        float:none;
+        width:100%;
+        padding-top:10px;
+    }
+     .clsTablePad
+    {
+        padding:20px;
+    }
+       .clsEligibityButton{
+        float:none;
+        padding-right:0px;
+        text-align:center;
+    }
+      .clsDesktopInLine
+    {
+         display:none;
+    }
+     .clsSuccessMainDiv
+    {
+        height:65px;
+    }
+    .clsLeftMenuContainer
+    {
+        width:100%;
+        padding:10px;
+    }
+     .clsAboutUsContent
+    {
+        width:100%;
+         margin-left:0px;
+    }
+    .clsTLeft
+    {
+        float:none;
+    }
+     .clsResAfforGrid{
+        width:100%;
+        height:320px;
+        overflow:scroll;
+    }
+      #divActualDoc
+     {
+         width:500px;
+     }
+        .clsLoanConfirmationRight{
+            float:none;
+        }
+      .clsSignaturePop{
+       width:100%;
+       height:400px;
+    }
+          .clsFloatLeft{
+        float:none;
+    }
+    #divSignPopup
+      {
+          height:600px;
+          overflow-y:scroll;
+      }
+    .clsCustomTextBox{
+        width:250px;
+    }
+      .clsDropDownList {
+        width:250px;
+    }
+}
+
+/* iPhone 6 Plus in landscape */
+@media only screen 
+and (min-device-width : 414px) 
+and (max-device-width : 736px) 
+and (orientation : landscape) {
+     .clsCenterBlock
+   {
+       width:100%;
+   }
+   
+     .clsContactInnerCenterDiv
+   {
+       width:100%;
+   }
+       .clsContactInnerDivWidth{
+       width:250px;
+   }
+   .clsHowItOwkrsCenterDiv
+   {
+       width:100%;
+   }
+   .clsHowItWorksBlock
+   {
+       width:100%;
+   }
+   .clsFirstBlockMargin
+   {
+       width:100%;
+      margin-left:0px;
+   }
+     .imgLeft
+   {
+       float:none;
+   }
+     .clsWhatuWillneedBlock
+    {
+        height:auto;
+    }
+    .clsPadLeft{
+        padding-left:20px;
+    }
+    .clsDesktop
+    {
+         display:none;
+    }
+     .clsContactIFeildsBox{
+        width:220px ;
+        margin:0 auto;
+    }
+      .clsWhtuWillNeedimg{
+        height:100%;
+        width:100%;
+    }
+       .clsPageBannerHeaderTitle
+    {
+        padding-left:20px;
+    }
+       .clsPageBannerHeaderSubTitle
+    {
+        padding-left:20px;
+    }
+    .footer {
+        height: 285px;
+    }
+       .clsContactFooFooter
+    {
+        width:300px;
+    }
+    .clsTermDialogue{
+        width:100%;
+    }
+    .clsHowItWorksBlock
+    {
+        padding-right:0px;
+    }
+    .clsFirstBlockMargin
+    {
+        background:none;
+    }
+         .clsBlockTitles
+    {
+        text-align:center;
+        padding-left:0px;
+    }
+    .clsBlockSubTitles
+    {
+        text-align:center;
+        padding-left:0px;
+    }
+      .clsSubHeaderOverride
+    {
+        width:100%;
+    }
+      .clsMobi{
+        display:block;
+    }
+    .clsMainHeaderInnerPad{
+        border-bottom:1px solid #003F7D;
+    }
+     .clsApplyNowButton{
+        margin-top:30px;
+        margin-bottom:30px;
+          float:none;
+        margin:0 auto;
+    }
+      .clsLoginBox{
+        width:100%;
+    }
+         #drpContactTitle
+    {
+        width:100%;
+    }
+     .clstxtWidth
+    {
+        width:100%;
+    }
+       .clsContactFooBottomTextbox
+    {
+        padding-right:0px;
+        width:100%;
+    }
+        .clsContactCallMeBackButton
+    {
+        margin-top:20px;
+    }
+    .clsDoIQualify
+    {
+         float:none;
+         margin:0 auto;
+         margin-top:20px;
+    }
+     .clsMarginLeft
+    {
+        margin-left:-20px;
+    }
+     .clsRegLeftDiv
+    {
+        float:none ;
+        width:100%;
+    }
+    .clsRegRightDiv
+    {
+        float:none;
+        width:100%;
+        padding-top:10px;
+    }
+     .clsTablePad
+    {
+        padding:20px;
+    }
+           .clsEligibityButton{
+        float:none;
+        padding-right:0px;
+        text-align:center;
+    }
+      .clsDesktopInLine
+    {
+         display:none;
+    }
+       .clsSuccessMainDiv
+    {
+        height:65px;
+    }
+      .clsLeftMenuContainer
+    {
+        width:100%;
+        padding:10px;
+    }
+       .clsAboutUsContent
+    {
+        width:100%;
+         margin-left:0px;
+    }
+    .clsTLeft
+    {
+        float:none;
+    }
+    .clsResAfforGrid{
+        width:100%;
+        height:320px;
+        overflow:scroll;
+    }
+     #divActualDoc
+     {
+         width:500px;
+     }
+         .clsLoanConfirmationRight{
+            float:none;
+        }
+      .clsSignaturePop{
+       width:100%;
+       height:400px;
+    }
+    .clsFloatLeft{
+        float:none;
+    }
+      #divSignPopup
+      {
+          height:600px;
+          overflow-y:scroll;
+      }
+    .clsCustomTextBox{
+        width:250px;
+    }
+      .clsDropDownList {
+        width:250px;
+    }
+}
+
+/* iPhone 6 Plus in portrait */
+@media only screen 
+and (min-device-width : 414px) 
+and (max-device-width : 736px) 
+and (orientation : portrait) {
+    .clsCenterBlock
+   {
+       width:100%;
+   }
+  
+    .clsContactInnerCenterDiv
+   {
+       width:100%;
+   }
+      .clsContactInnerDivWidth{
+       width:250px;
+   }
+    .clsHowItOwkrsCenterDiv
+   {
+       width:100%;
+   }
+    .clsHowItWorksBlock
+   {
+       width:100%;
+   }
+    .clsFirstBlockMargin
+   {
+       width:100%;
+      margin-left:0px;
+   }
+      .imgLeft
+   {
+       float:none;
+   }
+      .clsWhatuWillneedBlock
+    {
+        height:auto;
+    }
+    .clsPadLeft{
+        padding-left:20px;
+    }
+    .clsDesktop
+    {
+         display:none;
+    }
+     .clsContactIFeildsBox{
+        width:220px ;
+        margin:0 auto;
+    }
+      .clsWhtuWillNeedimg{
+        height:100%;
+        width:100%;
+    }
+       .clsPageBannerHeaderTitle
+    {
+        padding-left:20px;
+    }
+       .clsPageBannerHeaderSubTitle
+    {
+        padding-left:20px;
+    }
+    .footer {
+        height: 285px;
+    }
+       .clsContactFooFooter
+    {
+        width:300px;
+    }
+        .clsTermDialogue{
+        width:100%;
+    }
+        .clsHowItWorksBlock
+    {
+        padding-right:0px;
+    }
+        .clsFirstBlockMargin
+    {
+        background:none;
+    }
+             .clsBlockTitles
+    {
+        text-align:center;
+        padding-left:0px;
+    }
+    .clsBlockSubTitles
+    {
+        text-align:center;
+        padding-left:0px;
+    }
+      .clsSubHeaderOverride
+    {
+        width:100%;
+    }
+      .clsMobi{
+        display:block;
+    }
+    .clsMainHeaderInnerPad{
+        border-bottom:1px solid #003F7D;
+    }
+     .clsApplyNowButton{
+        margin-top:30px;
+        margin-bottom:30px;
+          float:none;
+        margin:0 auto;
+    }
+      .clsLoginBox{
+        width:100%;
+    }
+         #drpContactTitle
+    {
+        width:100%;
+    }
+     .clstxtWidth
+    {
+        width:100%;
+    }
+       .clsContactFooBottomTextbox
+    {
+        padding-right:0px;
+        width:100%;
+    }
+     .clsContactCallMeBackButton
+    {
+        margin-top:20px;
+    }
+      .clsDoIQualify
+    {
+         float:none;
+         margin:0 auto;
+         margin-top:20px;
+    }
+   .clsMarginLeft
+    {
+        margin-left:-20px;
+    }
+    .clsRegLeftDiv
+    {
+        float:none ;
+        width:100%;
+    }
+    .clsRegRightDiv
+    {
+        float:none;
+        width:100%;
+        padding-top:10px;
+    }
+     .clsTablePad
+    {
+        padding:20px;
+    }
+           .clsEligibityButton{
+        float:none;
+        padding-right:0px;
+        text-align:center;
+    }
+      .clsDesktopInLine
+    {
+         display:none;
+    }
+       .clsSuccessMainDiv
+    {
+        height:65px;
+    }
+      .clsLeftMenuContainer
+    {
+        width:100%;
+        padding:10px;
+    }
+       .clsAboutUsContent
+    {
+        width:100%;
+         margin-left:0px;
+    }
+       .clsTLeft
+    {
+        float:none;
+    }
+    .clsResAfforGrid{
+        width:100%;
+        height:320px;
+        overflow:scroll;
+    }
+     #divActualDoc
+     {
+         width:500px;
+     }
+         .clsLoanConfirmationRight{
+            float:none;
+        }
+      .clsSignaturePop{
+       width:100%;
+       height:400px;
+    }
+       .clsFloatLeft{
+        float:none;
+    }
+      #divSignPopup
+      {
+          height:600px;
+          overflow-y:scroll;
+      }
+    .clsCustomTextBox{
+        width:250px;
+    }
+      .clsDropDownList {
+        width:250px;
+    }
+}
+/*galaxy s5*/
+@media screen 
+  and (device-width: 360px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 3) {
+   .clsCenterBlock
+   {
+       width:100%;
+   }
+   
+   .clsContactInnerCenterDiv
+   {
+       width:100%;
+   }
+   .clsContactInnerDivWidth{
+       width:250px;
+   }
+   .clsHowItOwkrsCenterDiv
+   {
+       width:100%;
+   }
+   .clsHowItWorksBlock
+   {
+       width:100%;
+   }
+   .clsFirstBlockMargin
+   {
+       width:100%;
+       margin-left:0px;
+   }
+     .imgLeft
+   {
+       float:none;
+   }
+     .clsWhatuWillneedBlock
+    {
+        height:auto;
+    }
+    .clsPadLeft{
+        padding-left:20px;
+    }
+    .clsDesktop
+    {
+         display:none;
+    }
+     .clsContactIFeildsBox{
+        width:220px ;
+        margin:0 auto;
+    }
+      .clsWhtuWillNeedimg{
+        height:100%;
+        width:100%;
+    }
+       .clsPageBannerHeaderTitle
+    {
+        padding-left:20px;
+    }
+       .clsPageBannerHeaderSubTitle
+    {
+        padding-left:20px;
+    }
+   .footer {
+        height: 285px;
+    }
+      .clsContactFooFooter
+    {
+        width:300px;
+    }
+       .clsTermDialogue{
+        width:100%;
+    }
+       .clsHowItWorksBlock
+    {
+        padding-right:0px;
+    }
+       .clsFirstBlockMargin
+    {
+        background:none;
+    }
+            .clsBlockTitles
+    {
+        text-align:center;
+        padding-left:0px;
+    }
+    .clsBlockSubTitles
+    {
+        text-align:center;
+        padding-left:0px;
+    }
+      .clsSubHeaderOverride
+    {
+        width:100%;
+ 
+    }
+      .clsMobi{
+        display:block;
+    }
+       .clsMainHeaderInnerPad{
+        border-bottom:1px solid #003F7D;
+    }
+        .clsApplyNowButton{
+        margin-top:30px;
+        margin-bottom:30px;
+          float:none;
+        margin:0 auto;
+    }
+         .clsLoginBox{
+        width:100%;
+    }
+    #drpContactTitle
+    {
+        width:100%;
+    }
+     .clstxtWidth
+    {
+        width:100%;
+    }
+       .clsContactFooBottomTextbox
+    {
+        padding-right:0px;
+        width:100%;
+    }
+     .clsContactCallMeBackButton
+    {
+        margin-top:20px;
+    }
+      .clsDoIQualify
+    {
+         float:none;
+         margin:0 auto;
+         margin-top:20px;
+    }
+    .clsMarginLeft
+    {
+        margin-left:-20px;
+    }
+    .clsRegLeftDiv
+    {
+        float:none ;
+        width:100%;
+    }
+    .clsRegRightDiv
+    {
+        float:none;
+        width:100%;
+        padding-top:10px;
+    }
+     .clsTablePad
+    {
+        padding:20px;
+    }
+          .clsEligibityButton{
+        float:none;
+        padding-right:0px;
+        text-align:center;
+    }
+      .clsDesktopInLine
+    {
+         display:none;
+    }
+       .clsSuccessMainDiv
+    {
+        height:65px;
+    }
+      .clsLeftMenuContainer
+    {
+        width:100%;
+        padding:10px;
+    }
+       .clsAboutUsContent
+    {
+        width:100%;
+         margin-left:0px;
+    }
+       .clsTLeft
+    {
+        float:none;
+    }
+    .clsResAfforGrid{
+        width:100%;
+        height:320px;
+        overflow:scroll;
+    }
+     #divActualDoc
+     {
+         width:500px;
+     }
+      .clsLoanConfirmationRight{
+            float:none;
+        }
+       .clsSignaturePop{
+       width:100%;
+       height:400px;
+    }
+       .clsFloatLeft{
+        float:none;
+    }
+      #divSignPopup
+      {
+          height:600px;
+          overflow-y:scroll;
+      }
+     .clsCustomTextBox{
+        width:250px;
+    }
+    .clsDropDownList {
+        width:250px;
+    }
+}
+
+@media screen and (min-width: 700px) and (orientation: landscape) {
+   /*px*/
+    .clsCenterBlock
+   {
+       width:960px;
+   }
+   
+    .clsContactInnerCenterDiv
+   {
+       width:740px;
+   }
+     .clsContactInnerDivWidth{
+       width:520px;
+   }
+    .clsHowItOwkrsCenterDiv
+   {
+       width:770px;
+   }
+    .clsHowItWorksBlock
+   {
+       width:700px;
+   }
+    .clsFirstBlockMargin
+   {
+       width:683px;
+       margin-left:145px;
+   }
+      .imgLeft
+   {
+       float:left;
+   }
+      .clsWhatuWillneedBlock
+    {
+        height:500px;
+    }
+    .clsPadLeft{
+        padding-left:0px;
+    }
+    .clsDesktop
+    {
+         display:block;
+    }
+     .clsContactIFeildsBox{
+        width:100%;
+        margin:0 auto;
+    }
+      .clsWhtuWillNeedimg{
+        height:460px;
+        width:auto;
+    }
+    .clsPageBannerHeaderTitle
+    {
+        padding-left:0px;
+    }
+    .clsPageBannerHeaderSubTitle
+    {
+        padding-left:0px;
+    }
+    .footer {
+        height: 140px;
+    }
+       .clsContactFooFooter
+    {
+        width:500px;
+    }
+        .clsTermDialogue{
+        width:700px;
+    }
+    .clsHowItWorksBlock
+    {
+        padding-right:30px;
+    }
+    .clsFirstBlockMargin
+    {
+            background: url("./Images/Union10.png")  no-repeat;
+    }
+    .clsBlockTitles
+    {
+        text-align:left;
+        padding-left:40px;
+    }
+    .clsBlockSubTitles
+    {
+        text-align:left;
+        padding-left:40px;
+    }
+      .clsSubHeaderOverride
+    {
+        width:70%;
+       
+    }
+      .clsMobi{
+        display:none;
+    }
+       .clsMainHeaderInnerPad{
+        border-bottom:none;
+    }
+   .clsApplyNowButton{
+        margin-top:30px;
+        margin-left:30px;
+        margin-bottom:0px;
+          float:left;
+    }
+    .clsLoginBox{
+        width:360px;
+    }
+     #drpContactTitle
+    {
+        width:120px;
+    }
+      .clstxtWidth
+    {
+        width:180px;
+    }
+   .clsContactFooBottomTextbox
+    {
+        padding-right:20px;
+        width:200px;
+    }
+    .clsContactCallMeBackButton
+    {
+        margin-top:0px;
+    }
+       .clsDoIQualify
+    {
+         float:left;
+         margin-top:30px;
+    }
+    .clsMarginLeft
+    {
+        margin-left:0px;
+    }
+     .clsRegLeftDiv
+    {
+        float:left;
+        width:420px;
+    }
+     .clsRegRightDiv
+    {
+        float:right;
+        width:400px;
+        padding-top:0px;
+    }
+
+     .clsTablePad
+    {
+        padding:0px;
+    }
+    .clsEligibityButton{
+        float:right;
+        padding-right:30px;
+        text-align:left;
+    }
+      .clsDesktopInLine
+    {
+         display:inline-block;
+    }
+       .clsSuccessMainDiv
+    {
+        height:45px;
+    }
+    .clsLeftMenuContainer
+    {
+        width:170px;
+        padding:0px;
+    }
+     .clsAboutUsContent
+    {
+        width:760px;
+         margin-left:20px;
+    }
+    .clsTLeft
+    {
+        float:left;
+    }
+     .clsResAfforGrid{
+        width:800px;
+        height:320px;
+        overflow:scroll;
+    }
+      #divActualDoc
+     {
+         width:100%;
+     }
+    .clsLoanConfirmationRight{
+            float:right;
+        }
+     .clsSignaturePop{
+       width:730px;
+       height:620px;
+    }
+    .clsFloatLeft{
+        float:left;
+    }
+       #divSignPopup
+      {
+          height:625px;
+          overflow-y:hidden;
+      }
+     .clsCustomTextBox{
+        width:200px;
+    }
+      .clsDropDownList {
+        width:200px;
+    }
+}
+
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+{
+   .clsCenterBlock
+   {
+       width:960px;
+   }
+  
+   .clsContactInnerCenterDiv
+   {
+       width:740px;
+   }
+    .clsContactInnerDivWidth{
+       width:520px;
+   }
+    .clsHowItOwkrsCenterDiv
+   {
+       width:770px;
+   }
+     .clsHowItWorksBlock
+   {
+       width:700px;
+   }
+     .clsFirstBlockMargin
+   {
+       width:683px;
+       margin-left:145px;
+   }
+      .imgLeft
+   {
+       float:left;
+   }
+         .clsWhatuWillneedBlock
+    {
+        height:500px;
+    }
+    .clsPadLeft{
+        padding-left:0px;
+    }
+    .clsDesktop
+    {
+         display:block;
+    }
+     .clsContactIFeildsBox{
+        width:100%;
+        margin:0 auto;
+    }
+       .clsWhtuWillNeedimg{
+        height:460px;
+        width:auto;
+    }
+    .clsPageBannerHeaderTitle
+    {
+        padding-left:0px;
+    }
+    .clsPageBannerHeaderSubTitle
+    {
+        padding-left:0px;
+    }
+     .footer {
+        height: 140px;
+    }
+       .clsContactFooFooter
+    {
+        width:500px;
+    }
+    .clsTermDialogue{
+        width:700px;
+    }
+    .clsHowItWorksBlock
+    {
+        padding-right:30px;
+    }
+     .clsFirstBlockMargin
+    {
+            background: url("./Images/Union10.png")  no-repeat;
+    }
+       .clsBlockTitles
+    {
+        text-align:left;
+        padding-left:40px;
+    }
+    .clsBlockSubTitles
+    {
+        text-align:left;
+        padding-left:40px;
+    }
+      .clsSubHeaderOverride
+    {
+        width:70%;
+      
+    }
+          .clsMobi{
+        display:none;
+    }
+     .clsMainHeaderInnerPad{
+            border-bottom:none;
+    }
+     .clsApplyNowButton{
+        margin-top:30px;
+        margin-left:30px;
+        margin-bottom:0px;
+                  float:left;
+    }
+     .clsLoginBox{
+        width:360px;
+    }
+      #drpContactTitle
+    {
+        width:120px;
+    }
+      .clstxtWidth
+    {
+        width:180px;
+    }
+        .clsContactFooBottomTextbox
+    {
+        padding-right:20px;
+        width:200px;
+    }
+     .clsContactCallMeBackButton
+    {
+        margin-top:0px;
+    }
+      .clsDoIQualify
+    {
+         float:left;
+         margin-top:30px;
+    }
+      .clsMarginLeft
+    {
+        margin-left:0px;
+    }
+        .clsRegLeftDiv
+    {
+        float:left;
+        width:420px;
+    }
+     .clsRegRightDiv
+    {
+        float:right;
+        width:400px;
+        padding-top:0px;
+    }
+     
+     .clsTablePad
+    {
+        padding:0px;
+    }
+       .clsEligibityButton{
+        float:right;
+        padding-right:30px;
+        text-align:left;
+    }
+       .clsDesktopInLine
+    {
+         display:inline-block;
+    }
+    .clsSuccessMainDiv
+    {
+        height:45px;
+    }
+    .clsLeftMenuContainer
+    {
+        width:170px;
+        padding:0px;
+    }
+      .clsAboutUsContent
+    {
+        width:760px;
+        margin-left:20px;
+    }
+    .clsTLeft
+    {
+        float:left;
+    }
+     .clsResAfforGrid{
+        width:800px;
+        height:320px;
+        overflow:scroll;
+    }
+     #divActualDoc
+     {
+         width:100%;
+     }
+    .clsLoanConfirmationRight{
+            float:right;
+        }
+    .clsSignaturePop{
+       width:730px;
+       height:620px;
+    }
+      .clsFloatLeft{
+        float:left;
+    }
+         #divSignPopup
+      {
+          height:625px;
+          overflow-y:hidden;
+      }
+     .clsCustomTextBox{
+        width:200px;
+    }
+    .clsDropDownList {
+        width:200px;
+    }
+}
+/* iPads (landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) 
+{
+     .clsCenterBlock
+   {
+       width:960px;
+   }
+   
+     .clsContactInnerCenterDiv
+   {
+       width:740px;
+   }
+       .clsContactInnerDivWidth{
+       width:520px;
+   }
+      .clsHowItOwkrsCenterDiv
+   {
+       width:770px;
+   }
+       .clsHowItWorksBlock
+   {
+       width:700px;
+   }
+       .clsFirstBlockMargin
+   {
+       width:683px;
+              margin-left:145px;
+   }
+        .imgLeft
+   {
+       float:left;
+   }
+           .clsWhatuWillneedBlock
+    {
+        height:500px;
+    }
+    .clsPadLeft{
+        padding-left:0px;
+    }
+    .clsDesktop
+    {
+         display:block;
+    }
+     .clsContactIFeildsBox{
+        width:100%;
+        margin:0 auto;
+    }
+       .clsWhtuWillNeedimg{
+        height:460px;
+        width:auto;
+    }
+    .clsPageBannerHeaderTitle
+    {
+        padding-left:0px;
+    }
+    .clsPageBannerHeaderSubTitle
+    {
+        padding-left:0px;
+    }
+     .footer {
+        height: 140px;
+    }
+       .clsContactFooFooter
+    {
+        width:500px;
+    }
+        .clsTermDialogue{
+        width:700px;
+    }
+    .clsHowItWorksBlock
+    {
+        padding-right:30px;
+    }
+     .clsFirstBlockMargin
+    {
+            background: url("./Images/Union10.png")  no-repeat;
+    }
+       .clsBlockTitles
+    {
+        text-align:left;
+        padding-left:40px;
+    }
+    .clsBlockSubTitles
+    {
+        text-align:left;
+        padding-left:40px;
+    }
+      .clsSubHeaderOverride
+    {
+        width:70%;
+        
+    }
+    .clsMobi{
+        display:none;
+    }
+     .clsMainHeaderInnerPad{
+            border-bottom:none;
+    }
+     .clsApplyNowButton{
+        margin-top:30px;
+        margin-left:30px;
+        margin-bottom:0px;
+                  float:left;
+    }
+     .clsLoginBox{
+        width:360px;
+    }
+    #drpContactTitle
+    {
+        width:120px;
+    }
+      .clstxtWidth
+    {
+        width:180px;
+    }
+        .clsContactFooBottomTextbox
+    {
+        padding-right:20px;
+        width:200px;
+    }
+     .clsContactCallMeBackButton
+    {
+        margin-top:0px;
+    }
+      .clsDoIQualify
+    {
+         float:left;
+         margin-top:30px;
+    }
+        .clsMarginLeft
+    {
+        margin-left:0px;
+    }
+          .clsRegLeftDiv
+    {
+        float:left;
+        width:420px;
+    }
+     .clsRegRightDiv
+    {
+        float:right;
+        width:400px;
+        padding-top:0px;
+    }
+     
+     .clsTablePad
+    {
+        padding:0px;
+    }
+       .clsEligibityButton{
+        float:right;
+        padding-right:30px;
+        text-align:left;
+    }
+       .clsDesktopInLine
+    {
+         display:inline-block;
+    }
+    .clsSuccessMainDiv
+    {
+        height:45px;
+    }
+    .clsLeftMenuContainer
+    {
+        width:170px;
+        padding:0px;
+    }
+      .clsAboutUsContent
+    {
+        width:760px;
+        margin-left:20px;
+    }
+    .clsTLeft
+    {
+        float:left;
+    }
+     .clsResAfforGrid{
+        width:800px;
+        height:320px;
+        overflow:scroll;
+    }
+     #divActualDoc
+     {
+         width:100%;
+     }
+     .clsLoanConfirmationRight{
+            float:right;
+        }
+     .clsSignaturePop{
+       width:730px;
+       height:620px;
+    }
+      .clsFloatLeft{
+        float:left;
+    }
+         #divSignPopup
+      {
+          height:625px;
+          overflow-y:hidden;
+      }
+    .clsCustomTextBox{
+        width:200px;
+    }
+   .clsDropDownList {
+        width:200px;
+    }
+}
+/* iPads (portrait) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) 
+{
+     .clsCenterBlock
+   {
+       width:960px;
+   }
+   
+      .clsContactInnerCenterDiv
+   {
+       width:740px;
+   }
+        .clsContactInnerDivWidth{
+       width:520px;
+   }
+       .clsHowItOwkrsCenterDiv
+   {
+       width:770px;
+   }
+   .clsHowItWorksBlock
+   {
+       width:700px;
+   }
+   .clsFirstBlockMargin
+   {
+       width:683px;
+       margin-left:145px;
+   }
+    .imgLeft
+   {
+       float:left;
+   }
+       .clsWhatuWillneedBlock
+    {
+        height:500px;
+    }
+    .clsPadLeft{
+        padding-left:0px;
+    }
+    .clsDesktop
+    {
+         display:block;
+    }
+     .clsContactIFeildsBox{
+        width:100%;
+        margin:0 auto;
+    }
+       .clsWhtuWillNeedimg{
+        height:460px;
+        width:auto;
+    }
+    .clsPageBannerHeaderTitle
+    {
+        padding-left:0px;
+    }
+    .clsPageBannerHeaderSubTitle
+    {
+        padding-left:0px;
+    }
+     .footer {
+        height: 140px;
+    }
+       .clsContactFooFooter
+    {
+        width:500px;
+    }
+        .clsTermDialogue{
+        width:700px;
+    }
+        .clsHowItWorksBlock
+    {
+        padding-right:30px;
+    }
+         .clsFirstBlockMargin
+    {
+            background: url("./Images/Union10.png")  no-repeat;
+    }
+           .clsBlockTitles
+    {
+        text-align:left;
+        padding-left:40px;
+    }
+    .clsBlockSubTitles
+    {
+        text-align:left;
+        padding-left:40px;
+    }
+      .clsSubHeaderOverride
+    {
+        width:70%;
+        
+    }
+      .clsMobi{
+        display:none;
+    }
+        .clsMainHeaderInnerPad{
+            border-bottom:none;
+    }
+        .clsApplyNowButton{
+        margin-top:30px;
+        margin-left:30px;
+        margin-bottom:0px;
+                  float:left;
+    }
+        .clsLoginBox{
+        width:360px;
+    }
+     #drpContactTitle
+    {
+        width:120px;
+    }
+       .clstxtWidth
+    {
+        width:180px;
+    }
+         .clsContactFooBottomTextbox
+    {
+        padding-right:20px;
+        width:200px;
+    }
+         .clsContactCallMeBackButton
+    {
+        margin-top:0px;
+    }
+     .clsDoIQualify
+    {
+         float:left;
+         margin-top:30px;
+    }
+      .clsMarginLeft
+    {
+        margin-left:0px;
+    }
+        .clsRegLeftDiv
+    {
+        float:left;
+        width:420px;
+    }
+     .clsRegRightDiv
+    {
+        float:right;
+        width:400px;
+        padding-top:0px;
+    }
+     
+     .clsTablePad
+    {
+        padding:0px;
+    }
+       .clsEligibityButton{
+        float:right;
+        padding-right:30px;
+        text-align:left;
+    }
+       .clsDesktopInLine
+    {
+         display:inline-block;
+    }
+    .clsSuccessMainDiv
+    {
+        height:45px;
+    }
+    .clsLeftMenuContainer
+    {
+        width:170px;
+        padding:0px;
+    }
+      .clsAboutUsContent
+    {
+        width:760px;
+        margin-left:20px;
+    }
+    .clsTLeft
+    {
+        float:left;
+    }
+    .clsResAfforGrid{
+        width:800px;
+        height:320px;
+        overflow:scroll;
+    }
+     #divActualDoc
+     {
+         width:100%;
+     }
+     .clsLoanConfirmationRight{
+            float:right;
+        }
+      .clsSignaturePop{
+       width:730px;
+       height:620px;
+    }
+        .clsFloatLeft{
+        float:left;
+    }
+   #divSignPopup
+      {
+          height:625px;
+          overflow-y:hidden;
+      }
+      .clsCustomTextBox{
+        width:200px;
+    }
+          .clsDropDownList {
+        width:200px !important;
+    }
+}
+/* Desktops and laptops ----------- */
+@media only screen 
+and (min-width : 1224px) 
+{
+  .clsCenterBlock
+   {
+       width:960px !important;
+   }
+  
+    .clsContactInnerCenterDiv
+   {
+       width:740px !important;
+   }
+    .clsContactInnerDivWidth{
+       width:520px !important;
+   }
+     .clsHowItOwkrsCenterDiv
+   {
+       width:770px !important;
+   }
+   .clsHowItWorksBlock
+   {
+       width:700px !important;
+   }
+   .clsFirstBlockMargin
+   {
+       width:683px !important;
+       margin-left:145px !important;
+   }
+    .imgLeft
+   {
+       float:left !important;
+   }
+       .clsWhatuWillneedBlock
+    {
+        height:500px !important;
+    }
+    .clsPadLeft{
+        padding-left:0px !important;
+    }
+    .clsDesktop
+    {
+         display:block !important;
+    }
+     .clsContactIFeildsBox{
+        width:100% !important;
+        margin:0 auto !important;
+    }
+       .clsWhtuWillNeedimg{
+        height:460px !important;
+        width:auto !important;
+    }
+    .clsPageBannerHeaderTitle
+    {
+        padding-left:0px !important;
+    }
+    .clsPageBannerHeaderSubTitle
+    {
+        padding-left:0px !important;
+    }
+     .footer {
+        height: 140px !important;
+    }
+       .clsContactFooFooter
+    {
+        width:500px !important;
+    }
+        .clsTermDialogue{
+        width:700px !important;
+    }
+    .clsHowItWorksBlock
+    {
+        padding-right:30px !important;
+    }
+     .clsFirstBlockMargin
+    {
+            background: url("./Images/Union10.png")  no-repeat !important;
+    }
+       .clsBlockTitles
+    {
+        text-align:left !important;
+        padding-left:40px !important;
+    }
+    .clsBlockSubTitles
+    {
+        text-align:left !important;
+        padding-left:40px !important;
+    }
+      .clsSubHeaderOverride
+    {
+        width:70% !important;
+       
+    }
+      .clsMobi{
+        display:none !important;
+    }
+        .clsMainHeaderInnerPad{
+            border-bottom:none !important;
+    }
+    .clsApplyNowButton{
+        margin-top:30px !important;
+        margin-left:30px !important;
+        margin-bottom:0px !important;
+                  float:left !important;
+    }
+    .clsLoginBox{
+        width:360px !important;
+    }
+     #drpContactTitle
+    {
+        width:120px !important;
+    }
+       .clstxtWidth
+    {
+        width:180px !important;
+    }
+    .clsContactFooBottomTextbox
+    {
+        padding-right:20px !important;
+        width:200px !important;
+    }
+ .clsContactCallMeBackButton
+    {
+        margin-top:0px !important;
+    }
+   .clsDoIQualify
+    {
+         float:left !important;
+         margin-top:30px  !important;
+    }
+  .clsMarginLeft
+    {
+        margin-left:0px !important;
+    }
+    .clsRegLeftDiv
+    {
+        float:left !important;
+        width:420px !important;
+    }
+     .clsRegRightDiv
+    {
+        float:right !important;
+        width:400px !important;
+        padding-top:0px !important;
+    }
+     
+     .clsTablePad
+    {
+        padding:0px !important;
+    }
+    .clsEligibityButton{
+        float:right !important;
+        padding-right:30px !important;
+        text-align:left !important;
+    }
+       .clsDesktopInLine
+    {
+         display:inline-block !important;
+    }
+       .clsSuccessMainDiv
+    {
+        height:45px !important;
+    }
+    .clsLeftMenuContainer
+    {
+        width:170px !important;
+        padding:0px !important;
+    }
+      .clsAboutUsContent
+    {
+        width:760px !important;
+        margin-left:20px !important;
+    }
+    .clsTLeft
+    {
+        float:left !important;
+    }
+     .clsResAfforGrid{
+        width:800px !important;
+        height:320px !important;
+        overflow:scroll !important;
+    }
+      #divActualDoc
+     {
+         width:100% !important;
+     }
+     .clsLoanConfirmationRight{
+            float:right !important;
+        }
+      .clsSignaturePop{
+       width:730px !important;
+       height:620px !important;
+    }
+    .clsFloatLeft{
+        float:left !important;
+    }
+      #divSignPopup
+      {
+          height:625px !important;
+          overflow-y:hidden !important;
+      }
+    .clsCustomTextBox{
+        width:200px !important;
+    }
+        .clsDropDownList {
+        width:200px !important;
+    }
+}
+/* Large screens ----------- */
+@media only screen 
+and (min-width : 1824px) 
+{
+   .clsCenterBlock
+   {
+       width:960px !important;
+   }
+  
+     .clsContactInnerCenterDiv
+   {
+       width:740px !important;
+   }
+      .clsContactInnerDivWidth{
+       width:520px !important;
+   }
+      .clsHowItOwkrsCenterDiv
+   {
+       width:770px !important;
+   }
+   .clsHowItWorksBlock
+   {
+       width:700px !important;
+   }
+   .clsFirstBlockMargin
+   {
+       width:683px !important;
+       margin-left:145px !important;
+   }
+    .imgLeft
+   {
+       float:left !important;
+   }
+       .clsWhatuWillneedBlock
+    {
+        height:500px !important;
+    }
+    .clsPadLeft{
+        padding-left:0px !important;
+    }
+    .clsDesktop
+    {
+         display:block !important;
+    }
+     .clsContactIFeildsBox{
+        width:100% !important;
+        margin:0 auto !important;
+    }
+       .clsWhtuWillNeedimg{
+        height:460px !important;
+        width:auto !important;
+    }
+    .clsPageBannerHeaderTitle
+    {
+        padding-left:0px !important;
+    }
+      .clsPageBannerHeaderSubTitle
+    {
+        padding-left:0px !important;
+    }
+    .footer {
+        height: 140px !important;
+    }
+       .clsContactFooFooter
+    {
+        width:500px !important;
+    }
+            .clsTermDialogue{
+        width:700px !important;
+    }
+    .clsHowItWorksBlock
+    {
+        padding-right:30px !important;
+    }
+        .clsFirstBlockMargin
+    {
+            background: url("./Images/Union10.png")  no-repeat !important;
+    }
+             .clsBlockTitles
+    {
+        text-align:left !important;
+        padding-left:40px !important;
+    }
+    .clsBlockSubTitles
+    {
+        text-align:left !important;
+        padding-left:40px !important;
+    }
+        .clsSubHeaderOverride
+    {
+        width:70% !important;
+    }
+           .clsMobi{
+        display:none !important;
+    }
+    .clsMainHeaderInnerPad{
+            border-bottom:none !important;
+    }
+    .clsApplyNowButton{
+        margin-top:30px !important;
+        margin-left:30px !important;
+        margin-bottom:0px !important;
+              float:left !important;
+    }
+    .clsLoginBox{
+        width:360px !important;
+    }
+     #drpContactTitle
+    {
+        width:120px !important;
+    }
+        .clstxtWidth
+    {
+        width:180px !important;
+    }
+         .clsContactFooBottomTextbox
+    {
+        padding-right:20px !important;
+        width:200px !important;
+    }
+     .clsContactCallMeBackButton
+    {
+        margin-top:0px !important;
+    }
+        .clsDoIQualify
+    {
+         float:left !important;
+         margin-top:30px  !important;
+    }
+      .clsMarginLeft
+    {
+        margin-left:0px !important;
+    }
+    .clsRegLeftDiv
+    {
+        float:left !important;
+        width:420px !important;
+    }
+     .clsRegRightDiv
+    {
+        float:right !important;
+        width:400px !important;
+        padding-top:0px !important;
+    }
+       .clsTablePad
+    {
+        padding:0px !important;
+    }
+      .clsEligibityButton{
+        float:right !important;
+        padding-right:30px !important;
+        text-align:left !important;
+    }
+       .clsDesktopInLine
+    {
+         display:inline-block !important;
+    }
+    .clsSuccessMainDiv
+    {
+        height:45px !important;
+    }
+      .clsLeftMenuContainer
+    {
+        width:170px !important;
+        padding:0px !important;
+    }
+   .clsAboutUsContent
+    {
+        width:760px !important;
+         margin-left:20px !important;
+    }
+    .clsTLeft
+    {
+        float:left !important;
+    }
+    .clsResAfforGrid{
+        width:800px !important;
+        height:320px !important;
+        overflow:scroll !important;
+    }
+        #divActualDoc
+     {
+         width:100% !important;
+     }
+        .clsLoanConfirmationRight{
+            float:right !important;
+        }
+    .clsSignaturePop{
+       width:730px !important;
+       height:620px !important;
+    }
+      .clsFloatLeft{
+        float:left !important;
+    }
+      #divSignPopup
+      {
+          height:625px !important;
+          overflow-y:hidden !important;
+      }
+      .clsCustomTextBox{
+        width:200px !important;
+    }
+    .clsDropDownList {
+        width:200px !important;
+    }
+}

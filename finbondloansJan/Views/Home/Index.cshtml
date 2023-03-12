@@ -1,0 +1,258 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="~/Content/bootstrap.min.css">
+<script src="~/scripts/jquery.min.js"></script>
+<script src="~/scripts/bootstrap.min.js"></script>
+<link href="~/Content/Custom/Home.css" rel="stylesheet" />
+<link href="~/Content/Custom/Menus.css" rel="stylesheet" />
+
+<link href="~/Content/Custom/Howitworks.css" rel="stylesheet" />
+<script src="~/scripts/callmeback.js"></script>
+<link href="~/Content/Custom/contact.css" rel="stylesheet" />
+<link href="~/Content/Custom/contactInput.css" rel="stylesheet" />
+
+@*<map name='homemap'>
+        <area shape='rect' coords='180,263,440,333'    href='/checkeligibility/index' />
+
+    </map>*@
+<div class="clsMobi">
+    <img alt="" class="clsSliderMobi" usemap="#homemap" />
+    <div class="clsCellCMobiContainerForHeaderButtons">
+        <div class="clsMobiDoIQualify clsMobi" onclick="location.href = '../checkeligibility/index';">DO I QUALIFY?</div>
+
+        @if (string.IsNullOrEmpty(StaffLoans.Models.Common.LoggedInClientIDNumber))
+        {
+            <div class="clsMobiAppN clsMobi" onclick="location.href = '../mobireg/index';">APPLY NOW</div>
+        }
+        else
+        {
+            <div class="clsMobiAppN clsMobi" onclick="location.href = '../myAccount/index';">APPLY NOW</div>
+        }
+    </div>
+</div>
+<div class="clshomeBanner1 clsDesktop" style="width:100%;height:430px;">
+    <img alt="" class="clsSlider" usemap="#homemap" />
+    &nbsp;
+    <div class="clsContainerForHeaderButtons">
+        <div class="clsCustomHeaderButton2 clsDesktop" onclick="location.href = '../checkeligibility/index';">DO I QUALIFY?</div>
+
+        @if (string.IsNullOrEmpty(StaffLoans.Models.Common.LoggedInClientIDNumber))
+        {
+            <div class="clsCustomHeaderButton1 clsDesktop" onclick="location.href = '../register/index';">APPLY NOW</div>
+        }
+        else
+        {
+            <div class="clsCustomHeaderButton1 clsDesktop" onclick="location.href = '../myAccount/index';">APPLY NOW</div>
+        }
+    </div>
+    <div class="clsCellcContainerForHeaderButtons">
+        <div class="clsDesktopDoIQualify clsDesktop" onclick="location.href = '../checkeligibility/index';">DO I QUALIFY?</div>
+
+        @if (string.IsNullOrEmpty(StaffLoans.Models.Common.LoggedInClientIDNumber))
+        {
+            <div class="clsDesktopAppN clsDesktop" onclick="location.href = '../register/index';">APPLY NOW</div>
+        }
+        else
+        {
+            <div class="clsDesktopAppN clsDesktop" onclick="location.href = '../myAccount/index';">APPLY NOW</div>
+        }
+    </div>
+</div>
+
+<div class="clsCenterBlock">
+    <div class="clsCenterBlockPad">
+
+        @*<div>
+                <div  class="clsMenuTitleBox">
+                    <div class="clsMenuTitleColor"><a href="/home/index">HOME</a></div>
+                    <div class="clsMenuSubTitleColor">Find out more about our <br/>products, contact as well as how <br/>to apply</div>
+                </div>
+                <div  class="clsMenuTitleBox clsMenuTitleBoxLeft" >
+                    <div class="clsMenuTitleColor"><a href="/howitworks/index">HOW IT WORKS</a></div>
+                    <div class="clsMenuSubTitleColor">Find out how to apply for a <br/>Net1 loan with out easy <br/>guide US</div>
+                </div>
+                <div class="clsMenuTitleBox clsMenuTitleBoxLeft" >
+                    <div class="clsMenuTitleColor"><a href="/faq/index">FAQ</a></div>
+                    <div class="clsMenuSubTitleColor">For more information on our <br/>product refer to <br/>this section.</div>
+                </div>
+                <div class="clsMenuTitleBox clsMenuTitleBoxLeft" style="border-right:0px;">
+                    <div class="clsMenuTitleColor"><a href="/contactus/index"> CONTACT US</a></div>
+                    <div class="clsMenuSubTitleColor">Need any assistant? Get in <br/>touch with our call center<br/> agent for assistance.</div>
+                </div>
+                <div style="clear:both"></div>
+            </div>
+            <br /><br />
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                </ol>
+
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="~/Content/Images/slider1.png" alt="" style="width:100%;">
+                    </div>
+
+                    <div class="item">
+                        <img src="~/Content/Images/slider2.png" alt="" style="width:100%;">
+                    </div>
+                </div>
+
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>*@
+
+
+
+        <div class="clsHowItOwrksPAdBox">
+            <div class="clsHowItWorksTitle"><b>HOW IT WORKS</b></div>
+            <div class="clsHowItWorksSubTitle">Follow these easy steps to get started on getting you the extra cash you need.</div>
+            <br />
+            <br />
+            <div class="clsHowItOwkrsCenterDiv">
+                <div class="clsHowItWorksBlock">
+                    <img src="~/Content/Images/Step1.png" alt="" class="imgLeft" />
+                    <div class="clsFirstBlockMargin">
+                        <div class="clsBlockTitles"><a href="../register/index" style="color:#003F7D;">STEP 1: REGISTER:</a></div>
+                        <div class="clsBlockSubTitles">Create your online profile and complete your personal information.</div>
+                    </div>
+                    <div style="clear:both"></div>
+                </div>
+                <div class="clsHowItWorksBlock">
+                    <img src="~/Content/Images/Step2.png" alt="" class="imgLeft" />
+                    <div class="clsFirstBlockMargin">
+                        <div class="clsBlockTitles">STEP 2: APPLY</div>
+                        <div class="clsBlockSubTitles">Select your loan amount and submit your financial details.</div>
+                    </div>
+                    <div style="clear:both"></div>
+                </div>
+                <div class="clsHowItWorksBlock">
+                    <img src="~/Content/Images/Step3.png" alt="" class="imgLeft" />
+                    <div class="clsFirstBlockMargin">
+                        <div class="clsBlockTitles">STEP 3: ASSESSMENT</div>
+                        <div class="clsBlockSubTitles">Your application will be evaluated and loan options sent to you.</div>
+                    </div>
+                    <div style="clear:both"></div>
+                </div>
+
+                <div class="clsHowItWorksBlock">
+                    <img src="~/Content/Images/Step4.png" alt="" class="imgLeft" />
+                    <div class="clsFirstBlockMargin">
+                        <div class="clsBlockTitles">STEP 4: CONTRACT AGREEMENT</div>
+                        <div class="clsBlockSubTitles">Pick the loan option that suits you and sign the loan agreement.</div>
+                    </div>
+                    <div style="clear:both"></div>
+                </div>
+
+                <div class="clsHowItWorksBlock">
+                    <img src="~/Content/Images/Step5.png" alt="" class="imgLeft" />
+                    <div class="clsFirstBlockMargin">
+                        <div class="clsBlockTitles">STEP 5: CASH IN YOUR ACCOUNT</div>
+                        <div class="clsBlockSubTitles">Your loan will be deposited into your account.</div>
+                    </div>
+                    <div style="clear:both"></div>
+                </div>
+                <div style="clear:both"></div>
+
+            </div>
+            <div style="clear:both"></div>
+        </div>
+
+    </div>
+</div>
+<div class="clsWhatuWillneedBlock">
+    <div class="clsCenterBlock">
+        <div style="float:left;padding-right:30px;padding-top:40px;">
+            <img src="~/Content/Images/Whatyouwillneed.png" class="clsWhtuWillNeedimg" />
+        </div>
+        <div style="float:left;padding-top:60px;" class="clsPadLeft">
+            <div style="color:#003F7D;font-size:16px;font-weight:bold;">WHAT YOU WILL NEED</div>
+            <br />
+            <div>Below is a list of documents required when applying for your loan.</div>
+            <br />
+            <div style="color:#323232;font-size:12px;">
+                <div style=""><img src="~/Content/Images/Yellow_tick.png" style="float:left;padding-right:15px;padding-top:10px;" /> <div class="clsWhtuwillneedBorder">A cellphone number</div></div>
+                <div style="clear:both"></div>
+                <div style="">
+                    <img src="~/Content/Images/Yellow_tick.png" style="float:left;padding-right:15px;padding-top:10px;" /> <div class="clsWhtuwillneedBorder">SA ID number</div>
+                </div>
+                <div style="clear:both"></div>
+                <div style="">
+                    <img src="~/Content/Images/Yellow_tick.png" style="float:left;padding-right:15px;padding-top:10px;" /> <div class="clsWhtuwillneedBorder">Bank account details</div>
+                </div>
+                <div style="clear:both"></div>
+                <div style="">
+                    <img src="~/Content/Images/Yellow_tick.png" style="float:left;padding-right:15px;padding-top:10px;" /> <div class="clsWhtuwillneedBorder">Most recent proof of income</div>
+                </div>
+                <div style="clear:both"></div>
+                <div style="">
+                    <img src="~/Content/Images/Yellow_tick.png" style="float:left;padding-right:15px;padding-top:10px;" /> <div class="clsWhtuwillneedBorder" style="border-bottom:1px solid #CCCCCC">Proof of residence</div>
+                </div>
+                <div style="clear:both"></div>
+            </div>
+            <br />
+            <div style="color:#003F7D;font-size:16px;font-weight:bold;">
+                CHECK IF YOU QUALIFY OR APPLY NOW
+            </div>
+            <div class="clsMarginLeft">
+                <a href="~/checkeligibility/index"><div class="clsDoIQualify"></div></a>
+
+                @if (string.IsNullOrEmpty(StaffLoans.Models.Common.LoggedInClientIDNumber))
+                {
+                    <a href="~/mobireg/index" class="clsMobi"><div class="clsApplyNowButton "></div></a>
+                    <a href="~/register/index" class="clsDesktopInLine"><div class="clsApplyNowButton"></div></a>
+                }
+                else
+                {
+                    <a href="~/myaccount/index"><div class="clsApplyNowButton"></div></a>
+                }
+
+                <div style="clear:both"></div>
+            </div>
+        </div>
+        <div style="clear:both"></div>
+    </div>
+
+</div>
+<div class="clsContactBackground clsContactMdiv">
+    <div class="clsContactInnerCenterDiv">
+        @*<div class="clsContactBorderLeft"></div>*@
+        <div class="clsContactBorderText">CALL ME BACK</div>
+        @*<div class="clsContactBorderRight"></div>*@
+        <div style="clear:both"></div>
+        <br />
+        <div class="clsContactFooText">Leave your details below and one of our consultant will get in touch with you.</div>
+        <br />
+        <div class="clsContactIFeildsBox">
+            <select id="drpContactTitle">
+                <option value="Mr">Mr</option>
+                <option value="Mrs">Mrs</option>
+                <option value="Miss">Miss</option>
+                <option value="Prof">Prof</option>
+                <option value="Dr">Dr</option>
+                <option value="Hon">Hon</option>
+                <option value="Other">Other</option>
+            </select>
+            <div class="clsContactFooBottomTextbox" >
+                <input type="text" class="inputBox clstxtWidth" id="txtfooName" placeholder="Your Full Name" />
+            </div>
+            <div class="clsContactFooBottomTextbox" >
+                <input type="text" class="inputBox clstxtWidth" id="txtfooMobileNumber" placeholder="Phone Number" />
+            </div>
+            <div class="clsContactButton clsContactCallMeBackButton" onclick="fnSaveCallMeBack()">CALL ME BACK</div>
+            <div style="clear:both"></div>
+        </div>
+        <br />
+    </div>
+
+
+</div>

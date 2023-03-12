@@ -1,0 +1,63 @@
+06 Nov 2019 11:53:47 [INFO][11]ErrorLoLogger - MyAccountController=>CheckAffordabilityThe request channel timed out while waiting for a reply after 00:00:59.9939839. Increase the timeout value passed to the call to Request or increase the SendTimeout value on the Binding. The time allotted to this operation may have been a portion of a longer timeout. 
+Server stack trace: 
+   at System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at StaffLoans.LoanAPI.IFINBONDAPI.CheckAffordability(CheckAffordabilityRequest request)
+   at StaffLoans.LoanAPI.FINBONDAPIClient.StaffLoans.LoanAPI.IFINBONDAPI.CheckAffordability(CheckAffordabilityRequest request) in C:\Users\laxmi\Documents\Projects\Projects\StaffLoans\StaffLoans\StaffLoans\Service References\LoanAPI\Reference.cs:line 6275
+   at StaffLoans.LoanAPI.FINBONDAPIClient.CheckAffordability(TSessionData SessionData, TAffordabilityInfo AffordabilityInfo) in C:\Users\laxmi\Documents\Projects\Projects\StaffLoans\StaffLoans\StaffLoans\Service References\LoanAPI\Reference.cs:line 6282
+   at StaffLoans.Controllers.MyAccountController.CheckAffordability(MyAccount modal, String sendOTP, String saveData) in C:\Users\laxmi\Documents\Projects\Projects\StaffLoans\StaffLoans\StaffLoans\Controllers\MyAccountController.cs:line 150
+06 Nov 2019 11:56:32 [INFO][10]ErrorLoLogger - MyAccountController=>CheckAffordabilityThe request channel timed out while waiting for a reply after 00:00:59.9949862. Increase the timeout value passed to the call to Request or increase the SendTimeout value on the Binding. The time allotted to this operation may have been a portion of a longer timeout. 
+Server stack trace: 
+   at System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at StaffLoans.LoanAPI.IFINBONDAPI.CheckAffordability(CheckAffordabilityRequest request)
+   at StaffLoans.LoanAPI.FINBONDAPIClient.StaffLoans.LoanAPI.IFINBONDAPI.CheckAffordability(CheckAffordabilityRequest request) in C:\Users\laxmi\Documents\Projects\Projects\StaffLoans\StaffLoans\StaffLoans\Service References\LoanAPI\Reference.cs:line 6275
+   at StaffLoans.LoanAPI.FINBONDAPIClient.CheckAffordability(TSessionData SessionData, TAffordabilityInfo AffordabilityInfo) in C:\Users\laxmi\Documents\Projects\Projects\StaffLoans\StaffLoans\StaffLoans\Service References\LoanAPI\Reference.cs:line 6282
+   at StaffLoans.Controllers.MyAccountController.CheckAffordability(MyAccount modal, String sendOTP, String saveData) in C:\Users\laxmi\Documents\Projects\Projects\StaffLoans\StaffLoans\StaffLoans\Controllers\MyAccountController.cs:line 150
+06 Nov 2019 11:58:36 [INFO][19]ErrorLoLogger - MyAccountController=>CheckAffordabilityThe request channel timed out while waiting for a reply after 00:00:59.9844559. Increase the timeout value passed to the call to Request or increase the SendTimeout value on the Binding. The time allotted to this operation may have been a portion of a longer timeout. 
+Server stack trace: 
+   at System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at StaffLoans.LoanAPI.IFINBONDAPI.CheckAffordability(CheckAffordabilityRequest request)
+   at StaffLoans.LoanAPI.FINBONDAPIClient.StaffLoans.LoanAPI.IFINBONDAPI.CheckAffordability(CheckAffordabilityRequest request) in C:\Users\laxmi\Documents\Projects\Projects\StaffLoans\StaffLoans\StaffLoans\Service References\LoanAPI\Reference.cs:line 6275
+   at StaffLoans.LoanAPI.FINBONDAPIClient.CheckAffordability(TSessionData SessionData, TAffordabilityInfo AffordabilityInfo) in C:\Users\laxmi\Documents\Projects\Projects\StaffLoans\StaffLoans\StaffLoans\Service References\LoanAPI\Reference.cs:line 6282
+   at StaffLoans.Controllers.MyAccountController.CheckAffordability(MyAccount modal, String sendOTP, String saveData) in C:\Users\laxmi\Documents\Projects\Projects\StaffLoans\StaffLoans\StaffLoans\Controllers\MyAccountController.cs:line 150
+06 Nov 2019 15:22:30 [INFO][31]ErrorLoLogger - MyAccountController=>IndexThere was no endpoint listening at http://10.1.1.31:8070/soap/IFINBONDAPI that could accept the message. This is often caused by an incorrect address or SOAP action. See InnerException, if present, for more details. 
+Server stack trace: 
+   at System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+   at System.ServiceModel.Channels.HttpOutput.Send(TimeSpan timeout)
+   at System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.SendRequest(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at StaffLoans.LoanAPI.IFINBONDAPI.ClientEnquiry(ClientEnquiryRequest request)
+   at StaffLoans.LoanAPI.FINBONDAPIClient.StaffLoans.LoanAPI.IFINBONDAPI.ClientEnquiry(ClientEnquiryRequest request) in C:\Users\laxmi\Documents\Projects\Projects\StaffLoans\StaffLoans\StaffLoans\Service References\LoanAPI\Reference.cs:line 6248
+   at StaffLoans.LoanAPI.FINBONDAPIClient.ClientEnquiry(TSessionData SessionData, String IDNumber, Boolean InquiryOnly) in C:\Users\laxmi\Documents\Projects\Projects\StaffLoans\StaffLoans\StaffLoans\Service References\LoanAPI\Reference.cs:line 6256
+   at StaffLoans.Controllers.MyAccountController.Index() in C:\Users\laxmi\Documents\Projects\Projects\StaffLoans\StaffLoans\StaffLoans\Controllers\MyAccountController.cs:line 37

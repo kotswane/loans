@@ -1,0 +1,142 @@
+﻿@model StaffLoans.Models.LoginModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="~/Content/bootstrap.min.css">
+<link href="~/Content/Custom/Menus.css" rel="stylesheet" />
+<link href="~/Content/Custom/Login.css" rel="stylesheet" />
+<script src="~/scripts/login.js"></script>
+
+@*<div class="clsMobi" style="">
+    <div style="height:500px;background-color:#0657A7;color:#fff;text-align:center;padding:15px;">
+        <div style="padding-top:36%;">
+            <img src="~/Content/Images/Alert.png" alt="" style="padding-bottom:20px;" />
+            <div style="font-size:16px;"> <b>LOGIN</b></div>
+            <br />
+            <div>Currently can not login on mobile devices please use the a Desktop computer with internet connection</div>
+            <a href="~/home/index"><div class="clsBackButton">BACK</div></a>
+            <br/>
+        </div>
+    </div>
+</div>*@
+
+<div class="clsPageBannerHeader">  @*clsDesktop*@
+    <div class="clsCenterBlock clsPageBannerHeaderPad">
+        <div class="clsPageBannerHeaderTitle">LOGIN</div>
+        <div class="clsPageBannerHeaderSubTitle">Once you open this door, we're going to start opening doors for you too.</div>
+    </div>
+</div>
+<div class="clsCenterBlock"> @*clsDesktop*@
+    <div class="clsCenterBlockPad">
+        <br />
+        <div style="clear:both"></div>
+       
+        <div class="log_in clsCenterDiv" style="background-color:#fff;">
+
+            <div style="clear:both"></div>
+
+            <input type="hidden" id="hdnLoginErrorMsg" value="@ViewBag.LoginError" />
+            @using (Html.BeginForm("LoginUser", "Login", FormMethod.Post,new { autocomplete = "off" }))
+            {
+                @Html.AntiForgeryToken()
+                <div id="divError" class="clsErrorText" style="display:none"></div>
+                <div class="clsLoginBox">
+                    <table cellpadding="0" cellspacing="0" >
+
+                        <tr>
+                            <td>
+                                <div class="inputClass" style="width: 300px !important;">
+                                    ID Number
+                                </div>
+                                <br />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><br /></td>
+                        </tr>
+                        <tr>
+
+                            <td>
+                                @Html.TextBoxFor(m => m.IDNumber, new { maxlength = 13, @class = "inputClass inputBox", onkeypress = "return isNumberKey(event,this);", })
+                                <div class="clsMandatory inputClass" style="float: left"> </div>
+                                <br />
+                                <br />
+                                <br />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><br /></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="inputClass" style="width: 300px !important; ">
+                                    Password
+                                </div>
+                                <br />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><br /></td>
+                        </tr>
+                        <tr>
+
+                            <td>
+                                @Html.TextBoxFor(m => m.Password, new { id = "txtPassword", @class = "inputClass inputBox", type = "password", autocomplete = "off" })
+                                <div id='showhide' onclick='javascript:fnShowHidePasswordText();' class='btnHidePassword ' style="margin-top:5px !important;margin-right:0px;"></div>
+                                <div class="clsMandatory inputClass" style="float: left"></div>
+                                <br />
+                                <br />
+                                <br />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><br /></td>
+                        </tr>
+                        @*<tr>
+                                <td>
+                                    <div class="inputClass" style="width: 300px !important;">
+                                        Two-Step Authentication Code
+                                    </div>
+                                    <br />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><br /></td>
+                            </tr>
+                            <tr>
+
+                                <td>
+                                    @Html.TextBoxFor(m => m.TwoFactorCode, new { id = "txtTwoFactorCode", @class = "inputClass inputBox" })
+                                    <div class="clsMandatory inputClass" style="float: left"></div>
+                                    <br />
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><br /></td>
+                            </tr>*@
+                        <tr>
+
+                            <td style="padding-top: 10px; padding-bottom: 20px">
+                                <div style="clear:both"></div>
+                                <br />
+                                <div style="font-size: 12px; width: 300px; ">
+                                    Don't have an account with us yet? Why not <a href="@Url.Action("Index", "Register")" class="links elements clsWhiteBackLinks">
+                                        <span>Register,</span>
+                                    </a> we'd love for you to join us.
+                                </div>
+                                <br /><br />
+                                <input class="btn" style="width: 300px;  font-size: 14px;color: white;  border-radius: 10px;" type="submit" value="Log In" name="command" />
+                                <br /><br />
+                                <input class="btn" style="width: 300px;  font-size: 14px;color: white;  border-radius: 10px;" type="button" value="Forgot Password" onclick="location.href='@Url.Action("Index", "ForgotPassword")'" name="command" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            }
+            <br />
+        </div>
+        <br />
+    </div>
+</div>

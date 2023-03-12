@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/FinServiceSassa" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/FinServiceSassa" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://10.1.13.72/FinService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="Transactions">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AirtimeTrans" nillable="true" type="tns:ArrayOfAirtimeTransaction" />
+      <xs:element minOccurs="0" name="ElectricityTrans" nillable="true" type="tns:ArrayOfElectricityTransaction" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Transactions" nillable="true" type="tns:Transactions" />
+  <xs:complexType name="ArrayOfAirtimeTransaction">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AirtimeTransaction" nillable="true" type="tns:AirtimeTransaction" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAirtimeTransaction" nillable="true" type="tns:ArrayOfAirtimeTransaction" />
+  <xs:complexType name="AirtimeTransaction">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CellNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionDateTime" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AirtimeTransaction" nillable="true" type="tns:AirtimeTransaction" />
+  <xs:complexType name="ArrayOfElectricityTransaction">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ElectricityTransaction" nillable="true" type="tns:ElectricityTransaction" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfElectricityTransaction" nillable="true" type="tns:ArrayOfElectricityTransaction" />
+  <xs:complexType name="ElectricityTransaction">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CellNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MeterNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionDateTime" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ElectricityTransaction" nillable="true" type="tns:ElectricityTransaction" />
+  <xs:complexType name="Recipients">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Recipient" nillable="true" type="q1:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Recipients" nillable="true" type="tns:Recipients" />
+  <xs:complexType name="Historicaltransactions">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="HistTransaction" nillable="true" type="tns:ArrayOfHistoricalTransaction" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Historicaltransactions" nillable="true" type="tns:Historicaltransactions" />
+  <xs:complexType name="ArrayOfHistoricalTransaction">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HistoricalTransaction" nillable="true" type="tns:HistoricalTransaction" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHistoricalTransaction" nillable="true" type="tns:ArrayOfHistoricalTransaction" />
+  <xs:complexType name="HistoricalTransaction">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CellNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstRegCellNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IDNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MeterNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Month" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RegMethod" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Year" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HistoricalTransaction" nillable="true" type="tns:HistoricalTransaction" />
+  <xs:complexType name="RegistrationRowList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RegistrationList" nillable="true" type="tns:ArrayOfRegistrationRow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RegistrationRowList" nillable="true" type="tns:RegistrationRowList" />
+  <xs:complexType name="ArrayOfRegistrationRow">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RegistrationRow" nillable="true" type="tns:RegistrationRow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRegistrationRow" nillable="true" type="tns:ArrayOfRegistrationRow" />
+  <xs:complexType name="RegistrationRow">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BlockedID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BlockedMSISDN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IDBlack" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IDNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MSISDN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MSISDNBlack" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RegistrationDateTime" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RegistrationRow" nillable="true" type="tns:RegistrationRow" />
+  <xs:complexType name="AccountSummary">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BlacklistDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LinkedLastMonth" type="xs:int" />
+      <xs:element minOccurs="0" name="LinkedTotal" type="xs:int" />
+      <xs:element minOccurs="0" name="Reason" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RegistrationDateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="RegistrationType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AccountSummary" nillable="true" type="tns:AccountSummary" />
+  <xs:complexType name="MSISDNDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IDLinkedsLastMonth" type="xs:int" />
+      <xs:element minOccurs="0" name="IDLinkedsTotal" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MSISDNDetails" nillable="true" type="tns:MSISDNDetails" />
+</xs:schema>

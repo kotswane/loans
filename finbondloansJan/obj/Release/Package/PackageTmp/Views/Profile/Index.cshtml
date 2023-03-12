@@ -1,0 +1,240 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LoggedinLayout.cshtml";
+}
+<link rel="stylesheet" href="~/Content/profile.css" />
+@model  StaffLoans.Models.UpdatePersonalInformation 
+<script src="~/scripts/Profile.js"></script>
+<link href="~/Content/Custom/RegisterInput.css" rel="stylesheet" />
+<div class="clsPageBannerHeader">
+    <div class="clsCenterBlock clsPageBannerHeaderPad">
+        <div class="clsPageBannerHeaderTitle">PROFILE</div>
+        <div class="clsPageBannerHeaderSubTitle">You'll need to edit below fields to update profile information.</div>
+    </div>
+</div>
+
+@using (Html.BeginForm("UpdateProfile", "Profile", FormMethod.Post, new { @onsubmit = "return ValidateRegister();" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(m => m.ClientCode)
+    @Html.HiddenFor(m => m.OriginalEmailAddress)
+    @Html.HiddenFor(m => m.OriginalMobileNumber)
+    <br/><br />
+<div class="clsCenterBlock" style="">
+    <div class="">
+        <!-- Left Side -->
+        <div class="col-md-6">
+            <div class="form-group">
+                <div class="clsRegisterLabel">First Name:</div>
+                <div>@Html.TextBoxFor(m => m.FirstName, new { maxlength = 50, autocomplete = "off" })</div>
+                <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.FirstName)</div>
+            </div>
+            <div class="form-group">
+                <div class="clsRegisterLabel">Last Name:</div>
+                <div>@Html.TextBoxFor(m => m.LastName, new { maxlength = 50, autocomplete = "off" })</div>
+                <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.LastName)</div>
+            </div>
+            <div class="form-group">
+                <div class="clsRegisterLabel">Date Of Birth:</div>
+                <div>@Html.TextBoxFor(m => m.DateOfBirth, new { maxlength = 10, onkeypress = "return isNumberKey(event,this);", id = "txtdateofbirth", autocomplete = "off" })</div>
+                <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.DateOfBirth)</div>
+            </div>
+            <div class="form-group">
+                <div class="clsRegisterLabel">Marital Status:</div>
+                <div>
+                    @Html.DropDownListFor(m => m.MaritalStatus,
+                    new SelectList(Model.MaritalStatusList, "MartialStatusId", "MartialStatuseDesc", Model.MaritalStatus), new { @id = "ddlMaritalStatus", @class = "clsDropDownList1" })
+                </div>
+                <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.MaritalStatus)</div>
+            </div>
+            <div class="form-group">
+                <div class="clsRegisterLabel">Mobile Number:</div>
+                <div>
+                    @Html.TextBoxFor(m => m.MobileNumber, new
+               { @*disabled = "disabled", maxlength = 10,*@ onkeypress = "return isNumberKey(event,this);",
+                   autocomplete = "off"
+               })
+                </div>
+                <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.MobileNumber)</div>
+            </div>
+            <div class="form-group">
+                <div class="clsRegisterLabel">Alternate Number:</div>
+                <div>@Html.TextBoxFor(m => m.AlternateNumber, new { maxlength = 10, onkeypress = "return isNumberKey(event,this);", autocomplete = "off" })</div>
+                <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.AlternateNumber)</div>
+            </div>
+            <div class="form-group">
+                <div class="clsRegisterLabel">Nationality:</div>
+                <div>
+                    @Html.DropDownListFor(m => m.Nationality,
+                            new SelectList(Model.NationalityList, "NationalityId", "NationalityDesc", Model.Nationality), new { @id = "ddlNationality", @class = "clsDropDownList1" })
+                </div>
+                <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.Nationality)</div>
+            </div>
+            <div class="form-group">
+                <div class="clsRegisterLabel">Alternate Contact First Name:</div>
+                <div>@Html.TextBoxFor(m => m.AlternateContactFirstName, new { maxlength = 50, autocomplete = "off" })</div>
+                <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.AlternateContactFirstName)</div>
+            </div>
+            <div class="form-group">
+                <div class="clsRegisterLabel">Alternate Contact Number:</div>
+                <div>@Html.TextBoxFor(m => m.AlternateContactNumber, new { maxlength = 10, onkeypress = "return isNumberKey(event,this);", autocomplete = "off" })</div>
+                <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.AlternateContactNumber)</div>
+            </div>
+        </div>
+        <!-- Right Side -->
+        <div class="col-md-6">
+            <div class="form-group">
+                <div class="clsRegisterLabel">Middle Name:</div>
+                <div>@Html.TextBoxFor(m => m.MiddleName, new { maxlength = 50, autocomplete = "off" })</div>
+                <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.MiddleName)</div>
+            </div>
+            <div class="form-group">
+                <div class="clsRegisterLabel">ID Number:</div>
+                <div>@Html.TextBoxFor(m => m.IDNumber, new { disabled = "disabled", @readonly = "readonly", maxlength = 13, onkeypress = "return isNumberKey(event,this);", id = "txtIDNumber", autocomplete = "off", onchange = "javascript:fnPopulateDateOfBirth();" })</div>
+                <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.IDNumber)</div>
+            </div>
+            <div class="form-group">
+                <div class="clsRegisterLabel">Title:</div>
+                <div>
+                    @Html.DropDownListFor(m => m.Title,
+                new SelectList(Model.TitleList, "TitleId", "TitleDesc", Model.Title), new { @id = "ddlTitle", @class = "clsDropDownList1" })
+                </div>
+                <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.Title)</div>
+            </div>
+            <div class="form-group">
+                <div class="clsRegisterLabel">Email Address:</div>
+                <div>
+                    @Html.TextBoxFor(m => m.EmailAddress, new
+               { @*disabled = "disabled", @readonly = "readonly",*@ maxlength = 50,
+                   autocomplete = "off"
+               })
+                </div>
+                <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.EmailAddress)</div>
+            </div>
+            <div class="form-group">
+                <div class="clsRegisterLabel">Work Number:</div>
+                <div>@Html.TextBoxFor(m => m.WorkNumber, new { maxlength = 10, onkeypress = "return isNumberKey(event,this);", autocomplete = "off" })</div>
+                <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.WorkNumber)</div>
+            </div>
+            <div class="form-group">
+                <div class="clsRegisterLabel">Country Of Birth:</div>
+                <div>
+                    @Html.DropDownListFor(m => m.CountryOfBirth,
+                                new SelectList(Model.CountryOfBirthList, "COBId", "COBDesc", Model.CountryOfBirth), new { @id = "ddlCountryOfBirth", @class = "clsDropDownList1" })
+                </div>
+                <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.CountryOfBirth)</div>
+            </div>
+            <div class="form-group">
+                <div class="clsRegisterLabel">Language:</div>
+                <div>
+                    @Html.DropDownListFor(m => m.Language,
+                                new SelectList(Model.LanguageList, "LanguageId", "LanguageDesc", Model.Language), new { @id = "ddlLanguage", @class = "clsDropDownList1" })
+                </div>
+                <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.Language)</div>
+            </div>
+            <div class="form-group">
+                <div class="clsRegisterLabel">Alternate Contact First Name:</div>
+                <div>@Html.TextBoxFor(m => m.AlternateContactFirstName, new { maxlength = 50, autocomplete = "off" })</div>
+                <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.AlternateContactFirstName)</div>
+            </div>
+            <div class="form-group">
+                <div class="clsRegisterLabel">Marketing Preference:</div>
+                <div>
+                    @Html.DropDownListFor(m => m.MarketingPreference,
+                                new SelectList(Model.MarketingPreferenceList, "MarketingPreId", "MarketingPreDesc", Model.MarketingPreference), new { @id = "ddlMarketingPreference", @class = "clsDropDownList1" })
+                </div>
+                <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.MarketingPreference)</div>
+            </div>
+        </div>
+    </div>
+    <h3 class="clsSubHeading">Residential Address</h3>
+    <div class="">
+        <!-- Left Side -->
+        <div class="col-md-6">
+            <div class="form-group">
+                <div class="clsRegisterLabel">Street:</div>
+                <div>@Html.TextAreaFor(m => m.Street, new { maxlength = 50, @style = "height: 50px !important;width:270px !important;", @class = "clsCustomTextBox ", autocomplete = "off" })</div>
+                <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.Street)</div>
+            </div>
+            <div class="form-group">
+                <div class="clsRegisterLabel">Country:</div>
+                <div>
+                    @Html.DropDownListFor(m => m.Country,
+                        new SelectList(Model.CountryList, "CountryId", "CountryDesc", Model.Country), new { @id = "ddlCountry", @class = "clsDropDownList1" })
+                </div>
+                <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.Country)</div>
+            </div>
+            <div class="form-group">
+                <div class="clsRegisterLabel">Postal Code:</div>
+                <div>@Html.TextBoxFor(m => m.PostalCode, new { maxlength = 10, onkeypress = "return isNumberKey(event,this);", autocomplete = "off" })</div>
+                <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.PostalCode)</div>
+            </div>
+        </div>
+        <!-- Right Side -->
+        <div class="col-md-6">
+            <div class="form-group">
+                <div class="clsRegisterLabel">Suburb:</div>
+                <div>@Html.TextBoxFor(m => m.Suburb, new { maxlength = 50, autocomplete = "off" })</div>
+                <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.Suburb)</div>
+            </div>
+            <div class="form-group">
+                <div class="clsRegisterLabel">Province:</div>
+                <div>
+                    @Html.DropDownListFor(m => m.Province,
+                        new SelectList(Model.ProvinceList, "ProvinceDesc", "ProvinceDesc", Model.Province), new { @id = "ddlProvince", @class = "clsDropDownList1" })
+                </div>
+                <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.Province)</div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <h3 class="clsSubHeading">Postal Address</h3>
+    <div class="">
+        <!-- Left Side -->
+        <div class="col-md-6">
+            <div class="form-group">
+                <div class="clsRegisterLabel">Street:</div>
+                <div>@Html.TextAreaFor(m => m.PostalStreet, new { maxlength = 50, @style = "height: 50px !important;width:270px !important;", @class = "clsCustomTextBox ", autocomplete = "off" })</div>
+                <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.PostalStreet)</div>
+            </div>
+            <div class="form-group">
+                <div class="clsRegisterLabel">Country:</div>
+                <div>
+                    @Html.DropDownListFor(m => m.PostalCountry,
+                        new SelectList(Model.CountryList, "CountryId", "CountryDesc", Model.PostalCountry), new { @id = "ddlPostalCountry", @class = "clsDropDownList1" })
+                </div>
+                <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.PostalCountry)</div>
+            </div>
+            <div class="form-group">
+                <div class="clsRegisterLabel">Postal Code:</div>
+                <div>@Html.TextBoxFor(m => m.PostalPostalCode, new { maxlength = 10, onkeypress = "return isNumberKey(event,this);", autocomplete = "off" })</div>
+                <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.PostalPostalCode)</div>
+            </div>
+        </div>
+        <!-- Right Side -->
+        <div class="col-md-6">
+            <div class="form-group">
+                <div class="clsRegisterLabel">Suburb:</div>
+                <div>@Html.TextBoxFor(m => m.PostalSuburb, new { maxlength = 50, autocomplete = "off" })</div>
+                <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.PostalSuburb)</div>
+            </div>
+            <div class="form-group">
+                <div class="clsRegisterLabel">Province:</div>
+                <div>
+                    @Html.DropDownListFor(m => m.PostalProvince,
+                        new SelectList(Model.ProvinceList, "ProvinceDesc", "ProvinceDesc", Model.PostalProvince), new { @id = "ddlPostalProvince", @class = "clsDropDownList1" })
+                </div>
+                <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.PostalProvince)</div>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="">
+        <div class="col-md-12 text-center">
+            <input class="btn" type="submit" value="Update" name="Register" id="BtnRegister"/>
+        </div>
+    </div>
+    <br />
+</div>
+}

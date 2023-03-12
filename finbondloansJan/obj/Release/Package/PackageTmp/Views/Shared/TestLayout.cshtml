@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Loans</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    @*<link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />*@
+    @*<script src="~/Scripts/modernizr-2.6.2.js"></script>*@
+    <script src="~/scripts/jquery.min.js"></script>
+    <script src="~/scripts/jquery.unobtrusive-ajax.js"></script>
+    <script src="~/scripts/jquery.validate.js"></script>
+    <script src="~/scripts/jquery.validate.unobtrusive.js"></script>
+    <script src="~/scripts/Common.js"></script>
+
+    <script src="~/scripts/jquery-1.12.4.js"></script>
+    <link href="~/Content/jquery-ui.min.css" rel="stylesheet" />
+    <script src="~/scripts/jquery-ui.js"></script>
+    @*<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>*@
+
+    <script src="~/scripts/Loader.js"></script>
+    <script src="~/scripts/alerts.js"></script>
+    <script src="~/scripts/Master.js"></script>
+    <link href="~/Content/test.css" rel="stylesheet" />
+</head>
+<body>
+    <input type="hidden" id="hdnShowSuccessMsg" value='@ViewBag.ShowSuccessMessage' />
+    <input type="hidden" id="hdnShowSuccessMsgDesc" value='@ViewBag.ShowSuccessMessageDescription' />
+    <input type="hidden" id="hdnShowErrorMsg" value='@ViewBag.ShowErrorMessage' />
+    <input type="hidden" id="hdnShowErrorMsgDesc" value='@ViewBag.ShowErrorMessageDescription' />
+    <input type="hidden" id="hdnShowInfoMsg" value='@ViewBag.ShowInfoMessage' />
+    <input type="hidden" id="hdnShowInfoMsgDesc" value='@ViewBag.ShowInfoMessageDescription' />
+    <div id="divLoadDisable" class="black_overlayForCompletePage" style="display: none;">
+    </div>
+    <div id="divLoadIcon" class="clsLoadMainDiv" style="display: none;">
+        <div class="clsLoadInnerDiv" style="">
+            <div style="float: left;">
+                <img src="~/Content/Images/page-loader.gif" style="margin: auto;" alt="" />
+            </div>
+            <div class="clsLoadTextBlock loadMsg">
+                Loading...
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div style="width:960px;margin:0 auto">
+            <div style="padding:20px;padding-bottom:0px;">
+                <div style="padding-top:10px;padding-bottom:10px;">
+                    <div style="float:left;">
+                        <img src="~/Content/Images/EPE-Online-Training_white-13.png" alt="" />
+                    </div>
+                    <div style="margin-left:10px;font-size:20px;float:left;color:#4F4B4C;margin-top:5px;font-weight:bold;">
+                        Staff Loans
+                    </div>
+                    <div style="float:right;font-size:11px;margin-top:10px;">
+                        @if (StaffLoans.Models.Common.LoggedInClientName == "" || StaffLoans.Models.Common.LoggedInClientName == null)
+                        {
+                            <div class="clsMenusTabs"><a href="/home/index" id="divHomeMenu" class="clsMenuColor" style="text-decoration:none;">HOME</a></div>
+                            <div class="clsMenusTabs"><a href="/howitworks/index" id="divHowToApply" class="clsMenuColor" style="text-decoration:none;">HOW TO APPLY</a></div>
+                            <div class="clsMenusTabs"><a href="/faq/index" id="divFAQ" class="clsMenuColor" style="text-decoration:none;">FAQ</a></div>
+                            <div class="clsMenusTabs"><a href="/contactus/index" id="divContactUS" class="clsMenuColor" style="text-decoration:none;">CONTACT US</a></div>
+                            <div class="clsMenusTabs"><a href="/login/index" id="divLogin" class="clsMenuColor" style="text-decoration:none;">LOGIN</a></div>
+                        }
+                        else
+                        {
+                            <div class="clsMenusTabs">Hi @StaffLoans.Models.Common.LoggedInClientName,</div>
+                            <div class="btn" style="width:80px;color:#fff;margin-top:-10px;" onclick="javascript:window.location.href = '@Url.Action("Logout", "Login")';">LogOut</div>
+                        }
+                    </div>
+                    <div style="clear:both"></div>
+                </div>
+            </div>
+        </div>
+
+        @*<div style="width:100%;border-top:5px solid #006da2"></div>*@
+
+        <div style="width:960px;margin:0 auto;margin-top:0px;">
+            @*<div style="padding:20px;">*@
+            <div class="clsNegativegMainDiv" id="divNegativeDiv" style="display:none;height:25px; margin-top: 0px; position: relative;">
+                <div>
+                    <img src="~/Content/Images/Negative_alert_icon.png" alt="" class="clsNegativeInnerImgRight" />
+                    <div class="clsNegativeInnerTextdiv" id="divNegativeText">Invalid User</div>
+                    <div class="clsNegativeInnerCloseImageDiv" onclick="javascript:$('#divNegativeDiv').fadeOut();">
+                        <img src="~/Content/Images/close_popup_icon.png" alt="" />
+                    </div>
+                </div>
+            </div>
+            <div class="clsSuccessMainDiv" id="divSuccessDiv" style="display:none;height: 45px; margin-top: 0px; position: relative;">
+                <div>
+                    <img src="~/Content/Images/success_alert_icon.png" alt="" class="clsSuccessInnerImgRight" />
+                    <div class="clsSuccessInnerTextdiv" id="divSuccessText">Your paycharile link has successfully generated</div>
+                </div>
+                <div class="clsSuccessInnerCloseImageDiv" onclick="javascript:$('#divSuccessDiv').fadeOut();">
+                    <img src="~/Content/Images/close_popup_icon.png" alt="" />
+                </div>
+            </div>
+
+            @RenderBody()
+
+            @*<footer>
+                    <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+                </footer>*@
+            @*</div>*@
+        </div>
+        <div style="clear:both"></div>
+        <div class="push"></div>
+    </div>
+    <div style="clear:both"></div>
+    <div id="footer" class="footer">
+        <div class="footerAlign" style="width:960px;margin:0 auto;padding-top:20px;font-size:11px;">
+            <div style="padding-left:20px;padding-right:20px;">
+                <div class="leftContent" style="float:left;margin-right:15px;">
+                    &copy; Net1 2019
+                </div>
+                <div style="color:#1473E6;">
+                    <a href="/howitworks/index" style="color:#1473E6;text-decoration:none">HOW IT WORKS</a> |
+                    <a href="/faq/index" style="color:#1473E6;text-decoration:none">FAQ</a> |
+                    <a href="/contactus/index" style="color:#1473E6;text-decoration:none">CONTACT</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    @*<script src="~/Scripts/jquery-1.10.2.min.js"></script>*@
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+</body>
+</html>

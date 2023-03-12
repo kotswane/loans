@@ -1,0 +1,116 @@
+﻿@model StaffLoans.Models.Activation
+@{
+    ViewBag.Title = "ShowTwoFactorSecret";
+}
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/Custom/Activation.css" rel="stylesheet" />
+<link href="~/Content/Custom/contactInput.css" rel="stylesheet" />
+<script src="~/scripts/Activation.js"></script>
+@*<script src="~/scripts/OTP.js"></script>*@
+<div class="clsPageBannerHeader">
+    <div class="clsCenterBlock clsPageBannerHeaderPad">
+        <div class="clsPageBannerHeaderTitle">Welcome, @Model.FirstName @Model.Surname!</div>
+        <div class="clsPageBannerHeaderSubTitle">Please follow the below steps to complete the registration process.</div>
+    </div>
+</div>
+@if (Model != null)
+{
+    <div class="clsCenterBlock">
+        <div class="clsCenterBlockPad">
+            <div class="" style="background-color:#fff;border-radius:10px;width:700px;margin:0 auto">
+                <div style="padding:30px;padding-top:20px; margin: 0 auto;">
+                    @*<div class="">
+                        <h2 class="clsTwoFactorHeader">Welcome, @Model.FirstName @Model.Surname!</h2>
+                        
+                    </div>*@
+
+
+                    @*@using (Html.BeginForm("OTPCheck", "Activation", FormMethod.Post))
+                    {
+                        @Html.AntiForgeryToken()
+
+                        @Html.HiddenFor(x => x.ClientCode)
+                        @Html.HiddenFor(x => x.ActivationID)
+                        @Html.HiddenFor(x => x.ConfirmTwoFactorCode)
+                        @Html.HiddenFor(x => x.CellNumber, new { @id = "id_cellNumber" })
+                        @Html.HiddenFor(x => x.OTP, new { @id = "id_OTPSecret" })
+
+                        <div id="OTPSection">
+                            <div class=""><b>Verification (1/2) </b></div>
+                            <br />
+                            <div class=""><b>We need to verify that the cellphone number you provided us with is working, and have sent you an SMS OTP. Please enter it in the field below to proceed.</b></div>
+                            <br />
+                            <fieldset>
+                                <legend class="clsLegend" style="font-weight:bold;">Cell Number Verification</legend>
+                                <div class="editor-label clsFormInnerHeader">
+                                    @Html.LabelFor(m => m.CellNumberOTPPrompt):
+                                </div>
+                                <div class="editor-field clsTwoFactorInput">
+                                    @Html.TextBoxFor(m => m.CellNumberOTPPrompt, new { @id = "id_OTPPrompt" })
+                                    @Html.ValidationMessageFor(m => m.CellNumberOTPPrompt)
+                                </div>
+                                <p class="editor-label clsFormInnerHeader" id="id_warningText">
+                                    Test
+                                </p>
+                                <p>
+                                    <input type="submit" value="Activate Account" class="clsSubmitButton" id="otpButton"/>
+                                </p>
+
+                            </fieldset>
+                        </div>
+                    }*@
+                     @using (Html.BeginForm("Done", "Activation", FormMethod.Post))
+                     {
+                        @Html.AntiForgeryToken()
+
+                        @Html.HiddenFor(x => x.ClientCode)
+                        @Html.HiddenFor(x => x.ActivationID)
+
+                        <div id="TwoFactorSection" style="display:block;">
+                            <div style="font-size:18px;color:#003F7D;"><b>Verification Step (2/2) </b></div>
+                            <br/>
+                            <div class="">We use Two-Factor Authentication to ensure your security. Please add the below code to your authentication app of choice, such as Google Authenticator.</div>
+                            <p class="clsBarcode">
+                                If you have questions about Two-Factor Authentication, please read this handy <a href="https://support.google.com/accounts/topic/2954345?hl=en&ref_topic=7667090" target="_blank" class="links">guide</a>. Alternatively, give us a call on <b>011 343 2079</b>
+                            </p>
+                            <p style="margin-left:-20px;">
+                                @Html.QRCode(string.Format("otpauth://totp/FINBOND Loans?secret={0}", Model.EncodedSecret))
+                            </p>
+                            <p class="clsBarcodeText">
+                                @Model.EncodedSecret
+                            </p>
+
+                            <fieldset>
+                                <legend class="clsLegend" style="font-weight:bold;color:#003F7D;">Verify Two-Factor Authentication</legend>
+                                <br/>
+                                <div class="editor-label clsFormInnerHeader">
+                                    @Html.LabelFor(m => m.ConfirmTwoFactorCode):
+                                </div>
+                                <div class="editor-field clsTwoFactorInput">
+                                    @Html.TextBoxFor(m => m.ConfirmTwoFactorCode)
+                                    @Html.ValidationMessageFor(m => m.ConfirmTwoFactorCode)
+                                </div>
+                                <br/>
+                                <div class="editor-field  clsTwoFactorInput">
+                                    <input type="submit" value="Activate Account" class="btn" />
+                                    </div>
+                                <br/>
+
+
+</fieldset>
+                        </div>
+        }
+                </div>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    ;
+}

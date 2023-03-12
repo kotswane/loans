@@ -1,0 +1,11 @@
+﻿
+        *, *:before, *:after
+    {
+        -webkit-box-sizing:border-box;
+    }
+    input[type=text] {
+        -webkit-box-sizing:initial !important;
+    }
+    input[type=password] {
+        -webkit-box-sizing:initial !important;
+    }

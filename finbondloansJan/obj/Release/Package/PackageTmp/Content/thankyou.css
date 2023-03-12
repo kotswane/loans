@@ -1,0 +1,20 @@
+﻿/*
+
+.clsCenterBlock {
+    max-width: 100%;
+}
+.clsPageBannerHeaderTitle {
+    text-align: center;
+}
+.push {
+    margin-top: -3rem !important;
+}*/
+h3, p {
+    color: #cccccc;
+}
+p {
+    font-size: 12px;
+}
+.jumbotron {
+    background-color: #0657A7;
+}

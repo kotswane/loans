@@ -1,0 +1,41 @@
+﻿   .clsTwoFactorHeader {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    /*.clsBarcode {
+        text-align: center;
+    }*/
+
+    .clsBarcodeText {
+        /*text-align: center;*/
+        font-size: 16px;
+    }
+
+    .clsFormInnerHeader {
+        padding: 10px;
+    }
+
+    .clsLegend {
+        font-size: 11px;
+    }
+
+    .clsSubmitButton {
+        padding: 15px;
+        background-color: #51626c;
+        color: white;
+        font-size: 14px;
+        border: 1px solid #51626c;
+        margin-left: 10px;
+        border-radius: 10px;
+        width: 272px;
+    }
+    .clsSubmitButton:hover{
+       background-color:#0076BC;
+    }
+    .clsTwoFactorInput {
+        margin-left: 10px;
+    }
+    .links:hover{
+        color:#0076BC !important;
+    }

@@ -1,0 +1,12 @@
+﻿.clsMenuTitleBox{
+    float:left;width:220px;padding-right:20px;border-right:1px solid #FFFFFF;
+}
+.clsMenuTitleColor{
+    color:#0076BC;font-size:16px;
+}
+.clsMenuSubTitleColor{
+    color:#9EA4A9;font-size:13px;
+}
+.clsMenuTitleBoxLeft{
+    padding-left:20px;
+}

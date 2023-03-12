@@ -1,0 +1,203 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LoggedinLayout.cshtml";
+}
+<link href="~/Content/LoanOverview.css" rel="stylesheet" />
+@model StaffLoans.Models.LoanInfo
+
+<div class="clsPageBannerHeader">
+    <div class="clsCenterBlock clsPageBannerHeaderPad">
+        <div class="clsPageBannerHeaderTitle">LOAN OVERVIEW</div>
+        <div class="clsPageBannerHeaderSubTitle">Summary of your loan </div>
+    </div>
+</div>
+<div class="clsCenterBlock">
+    <div class="clsCenterBlockPad" style="background-color:#fff; border-radius:10px;">
+        <div style="width:700px;margin:0 auto;padding-top:10px;padding-bottom:10px;">
+            <div style="font-size:20px;color:#29303C;font-weight:bold;padding-bottom:5px;">Loan OverView</div>
+            <br/>
+            <div class="" style="background-color:#fff;border-radius:5px;height:120px;border:1px solid #29303C;">
+                <div style="padding:30px;padding-top:20px; margin: 0 auto;">
+                    <div style="float:left;padding-right:50px;">
+                        <img src="~/Content/Images/Usericon.png" alt="" style="float:left;" />
+                        <div style="font-size:14px;font-weight:bold;color:#29303C;padding-left:50px;padding-top:12px;">@Model.Name @Model.Surname</div>
+                    </div>
+                    <div style="float:left;">
+                        <div style="float:left;font-size:10px;width:150px;padding-bottom:10px;">CONTRACT DATE:<br/>
+                            <div style="font-size:12px;font-weight:bold;"><label id="lblContractDate">@StaffLoans.Models.Common.FormatDate(Model.ContractDate) </label ></div >
+                        </div >
+                        <div style = "float:left;font-size:10px;width:150px;padding-bottom:10px;" >
+                            LOAN AMOUNT:<br/>
+                            <div style = "font-size:12px;font-weight:bold;" ><label id = "lblLoanAmount" >@StaffLoans.Models.Common.FormatMoney(@Model.LoanAmt) </label ></div >
+                        </div >
+                        <div style = "clear:both" ></div >
+                        <div style = "border-top:1px solid #00000029;padding-bottom:10px;" ></div >
+                        <div style = "float:left;font-size:10px;width:150px;padding-bottom:10px;" >
+                            LAST PAYMENT DATE:<br/>
+                            <div style = "font-size:12px;font-weight:bold;" ><label id = "lblLastPayDate" > @StaffLoans.Models.Common.FormatDate(@Model.LastPayDate) </label></div>
+                        </div >
+                        <div style = "float:left;font-size:10px;width:150px;padding-bottom:20px;" >
+                           REMAINING BALANCE <br/>
+                            <div style = "font-size:12px;font-weight:bold;" ><label id = "lblRemianingBal" > @StaffLoans.Models.Common.FormatMoney(@Model.RemainingBalance) </label></div >
+                        </div>
+                        <div style = "clear:both" ></div>
+                    </div>
+                    <div style = "clear:both " ></div>
+                </div>
+            </div>
+            <br />
+            <div style = "float:left;margin-right:25px;background-color:#fff;border-radius:5px;height:350px;width:320px;border:1px solid #29303C;" >
+                <div style = "padding-top:20px; margin: 0 auto;" >
+                    <div style = "font-size:14px;font-weight:bold;color:#29303C;padding-left:15px;" > Repayment History </div>
+                    <div style = "border-top:1px solid #00000029;margin-top:5px;margin-bottom:20px;" ></div>
+                    <div style = "width:190px;margin:0 auto;" >
+                        <img src="~/Content/Images/@Model.ImgName" alt = ""  class="clsPaymentHistoryIcon" />
+                    </div>
+                    <div class="@Model.monthsPadCssClass" style="padding-left:45px;padding-top:15px;">
+                        @if (Model.lstPayments != null)
+                        {
+                            foreach (var hist in Model.lstPayments)
+                            {
+                                <div class="clsMonthName">
+                                    @hist.MonthName<br />
+                                    @if (hist.IsPaid)
+                                    {
+                                        <img src="~/Content/Images/Green_tick.png" class="clsMonthIconImg" alt="" />
+                                    }
+                                    else
+                                    {
+                                        <img src="~/Content/Images/Red_tick.png" class="clsMonthIconImg" alt="" />
+                                    }
+
+                                </div>
+                            }
+                        }
+
+
+                        <div style="clear:both"></div>
+                    </div>
+                    </div>
+                </div>
+            <div style = "float:left;padding-right:25px;background-color:#fff;border-radius:5px;height:120px;width:220px;border:1px solid #29303C;" >
+                <div style = "padding-top:20px; margin: 0 auto;" >
+                    <div style = "font-size:14px;font-weight:bold;color:#29303C;padding-left:15px;" > Next Payment </div>
+                    <div style = "border-top:1px solid #00000029;margin-top:5px;margin-bottom:20px;" ></div>
+                    <div style = "padding-left:15px;font-size:12px;font-weight:bold;" >
+                        @StaffLoans.Models.Common.FormatMoney(@Model.NextInstallment) <br/>
+                        <div style = "font-size:8px;" > Due by @StaffLoans.Models.Common.FormatDate(@Model.NextInstallmentDate) </div >
+                    </div>
+                    </div>
+                </div >
+            <div style = "clear:both" ></div >
+        </div >
+                @*<div class="clsDashboardPage">
+                    <div class="clsDashboardTitle">Loan Overview: <b>@Model.Name   @Model.Surname </b></div>
+                    <div class="clsDashboardContainer">
+                        <div class="clsDashboardBox">
+
+                            <div class="clsDashboardContentHeader">CONTRACT DATE:</div>
+                            <div class="clsDashboardContentValue">@StaffLoans.Models.Common.FormatDate(@Model.ContractDate)</div>
+                        </div>
+                        <div class="clsDashboardBox">
+                            <div class="clsDashboardContentHeader">
+                                LOAN AMOUNT:
+                            </div>
+                            <div class="clsDashboardContentValue">
+                                @StaffLoans.Models.Common.FormatMoney(Convert.ToDecimal(@Model.LoanAmt))
+                             
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clsPaymentHistory">
+                        <div class="clsDashboardContentHeader">
+                            PAYMENT HISTORY:
+                        </div>
+                        <div>
+                      
+                            <img src="~/Content/Images/@Model.ImgName" alt="" class="clsPaymentHistoryIcon" />
+                        </div>
+                        <div class="@Model.monthsPadCssClass" style="padding-left:25px">
+                            @if (Model.lstPayments != null)
+            {
+                foreach (var hist in Model.lstPayments)
+                {
+                    <div class="clsMonthName">
+                        @hist.MonthName<br />
+                        @if (hist.IsPaid)
+                                {
+                                <img src="~/Content/Images/Green_tick.png" class="clsMonthIconImg" alt="" />
+                                }
+                                else
+                                {
+                                <img src="~/Content/Images/Red_tick.png" class="clsMonthIconImg" alt="" />
+                                }
+
+                    </div>
+                        }
+                    }
+
+                  
+                    <div style="clear:both"></div>
+                </div>
+            </div>
+
+
+            <div class="clsDashboardContainer">
+                <div class="clsDashboardBox @Model.arrearsCssClass">
+                    <div class="clsDashboardContentHeader">
+                        AMOUNT IN ARREARS:
+                    </div>
+                    <div class="clsDashboardContentValue">
+                        
+                        @StaffLoans.Models.Common.FormatMoney(Convert.ToDecimal(@Model.AmountInArrears))
+                    </div>
+                    <div class="clsSubHeader" style="padding-left:20px">Loan Status: &nbsp;</div>
+                    <div class="clsSubHeader">@Model.LoanStatus</div>
+                </div>
+
+
+                <div class="clsDashboardBox">
+                    <div class="clsDashboardContentHeader">
+                        LAST PAYMENT DATE:
+                    </div>
+                    <div class="clsDashboardContentValue">
+                        @StaffLoans.Models.Common.FormatDate(@Model.LastPayDate)
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="clsDashboardContainer clsNextPayment">
+                <div class="clsDashboardBox">
+                    <div class="clsDashboardContentHeader">
+                        NEXT PAYMENT:
+                    </div>
+                    <div class="clsDashboardContentValue">
+                        @StaffLoans.Models.Common.FormatMoney(Convert.ToDecimal(@Model.NextInstallment))
+                    </div>
+                    @if (@Model.NextInstallment != 0)
+            {
+                    <div class="clsSubHeader" style="padding-left:20px">Due By: &nbsp;</div>
+                    <div class="clsSubHeader">
+                        @StaffLoans.Models.Common.FormatDate(@Model.NextInstallmentDate)
+                        
+                    </div>
+                    }
+                </div>
+
+                <div class="clsDashboardBox">
+                    <div class="clsDashboardContentHeader">
+                        REMAINING BALANCE:
+                    </div>
+                    <div class="clsDashboardContentValue">
+                        @StaffLoans.Models.Common.FormatMoney(Convert.ToDecimal(@Model.RemainingBalance))
+                        
+                    </div>
+                </div>
+            </div>
+            <div style="clear:both"></div>
+
+        </div>*@
+    </div>
+</div>

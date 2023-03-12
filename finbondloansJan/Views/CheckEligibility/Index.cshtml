@@ -1,0 +1,131 @@
+﻿@model StaffLoans.Models.CheckEligibility
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewBag.Title = "CheckEligibility";
+}
+<link href="~/Content/Custom/Menus.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/Custom/EligibilityEnquiry.css" rel="stylesheet" />
+<script src="~/scripts/ThankYou.js"></script>
+<script src="~/scripts/checkEligibility.js"></script>
+<style>
+    *, *:before, *:after {
+        -webkit-box-sizing: border-box;
+    }
+
+    input[type=text] {
+        -webkit-box-sizing: initial !important;
+    }
+
+    input[type=password] {
+        -webkit-box-sizing: initial !important;
+    }
+</style>
+<div class="clsPageBannerHeader">
+    <div class="clsCenterBlock clsPageBannerHeaderPad">
+        <div class="clsPageBannerHeaderTitle">DO I QUALIFY?</div>
+        <div class="clsPageBannerHeaderSubTitle">Please follow the below instructions to check if you qualify for a loan.</div>
+    </div>
+</div>
+<div class="clsCenterBlock">
+    <div class="clsCenterBlockPad" style="padding:0px;">
+        <div style="width:100%;margin:0 auto">
+            <div style="background-color:#fff; border-radius:10px;">
+                <div class="clsTablePad">
+                    <br/>
+                    @using (Html.BeginForm("SubmitEligibilityCheck", "CheckEligibility", FormMethod.Post))
+            {
+                        @Html.AntiForgeryToken()
+                    
+                        @*<div class="clsMainHeading cls_checkHeader">Online Loan Enquiry</div>
+                        <hr />*@
+                        <br />
+                        <div class="clsRegLeftDiv">
+                            <div class="clsRegisterLabel">First Name:</div>
+                            <div>@Html.TextBoxFor(m => m.FirstName, new { maxlength = 50, autocomplete = "off" })</div>
+                            <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.FirstName)</div>
+                        </div>
+                        <div class="clsMobi"><br/></div>
+                        <div class="clsRegRightDiv">
+                            <div class="clsRegisterLabel">Last Name:</div>
+                            <div>@Html.TextBoxFor(m => m.Surname, new { maxlength = 50, autocomplete = "off" })</div>
+                            <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.Surname)</div>
+                        </div>
+                        <div style="clear:both"></div>
+                        <br />
+                        
+                        <div class="clsRegLeftDiv">
+                            <div class="clsRegisterLabel">ID Number:</div>
+                            <div>@Html.TextBoxFor(m => m.IDNumber, new { maxlength = 13, onkeypress = "return isNumberKey(event,this);", autocomplete = "off" })</div>
+                            <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.IDNumber)</div>
+                        </div>
+                        <div class="clsMobi"><br /></div>
+                        <div class="clsRegRightDiv">
+                            <div class="clsRegisterLabel">Country Of Birth:</div>
+                            <div>
+                                @Html.DropDownListFor(m => m.CountryOfBirth,
+                                   new SelectList(Model.CountryOfBirthList, "COBId", "COBDesc", Model.CountryOfBirth), new { @id = "ddlCountryOfBirth", @class = "clsDropDownList" })
+                            </div>
+                            <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.CountryOfBirth)</div>
+                        </div>
+
+                        <div style="clear:both"></div>
+                        <br />
+
+                        <div class="clsRegLeftDiv">
+                            <div class="clsRegisterLabel">Loan Amount:</div>
+                            <div>@Html.TextBoxFor(m => m.LoanAmount, new { maxlength = 9, autocomplete = "off" })</div>
+                            <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.LoanAmount)</div>
+                        </div>
+                        <div class="clsMobi"><br /></div>
+                        <div class="clsRegRightDiv">
+                            <div class="clsRegisterLabel">Type of Employment:</div>
+                            <div>
+                                @Html.DropDownListFor(m => m.EmploymentTypeId,
+                                   new SelectList(Model.EmploymentTypeList, "EmploymentTypeId", "EmploymentTypeDesc", Model.EmploymentTypeId), new { @id = "ddlTypeOfEmployment", @class = "clsDropDownList" })
+                            </div>
+                            <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.EmploymentTypeId)</div>
+                        </div>
+                        <div style="clear:both"></div>
+                        <br />
+
+                        <div class="clsEligibityButton">
+                            <input class="btn" type="submit" value="Submit" name="Submit" id="BtnRegister"  />
+                           
+                        </div>
+                        <div style="clear:both"></div>
+                        <br/>
+                    }
+                </div>
+
+
+                
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="divTermsOfUse" class="modal fade" role="dialog">
+    <div class="modal-dialog" style="width:700px">
+        <div class="modal-content" style="height:350px;overflow-y:scroll ">
+            <div id="closeButton" class="closeModalButton" data-dismiss="modal" style="height:55px">&times;</div>
+            <div class="modal-header">
+                <h4 class="modal-title clsTermsHeader">Net 1 Staff Loans Terms of Use</h4>
+            </div>
+            <div class="modal-body" style="font-size:12px;line-height:16px">
+                <ul>
+                    <li>Loan repayments will be of Payroll Deduction, administered by Net1 HR.</li>
+                    <li>Staff member must be permanently employed for a period of at least 6 months from date of application.</li>
+                    <li>Normal affordability rules apply, and subject to approval by line manager, as well as HR.</li>
+                    <li>Should an employee resign or terminate employment at Net1 for whatever reason; Net1 reserves the right to settle any outstanding loan balances by way of leave pay or any other emoluments deduction at the point of termination. After which, should there still be an outstanding balance, the former employee must make payment arrangement to settle their outstanding debt.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,114 @@
+﻿@model StaffLoans.Models.ResetPassword
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/Custom/Menus.css" rel="stylesheet" />
+<link href="~/Content/Custom/Login.css" rel="stylesheet" />
+<script src="~/scripts/jquery.password-strength.js"></script>
+<script src="~/scripts/PasswordReset.js"></script>
+<script src="~/scripts/ForgotPassword.js"></script>
+<style type="text/css">
+    .btnHidePassword {
+        margin-top: 8px;
+        margin-right: 10px;
+    }
+
+    .btnShowPassword {
+        margin-top: 8px;
+        margin-right: 10px;
+    }
+</style>
+
+<div class="clsPageBannerHeader">
+    <div class="clsCenterBlock clsPageBannerHeaderPad">
+        <div class="clsPageBannerHeaderTitle">PASSWORD RESET</div>
+        <div class="clsPageBannerHeaderSubTitle">Please follow the below steps to reset the password
+        </div>
+    </div>
+</div>
+<div class="clsCenterBlock">
+    <div class="clsCenterBlockPad">
+
+ 
+        <br />
+        <div style="clear:both"></div>
+        <div class="log_in clsCenterDiv" style="background-color:#fff;border-radius:5px;width:500px;margin:0 auto">
+
+            <div style="clear:both"></div>
+
+            <input type="hidden" id="hdnLoginErrorMsg" value="@ViewBag.LoginError" />
+            @using (Html.BeginForm("Reset", "PasswordReset", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+
+                @Html.HiddenFor(m => m.clientCode)
+                @Html.HiddenFor(m => m.activeReset)
+
+                <div id="divError" class="clsErrorText" style="display:none"></div>
+
+                <table cellpadding="0" cellspacing="0" style="margin: 0 auto;">
+                 
+                    
+                    <tr>
+                        <td>
+                            <div class="inputClass" style="width: 300px !important;">
+                                Password
+                            </div>
+                            <br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><br /></td>
+                    </tr>
+                    <tr>
+
+                        <td>
+                            @Html.TextBoxFor(m => m.Password, new { maxlength = 13, id = "txtPassword", @class = "inputClass inputBox", type = "password", autocomplete = "new-password" })
+                            @*<div class="clsMandatory inputClass" style="float: left"> </div>*@
+                            <br />
+                            <div class="clsMandatory " style="float: left">@Html.ValidationMessageFor(m => m.Password)</div>
+                            <br />
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <div class="inputClass" style="width: 300px !important; ">
+                                Confirm Password
+                            </div>
+                            <br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><br /></td>
+                    </tr>
+                    <tr>
+
+                        <td>
+                            @Html.TextBoxFor(m => m.ConfirmPassword, new { @class = "inputClass inputBox", type = "password", autocomplete = "new-password" })
+                            <br />
+                            <div class="clsMandatory " style="float: left">@Html.ValidationMessageFor(m => m.ConfirmPassword)</div>
+                            @*<div class="clsMandatory inputClass" style="float: left"></div>*@
+                            <div style="clear:both"></div>
+                            <br />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2"><br /></td>
+                    </tr>
+                    <tr>
+
+                        <td style="padding-top: 10px; padding-bottom: 20px">
+                            <div style="clear:both"></div>
+                            <br />
+                            <input class="btn" style="width: 360px;  font-size: 14px;color: white;  border-radius: 10px;" type="submit" value="Reset" name="command" />
+                        </td>
+                    </tr>
+                </table>
+            }
+            <br />
+        </div>
+    </div>
+</div>

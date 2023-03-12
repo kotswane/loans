@@ -1,0 +1,4 @@
+11 Nov 2019 08:59:46 [INFO][7]ErrorLoLogger - ActivationCotnroller=>IndexInput string was not in a correct format.    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseUInt32(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.UInt32.Parse(String s)
+   at StaffLoans.Controllers.ActivationController.Index(Boolean generateSecret, String error) in C:\Users\laxmi\Documents\Projects\Projects\StaffLoans\StaffLoans\StaffLoans\Controllers\ActivationController.cs:line 82

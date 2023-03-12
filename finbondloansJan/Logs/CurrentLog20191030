@@ -1,0 +1,9 @@
+30 Oct 2019 10:06:32 [INFO][34]WEBTeamLogger - Email Sent Successfully <br/><br/>Hi La<br/>Please click on below URL or Alternatively, you can copy this link and paste it into your browser to activate your account:<Br/>http://localhost:52141/Activation/Index/?CID=29&LinkID=d93f6b3e-eed0-400b-8f38-2b3fab61c9a5<Br/><Br/>Thank You<Br/><Br/>Staff Loan Activationss@df.com
+30 Oct 2019 10:06:32 [INFO][34]StaffLoans.Controllers.RegisterController - Staff Loan Activation:  System.Collections.Generic.List`1[System.String]<br/><br/>Hi La<br/>Please click on below URL or Alternatively, you can copy this link and paste it into your browser to activate your account:<Br/>http://localhost:52141/Activation/Index/?CID=29&LinkID=d93f6b3e-eed0-400b-8f38-2b3fab61c9a5<Br/><Br/>Thank You<Br/><Br/>
+30 Oct 2019 11:20:43 [INFO][14]StaffLoans.Controllers.HomeController - Call Me Back Request: Title|Mr,Name|dsfdsf,Mobile|05456456465
+30 Oct 2019 11:20:55 [INFO][19]StaffLoans.Controllers.HomeController - Call Me Back Request: Title|Mr,Name|dsfdsf,Mobile|05456456465
+30 Oct 2019 11:20:57 [INFO][13]StaffLoans.Controllers.HomeController - Call Me Back Request: Title|Mr,Name|dsfdsf,Mobile|05456456465
+30 Oct 2019 11:20:57 [INFO][14]StaffLoans.Controllers.HomeController - Call Me Back Request: Title|Mr,Name|dsfdsf,Mobile|05456456465
+30 Oct 2019 11:21:09 [INFO][19]StaffLoans.Controllers.HomeController - Call Me Back Request: Title|Mr,Name|dsfdsf,Mobile|05456456465
+30 Oct 2019 11:23:11 [INFO][19]StaffLoans.Controllers.HomeController - Call Me Back Request: Title|Mr,Name|cvxv,Mobile|45435435
+30 Oct 2019 11:36:26 [INFO][29]InfoLogs - Staff Loan Activation: 

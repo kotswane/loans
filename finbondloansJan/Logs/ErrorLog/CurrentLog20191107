@@ -1,0 +1,72 @@
+07 Nov 2019 15:20:27 [INFO][13]ErrorLoLogger - MyAccountController=>IndexThere was no endpoint listening at http://10.1.1.31:8070/soap/IFINBONDAPI that could accept the message. This is often caused by an incorrect address or SOAP action. See InnerException, if present, for more details. 
+Server stack trace: 
+   at System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+   at System.ServiceModel.Channels.HttpOutput.Send(TimeSpan timeout)
+   at System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.SendRequest(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at StaffLoans.LoanAPI.IFINBONDAPI.ClientEnquiry(ClientEnquiryRequest request)
+   at StaffLoans.LoanAPI.FINBONDAPIClient.StaffLoans.LoanAPI.IFINBONDAPI.ClientEnquiry(ClientEnquiryRequest request) in C:\Users\laxmi\Documents\Projects\Projects\StaffLoans\StaffLoans\StaffLoans\Service References\LoanAPI\Reference.cs:line 6248
+   at StaffLoans.LoanAPI.FINBONDAPIClient.ClientEnquiry(TSessionData SessionData, String IDNumber, Boolean InquiryOnly) in C:\Users\laxmi\Documents\Projects\Projects\StaffLoans\StaffLoans\StaffLoans\Service References\LoanAPI\Reference.cs:line 6256
+   at StaffLoans.Controllers.MyAccountController.Index() in C:\Users\laxmi\Documents\Projects\Projects\StaffLoans\StaffLoans\StaffLoans\Controllers\MyAccountController.cs:line 37
+07 Nov 2019 15:21:28 [INFO][6]ErrorLoLogger - LoginController=>LoginUserThere was no endpoint listening at http://10.1.1.31:8070/soap/IFINBONDAPI that could accept the message. This is often caused by an incorrect address or SOAP action. See InnerException, if present, for more details. 
+Server stack trace: 
+   at System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+   at System.ServiceModel.Channels.HttpOutput.Send(TimeSpan timeout)
+   at System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.SendRequest(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at StaffLoans.LoanAPI.IFINBONDAPI.ClientLogon(ClientLogonRequest request)
+   at StaffLoans.LoanAPI.FINBONDAPIClient.StaffLoans.LoanAPI.IFINBONDAPI.ClientLogon(ClientLogonRequest request) in C:\Users\laxmi\Documents\Projects\Projects\StaffLoans\StaffLoans\StaffLoans\Service References\LoanAPI\Reference.cs:line 6778
+   at StaffLoans.LoanAPI.FINBONDAPIClient.ClientLogon(String ClientID, String Password) in C:\Users\laxmi\Documents\Projects\Projects\StaffLoans\StaffLoans\StaffLoans\Service References\LoanAPI\Reference.cs:line 6785
+   at StaffLoans.Controllers.LoginController.LoginUser(LoginModel model, String returnUrl) in C:\Users\laxmi\Documents\Projects\Projects\StaffLoans\StaffLoans\StaffLoans\Controllers\LoginController.cs:line 46
+07 Nov 2019 15:26:36 [INFO][6]ErrorLoLogger - LoginController=>LoginUserThere was no endpoint listening at http://10.1.1.31:8070/soap/IFINBONDAPI that could accept the message. This is often caused by an incorrect address or SOAP action. See InnerException, if present, for more details. 
+Server stack trace: 
+   at System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+   at System.ServiceModel.Channels.HttpOutput.Send(TimeSpan timeout)
+   at System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.SendRequest(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at StaffLoans.LoanAPI.IFINBONDAPI.ClientLogon(ClientLogonRequest request)
+   at StaffLoans.LoanAPI.FINBONDAPIClient.StaffLoans.LoanAPI.IFINBONDAPI.ClientLogon(ClientLogonRequest request) in C:\Users\laxmi\Documents\Projects\Projects\StaffLoans\StaffLoans\StaffLoans\Service References\LoanAPI\Reference.cs:line 6778
+   at StaffLoans.LoanAPI.FINBONDAPIClient.ClientLogon(String ClientID, String Password) in C:\Users\laxmi\Documents\Projects\Projects\StaffLoans\StaffLoans\StaffLoans\Service References\LoanAPI\Reference.cs:line 6785
+   at StaffLoans.Controllers.LoginController.LoginUser(LoginModel model, String returnUrl) in C:\Users\laxmi\Documents\Projects\Projects\StaffLoans\StaffLoans\StaffLoans\Controllers\LoginController.cs:line 46
+07 Nov 2019 15:50:40 [INFO][56]ErrorLoLogger - RegisterController => IndexThere was no endpoint listening at http://10.1.1.31:8070/soap/IFINBONDAPI that could accept the message. This is often caused by an incorrect address or SOAP action. See InnerException, if present, for more details. 
+Server stack trace: 
+   at System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+   at System.ServiceModel.Channels.HttpOutput.Send(TimeSpan timeout)
+   at System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.SendRequest(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at StaffLoans.LoanAPI.IFINBONDAPI.ConnectionCheck(ConnectionCheckRequest request)
+   at StaffLoans.LoanAPI.FINBONDAPIClient.StaffLoans.LoanAPI.IFINBONDAPI.ConnectionCheck(ConnectionCheckRequest request) in C:\Users\laxmi\Documents\Projects\Projects\StaffLoans\StaffLoans\StaffLoans\Service References\LoanAPI\Reference.cs:line 6096
+   at StaffLoans.LoanAPI.FINBONDAPIClient.ConnectionCheck(UInt32 SoftwareVersionInt, UInt32 BankInfoVersion) in C:\Users\laxmi\Documents\Projects\Projects\StaffLoans\StaffLoans\StaffLoans\Service References\LoanAPI\Reference.cs:line 6103
+   at StaffLoans.Controllers.RegisterController.Index(String strErrorMsg) in C:\Users\laxmi\Documents\Projects\Projects\StaffLoans\StaffLoans\StaffLoans\Controllers\RegisterController.cs:line 44

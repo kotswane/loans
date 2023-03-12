@@ -1,0 +1,72 @@
+﻿@model StaffLoans.Models.UpdateOTP
+@{
+    ViewBag.Title = "OTPCheck";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/Custom/Activation.css" rel="stylesheet" />
+<script src="~/scripts/Activation.js"></script>
+<link href="~/Content/Custom/contactInput.css" rel="stylesheet" />
+<div class="clsPageBannerHeader">
+    <div class="clsCenterBlock clsPageBannerHeaderPad">
+        <div class="clsPageBannerHeaderTitle">Welcome, @Model.FirstName @Model.Surname!</div>
+        <div class="clsPageBannerHeaderSubTitle">Please follow the below steps to complete the update process.</div>
+    </div>
+</div>
+@if (Model != null)
+{
+
+    <div class="clsCenterBlock">
+        <div class="clsCenterBlockPad">
+            <div class="" style="background-color:#fff;border-radius:10px;width:700px;margin:0 auto">
+                <div style="padding:30px;padding-top:20px; margin: 0 auto;">
+
+                    @using (Html.BeginForm("OTPPrompt", "UpdateDetailsVerification", FormMethod.Post))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.HiddenFor(x => x.FirstName)
+                        @Html.HiddenFor(x => x.ClientCode)
+                        @Html.HiddenFor(x => x.UpdateID)
+                        @Html.HiddenFor(x => x.NewCell)
+                        @Html.HiddenFor(x => x.NewEmail)
+                        @Html.HiddenFor(x => x.IDNumber)
+                        @Html.HiddenFor(x => x.CellNumber, new { @id = "id_cellNumber" })
+                        @*@Html.HiddenFor(x => x.OTP, new { @id = "id_OTPSecret" })*@
+
+                        <div id="OTPSection">
+                            <div style="font-size:18px;color:#003F7D;"><b>Verification Step (2/2) </b></div>
+                            <br />
+                            <div class="">We need to verify that you are the owner of this account, and have sent you an SMS OTP. Please enter it in the field below to proceed. If you are no longer able to access the Cell number associated with this account, please contact our customer support.</div>
+                            <br />
+                            <fieldset>
+
+                                <legend class="clsLegend" style="font-weight:bold;color:#003F7D;">Cell Number Verification</legend>
+                                <br />
+                                <div class="editor-label clsFormInnerHeader">
+                                    @Html.LabelFor(m => m.CellNumberOTPPrompt):
+                                </div>
+                                <div class="editor-field clsTwoFactorInput">
+                                    @Html.TextBoxFor(m => m.CellNumberOTPPrompt, new { @id = "id_OTPPrompt", autocomplete = "off" })
+                                    @Html.ValidationMessageFor(m => m.CellNumberOTPPrompt)
+                                </div>
+                                <br />
+                                <div class="editor-field  clsTwoFactorInput">
+                                    <input type="submit" value="Submit" class="btn" id="otpButton" />
+                                    <br />
+                                </div>
+                                <br />
+                                <br />
+
+                            </fieldset>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    ;
+}

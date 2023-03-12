@@ -1,0 +1,8 @@
+21 Nov 2019 09:29:08 [INFO][78]ErrorLoLogger - ActivationCotnroller=>IndexInvalid length for a Base-64 char array or string.    at System.Convert.FromBase64_Decode(Char* startInputPtr, Int32 inputLength, Byte* startDestPtr, Int32 destLength)
+   at System.Convert.FromBase64CharPtr(Char* inputPtr, Int32 inputLength)
+   at System.Convert.FromBase64String(String s)
+   at StaffLoans.Models.Common.Decrypt(String cypherString, Boolean useHasing) in C:\Users\laxmi\Documents\Projects\Projects\FinbondLoans\StaffLoans\Models\Common.cs:line 614
+   at StaffLoans.Controllers.ActivationController.Index(Boolean generateSecret, String error) in C:\Users\laxmi\Documents\Projects\Projects\FinbondLoans\StaffLoans\Controllers\ActivationController.cs:line 84
+21 Nov 2019 09:54:31 [INFO][29]ErrorLoLogger - ActivationCotnroller=>IndexString was not recognized as a valid DateTime.    at System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.Convert.ToDateTime(String value)
+   at StaffLoans.Controllers.ActivationController.Index(Boolean generateSecret, String error) in C:\Users\laxmi\Documents\Projects\Projects\FinbondLoans\StaffLoans\Controllers\ActivationController.cs:line 116

@@ -1,0 +1,21 @@
+﻿.clsMainHeaderPad{
+    padding:20px;padding-bottom:0px;
+}
+.clsMainHeaderInnerPad{
+    padding-top:10px;padding-bottom:10px;
+    border-bottom:none;
+}
+.clsMenuBlock{
+    float:right;font-size:11px;margin-top:25px;
+}
+.clsMainFooterAlign{
+   padding-top:20px;font-size:11px;
+}
+
+.clsFooNet1CopyContent{
+    text-align:center;margin-right:15px;color:#9EA4A9;
+}
+
+.clsFooLinkColor{
+    color:#8c9395;
+}

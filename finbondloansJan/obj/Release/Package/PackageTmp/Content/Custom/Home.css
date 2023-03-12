@@ -1,0 +1,122 @@
+﻿
+    .inputBox {
+        border: none !important;
+        border-bottom: 1px solid #fff !important;
+        border-radius: 0px !important;
+        font-size: 12px;
+        /*width: 180px !important;*/
+        background-color:transparent;
+        color:#9EA4A9;
+    }
+    .inputBox::placeholder {
+         color:#9EA4A9;
+    }
+/*.Rectanglearrow_box {
+	position: relative;
+	background: #fff;
+	border: 1px solid #707070;
+    height:80px;
+
+}
+.Rectanglearrow_box:after, .arrow_box:before {
+	right: 100%;
+	top: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.Rectanglearrow_box:after {
+	border-color: rgba(136, 183, 213, 0);
+	border-right-color: #88b7d5;
+	border-width: 20px;
+	margin-top: -20px;
+}
+.Rectanglearrow_box:before {
+	border-color: rgba(112, 112, 112, 0);
+	border-right-color: #fff;
+	border-width: 21px;
+	margin-top: -21px;
+}*/
+      #drpContactTitle{
+        width:120px;border-radius:30px;border-color:#fff;background-color:#315168;padding:10px;float:left;margin-right:20px;border:1px solid #fff;color:#fff;
+    }
+
+@media screen and (min-width: 768px) {
+    .carousel-control .glyphicon-chevron-left, .carousel-control .icon-prev {
+        margin-left: -10px;
+    }
+}
+        @media screen and (min-width: 768px) {
+            .carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right, .carousel-control .icon-next, .carousel-control .icon-prev {
+                width: 30px;
+                height: 30px;
+                margin-top: -10px;
+                font-size: 30px;
+            }
+        }
+.carousel-control .glyphicon-chevron-left, .carousel-control .icon-prev {
+    left: 50%;
+    margin-left: -10px;
+}
+
+      .carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right, .carousel-control .icon-next, .carousel-control .icon-prev {
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+    display: inline-block;
+    margin-top: -10px;
+}
+.glyphicon {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: "Glyphicons Halflings";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.glyphicon-chevron-left
+{
+    background:url("/content/Images/LeftArrow.png")  no-repeat;
+    background-position:center;
+    border:none;
+}
+.glyphicon-chevron-right
+{
+    background:url("/content/Images/RightArrow.png")  no-repeat;
+    background-position:center;
+    border:none;
+}
+.clshomeBanner
+{
+     background:url("/content/Images/Header.png")  no-repeat;
+    background-position:center;
+    overflow: auto;
+}
+
+.clsCustomHeaderButton1 {
+    top: 270px; left: 34%; width: 250px; z-index: 1000; height: 65px; float: right;  background-color:#2fd857; border: 1px solid #2fd857; border-radius: 50px; cursor:pointer; text-align:center; color: white; font-family: OpenSans-Regular !important; font-weight: 900; padding-top: 20px; font-size: 20px;
+}
+
+.clsCustomHeaderButton2 {
+    top: 270px; left: 14%; width: 250px; z-index: 1000; height: 65px; float: left;  background-color:white; border: 1px solid white; border-radius: 50px; cursor:pointer; text-align:center; color: #013e7d; font-family: OpenSans-Regular !important; font-weight: 900; padding-top: 20px; font-size: 20px;
+}
+
+.clsContainerForHeaderButtons {
+    position:absolute;
+    top: 13%;
+    left: 40%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    align-content:center;
+    width: 550px;
+    height: 100px;
+    /*background-color: grey;*/
+}

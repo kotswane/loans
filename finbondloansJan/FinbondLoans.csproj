@@ -1,0 +1,624 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FF7D45B6-B42B-4427-A13C-E16029ECD324}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>StaffLoans</RootNamespace>
+    <AssemblyName>StaffLoans</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CaptchaMvc, Version=2.5.0.0, Culture=neutral, PublicKeyToken=fe46ad421dd3b0e6, processorArchitecture=MSIL">
+      <HintPath>..\packages\CaptchaMvc.Mvc5.1.5.0\lib\net45-full\CaptchaMvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="evohtmltopdf, Version=3.0.0.0, Culture=neutral, PublicKeyToken=5b5f377bc08a4d32, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\evohtmltopdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Gma.QrCodeNet.Encoding, Version=0.0.1.29147, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Gma.QrCodeNet.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.7.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.7\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.0.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.0.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.0.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.0.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.0.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.0.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Custom\Activation.css" />
+    <Content Include="Content\Custom\cellc.css" />
+    <Content Include="Content\Custom\contact.css" />
+    <Content Include="Content\Custom\contactInput.css" />
+    <Content Include="Content\Custom\ExpensesSheet.css" />
+    <Content Include="Content\Custom\ExtraMenuCustomisation.css" />
+    <Content Include="Content\Custom\faq.css" />
+    <Content Include="Content\Custom\Home.css" />
+    <Content Include="Content\Custom\Howitworks.css" />
+    <Content Include="Content\Custom\Login.css" />
+    <Content Include="Content\Custom\Master.css" />
+    <Content Include="Content\Custom\Menus.css" />
+    <Content Include="Content\Custom\register.css" />
+    <Content Include="Content\Custom\RegisterInput.css" />
+    <Content Include="Content\datatables.responsive.css" />
+    <Content Include="Content\demo_table.css" />
+    <Content Include="Content\Footable.css" />
+    <Content Include="Content\Images\button.png" />
+    <Content Include="Content\Images\hide_password.png" />
+    <Content Include="Content\Images\Negative_alert_icon.png" />
+    <Content Include="Content\Images\page-loader.gif" />
+    <Content Include="Content\Images\Red_close_icon.png" />
+    <Content Include="Content\Images\show_password.png" />
+    <Content Include="Content\Images\Signin.png" />
+    <Content Include="Content\Images\success_alert_icon.png" />
+    <Content Include="Content\jquery-ui.min.css" />
+    <Content Include="Content\loancompletion.css" />
+    <Content Include="Content\LoanOverview.css" />
+    <Content Include="Content\profile.css" />
+    <Content Include="Content\responsive.css" />
+    <Content Include="Content\signature-pad.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\thankyou.css" />
+    <Content Include="debitorder.html" />
+    <Content Include="Global.asax" />
+    <Content Include="scripts\Activation.js" />
+    <Content Include="scripts\ai.0.22.9-build00167.js" />
+    <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="scripts\alerts.js" />
+    <Content Include="scripts\app.js" />
+    <Content Include="scripts\bootstrap.js" />
+    <Content Include="scripts\bootstrap.min.js" />
+    <Content Include="Content\Fonts\OpenSans-Regular.ttf" />
+    <None Include="Properties\PublishProfiles\FinbondLoans.pubxml" />
+    <None Include="Properties\PublishProfiles\StaffLoansWeb.pubxml" />
+    <Content Include="scripts\callmeback.js" />
+    <Content Include="scripts\checkEligibility.js" />
+    <Content Include="scripts\Common.js" />
+    <Content Include="scripts\ContractScripting.js" />
+    <Content Include="scripts\datatables.responsive.js" />
+    <Content Include="scripts\Footable.js" />
+    <Content Include="scripts\ForgotPassword.js" />
+    <None Include="scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="scripts\jquery-3.4.1.js" />
+    <Content Include="scripts\jquery-3.4.1.min.js" />
+    <Content Include="scripts\jquery-3.4.1.slim.js" />
+    <Content Include="scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="scripts\jquery-migrate-1.2.1.js" />
+    <Content Include="scripts\jquery-ui.js" />
+    <Content Include="scripts\jquery-ui.min.js" />
+    <Content Include="scripts\jquery.password-strength.js" />
+    <Content Include="scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="scripts\jquery.validate.js" />
+    <Content Include="scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="scripts\Loader.js" />
+    <Content Include="scripts\loggedinMaster.js" />
+    <Content Include="scripts\login.js" />
+    <Content Include="scripts\Master.js" />
+    <Content Include="scripts\modernizr-2.6.2.js" />
+    <Content Include="scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="scripts\jquery-3.4.1.min.map" />
+    <None Include="Service References\FinService\FinService.wsdl" />
+    <None Include="Service References\FinService\FinService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FinService\FinService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FinService\FinService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FinService\FinService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="scripts\Statement.js" />
+    <Content Include="Service References\FinService\StaffLoans.FinService.AccountSummary.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\FinService\StaffLoans.FinService.Historicaltransactions.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\FinService\StaffLoans.FinService.LoadBlacklistIntoTempResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\FinService\StaffLoans.FinService.MSISDNDetails.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\FinService\StaffLoans.FinService.RegistrationRowList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\FinService\StaffLoans.FinService.Transactions.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\LoanAPI\configuration91.svcinfo" />
+    <None Include="Service References\LoanAPI\configuration.svcinfo" />
+    <None Include="Service References\LoanAPI\IFINBONDAPIservice1.wsdl" />
+    <None Include="Service References\LoanAPI\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="scripts\MyAccount.js" />
+    <Content Include="scripts\PasswordMode.js" />
+    <Content Include="scripts\PasswordReset.js" />
+    <Content Include="scripts\Profile.js" />
+    <Content Include="scripts\Register.js" />
+    <Content Include="scripts\signature.js" />
+    <Content Include="scripts\signature_pad.min.js" />
+    <Content Include="scripts\signature_pad.umd.js" />
+    <Content Include="scripts\ThankYou.js" />
+    <None Include="Service References\FinService\FinService.disco" />
+    <None Include="Service References\FinService\configuration91.svcinfo" />
+    <None Include="Service References\FinService\configuration.svcinfo" />
+    <None Include="Service References\FinService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="test.html" />
+    <Content Include="test2.html" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ActivationController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\CheckEligibilityController.cs" />
+    <Compile Include="Controllers\ContactUsController.cs" />
+    <Compile Include="Controllers\CustomErrorsController.cs" />
+    <Compile Include="Controllers\FAQController.cs" />
+    <Compile Include="Controllers\ForgotPasswordController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HowItWorksController.cs" />
+    <Compile Include="Controllers\LoanCompletionController.cs" />
+    <Compile Include="Controllers\LoanOverviewController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MasterBaseController.cs" />
+    <Compile Include="Controllers\MobiregController.cs" />
+    <Compile Include="Controllers\MobiThankYouController.cs" />
+    <Compile Include="Controllers\MyAccountController.cs" />
+    <Compile Include="Controllers\PasswordResetController.cs" />
+    <Compile Include="Controllers\PreserveQueryString.cs" />
+    <Compile Include="Controllers\ProfileController.cs" />
+    <Compile Include="Controllers\RegisterController.cs" />
+    <Compile Include="Controllers\StatementsController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Controllers\ThankYouController.cs" />
+    <Compile Include="Controllers\UpdateDetailsVerificationController.cs" />
+    <Compile Include="Controllers\WelcomeController.cs" />
+    <Compile Include="Filters\Filters.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Activation.cs" />
+    <Compile Include="Models\ActivationOTP.cs" />
+    <Compile Include="Models\CheckEligibility.cs" />
+    <Compile Include="Models\Common.cs" />
+    <Compile Include="Models\Document.cs" />
+    <Compile Include="Models\Emails.cs" />
+    <Compile Include="Models\ForgotPassword.cs" />
+    <Compile Include="Models\LoanInfo.cs" />
+    <Compile Include="Models\Loans.cs" />
+    <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\PersonalInformation.cs" />
+    <Compile Include="Models\ResetPassword.cs" />
+    <Compile Include="Models\SalaryAndExpenses.cs" />
+    <Compile Include="Models\Update.cs" />
+    <Compile Include="Models\UpdateOTP.cs" />
+    <Compile Include="Models\UpdatePersonalInformation.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QRHelper.cs" />
+    <Compile Include="Service References\FinService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\LoanAPI\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="TwoFactorProfile.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Fonts\Muli.ttf" />
+    <Content Include="Content\Fonts\MuliRegular.eot" />
+    <Content Include="Content\Fonts\MuliRegular.woff" />
+    <Content Include="Views\MyAccount\Index.cshtml" />
+    <Content Include="Views\Register\Index.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.AdjustOfferResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.CalculateRiskMatrixResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.CashControlAddResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.CashControlDeleteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.CashControlEODResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.CashControlGetRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.CheckAffordabilityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.ClientEnquiryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.ConnectionCheckResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.GetLoanReceiptResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.GetLoanStatementReceiptResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.GetOperatorEODReceiptResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.InsDocumentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.InsDocumentsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.InsUpdBankingDetailsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.InsUpdClientDetailsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.InsUpdEmployerDetailsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.InsUpdExpenseDeclarationInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.LoanCompletionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.OperatorLogonResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.TAdjustOfferReply.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.TAffordabilityReply.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.TCashInOutRecordsReply.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.TClientEnquiryReply.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.TConnectionCheckReply.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.TestFuncResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.TInsUpdReply.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.TLogonReply.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.TReceiptReply.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.TRecordInsUpdReply.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.TReplyData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.TRiskReply.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.ValidateSessionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Views\Activation\Index.cshtml" />
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.ClientLoginAndSecretUpdateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.ClientLogonResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.GetPendingLoanApplicationsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.InsUpdClientActivationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.LoanApplicationCompletionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.TClientLogonReply.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.TClientValidateActivationReply.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.TPendingLoanApplicationsReply.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.ValidateActivationLinkResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\ThankYou\Index.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\FAQ\Index.cshtml" />
+    <Content Include="Views\ContactUs\Index.cshtml" />
+    <Content Include="Views\HowItWorks\Index.cshtml" />
+    <Content Include="Views\LoanCompletion\Index.cshtml" />
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.LoanEnquiryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.TLoanEnquiryReply.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Views\Shared\_LoggedinLayout.cshtml" />
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.UpdateAEDOInformationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Views\LoanOverview\Index.cshtml" />
+    <Content Include="Views\Shared\TestLayout.cshtml" />
+    <Content Include="Views\Test\Index.cshtml" />
+    <Content Include="Views\Profile\Index.cshtml" />
+    <Content Include="Views\Welcome\Index.cshtml" />
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.CheckBureauResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.TCheckBureauReply.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Views\ForgotPassword\Index.cshtml" />
+    <Content Include="Views\PasswordReset\Index.cshtml" />
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.LoanPreAuthResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Views\Activation\OTPCheck.cshtml" />
+    <Content Include="Views\CheckEligibility\Index.cshtml" />
+    <Content Include="Views\Statements\Index.cshtml" />
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.LogNuPayRequestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Views\UpdateDetailsVerification\Index.cshtml" />
+    <Content Include="Views\UpdateDetailsVerification\OTPCheck.cshtml" />
+    <Content Include="Views\ThankYou\UpdatedDetails.cshtml" />
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.ValidateActivationGUIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Views\Mobireg\Index.cshtml" />
+    <Content Include="Views\MobiThankYou\Index.cshtml" />
+    <Content Include="Views\CustomErrors\Index.cshtml" />
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.GetLoanApplicationsByStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.RecordVisitResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.SendOTPSMSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.TLoanApplicationsByStatusReply.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.TOTPReply.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.GetLoanApplicationsByIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.LoanManualCreditResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.TLoanApplicationsByIDReply.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.UpdateApplicationStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Views\CheckEligibility\affordability.cshtml" />
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.AddDocumentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.DownloadUpdateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LoanAPI\StaffLoans.LoanAPI.TSoftwareUpdateReply.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\FinService\" />
+    <WCFMetadataStorage Include="Service References\LoanAPI\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TwoFactor\TwoFactor.csproj">
+      <Project>{903279e1-4d47-4f18-a6f6-ed61eaad8176}</Project>
+      <Name>TwoFactor</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52141</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:52141/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

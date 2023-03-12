@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+   <meta name="viewport" content="width=device-width" />
+</head>
+<body  style="position:absolute; top:0; bottom:0; right:0; left:0;" >
+
+<div id="divMain" style="width:100%;height:100%;">
+
+<!--<object data="https://mobile.epe-online.co.za/t1.pdf" type="application/pdf" width="100%" height="100%">
+
+</object>-->
+
+<!--<embed id="embedPDF" src="https://mobile.epe-online.co.za/t1.pdf"  width="100%" height="100%" />-->
+<!--<embed id="embedPDF" src="http://www.net1.com/media/94719/2018-01-08-online-banking-terms-and-conditions.pdf" type="application/pdf" width="100%" height="100%" />-->
+                <embed id="embedPDF" src="https://drive.google.com/viewerng/viewer?embedded=true&url=https://net1onlinemobile.co.za/Infinity_Terms_and_Conditions.pdf" width="100%" height="100%"  >
+			  
+<!--<embed id="embedPDF" src="http://www.net1.com/media/94719/2018-01-08-online-banking-terms-and-conditions.pdf" width="100%" height="100%"  >-->
+
+				
+</div>
+
+<script>
+    function resizeContainers() {
+        document.getElementById("embedPDF").width((document.getElementById("divMain").width()));
+        document.getElementById("embedPDF").height((document.getElementById("divMain").height()));
+    }
+</script>
+
+</body>
+</html>

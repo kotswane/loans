@@ -1,0 +1,466 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using CaptchaMvc.HtmlHelpers  
+@model  StaffLoans.Models.PersonalInformation 
+<script src="~/scripts/jquery.password-strength.js"></script>
+<script src="~/scripts/Register.js?v=3"></script>
+<script src="~/scripts/PasswordMode.js"></script>
+<link href="~/Content/Custom/Menus.css" rel="stylesheet" />
+@*<link href="~/Content/Custom/register.css" rel="stylesheet" />*@
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/Custom/RegisterInput.css" rel="stylesheet" />
+<script src="~/scripts/ThankYou.js"></script>
+<div class="clsPageBannerHeader">
+    <div class="clsCenterBlock clsPageBannerHeaderPad">
+        <div class="clsPageBannerHeaderTitle">REGISTER</div>
+        <div class="clsPageBannerHeaderSubTitle">You'll need to create an account to continue. If you have been here before, please <a href="~/login/index" style="color:#008fd5" class="clsWhiteBackLinks">log in</a> </div>
+    </div>
+</div>
+<div class="clsCenterBlock"> @*clsDesktop*@
+    <div class="clsCenterBlockPad">
+        <br />
+        <div style="width:100%;margin:0 auto">
+            <div style="background-color:#fff; border-radius:10px;">
+                <div style="padding:20px;">
+                    @using (Html.BeginForm("RegisterStep1", "Register", FormMethod.Post, new { @onsubmit = "return ValidateRegister();" }))
+            {
+                        @Html.AntiForgeryToken()
+                        @*<div class="clsMainHeading">Register</div>
+                        <hr />
+                        <br />*@
+                        @*<div>You'll need to create an account to continue. If you have been here before please <a href="/login/index" style="color:#008fd5" class="clsWhiteBackLinks">log in</a> </div>
+                        <br />
+                        <br />*@
+                        <div class="clsRegLeftDiv">
+                            <div class="clsRegisterLabel">First Name:</div>
+                            <div>@Html.TextBoxFor(m => m.FirstName, new { maxlength = 50, autocomplete = "off" })</div>
+                            <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.FirstName)</div>
+                        </div>
+
+                        <div class="clsRegRightDiv">
+                            <div class="clsRegisterLabel">Middle Name:</div>
+                            <div>@Html.TextBoxFor(m => m.MiddleName, new { maxlength = 50, autocomplete = "off" })</div>
+                            <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.MiddleName)</div>
+                        </div>
+                        <div style="clear:both"></div>
+                        <br />
+                        <div class="clsRegLeftDiv">
+                            <div class="clsRegisterLabel">Last Name:</div>
+                            <div>@Html.TextBoxFor(m => m.LastName, new { maxlength = 50, autocomplete = "off" })</div>
+                            <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.LastName)</div>
+                        </div>
+
+                        <div class="clsRegRightDiv">
+                            <div class="clsRegisterLabel">ID Number:</div>
+                            <div>@Html.TextBoxFor(m => m.IDNumber, new { maxlength = 13, onkeypress = "return isNumberKey(event,this);", id="txtIDNumber", autocomplete = "off", onchange = "javascript:fnPopulateDateOfBirth();" })</div>
+                            <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.IDNumber)</div>
+                        </div>
+                        <div style="clear:both"></div>
+                        <br />
+                        <div class="clsRegLeftDiv">
+                            <div class="clsRegisterLabel">Date Of Birth:</div>
+                            <div>@Html.TextBoxFor(m => m.DateOfBirth, new { maxlength = 10, onkeypress = "return isNumberKey(event,this);", id = "txtdateofbirth", autocomplete = "off" })</div>
+                            <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.DateOfBirth)</div>
+                        </div>
+
+                        <div class="clsRegRightDiv">
+                            <div class="clsRegisterLabel">Title:</div>
+                            <div>
+
+                                @Html.DropDownListFor(m => m.Title,
+                       new SelectList(Model.TitleList, "TitleId", "TitleDesc", Model.Title), new { @id = "ddlTitle", @class = "clsDropDownList" })
+                            </div>
+                            <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.Title)</div>
+                        </div>
+                        <div style="clear:both"></div>
+                        <br />
+                        <div class="clsRegLeftDiv">
+                            <div class="clsRegisterLabel">Marital Status:</div>
+                            <div>
+                                @Html.DropDownListFor(m => m.MaritalStatus,
+                               new SelectList(Model.MaritalStatusList, "MartialStatusId", "MartialStatuseDesc", Model.MaritalStatus), new { @id = "ddlMaritalStatus", @class = "clsDropDownList" })
+                            </div>
+                            <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.MaritalStatus)</div>
+                        </div>
+
+                        <div class="clsRegRightDiv">
+                            <div class="clsRegisterLabel">Email Address:</div>
+                            <div>@Html.TextBoxFor(m => m.EmailAddress, new { maxlength = 50, autocomplete = "off" })</div>
+                            <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.EmailAddress)</div>
+                        </div>
+                        <div style="clear:both"></div>
+                        <br />
+                        <div class="clsRegLeftDiv">
+                            <div class="clsRegisterLabel">Mobile Number:</div>
+                            <div>@Html.TextBoxFor(m => m.MobileNumber, new { maxlength = 10, onkeypress = "return isNumberKey(event,this);", autocomplete = "off" })</div>
+                            <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.MobileNumber)</div>
+                        </div>
+
+                        <div class="clsRegRightDiv">
+                            <div class="clsRegisterLabel">Work Number:</div>
+                            <div>@Html.TextBoxFor(m => m.WorkNumber, new { maxlength = 10, onkeypress = "return isNumberKey(event,this);", autocomplete = "off" })</div>
+                            <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.WorkNumber)</div>
+                        </div>
+                        <div style="clear:both"></div>
+                        <br />
+                        <div class="clsRegLeftDiv">
+                            <div class="clsRegisterLabel">Alternate Number:</div>
+                            <div>@Html.TextBoxFor(m => m.AlternateNumber, new { maxlength = 10, onkeypress = "return isNumberKey(event,this);", autocomplete = "off" })</div>
+                            <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.AlternateNumber)</div>
+                        </div>
+
+                        <div class="clsRegRightDiv">
+                            <div class="clsRegisterLabel">Country Of Birth:</div>
+                            <div>
+
+                                @Html.DropDownListFor(m => m.CountryOfBirth,
+                                   new SelectList(Model.CountryOfBirthList, "COBId", "COBDesc", Model.CountryOfBirth), new { @id = "ddlCountryOfBirth", @class = "clsDropDownList" })
+                            </div>
+                            <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.CountryOfBirth)</div>
+                        </div>
+                        <div style="clear:both"></div>
+                        <br />
+                        <div class="clsRegLeftDiv">
+                            <div class="clsRegisterLabel">Nationality:</div>
+                            <div>
+                                @Html.DropDownListFor(m => m.Nationality,
+                                   new SelectList(Model.NationalityList, "NationalityId", "NationalityDesc", Model.Nationality), new { @id = "ddlNationality", @class = "clsDropDownList" })
+                            </div>
+                            <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.Nationality)</div>
+                        </div>
+
+
+                        <div class="clsRegRightDiv">
+                            <div class="clsRegisterLabel">Language:</div>
+                            <div>
+                                @Html.DropDownListFor(m => m.Language,
+                                   new SelectList(Model.LanguageList, "LanguageId", "LanguageDesc", Model.Language), new { @id = "ddlLanguage", @class = "clsDropDownList" })
+                            </div>
+                            <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.Language)</div>
+                        </div>
+                        <div style="clear:both"></div>
+                        <br />
+                        <div class="clsRegLeftDiv">
+                            <div class="clsRegisterLabel">Alternate Contact First Name:</div>
+                            <div>@Html.TextBoxFor(m => m.AlternateContactFirstName, new { maxlength = 50, autocomplete = "off" })</div>
+                            <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.AlternateContactFirstName)</div>
+                        </div>
+
+                        <div class="clsRegRightDiv">
+                            <div class="clsRegisterLabel">Alternate Contact Last Name:</div>
+                            <div>@Html.TextBoxFor(m => m.AlternateContactLastName, new { maxlength = 50, autocomplete = "off" })</div>
+                            <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.AlternateContactLastName)</div>
+                        </div>
+                        <div style="clear:both"></div>
+                        <br />
+                        <div class="clsRegLeftDiv">
+                            <div class="clsRegisterLabel">Alternate Contact Number:</div>
+                            <div>@Html.TextBoxFor(m => m.AlternateContactNumber, new { maxlength = 10, onkeypress = "return isNumberKey(event,this);", autocomplete = "off" })</div>
+                            <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.AlternateContactNumber)</div>
+                        </div>
+
+
+                        <div class="clsRegRightDiv">
+                            <div class="clsRegisterLabel">Marketing Preference:</div>
+                            <div>
+                                @Html.DropDownListFor(m => m.MarketingPreference,
+                                   new SelectList(Model.MarketingPreferenceList, "MarketingPreId", "MarketingPreDesc", Model.MarketingPreference), new { @id = "ddlMarketingPreference", @class = "clsDropDownList" })
+                            </div>
+                            <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.MarketingPreference)</div>
+                        </div>
+                        <div style="clear:both"></div>
+                        <br />
+                        <div class="clsRegLeftDiv">
+                            <div class="clsRegisterLabel">Loan Amount:</div>
+                            <div>@Html.TextBoxFor(m => m.LoanAmount, new { maxlength = 10, onkeypress = "return isNumberKey(event,this);", autocomplete = "off", placeholder = "Up to the Maximum value of 20K" })</div>
+                            <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.LoanAmount)</div>
+                        </div>
+
+
+                        <div class="clsRegRightDiv">
+                            <div class="clsRegisterLabel">Employment Type:</div>
+                            <div>
+                                @Html.DropDownListFor(m => m.EmploymentTypeId,
+                                   new SelectList(Model.EmploymentTypeList , "EmploymentTypeId", "EmploymentTypeDesc", Model.EmploymentTypeId), new { @id = "ddlEmploymentType", @class = "clsDropDownList" })
+                            </div>
+                            <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.EmploymentTypeId)</div>
+                        </div>
+                        <div style="clear:both"></div>
+                        <br />
+                        <div class="clsRegLeftDiv">
+                            <div class="clsRegisterLabel">Password:</div>
+                            <div style="width:300px;float:left">
+                                @Html.TextBoxFor(m => m.Password, new { @id = "txtPassword", type = "password", autocomplete = "new-password", maxlength = "20" })
+                                <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.Password)</div>
+                            </div>
+
+                            <div style="clear:both"></div>
+                        </div>
+                        <div style="clear:both"></div>
+                        <br />
+                        <br />
+                        <div class="clsSubHeading">Residential Address</div>
+                        <br />
+                        <br />
+                        <div class="clsRegLeftDiv">
+                            <div class="clsRegisterLabel">Street:</div>
+                            <div>@Html.TextAreaFor(m => m.Street, new { maxlength = 50, @style = "height: 50px !important;width:270px !important;", @class = "clsCustomTextBox ", autocomplete = "off", id = "txtResStreet" })</div>
+                            <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.Street)</div>
+                        </div>
+
+                        <div class="clsRegRightDiv">
+                            <div class="clsRegisterLabel">Suburb:</div>
+                            <div>@Html.TextBoxFor(m => m.Suburb, new { maxlength = 50, autocomplete = "off", id = "txtResSuburb" })</div>
+                            <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.Suburb)</div>
+                        </div>
+                        <div style="clear:both"></div>
+                        <br />
+                        <div class="clsRegLeftDiv">
+                            <div class="clsRegisterLabel">Country:</div>
+                            <div>
+                                @Html.DropDownListFor(m => m.Country,
+                                   new SelectList(Model.CountryList, "CountryId", "CountryDesc", Model.Country), new { @id = "ddlCountry", @class = "clsDropDownList" })
+                            </div>
+                            <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.Country)</div>
+                        </div>
+
+                        <div class="clsRegRightDiv">
+                            <div class="clsRegisterLabel">Province:</div>
+                            <div>
+
+                                @Html.DropDownListFor(m => m.Province,
+                                   new SelectList(Model.ProvinceList, "ProvinceDesc", "ProvinceDesc", Model.Province), new { @id = "ddlProvince", @class = "clsDropDownList" })
+                            </div>
+                            <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.Province)</div>
+                        </div>
+                        <div style="clear:both"></div>
+                        <br />
+                        <div>
+                            <div class="clsRegisterLabel">Postal Code:</div>
+                            <div>@Html.TextBoxFor(m => m.PostalCode, new { maxlength = 10, onkeypress = "return isNumberKey(event,this);", autocomplete = "off", id = "txtResCode" })</div>
+                            <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.PostalCode)</div>
+                        </div>
+                        <br />
+                        <div>
+                            @*@Html.CheckBoxFor(m => m.AcceptedToCheckCreditBeareu)*@
+                            <input type="checkbox" id="chkAddress" class="input_class_checkbox_address" onchange="fnPostalAddSameAsResAdd();" />
+                            Postal Address same as Residential Address
+                        </div>
+
+                        <br />
+                        <br />
+                        <div class="clsSubHeading">Postal Address</div>
+                        <br />
+                        <br />
+                        <div class="clsRegLeftDiv">
+                            <div class="clsRegisterLabel">Street:</div>
+                            <div>@Html.TextAreaFor(m => m.PostalStreet, new { maxlength = 50, @style = "height: 50px !important;width:270px !important;", @class = "clsCustomTextBox ", autocomplete = "off",id="txtPostalStreet" })</div>
+                            <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.PostalStreet)</div>
+                        </div>
+
+                        <div class="clsRegRightDiv">
+                            <div class="clsRegisterLabel">Suburb:</div>
+                            <div>@Html.TextBoxFor(m => m.PostalSuburb, new { maxlength = 50, autocomplete = "off", id = "txtPostalSuburb" })</div>
+                            <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.PostalSuburb)</div>
+                        </div>
+                        <div style="clear:both"></div>
+                        <br />
+                        <div class="clsRegLeftDiv">
+                            <div class="clsRegisterLabel">Country:</div>
+                            <div>
+                                @Html.DropDownListFor(m => m.PostalCountry,
+                                   new SelectList(Model.CountryList, "CountryId", "CountryDesc", Model.PostalCountry), new { @id = "ddlPostalCountry", @class = "clsDropDownList" })
+                            </div>
+                            <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.PostalCountry)</div>
+                        </div>
+
+                        <div class="clsRegRightDiv">
+                            <div class="clsRegisterLabel">Province:</div>
+                            <div>
+
+                                @Html.DropDownListFor(m => m.PostalProvince,
+                                   new SelectList(Model.ProvinceList, "ProvinceDesc", "ProvinceDesc", Model.PostalProvince), new { @id = "ddlPostalProvince", @class = "clsDropDownList" })
+                            </div>
+                            <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.PostalProvince)</div>
+                        </div>
+                        <div style="clear:both"></div>
+                        <br />
+                        <div>
+                            <div class="clsRegisterLabel">Postal Code:</div>
+                            <div>@Html.TextBoxFor(m => m.PostalPostalCode, new { maxlength = 10, onkeypress = "return isNumberKey(event,this);", autocomplete = "off", id = "txtPostalCode" })</div>
+                            <div class="clsMandatory" style="float: left">@Html.ValidationMessageFor(m => m.PostalPostalCode)</div>
+                        </div>
+                        <br />
+
+
+                        <div>
+                            @*@Html.CheckBoxFor(m => m.AcceptedToCheckCreditBeareu)*@
+                            <input type="checkbox" id="chkCreditCheck" class="input_class_checkbox" />
+                            You hereby provide us permission to perform a credit check for the purposes of granting this loan
+                        </div>
+
+                        <div style="display:none" id="divCreditCheck" class="clsMandatory">Please accept the credit check</div>
+                        <br/>
+                        <div style="color: red; font-size: 12px">Please ensure that your cellphone number and email are correct as they are used during the verification process. You will not be able to edit them after this step.</div>
+
+                        <br />
+                        <div>
+                            @Html.MathCaptcha() 
+                        </div>
+                        @*<div>
+                                <input type="checkbox" />
+                                I have read and accept the Privacy Policy and agree to the use of my personal information for the purpose set out therein.
+                            </div>
+                            <br />*@
+                        <div style="clear:both"></div>
+                        <br/>
+                        <div style="float:right">
+                            <input class="btn" type="submit" value="Register" name="Register" id="BtnRegister" style="float:right" />
+                            <div style="clear:both">
+                                By clicking the button above you accept the
+                                <div class="clsWhiteBackLinks" style="padding-left:5px;float:right;cursor:hand;cursor:pointer;" data-toggle="modal" data-target="#divRegisterTermsOfUse" >
+    T's &amp; C's</div>
+                            </div>
+                        </div>
+                        <div style="clear:both"></div>
+            }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="divRegisterTermsOfUse" class="modal fade" role="dialog">
+    <div class="modal-dialog" style="">  @*width:900px*@
+        <div class="modal-content" style="height:650px;overflow-y:scroll ">
+            <div id="closeButton" class="closeModalButton" data-dismiss="modal" style="height:55px">&times;</div>
+          
+            <div class="modal-body" style="font-size:11px;line-height:16px">
+                <div style="float:left;padding-right:25px;">  @*width:48%;*@
+                    <div style="font-weight:bold;text-align:center;">TERMS AND CONDITIONS FOR PRE-AGREEMENT STATEMENT<br />(“Agreement”)</div>
+                    <br/>
+                    <ul>
+                        <li><b>1.	This Agreement is made up of the Pre-Agreement Statement and Quotation, the document recording your electronic or written acceptance of both the Pre-Agreement Statement and Quotation and these terms and conditions. In terms of this Agreement, the Credit Provider agrees to lend me the amount set out in the Quotation/Loan Information section and I agree to repay the Credit Provider the amount set out under Total Repayment of the Quotation/Loan Information section.</b></li>
+                        <li>2.	<b><u>Early settlement and early repayments:</u></b> I may settle this Agreement early at any time in terms of sections 122 and 125 of the National Credit Act, 34 of 2005 (“the Act”) by paying the unpaid balance, the unpaid interest and all other fees and charges up to the date of settlement. I may also make early repayments under this Agreement.</li>
+                        <li>3.	<b><u>Addresses for receiving documents:</u></b> I nominate the address set out in the Pre-Agreement Statement and Quotation for purposes of communication, including legal notices and court orders. Either party to this Agreement may change its address by delivering to the other party a written notice of the new address by hand, registered mail, or electronic mail.</li>
+                        <li>4.	<b><u>Payments under the Agreement:</u></b>  I authorise the Credit Provider to deduct the monthly instalments and other amounts due in terms of this Agreement from my bank account.</li>
+                        <li>5.	<b><u>Penalty clause and Legal Costs:</u></b> If I default under this Agreement, I agree that the Credit Provider may charge me penalty interest on arrear instalments at the same interest rate set out in the <b>Quotation/Loan Information section.</b> I agree that all attorneys' or registered debt collectors' costs can be recovered from me on the higher of the attorney and client scale or the published tariff recoverable by registered debt collectors.</li>
+                        <li>6.	<b><u>Credit Provider's right to terminate this Agreement:</u></b> The Credit Provider may enforce and/or terminate this Agreement against me if I default with any of the agreed instalments in terms of this Agreement, in terms of sections 123, 129 and 130 of the Act, which may result in a court enforcing the repayment of my outstanding obligations in terms of this Agreement and a judgment against me being recorded at credit bureaus, which will be available to other credit providers.</li>
+                        <li>7.	<b><u>Account statements:</u></b> The Credit Provider will provide a free statement to me at the end of every third month and statements during intermediate months will be provided to me on request at a cost computed at the maximum allowable provided for in the Act.</li>
+                        <li>8.	<b><u>Default Administration and collection charges:</u></b> If I default under this Agreement, I will be liable for default and/or collection charges and reasonable and necessary expenses incurred to deliver such letter, at the maximum allowable rate allowed in law.</li>
+                        <li>9.	<b><u>Conditions, rights and obligations:</u></b> This is the full agreement between the parties and there are no unwritten terms or conditions.</li>
+                        <li>10.	<b><u>Dispute resolution:</u></b> I agree that in the event of any dispute or uncertainty, I will let Credit Provider know in writing, and if the dispute is not resolved, I may take the matter up with the National Credit Regulator at toll share number 0860 100 406.</li>
+                        <li>11.	<b><u>Administration order:</u></b> I declare that I am not under administration, nor am I going to apply for an administration order. If I am placed under administration after entering into this Agreement, I agree that all instalments still due after the administration order is granted, fall within the ambit of Section 74 A (2)(e)(ii) of the Magistrates Court Act and are excluded in terms of Section 74 C (2) of the said act and the Credit Provider will be able to recover all moneys still outstanding in terms of this Agreement by legal action.</li>
+                        <li>12.	<b><u>Debt counselling:</u></b> I may apply to a debt counsellor to be declared over indebted in terms of section 86 of the Act. I can access the names of debt counsellors at www.ncr.org.za.</li>
+                        
+                    </ul>
+                    <br/>
+                    <div><b>I declare and warrant that I:</b></div>
+                    <ul>
+                        <li>am legally competent to execute this Agreement;</li>
+                        <li>if necessary, have my spouse's consent to enter into this Agreement;</li>
+                        <li>understand and accept the terms and conditions set out in this Agreement;</li>
+                        <li>have given information that is true and complete as part of the assessment required prior to entering into this Agreement;</li>
+                        <li>am the rightful owner of the bank account detailed in this Agreement and as such have the right to give the Credit Provider the authority to debit such account;</li>
+                        <li>have not applied to a debt counsellor or court for an over-indebtedness or debt review.</li>
+                    </ul>
+                </div>
+                <div style="float:left;"> @*width:48%;*@
+                    <div><b>CONTACT NUMBERS</b></div>
+                    <table>
+                        <tr>
+                            <td><b>National Credit Regulator:</b></td>
+                            <td>086 062 7627</td>
+                            <td>complaints@ncr.org.za</td>
+                        </tr>
+                        <tr>
+                            <td><B>Banking Ombudsman:</B></td>
+                            <td>0860 800 900</td>
+                            <td>info@obassa.co.za</td>
+                        </tr>
+
+                        <tr>
+                            <td><b>Credit bureaus:</b></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Compuscan:</td>
+                            <td>086 151 4131</td>
+                            <td>consumercare@compuscan.co.za</td>
+                        </tr>
+                        <tr>
+                            <td>XDS:</td>
+                            <td>086 093 7000</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>011 645 9100</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Experian:</td>
+                            <td>0861 10 56 65</td>
+                            <td>EZA.consumer@experian.com</td>
+                        </tr>
+                        <tr>
+                            <td>CPB:</td>
+                            <td></td>
+                            <td>dispute@cpbonline.co.za</td>
+                        </tr>
+                        <tr>
+                            <td>TransUnion:</td>
+                            <td>0861 886 466</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Vericred:</td>
+                            <td></td>
+                            <td>disputes@vccb.co.za</td>
+                        </tr>
+                    </table>
+                
+                <ul>
+                    <li>Loan repayments will be of Payroll Deduction, administered by Net1 HR.</li>
+                    <li>Staff member must be permanently employed for a period of at least 6 months from date of application.</li>
+                    <li>Normal affordability rules apply, and subject to approval by line manager, as well as HR.</li>
+                    <li>Should an employee resign or terminate employment at Net1 for whatever reason; Net1 reserves the right to settle any outstanding loan balances by way of leave pay or any other emoluments deduction at the point of termination. After which, should there still be an outstanding balance, the former employee must make payment arrangement to settle their outstanding debt.</li>
+                    
+                </ul>
+                <br/>
+                <div style="text-align:center;font-weight:bold">
+                    CONSENT FOR CREDIT CHECK AND MARKETING OPTIONS
+                </div>
+                <div><b>Credit Check Consent:</b></div>
+                <div>I voluntarily provide consent to the Credit Provider to:</div>
+                <ul>
+                    <li>conduct a reference check on me for the purposes of the Credit Provider carrying out a statutory assessment of my creditworthiness, for the purpose of deciding whether to grant me credit and enter into a credit agreement with me (the Agreement);</li>
+                    <li>monitor my credit profile if the Credit Provider does grant me credit;</li>
+                    <li>file my consumer credit information with any registered credit bureau;</li><li>share my Personal Information with tracing agents, collection agents and attorneys if I default under the Agreement;</li>
+                    <li>use my Personal Information for any lawful purpose that the Credit Provider is required to comply with;</li><li>tell credit bureaus about this application for credit, the entering into and termination of the Agreement, and how I conduct the Agreement. I understand that if I do not conduct the Agreement well, my credit-worthiness will be negatively affected.</li>
+
+                </ul>
+             <br/>
+                <p>I further provide my consent to any credit bureau to provide the Credit Provider with credit reports, to accept the filing of my credit information from the Credit Provider.</p>
+                <p>I understand that I have the right to contact the credit bureaus to check my credit record and request the credit bureaus to correct any incorrect information they hold about me.</p>
+                <br/>
+                <div><b>Personal Information:</b></div>
+                <p>I consent to the Credit Provider collecting and Processing* my Personal Information** to enable it to implement the Agreement, carry out statistical and other analysis to identify potential markets and trends and to develop new products and services and to it disclosing my Personal Information to any of its agents or service providers. The Credit Provider asks these parties to agree to its privacy policies.</p>
+                <p>I agree that the Credit Provider may determine the need and purpose of Processing my Personal Information as required by various laws, including the Financial Intelligence Centre Act and the Financial Advisory and Intermediary Services Act.</p>
+                <p>I consent to the Credit Provider holding, utilising, processing, confirming, storing and giving out my confidential and personal information to my employer, bank, any credit bureau or other person for business reasons if the Credit Provider is legally required to or allowed to do so and to the Credit Provider holding, utilising, processing, confirming, storing, sending and receiving information about me from any credit bureau or similar organisation that has information about me or my creditworthiness.</p>
+                <p>I have no claim against the Credit Provider for keeping, using or legally distributing my Personal Information.</p>
+                <p><b>*Process/Processing</b> means the collection, receipt, recording, organisation, collation, storage, updating or modification, retrieval; alteration; consultation; use; dissemination by means of transmission, distribution or making available in any other form; merging, linking, as well as blocking, degradation, erasure or destruction of information;</p>
+                <p><b>**Personal Information</b> includes race, gender, sex, marital status, nationality, ethnic or social origin, colour, sexual orientation, age, physical or mental health, religion, belief, disability, language, birth, education, identity number, telephone number, email, postal or street address, biometric information, financial, criminal or employment history and correspondence that is private or confidential.</p>
+
+            </div>
+            @*<div class="modal-footer">
+            </div>*@
+                </div>
+        </div>
+    </div>
+</div>

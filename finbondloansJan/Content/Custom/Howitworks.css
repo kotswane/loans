@@ -1,0 +1,82 @@
+﻿.clsHowItOwrksPAdBox{
+    border-radius:10px;padding:20px;
+    padding-bottom:0px;
+}
+.clsHowItWorksTitle{
+    text-align:center;font-size:18px;color:#003F7D;
+}
+
+.clsHowItWorksTitleDark{
+    text-align:center;font-size:18px;color:#29303C;
+}
+.clsHowItWorksSubTitle{
+    text-align:center;color:#9EA4A9;padding-top:15px;
+}
+.clsHowItOwkrsCenterDiv{
+    width:770px;margin:0 auto;
+}
+.clsHowItWorksBlock{
+    float:left;padding-right:30px;width:700px;text-align:center;
+}
+.clsLastBlockInFirstRow{
+    float:right;width:250px;text-align:center;
+}
+.clsFirstBlockMargin{
+    margin-top:10px;
+    
+     background: url("../Images/Union10.png")  no-repeat;
+   width:683px;
+   height:130px;
+   margin-left:145px;
+}
+.clsBlockTitles{
+    font-weight:bold;color:#003F7D;font-size:14px;
+    text-align:left;
+    padding-left:40px;
+    padding-top:20px;
+}
+.clsBlockSubTitles{
+    color:#323232;
+    font-size:14px;
+        text-align:left;
+    padding-left:40px;
+    padding-top:10px;
+}
+.clsHowItWorksSecondBlck{
+    width:500px;margin:0 auto;
+}
+.clsSecondBLockFirstdiv{
+    float:left;width:250px;text-align:center;padding-right:30px;
+}
+.clsSecondBlockLastDiv{
+    float:right;width:250px;text-align:center;
+}
+
+.clsBlockTitlesForDarkColor{
+    font-weight:bold;color:#29303C;font-size:14px;
+}
+  *, *:before, *:after
+    {
+        -webkit-box-sizing:border-box;
+    }
+  
+
+    .arrow_box {
+        position: relative;
+        background: #fff;
+    }
+
+        .arrow_box:after {
+            right: 100%;
+            top: 50%;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+            border-color: rgba(255, 255, 255, 0);
+            border-right-color: #fff;
+            border-width: 10px;
+            margin-top: -10px;
+        }
